@@ -1,0 +1,38 @@
+ h1 {color:#4747C2;
+	 font-size:200%;
+	 font-family:Verdana;
+	 text-align:center}
+ h2 {color:#2F4F2F;
+ 	 font-size:150%;
+	 text-align:center}
+ h3 {font-style:italic;}
+
+a.menu
+{
+	display:block;
+	width:140px;
+	font-weight:bold;
+	color:#FFFFFF;
+	background:#069;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+a:hover,a:active
+{
+	background-color:#09C;
+}
+.footer
+{
+	text-align:center;
+	margin:auto;
+	vertical-align:middle;
+}
+.header
+{
+	text-align:right;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:20px;
+	color:#FF3;
+}
