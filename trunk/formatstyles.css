@@ -76,3 +76,46 @@ color:#2E2E2E;
 .non-underline {
 text-decoration: none;
 }
+
+/*********************************************/
+body
+{
+	width: 70%;
+}
+
+#horizontal_menu ul
+{
+    list-style-type: none;
+	padding: 0px;
+}
+
+#horizontal_menu li
+{
+	display: inline;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* Formatting Menu */           
+#horizontal_menu a
+{
+	height: 20px;
+
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 11pt;
+	
+	background-color: #F00;
+    color: #FFFBF0;
+
+    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
+	
+	float: left;
+	width: 19.97%;
+	
+	border-right: 1px solid #F4EFDF;
+}
+
+#horizontal_menu a:hover
+{
+	color: #0F0;
+}
