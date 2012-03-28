@@ -1,25 +1,18 @@
 /* Layout Styles */ 
 #page_section { 
  background: white; 
- width:1200px;
- margin:auto;
+ width: 80%;
+ margin:0 auto;
 } 
 #banner { 
 height: 150px; 
-width: 1200px;
 background: url(images/banner2.png);
 } 
 #footer { 
 height: 50px;
-width:1200px;
-padding:0;
 color:#FFF;
 }    
  
 #content {
-min-height:500px;
-margin-left: 140px; 
-padding: 1em;
-width: 1044px;
 background:url(images/background.jpg) repeat;
 }
