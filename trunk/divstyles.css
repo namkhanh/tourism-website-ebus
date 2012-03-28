@@ -9,27 +9,67 @@ background:url(images/banner.png);
 } 
 
 #nav{
-
 height: 40px;
 background: red;
 }
 
-#search-spot{
+#title-text {
+color:#5FA92A;
+font-size:130%;
+background-image:url(images/hor-line.jpg);
+background-repeat:repeat-x;
+background-position:22px 22px;
+margin-bottom:5px;
+width:210px
+}
+
+#left-top{
+margin-top:2%;
 float:left;
 width:25%;
 height:200px;
-background: blue;
 }
 
-#spec-spot{
+#search-box {
+width:100%;
+height:100%;
+
+}
+
+#ver-border {
+margin-top:7%;
+float:left;
+height:100px;
+width:0.5%;
+}
+
+#ver-border1 {
+width:100%;
+height:100%;
+background-image:url(images/ver-line.jpg);
+background-repeat:repeat-y;
+background-position:center;
+}
+
+#right-top{
+margin-top:2%;
+margin-left:20px;
 float:right;
-width:75%;
+width:72.4%;
 height:200px;
-background: green;
+}
+
+#spec-tour{
+width:100%;
+height:100%;
+
 }
 
 #hot-spot {
-margin-top:200px;
+margin-top:4%;
+}
+
+#metro-ui {
 background: #ffffff url(images/bg1.png) repeat left top;
 height:500px;
 }
@@ -38,7 +78,7 @@ height:500px;
 	margin-right: 5px;
     float: left;
     height: 49.5%;
-    width: 69.5%;
+    width: 69.4%;
 }
 
 #top-small {
