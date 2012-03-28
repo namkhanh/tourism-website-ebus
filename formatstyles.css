@@ -1,3 +1,16 @@
+.wan-clear {
+ clear: both;
+}
+.wan-clearer {
+ clear: both; 
+ display: block; 
+ margin: 0; 
+ padding: 0; 
+ height: 0; 
+ line-height: 1px; 
+ font-size: 1px;
+}
+
  h1 {color:#4747C2;
 	 font-size:200%;
 	 font-family:Verdana;
@@ -36,4 +49,30 @@ a:hover,a:active
 	font-family:Tahoma, Geneva, sans-serif;
 	font-size:20px;
 	color:#FF3;
+}
+
+.transparent-box {
+width: 100%;
+height: 50px;
+margin-top: -50px;
+background-color:#ffffff;
+opacity:0.45;
+filter:alpha(opacity=45); /* For IE8 and earlier */
+position: relative;
+z-index: 2;
+}
+
+p {
+padding: 1%;
+text-align:center;
+font-weight:bold;
+margin: -40px 1px 1px;
+position: relative;
+text-align: center;
+z-index: 9999;
+color:#2E2E2E;
+}
+
+.non-underline {
+text-decoration: none;
 }

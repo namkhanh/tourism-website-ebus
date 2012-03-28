@@ -1,6 +1,5 @@
 /* Layout Styles */ 
 #page_section { 
- background: white; 
  width: 80%;
  margin:0 auto;
 } 
@@ -8,10 +7,71 @@
 height: 150px; 
 background: url(images/banner.png);
 } 
+
+#nav{
+
+height: 40px;
+background: red;
+}
+
+#search-spot{
+float:left;
+width:25%;
+height:200px;
+background: blue;
+}
+
+#spec-spot{
+float:right;
+width:75%;
+height:200px;
+background: green;
+}
+
+#hot-spot {
+margin-top:200px;
+background: #ffffff url(images/bg1.png) repeat left top;
+height:500px;
+}
+
+#top-big { 
+	margin-right: 5px;
+    float: left;
+    height: 49.5%;
+    width: 69.5%;
+}
+
+#top-small {
+    float: right;
+    height: 49.5%;
+    width: 30%;
+}
+
+#bot1 {
+margin-right: 5px;
+ float: left;
+  height: 49.5%;
+  width: 32%;
+}
+
+#bot2 {
+ margin-right: 3px;
+ float: left;
+  height: 49.5%;
+  width: 35%;
+}
+
+#bot3 {
+
+ float: right;
+ height: 49.5%;
+  width: 32%;
+}
 #footer { 
 height: 50px;
 color:#FFF;
-}    
+}
+    
  
 #content {
 background:url(images/background.jpg) repeat;
