@@ -79,41 +79,34 @@ text-decoration: none;
 
 /*********************************************/
 
-/*body
-{
-	width: 70%;
-}*/
-
 /* Formatting Menu */
 #horizontal_menu ul
 {
     list-style-type: none;
 	padding: 0px;
-	
 }
 
 #horizontal_menu li
 {
-	display: inline;
-	font-weight: bold;
-	text-align: center;
-	
+	display: inline
 }
 
 #horizontal_menu a
 {
-	height: 20px;
-
+	padding: 5px 0;
+	width: 16.45%;
+	float: left;
+	
     font-family: Verdana, Geneva, sans-serif;
     font-size: 11pt;
-	
-	background-color: #F00;
+	font-weight: bold;
+	text-align: center;
+		
     color: #FFFBF0;
-
-    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
+	background-color: #F00;
 	
-	float: left;
-	width: 20%;
+    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
+	border: 1px solid #FFFBF0;
 }
 
 #horizontal_menu a:hover
