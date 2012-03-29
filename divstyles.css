@@ -3,9 +3,9 @@
  width: 80%;
  margin:0 auto;
  background:white;
--moz-box-shadow: 0 0 5px 5px #888;
--webkit-box-shadow: 0 0 5px 5px#888;
-box-shadow: 0 0 5px 5px #888;
+-moz-box-shadow: 0 0 2px 2px #888;
+-webkit-box-shadow: 0 0 2px 2px#888;
+box-shadow: 0 0 2px 2px #888;
 } 
 #banner { 
 height: 150px;
