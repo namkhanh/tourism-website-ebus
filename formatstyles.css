@@ -113,12 +113,7 @@ text-decoration: none;
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
 	
 	float: left;
-	width: 19.97%;
-	
-	border-right: 1px solid #F4EFDF;
-	
-	padding-top:5px;
-	padding-bottom: 5px;
+	width: 20%;
 }
 
 #horizontal_menu a:hover
