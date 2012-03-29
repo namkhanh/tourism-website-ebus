@@ -7,6 +7,57 @@
 	<meta name ="keywords" content="?????"  /> 
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+	
+	<!-- include CSS always before including js -->
+<link type="text/css" rel="stylesheet" href="skins/tn3/tn3.css"></link>
+<!-- include jQuery library -->
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<!-- include tn3 plugin -->
+<script type="text/javascript" src="js/jquery.tn3lite.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	  jQuery.fn.tn3.Gallery.config.timerSteps =1;
+	  jQuery.fn.tn3.Thumbnailer.config.speed = 1;
+	 });
+	$(document).ready(function() {
+		//Thumbnailer.config.shaderOpacity = 1;
+		var tn1 = $('.mygallery').tn3({
+		startWithAlbums:true,
+	      autoplay:true,
+		  delay:3000,
+skinDir:"skins",
+imageClick:"fullscreen",
+image:{
+maxZoom:1.5,
+crop:true,
+clickEvent:"dblclick",
+transitions:[{
+type:"blinds"
+},{
+type:"grid"
+},{
+type:"grid",
+duration:460,
+easing:"easeInQuad",
+gridX:1,
+gridY:8,
+// flat, diagonal, circle, random
+sort:"random",
+sortReverse:false,
+diagonalStart:"bl",
+// fade, scale
+method:"scale",
+partDuration:360,
+partEasing:"easeOutSine",
+partDirection:"left"
+}]
+}
+		});
+	});
+	
+
+</script>
 </head>
 
 <body>
@@ -44,7 +95,36 @@
 		
 		<div id="right-top">
             <div id="title-text">Special Tour Countdown</div>
-            <div id="spec-tour"></div>
+            <div id="spec-tour">
+		
+			<div class="mygallery">
+		<div class="tn3 album">
+	    <ol>
+		<li>
+		    <h4>Hohensalzburg Castle</h4>
+		    <div class="tn3 description">Salzburg, Austria</div>
+		    <a href="images/hot-tour/1.jpg">
+			<img src="images/hot-tour/35x35/1.jpg" />
+		    </a>
+		</li>
+		<li>
+		    <h4>Isolated sandy cove</h4>
+		    <div class="tn3 description">Zakynthos island, Greece</div>
+		    <a href="images/hot-tour/2.jpg">
+			<img src="images/hot-tour/35x35/2.jpg" />
+		    </a>
+		</li>
+		<li>
+		    <h4>A view from the Old Town</h4>
+		    <div class="tn3 description">Herceg Novi, Montenegro</div>
+		    <a href="images/hot-tour/3.jpg">
+			<img src="images/hot-tour/35x35/3.jpg" />
+		    </a>
+		</li>
+	    </ol>
+	</div>
+    </div>
+</div>
 		</div>
 		
 		<div class="wan-clear"></div>
@@ -105,5 +185,13 @@
 <!-- This is end of the footer -->
 	</div> 
 <!-- This is end of the page section -->
+<script>
+$(".tn3-prev-page").attr("display:none");
+$("div").remove(":contains('tn3-thumbs')");
+$('tn3-thumbs').remove();
+	$('div').remove('.tn3-thumbs');
+
+
+</script>
 </body>
 </html>
