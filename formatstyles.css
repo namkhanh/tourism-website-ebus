@@ -89,6 +89,7 @@ text-decoration: none;
 {
     list-style-type: none;
 	padding: 0px;
+	
 }
 
 #horizontal_menu li
@@ -96,6 +97,7 @@ text-decoration: none;
 	display: inline;
 	font-weight: bold;
 	text-align: center;
+	
 }
 
 #horizontal_menu a
@@ -114,6 +116,9 @@ text-decoration: none;
 	width: 19.97%;
 	
 	border-right: 1px solid #F4EFDF;
+	
+	padding-top:5px;
+	padding-bottom: 5px;
 }
 
 #horizontal_menu a:hover
