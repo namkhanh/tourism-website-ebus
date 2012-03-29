@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test TN3 Gallery</title>
+<link type="text/css" rel="stylesheet" href="skins/tn3/tn3.css"></link> 
+ <script type="text/javascript" src="js/jquery.tn3lite.min.js"></script> 
+ <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script> 
+ 
+ <script type="text/javascript">
+$(document).ready(function() {
+ $('.gallery').tn3({
+   startWithAlbums:true,
+   autoplay:true
+ });
+});
+</script>
+</head>
+
+<body>
+<div class="tn3-gallery">
+<div class="tn3-albums">
+ <h4>My First TN3 Photo Album</h4> 
+     <div class="tn3-album-description">1st album I&apos;ve built.</div> 
+      <ul> 
+        <li> 
+         <h4>Image 1</h4> 
+          <div class="tn3-image-descriptionn">My Image 1 description</div>
+            <a href="images/fixed/1.jpg"><img src="images/thumbs/1.jpg" /></a> 
+         </li>
+         <li> 
+          <h4>Image 2</h4> 
+          <div class="tn3 description">My Image 2 description</div> 
+          <a href="images/fixed/2.jpg"> 
+            <img src="images/thumbs/2.jpg" /> 
+          </a> 
+        </li>  
+       </ul>
+    </div>
+  </div>
+</body>
+</html>

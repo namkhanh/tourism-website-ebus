@@ -11,6 +11,12 @@
  font-size: 1px;
 }
 
+body {
+		margin:0px;
+		padding:0px;
+		background-image:url(images/bg3.jpg);
+}
+
  h1 {color:#4747C2;
 	 font-size:200%;
 	 font-family:Verdana;
@@ -103,7 +109,7 @@ text-decoration: none;
 	text-align: center;
 		
     color: #FFFBF0;
-	background-color: #F00;
+	background-color: #D02C1B;
 	
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
 	border: 1px solid #FFFBF0;
@@ -111,6 +117,6 @@ text-decoration: none;
 
 #horizontal_menu a:hover
 {
-	color: #0F0;
+	color: yellow;
 }
 
