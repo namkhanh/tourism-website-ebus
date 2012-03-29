@@ -63,7 +63,7 @@ partDirection:"left"
 <body>
     <div id="content">
     <div class="mygallery">
-	<div class="tn3 album">
+		<div class="tn3 album">
 	    <h4>Fixed Dimensions</h4>
 	    <div class="tn3 description">Images with fixed dimensions</div>
 	    <div class="tn3 thumb">images/35x35/1.jpg</div>
@@ -156,6 +156,14 @@ partDirection:"left"
 	</div>
     </div>
 </div>
+<script>
+$(".tn3-prev-page").attr("display:none");
+$("div").remove(":contains('tn3-thumbs')");
+$('tn3-thumbs').remove();
+	$('div').remove('.tn3-thumbs');
+
+
+</script>
 </body>
 </html>
 
