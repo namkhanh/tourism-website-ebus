@@ -88,7 +88,7 @@ text-decoration: none;
 
 #horizontal_menu li
 {
-	display: inline
+	display: inline;
 }
 
 #horizontal_menu a
