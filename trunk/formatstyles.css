@@ -78,11 +78,13 @@ text-decoration: none;
 }
 
 /*********************************************/
-body
+
+/*body
 {
 	width: 70%;
-}
+}*/
 
+/* Formatting Menu */
 #horizontal_menu ul
 {
     list-style-type: none;
@@ -96,7 +98,6 @@ body
 	text-align: center;
 }
 
-/* Formatting Menu */           
 #horizontal_menu a
 {
 	height: 20px;
