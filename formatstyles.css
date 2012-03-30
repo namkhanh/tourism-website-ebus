@@ -86,6 +86,11 @@ text-decoration: none;
 /*********************************************/
 
 /* Formatting Menu */
+#horizontal_menu 
+{
+	
+}
+
 #horizontal_menu ul
 {
     list-style-type: none;
@@ -113,7 +118,6 @@ text-decoration: none;
 	
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
 	border: 1px solid #FFFBF0;
-	
 }
 
 #horizontal_menu a:hover
