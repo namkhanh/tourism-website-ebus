@@ -100,7 +100,7 @@ text-decoration: none;
 #horizontal_menu a
 {
 	padding: 5px 0;
-	width: 16.45%;
+	width: 16.47%;
 	float: left;
 	
     font-family: Verdana, Geneva, sans-serif;
@@ -113,6 +113,7 @@ text-decoration: none;
 	
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
 	border: 1px solid #FFFBF0;
+	
 }
 
 #horizontal_menu a:hover
