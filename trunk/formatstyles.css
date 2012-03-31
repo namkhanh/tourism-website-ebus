@@ -102,10 +102,13 @@ text-decoration: none;
   	margin:0;
   	padding:0;
   	list-style: none;
+	position:relative;
+	z-index:999
 }
 
 #topnav ul li 
-{		
+{	
+		
   	display:block;
   	position:relative;
   	float:left;
