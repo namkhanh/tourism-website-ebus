@@ -86,42 +86,65 @@ text-decoration: none;
 /*********************************************/
 
 /* Formatting Menu */
-#horizontal_menu 
-{
-	
+#topnav ul {
+  	font-family:Verdana, Geneva, sans-serif;
+  	font-size:14px;
+	font-weight:bold;
+  	margin:0;
+  	padding:0;
+  	list-style: none;
 }
 
-#horizontal_menu ul
-{
-    list-style-type: none;
-	padding: 0px;
+#topnav ul li {
+  	display:block;
+  	position:relative;
+  	float:left;
 }
 
-#horizontal_menu li
-{
-	display: inline;
-}
-
-#horizontal_menu a
+#topnav ul li a 
 {
 	padding: 5px 0;
-	width: 16.47%;
-	float: left;
+  	display:block;
+  	text-decoration:none;
+	width: 150px;
 	
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 11pt;
-	font-weight: bold;
-	text-align: center;
-		
-    color: #FFFBF0;
+  	color: #FFFBF0;
+	text-align:center;
 	background-color: #D02C1B;
 	
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
-	border: 1px solid #FFFBF0;
+	border-style:double;
+/*	border: 1px solid #FF8040;*/
 }
 
-#horizontal_menu a:hover
+#topnav ul li a:hover 
+{ 
+	background: #617F8A;
+}
+
+#topnav li ul 
+{ 
+	display: none; 
+}
+
+#topnav li:hover ul 
 {
-	color: yellow;
+  	display: block;
+  	position: absolute;
 }
 
+#topnav li:hover li 
+{
+  	float: none;
+  	font-size:11px;	
+}
+
+#topnav li:hover a 
+{ 
+	background: #617F8A; 
+}
+
+#topnav li:hover li a:hover 
+{ 
+	background: #95A9B1; 
+}
