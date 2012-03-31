@@ -9,36 +9,32 @@
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
 	
 	<!-- include CSS always before including js -->
-<link type="text/css" rel="stylesheet" href="skins/tn3/tn3.css"></link>
+
 <!-- include jQuery library -->
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="style/css/Main.css" />
-  <link rel="stylesheet" type="text/css" href="style/css/user-define.css" />
-  <script src="js//jquery/1.5.1/jquery.min.js"></script>
-  <script src="js/jquery/slides.min.jquery.js"></script>
-  <script src="js/home.js"></script>
-  <script src="js/jquery.cycle.all.latest.js"></script>
- 
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
 <script type="text/javascript" src="js/jquery.timers.js"></script>
 <script type="text/javascript" src="js/jquery.dropshadow.js"></script>
 <script type="text/javascript" src="js/mbTooltip.js"></script>
 <link rel="stylesheet" type="text/css" href="style/css/mbTooltip.css" title="style1"  media="screen">
 
 <script>
-  $(function(){
-    $("[title]").mbTooltip({ // also $([domElement]).mbTooltip  >>  in this case only children element are involved
-      opacity : .97,       //opacity
-      wait:1200,           //before show
-      cssClass:"default",  // default = default
-      timePerWord:70,      //time to show in milliseconds per word
-      hasArrow:false,			// if you whant a little arrow on the corner
-      hasShadow:true,
-      imgPath:"images/",
-      ancor:"mouse", //"parent"  you can ancor the tooltip to the mouse position or at the bottom of the element
-      shadowColor:"black", //the color of the shadow
-      mb_fade:200 //the time to fade-in
-    });
-  });
+$(function(){
+	  $("[title]").mbTooltip({
+	    opacity : .80, //opacity
+	    wait:500, //before show
+	    ancor:"mouse", //"parent"
+	    cssClass:"default", // default = default
+	    timePerWord:70, //time to show in milliseconds per word
+	    hasArrow:true,
+	    color:"red",
+	    imgPath:"images/",
+	    shadowColor:"black",
+	    fade:500
+	  });
+	})
 </script>
 </head>
 
@@ -204,7 +200,8 @@
                             </table>
                         </tr>
                     </table>  
-                </fieldset></form>            
+                </fieldset>
+                </form>            
             </div>
 		</div>
 		
@@ -215,25 +212,24 @@
 		
 		<div id="right-top">
             <div id="title-text">Special Tour Countdown</div>
+            
             <div id="spec-tour">
-				<div id="slides">
-					<div class="slides_container">
-						<div class="slide">
-							<a class="someClass" href="#" title="Iphone App"
-								target="_blank"><img src="images/hot-tour/1.jpg"
-								class="someClass" width="100%" height="100%" border="0"
-								alt="Slide 1"></a>
-						</div>
-<!-- 						<div class="slide"> -->
-<!-- 							<a class="someClass" href="#" title="Iphone App" -->
-<!-- 								target="_blank"><img src="images/slide/2.png" -->
-<!-- 								class="someClass" width="100" height="200px" border="0" -->
-<!-- 								alt="Slide 1"></a> -->
-<!-- 						</div> -->
-					</div>
-					<a href="#" class="prev"></a> <a href="#" class="next"></a>
+				<div id="slideshow">
+					<ul id="nav">
+						<li id="prev"><a href="#">Previous</a></li>
+						<li id="next"><a href="#">Next</a></li>
+					</ul>
+			
+					<ul id="slides">
+						<a href="#" title="abc"><li><img src="images/hot-tour/1.jpg" alt="Harley Davidson Sportster" /></li></a>
+						<a href="#" title="123"><li><img src="images/hot-tour/2.jpg " alt="Harley Davidson Sportster" /></li></a>
+						<a href="#" title="long"><li><img src="images/hot-tour/3.jpg " alt="Harley Davidson Sportster" /></li></a>
+					</ul>
+					
+					
 				</div>
 			</div>
+			
 		</div>
 		
 		<div class="wan-clear"></div>
@@ -289,18 +285,20 @@
 		<div id="footer"> 
  
 			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
- 
+ <script language="JavaScript">
+			TargetDate = "3/28/2013 1:19 PM";
+			BackColor = "palegreen";
+			ForeColor = "navy";
+			CountActive = true;
+			CountStepper = -1;
+			LeadingZero = true;
+			DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+			FinishMessage = "It is finally here!";
+			</script>
+			<script language="JavaScript" src="js/countdown.js"></script>
 		</div> 
 <!-- This is end of the footer -->
 	</div> 
 <!-- This is end of the page section -->
-<script>
-$(".tn3-prev-page").attr("display:none");
-$("div").remove(":contains('tn3-thumbs')");
-$('tn3-thumbs').remove();
-	$('div').remove('.tn3-thumbs');
-
-
-</script>
 </body>
 </html>

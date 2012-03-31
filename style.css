@@ -1,0 +1,49 @@
+@CHARSET "ISO-8859-1";
+
+div#slideshow { 
+	height:100%;
+	width:100%;
+	overflow: scroll; /* Allows the slides to be viewed using scrollbar if Javascript isn't available */
+	position: relative; 
+	z-index: 5;
+}
+
+div#slideshow ul#nav {
+	display: none;
+	list-style: none;
+	position: relative; 
+	top: 120px; 
+	z-index: 15;
+}
+
+	div#slideshow ul#nav li#prev {
+		float: left; 
+		margin: 0 0 0 -36px;
+	}
+	
+	div#slideshow ul#nav li#next {
+		float: right; 
+		margin: 0 22px 0 0;
+	}
+	
+	div#slideshow ul#nav li a {
+		display: block; 
+		width: 32px; 
+		height: 32px; 
+		text-indent: -9999px;
+	}
+		div#slideshow ul#nav li#prev a {
+			background: url(images/prev.png);
+			background-size:32px 32px;
+		}
+		div#slideshow ul#nav li#next a {
+			background: url(images/next.png);
+			background-size:32px 32px;
+		}
+
+	div#slideshow ul#slides {
+		list-style: none;
+	}
+		div#slideshow ul#slides li {
+			margin: 0 20px 0 0;
+		}
