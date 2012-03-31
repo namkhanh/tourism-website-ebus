@@ -173,3 +173,9 @@ text-decoration: none;
 	background-position: bottom center;
 	background-repeat: no-repeat;
 }
+
+#search-box
+{
+	font-family:Verdana, Geneva, sans-serif;
+  	font-size:12px;
+}
