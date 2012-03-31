@@ -166,3 +166,10 @@ text-decoration: none;
 	color:#0FF;
 	text-decoration:underline;
 }
+
+#topnav a.parent_menu
+{
+	background-image: url(images/navdown_white.gif);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
