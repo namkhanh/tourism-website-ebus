@@ -167,6 +167,51 @@ text-decoration: none;
 	text-decoration:underline;
 }
 
+    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
+	border-right:1px solid #FFFBF0;
+	/*background: url(images/topnav_separator.png) no-repeat right center;*/
+}
+
+#topnav ul li a:hover, li:hover a 
+{ 
+	background:#FF8040;
+}
+
+#topnav ul li ul 
+{ 
+	display: none; 
+}
+
+#topnav li:hover ul 
+{
+  	display: block;
+  	position: absolute;
+}
+
+#topnav li:hover li 
+{
+  	float:none;
+  	font-size:11px;	
+}
+
+#topnav li:hover li a:hover 
+{ 
+	background: #95A9B1;
+	border-top:1px solid #FFFBF0;
+	border-bottom:1px solid #FFFBF0;
+}
+
+#topnav li.current a
+{
+	/* Background for current item */
+}
+
+#topnav li.current a span
+{
+	color:#0FF;
+	text-decoration:underline;
+}
+
 #topnav li ul 
 { 
 	display: none; 
