@@ -83,3 +83,86 @@ color:#2E2E2E;
 text-decoration: none;
 }
 
+/*********************************************/
+
+/* Formatting Menu */
+#topnav 
+{
+	height:50px;
+	margin:0;
+	padding:0;
+	background: url(images/topnav.jpg) no-repeat left top;
+}
+
+#topnav ul 
+{
+  	font-family:Verdana, Geneva, sans-serif;
+  	font-size:14px;
+	font-weight:bold;
+  	margin:0;
+  	padding:0;
+  	list-style: none;
+}
+
+#topnav ul li 
+{		
+  	display:block;
+  	position:relative;
+  	float:left;
+}
+
+#topnav ul li a 
+{
+	padding: 16px 2px;
+
+  	display:block;
+	width: 105px;	
+  	text-decoration:none;
+
+  	color: #FFFBF0;
+	text-align:center;
+
+    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
+	border-right:1px solid #FFFBF0;
+	/*background: url(images/topnav_separator.png) no-repeat right center;*/
+}
+
+#topnav ul li a:hover, li:hover a 
+{ 
+	background:#FF8040;
+}
+
+#topnav ul li ul 
+{ 
+	display: none; 
+}
+
+#topnav li:hover ul 
+{
+  	display: block;
+  	position: absolute;
+}
+
+#topnav li:hover li 
+{
+  	float:none;
+  	font-size:11px;	
+}
+
+#topnav li:hover li a:hover 
+{ 
+	background: #95A9B1;
+	border-top:1px solid #FFFBF0;
+	border-bottom:1px solid #FFFBF0;
+}
+
+#topnav li.current a
+{
+	/* Background for current item */
+}
+
+#topnav li.current a span
+{
+	color:#0FF;
+	text-decoration:underline;
+}
