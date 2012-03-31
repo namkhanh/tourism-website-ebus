@@ -12,53 +12,38 @@
 <link type="text/css" rel="stylesheet" href="skins/tn3/tn3.css"></link>
 <!-- include jQuery library -->
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-<!-- include tn3 plugin -->
-<script type="text/javascript" src="js/jquery.tn3lite.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style/css/Main.css" />
+  <link rel="stylesheet" type="text/css" href="style/css/user-define.css" />
+  <script src="js//jquery/1.5.1/jquery.min.js"></script>
+  <script src="js/jquery/slides.min.jquery.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/jquery.cycle.all.latest.js"></script>
+ 
+<script type="text/javascript" src="js/jquery.timers.js"></script>
+<script type="text/javascript" src="js/jquery.dropshadow.js"></script>
+<script type="text/javascript" src="js/mbTooltip.js"></script>
+<link rel="stylesheet" type="text/css" href="style/css/mbTooltip.css" title="style1"  media="screen">
 
-<script type="text/javascript">
-	$(document).ready(function() {
-	  jQuery.fn.tn3.Gallery.config.timerSteps =1;
-	  jQuery.fn.tn3.Thumbnailer.config.speed = 1;
-	 });
-	$(document).ready(function() {
-		//Thumbnailer.config.shaderOpacity = 1;
-		var tn1 = $('.mygallery').tn3({
-		startWithAlbums:true,
-	      autoplay:true,
-		  delay:3000,
-skinDir:"skins",
-imageClick:"fullscreen",
-image:{
-maxZoom:1.5,
-crop:true,
-clickEvent:"dblclick",
-transitions:[{
-type:"blinds"
-},{
-type:"grid"
-},{
-type:"grid",
-duration:460,
-easing:"easeInQuad",
-gridX:1,
-gridY:8,
-// flat, diagonal, circle, random
-sort:"random",
-sortReverse:false,
-diagonalStart:"bl",
-// fade, scale
-method:"scale",
-partDuration:360,
-partEasing:"easeOutSine",
-partDirection:"left"
-}]
-}
-		});
-	});
+<script>
+  $(function(){
+    $("[title]").mbTooltip({ // also $([domElement]).mbTooltip  >>  in this case only children element are involved
+      opacity : .97,       //opacity
+      wait:1200,           //before show
+      cssClass:"default",  // default = default
+      timePerWord:70,      //time to show in milliseconds per word
+      hasArrow:false,			// if you whant a little arrow on the corner
+      hasShadow:true,
+      imgPath:"images/",
+      ancor:"mouse", //"parent"  you can ancor the tooltip to the mouse position or at the bottom of the element
+      shadowColor:"black", //the color of the shadow
+      mb_fade:200 //the time to fade-in
+    });
+  });
 </script>
 </head>
 
 <body>
+
 	<!-- This is the page section -->
 	<div id="page_section">
 
@@ -108,35 +93,24 @@ partDirection:"left"
 		<div id="right-top">
             <div id="title-text">Special Tour Countdown</div>
             <div id="spec-tour">
-		
-			<div class="mygallery">
-		<div class="tn3 album">
-	    <ol>
-		<li>
-		    <h4>Hohensalzburg Castle</h4>
-		    <div class="tn3 description">Salzburg, Austria</div>
-		    <a href="images/hot-tour/1.jpg">
-			<img src="images/hot-tour/35x35/1.jpg" />
-		    </a>
-		</li>
-		<li>
-		    <h4>Isolated sandy cove</h4>
-		    <div class="tn3 description">Zakynthos island, Greece</div>
-		    <a href="images/hot-tour/2.jpg">
-			<img src="images/hot-tour/35x35/2.jpg" />
-		    </a>
-		</li>
-		<li>
-		    <h4>A view from the Old Town</h4>
-		    <div class="tn3 description">Herceg Novi, Montenegro</div>
-		    <a href="images/hot-tour/3.jpg">
-			<img src="images/hot-tour/35x35/3.jpg" />
-		    </a>
-		</li>
-	    </ol>
-	</div>
-    </div>
-</div>
+				<div id="slides">
+					<div class="slides_container">
+						<div class="slide">
+							<a class="someClass" href="#" title="Iphone App"
+								target="_blank"><img src="images/slide/1.png"
+								class="someClass" width="100%" height="100%" border="0"
+								alt="Slide 1"></a>
+						</div>
+<!-- 						<div class="slide"> -->
+<!-- 							<a class="someClass" href="#" title="Iphone App" -->
+<!-- 								target="_blank"><img src="images/slide/2.png" -->
+<!-- 								class="someClass" width="100" height="200px" border="0" -->
+<!-- 								alt="Slide 1"></a> -->
+<!-- 						</div> -->
+					</div>
+					<a href="#" class="prev"></a> <a href="#" class="next"></a>
+				</div>
+			</div>
 		</div>
 		
 		<div class="wan-clear"></div>
