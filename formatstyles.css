@@ -86,7 +86,16 @@ text-decoration: none;
 /*********************************************/
 
 /* Formatting Menu */
-#topnav ul {
+#topnav 
+{
+	height:50px;
+	margin:0;
+	padding:0;
+	background: url(images/topnav.jpg) no-repeat left top;
+}
+
+#topnav ul 
+{
   	font-family:Verdana, Geneva, sans-serif;
   	font-size:14px;
 	font-weight:bold;
@@ -95,7 +104,8 @@ text-decoration: none;
   	list-style: none;
 }
 
-#topnav ul li {
+#topnav ul li 
+{		
   	display:block;
   	position:relative;
   	float:left;
@@ -103,23 +113,58 @@ text-decoration: none;
 
 #topnav ul li a 
 {
-	padding: 5px 0;
+	padding: 16px 2px;
+
   	display:block;
+	width: 105px;	
   	text-decoration:none;
-	width: 177.3px;
-	
+
   	color: #FFFBF0;
 	text-align:center;
-	background-color: #D02C1B;
-	
-    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */
-	border-style:double;
-/*	border: 1px solid #FF8040;*/
+
+    text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
+	border-right:1px solid #FFFBF0;
+	/*background: url(images/topnav_separator.png) no-repeat right center;*/
 }
 
-#topnav ul li a:hover 
+#topnav ul li a:hover, li:hover a 
 { 
-	background: #00BF00;
+	background:#FF8040;
+}
+
+#topnav ul li ul 
+{ 
+	display: none; 
+}
+
+#topnav li:hover ul 
+{
+  	display: block;
+  	position: absolute;
+}
+
+#topnav li:hover li 
+{
+  	float:none;
+  	font-size:11px;	
+}
+
+#topnav li:hover li a:hover 
+{ 
+	background: #95A9B1;
+	border-top:1px solid #FFFBF0;
+	border-bottom:1px solid #FFFBF0;
+}
+
+#topnav li.current a
+{
+	/* Background for current item */
+}
+
+#topnav li.current a span
+{
+	color:#0FF;
+	text-decoration:underline;
 }
 
 #topnav li ul 
