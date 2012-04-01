@@ -99,7 +99,7 @@ text-decoration: none;
 	height:50px;
 	margin:0;
 	padding:0;
-	background: url(images/topnav.jpg) no-repeat left top;
+	background: url(images/topnav_yellow.jpg) no-repeat left top;
 }
 
 #topnav ul 
@@ -130,7 +130,8 @@ text-decoration: none;
 	width: 105px;	
   	text-decoration:none;
 
-  	color: #FFFBF0;
+  	/*color: #FFFBF0;  Apply for orange menu */
+	color:#808080;
 	text-align:center;
 
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
@@ -174,7 +175,7 @@ text-decoration: none;
 
 #topnav li.current a span
 {
-	color:#0FF;
+	/*color:#0FF;*/
 	text-decoration:underline;
 }
 
