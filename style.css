@@ -33,7 +33,7 @@ div#slideshow ul#nav {
 		text-indent: -9999px;
 	}
 	
-div#slideshow ul#slides li span#caption {
+div#slideshow ul#slides li span.caption {
 position:absolute; 
 top:190px;
 left:0; 

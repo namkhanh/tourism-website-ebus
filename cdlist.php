@@ -19,7 +19,7 @@
 			$year = idate("Y",strtotime($record['date']));
 			$ID = $record['eventID'];
 		
-			echo '<li><center><a href="event.html?eventID='.$ID.'" id="'.$ID.'" title=""><img src="'.$record['image'].'"/></a></li> ';
+			echo '<li><center><a href="event.html?eventID='.$ID.'"><img src="'.$record['image'].'"/><span id="'.$ID.'" class="caption">Countdown</span></a></center></li>';;
 			echo '
 				<script language="javascript" type="text/javascript>
 					var montharray'.$ID.'=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");

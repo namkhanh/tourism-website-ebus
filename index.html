@@ -15,27 +15,6 @@
 <script type="text/javascript" src="js/jquery-1.7.2.js"></script>
 <script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 <script type="text/javascript" src="js/scripts.js"></script>
-<script type="text/javascript" src="js/jquery.timers.js"></script>
-<script type="text/javascript" src="js/jquery.dropshadow.js"></script>
-<script type="text/javascript" src="js/mbTooltip.js"></script>
-<link rel="stylesheet" type="text/css" href="style/css/mbTooltip.css" title="style1"  media="screen">
-
-<script>
-$(function(){
-	  $("[title]").mbTooltip({
-	    opacity : .80, //opacity
-	    wait:500, //before show
-	    ancor:"mouse", //"parent"
-	    cssClass:"default", // default = default
-	    timePerWord:70, //time to show in milliseconds per word
-	    hasArrow:true,
-	    color:"red",
-	    imgPath:"images/",
-	    shadowColor:"black",
-	    fade:500
-	  });
-	})
-</script>
 </head>
 
 <body>
@@ -221,67 +200,8 @@ $(function(){
 					</ul>
 		
 					<ul id="slides">
-						<a href="#" ><li><img src="images/hot-tour/1.jpg" alt="Harley Davidson Sportster" /><span id="caption">HN</span></li></a>
-						<a href="#" ><li><img src="images/hot-tour/2.jpg " alt="Harley Davidson Sportster" /><span id="caption">Da Lat</span></li></a>
-						<a href="#" ><li><img src="images/hot-tour/3.jpg " alt="Harley Davidson Sportster" /><span id="caption">Nha Trang</span></li></a>
+						<?php include("cdlist.php"); ?>
 					</ul>
-
-					<script>
-							//change the text below to reflect your own,
-				var before="Christmas!"
-				var current="Today is Christmas. Merry Christmas!"
-				var montharray=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
-
-				function countdown(yr,m,d){
-					
-					theyear=yr;themonth=m;theday=d
-					var today=new Date()
-					var todayy=today.getYear()
-					
-					if (todayy < 1000)
-						todayy+=1900
-						
-					var todaym=today.getMonth()
-					var todayd=today.getDate()
-					var todayh=today.getHours()
-					var todaymin=today.getMinutes()
-					var todaysec=today.getSeconds()
-					var todaystring=montharray[todaym]+" "+todayd+", "+todayy+" "+todayh+":"+todaymin+":"+todaysec
-					
-					futurestring=montharray[m-1]+" "+d+", "+yr
-					dd=Date.parse(futurestring)-Date.parse(todaystring)
-					dday=Math.floor(dd/(60*60*1000*24)*1)
-					dhour=Math.floor((dd%(60*60*1000*24))/(60*60*1000)*1)
-					dmin=Math.floor(((dd%(60*60*1000*24))%(60*60*1000))/(60*1000)*1)
-					dsec=Math.floor((((dd%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1)
-					
-					if(dday==0&&dhour==0&&dmin==0&&dsec==1){
-						
-						document.title.count.count2.value=current
-						document.title.count.count3.value=current
-						return
-						
-					} else
-					
-						var countdownOne="Only "+dday+ " days, "+dhour+" hours, "+dmin+" minutes, and "+dsec+" seconds left until "+before
-						setTimeout("countdown(theyear,themonth,theday)",1000)
-						$("a#one").attr("title", countdownOne);
-						
-					}
-					
-					//enter the count down date using the format year/month/day
-					countdown(2012,12,24)
-						function setTooltip(){
-							$("a#one").attr("title", $("p#one").text());
-						}
-
-					
-		
-
-					
-					
-					</script>
-					
 				</div>
 			</div>
 			
