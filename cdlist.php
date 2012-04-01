@@ -19,7 +19,7 @@
 			$year = idate("Y",strtotime($record['date']));
 			$ID = $record['eventID'];
 		
-			echo '<li><a href="event.html?eventID='.$ID.'"><img src="'.$record['image'].'"   onmouseover="openDes'.$ID.'();" onmouseout="closeDes'.$ID.'();"/><span id="'.$ID.'" class="caption" style="display:none">Countdown</span></a></li>';;
+			echo '<li onmouseover="openDes(\''.$ID.'\')" onmouseout="closeDes((\''.$ID.'\'))" ><a href="event.html?eventID='.$ID.'" ><img  src="'.$record['image'].'"  /><span id="'.$ID.'" class="caption" style="display:none">Countdown</span></a>';;
 			echo '
 				<script language="javascript" type="text/javascript">
 					var montharray'.$ID.'=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
@@ -53,13 +53,9 @@
 					}
 				
 					countdown'.$ID.'('.$year.','.$month.','.$day.');	
-				function openDes'.$ID.'(){
-						$("span#'.$ID.'").css("display", "inline");
-					}
-					function closeDes'.$ID.'(){
-						$("span#'.$ID.'").css("display", "none");
-					}			
+								
 				</script>';
+			echo "</li>";
 		}
 	}
 	
