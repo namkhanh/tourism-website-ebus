@@ -1,10 +1,10 @@
 <?php
-	$con = mysql_connect("localhost","root","123456");	
+	$con = mysql_connect("localhost","root","");	
 	if (!$con)
   	{
 		echo "Could not connect: " . mysql_error();
   	}	
-	mysql_select_db("green_it_tourism", $con);
+	mysql_select_db("longtran", $con);
 	
 	$result = mysql_query("SELECT * FROM event WHERE date>'".date("Y-m-d")."' ORDER BY date");
 	
@@ -19,7 +19,7 @@
 			$year = idate("Y",strtotime($record['date']));
 			$ID = $record['eventID'];
 		
-			echo '<li><a href="event.html?eventID='.$ID.'"><img src="'.$record['image'].'" onmouseover="openDes();" onmouseout="closeDes();"/><span id="'.$ID.'" class="caption">Countdown</span></a></li>';;
+			echo '<li><a href="event.html?eventID='.$ID.'"><img src="'.$record['image'].'"   onmouseover="openDes'.$ID.'();" onmouseout="closeDes'.$ID.'();"/><span id="'.$ID.'" class="caption" style="display:none">Countdown</span></a></li>';;
 			echo '
 				<script language="javascript" type="text/javascript">
 					var montharray'.$ID.'=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
@@ -52,7 +52,13 @@
 						setTimeout("countdown'.$ID.'(theyear'.$ID.',themonth'.$ID.',theday'.$ID.')",1000);
 					}
 				
-					countdown'.$ID.'('.$year.','.$month.','.$day.');				
+					countdown'.$ID.'('.$year.','.$month.','.$day.');	
+				function openDes'.$ID.'(){
+						$("span#'.$ID.'").css("display", "inline");
+					}
+					function closeDes'.$ID.'(){
+						$("span#'.$ID.'").css("display", "none");
+					}			
 				</script>';
 		}
 	}
