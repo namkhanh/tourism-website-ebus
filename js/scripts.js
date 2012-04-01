@@ -13,3 +13,12 @@ $(document).ready(function() {
 		$("ul#nav").fadeOut();
 		});
 });
+
+
+function openDes(id){
+	$("span#"+id).css("display", "inline");
+}
+
+function closeDes(id){
+	$("span#"+id).css("display", "none");
+}	
