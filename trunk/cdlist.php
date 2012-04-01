@@ -1,12 +1,12 @@
 <?php
-	$con = mysql_connect("localhost","root","");	
+	$con = mysql_connect("localhost","root","123456");	
 	if (!$con)
   	{
 		echo "Could not connect: " . mysql_error();
   	}	
-	mysql_select_db("longtran", $con);
+	mysql_select_db("green_it_tourism", $con);
 	
-	$result = mysql_query("SELECT * FROM event WHERE date > '".date("Y-m-d")."' ORDER BY date limit 0,3");
+	$result = mysql_query("SELECT * FROM event WHERE date > '".date("Y-m-d")."' ORDER BY date");
 	
 	
 	while($record = mysql_fetch_array($result))
