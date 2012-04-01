@@ -1,18 +1,16 @@
 <?php
-	$con = mysql_connect("localhost","root","123456");	
+	$con = mysql_connect("localhost","root","");	
 	if (!$con)
   	{
 		echo "Could not connect: " . mysql_error();
   	}	
-	mysql_select_db("green_it_tourism", $con);
+	mysql_select_db("longtran", $con);
 	
-	$result = mysql_query("SELECT * FROM event WHERE date>'".date("Y-m-d")."' ORDER BY date limit 0,3");
+	$result = mysql_query("SELECT * FROM event WHERE date > '".date("Y-m-d")."' ORDER BY date limit 0,3");
 	
-	$count = 0;
 	
-	while (($record = mysql_fetch_array($result) and $count < 3) or die(mysql_error())) {
-	
-			$count += 1;
+	while($record = mysql_fetch_array($result))
+	{
 			$day = idate("d",strtotime($record['date']));
 			$month = idate("m",strtotime($record['date']));
 			$year = idate("Y",strtotime($record['date']));
@@ -55,7 +53,6 @@
 								
 				</script>';
 			echo "</li>";
-		
 	}
 	
 	mysql_close($con);
