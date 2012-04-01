@@ -12,13 +12,13 @@
 }
 
 body {
-	background: url(images/test/brushed_alu.png);
+	background-image: url(images/test/brushed_alu.png);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
-		margin:0px;
-		padding:0px;
+	margin:0px;
+	padding:0px;
 }
 
  h1 {color:#4747C2;
@@ -95,8 +95,7 @@ text-decoration: none;
 	height:50px;
 	margin:0;
 	padding:0;
-	position:absolute;
-	background: url('images/test/trans1.png'); 
+	background: url(images/topnav.jpg) no-repeat left top;
 }
 
 #topnav ul 
@@ -127,7 +126,7 @@ text-decoration: none;
 	width: 105px;	
   	text-decoration:none;
 
-  	color: #BF3030;
+  	color: #FFFBF0;
 	text-align:center;
 
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
@@ -137,7 +136,7 @@ text-decoration: none;
 
 #topnav ul li a:hover, li:hover a 
 { 
-	background: url('images/test/trans2.png'); 
+	background:#FF8040;
 }
 
 #topnav ul li ul 
