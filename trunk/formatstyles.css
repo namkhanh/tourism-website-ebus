@@ -44,7 +44,7 @@ a.menu
 }
 a:hover,a:active
 {
-	background-color:#09C;
+	/*background-color:#09C;*/
 }
 .footer
 {
@@ -97,7 +97,7 @@ text-decoration: none;
 #topnav 
 {
 	height:50px;
-	margin:0;
+	margin:10px 0;
 	padding:0;
 	background: url(images/topnav_yellow.jpg) no-repeat left top;
 }
@@ -115,8 +115,7 @@ text-decoration: none;
 }
 
 #topnav ul li 
-{	
-		
+{		
   	display:block;
   	position:relative;
   	float:left;
@@ -135,18 +134,24 @@ text-decoration: none;
 	text-align:center;
 
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
-	border-right:1px solid #FFFBF0;
+/*	border-right:1px solid #FFFBF0;*/
 	/*background: url(images/topnav_separator.png) no-repeat right center;*/
+}
+
+#topnav ul li ul a
+{
+	border-top:1px solid #FFFBF0;
 }
 
 #topnav ul li a:hover, li:hover a 
 { 
-	background:#FF8040;
+	color:white;
+	background:#DFDA15;
 }
 
 #topnav ul li ul 
 { 
-	display: none; 
+	display: none;
 }
 
 #topnav li:hover ul 
@@ -161,22 +166,11 @@ text-decoration: none;
   	font-size:11px;	
 }
 
-#topnav li:hover li a:hover 
-{ 
-	background: #95A9B1;
-	border-top:1px solid #FFFBF0;
-	border-bottom:1px solid #FFFBF0;
-}
-
 #topnav li.current a
 {
-	/* Background for current item */
-}
-
-#topnav li.current a span
-{
-	/*color:#0FF;*/
-	text-decoration:underline;
+	background:url('images/menuhover.gif') center center no-repeat;
+	/*background-color:#DFDA15;*/
+	color:white;
 }
 
 #topnav a.parent_menu
