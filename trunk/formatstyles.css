@@ -12,9 +12,13 @@
 }
 
 body {
+	background: url(images/test/brushed_alu.png);
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 		margin:0px;
 		padding:0px;
-		background-image:url(images/daisies-on-green-background-871294684597LeG.jpg);
 }
 
  h1 {color:#4747C2;
