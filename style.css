@@ -32,6 +32,17 @@ div#slideshow ul#nav {
 		height: 32px; 
 		text-indent: -9999px;
 	}
+	
+div#slideshow ul#slides li span#caption {
+position:absolute; 
+top:190px;
+left:0; 
+height:70px;
+width:780px; 
+background: url('images/transparent-bg.png'); 
+}
+
+	
 		div#slideshow ul#nav li#prev a {
 			background: url(images/prev.png);
 			background-size:32px 32px;
