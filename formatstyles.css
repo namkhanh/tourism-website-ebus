@@ -168,7 +168,7 @@ text-decoration: none;
 
 #topnav li.current a
 {
-	background:url('images/menuhover.gif') center center no-repeat;
+	background:url('images/menuhover.png') center center no-repeat;
 	/*background-color:#DFDA15;*/
 	color:white;
 }
