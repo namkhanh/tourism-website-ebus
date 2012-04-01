@@ -19,9 +19,9 @@
 			$year = idate("Y",strtotime($record['date']));
 			$ID = $record['eventID'];
 		
-			echo '<li><center><a href="event.html?eventID='.$ID.'"><img src="'.$record['image'].'"/><span id="'.$ID.'" class="caption">Countdown</span></a></center></li>';;
+			echo '<li><a href="event.html?eventID='.$ID.'"><img src="'.$record['image'].'" onmouseover="openDes();" onmouseout="closeDes();"/><span id="'.$ID.'" class="caption">Countdown</span></a></li>';;
 			echo '
-				<script language="javascript" type="text/javascript>
+				<script language="javascript" type="text/javascript">
 					var montharray'.$ID.'=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
 
 					function countdown'.$ID.'(yr,m,d){
@@ -48,7 +48,7 @@
 						dmin'.$ID.'=Math.floor(((dd'.$ID.'%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
 						dsec'.$ID.'=Math.floor((((dd'.$ID.'%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
 					
-						document.getElementById("'.$ID.'").setAttribute("title","long.");
+						document.getElementById("'.$ID.'").innerHTML = dday'.$ID.'+ " days, "+dhour'.$ID.'+" hours "+dmin'.$ID.'+" minutes "+dsec'.$ID.'+" seconds left";
 						setTimeout("countdown'.$ID.'(theyear'.$ID.',themonth'.$ID.',theday'.$ID.')",1000);
 					}
 				
