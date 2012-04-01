@@ -55,10 +55,14 @@ a:hover,a:active
 }
 .header
 {
-	text-align:right;
 	font-family:Tahoma, Geneva, sans-serif;
 	font-size:20px;
 	color:#FF3;
+    /*set the div in the bottom right corner*/
+    position:absolute;
+    top:0;
+    right:0;
+
 }
 
 .transparent-box {
