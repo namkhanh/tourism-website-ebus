@@ -9,14 +9,14 @@ position: relative;
 }
 
 #right-cor {
-position:static;
+position:absolute;
 top:0;
 right:0;
 z-index=-5;
 }
 
 #left-cor {
-position:positiond;
+position:absolute;
 top:0;
 left:0;
 z-index=-5;
