@@ -23,6 +23,8 @@
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
 	</script> 
+<script type="text/javascript" src="js/login.js"></script>
+
 </head>
 
 <body>
@@ -40,7 +42,7 @@
 		</div> 
 <!-- This is end of the banner --> 
     
-    	<div id="login">
+    	<div id="task">
         	<table>
 				<tr>
                     <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
@@ -48,9 +50,35 @@
                     <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="8%" alt="Your Cart" title="Your Cart"/></a></td>
                     <td width="3%" align="center"><a href="">Register</a></td>
                     <td width="1%" align="center">|</td>
-                    <td width="3%" align="center"><a href="">Login</a></td>    
+                    <td width="3%" align="center"><a href="javascript:login('show');">Login</a></td>    
 				</tr>
             </table>
+        </div>
+        
+        <div id="login">
+        	<form name="login" action="" method="post">
+            	<table>
+                	<caption style="padding:10px 0;">Login</caption>
+                	<tr>
+                    	<td>Username</td>
+                        <td><input name="username" /></td>
+                    </tr>
+                    
+                    <tr>
+						<td>Password</td>
+                        <td><input name="password" type="password" /></td>
+                    </tr>
+					
+                    <tr>
+                    	<table align="center">
+                        	<tr>
+			                  	<td><input type="submit" name="submit" value="Login" /></td>
+            		            <td><input type="button" onclick="" value="Cancel" /></td>          
+                            </tr>
+                        </table>
+                    </tr>
+                </table>
+            </form>
         </div> 
         
 		<div id="topnav">
