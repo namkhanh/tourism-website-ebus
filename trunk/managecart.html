@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
+    <title>Welcome to Green Travel</title>
+    <meta name="description" content="E-Business"  /> 
+	<meta name ="keywords" content="?????"  /> 
+	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
+	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+	
+	<!-- include CSS always before including js -->
+
+	<!-- include jQuery library -->
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src ="language-en.js"></script> 
+	<script type="text/javascript" src ="nopcart.js" language="javascript"> 
+      //============================================================== 
+      //               NOP Design JavaScript Shopping Cart               
+      //-------------------------------------------------------------- 
+	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
+	  //============================================================== 
+	</script> 
+</head>
+
+<body>
+
+<div id="left-corn"><img src="images/test/left-corn.png" /></div>
+<div id="right-corn"><img src="images/test/right-corn.png" /></div>
+
+	<!-- This is the page section -->
+	<div id="page_section">
+
+		<!-- This is the banner --> 
+		<div id="banner"> 
+ 			 <?php include("header.php"); ?>
+		<!-- <img src="images/logo.jpg" align="middle" height="100" width="150" title="Rony's Logo" alt="bulb logo with money sign"/> -->
+
+		</div> 
+<!-- This is end of the banner --> 
+    
+    	<div id="login">
+        	<table>
+				<tr>
+                    <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
+                    <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
+                    <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="8%" alt="Your Cart" title="Your Cart"/></a></td>
+                    <td width="3%" align="center"><a href="">Register</a></td>
+                    <td width="1%" align="center">|</td>
+                    <td width="3%" align="center"><a href="">Login</a></td>    
+				</tr>
+            </table>
+        </div> 
+        
+		<div id="topnav">
+            <ul>
+                <li class="current"><a href="index.html">Home</a></li>
+                
+                <li><a href="" class="parent_menu">Tour</a>
+                    <ul>
+                        <li><a href="">North Vietnam</a></li>
+                        <li><a href="">Middle Vietnam</a></li>
+                        <li><a href="">South Vietnam</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="" class="parent_menu">Transport</a>
+                    <ul>
+                        <li><a href="">Transport 1</a></li>
+                        <li><a href="">Transport 2</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Site Map</a></li>
+            </ul>
+        </div>
+	
+       
+
+		<div class="wan-clear"></div>
+		
+		<div class="wan-clear"></div>
+<!-- This is the content -->
+		<div id="content">
+			  <h1>Manage your cart</h1>
+		<!-- ManageCart Begin--> 
+		<center>The items listed below are currently in your shopping cart: 
+		<br /> 
+		<form action="checkout.html" method="get"   
+        onsubmit="return ValidateCart(this)">  
+		<script type="text/javascript"> 
+       	ManageCart(); 
+      	</script> 
+        <br />
+        <center>         
+     	<input type="submit" value="   Check Out   " /> 
+		</form></center>   
+        <br /><br />
+        <a class="menu" href="index.html">Add more</a>
+<!-- ManageCart End  --> 
+ </center>
+ 
+		</div> 
+<!-- This is end of the content -->
+<br />
+<!-- This is the footer -->
+		<div id="footer"> 
+ 
+			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
+
+			
+		</div> 
+<!-- This is end of the footer -->
+	</div> 
+<!-- This is end of the page section -->
+</body>
+
+</html>

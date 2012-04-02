@@ -203,3 +203,8 @@ text-decoration: none;
 {
 	text-decoration:underline;
 }
+
+.nopcart td{
+	border:1px solid #990000;
+	text-align:center;
+}
