@@ -6,13 +6,26 @@ background: none repeat scroll 0 0 padding-box white;
 border: 8px solid transparent;
 box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 position: relative;
-} 
+}
+
+#right-cor {
+position:static;
+top:0;
+right:0;
+z-index=-5;
+}
+
+#left-cor {
+position:positiond;
+top:0;
+left:0;
+z-index=-5;
+}
+
 #banner { 
 height: 150px;
 background:url(images/banner.jpg);
 } 
-
-
 
 #title-text {
 color:#5FA92A;
