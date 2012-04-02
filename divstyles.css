@@ -8,10 +8,10 @@ box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 position: relative;
 }
 
-#right-cor {
+#right-corn {
 position:absolute;
 top:0;
-left:100%;
+right:0;
 }
 
 #left-corn {
