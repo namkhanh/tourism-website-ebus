@@ -1,10 +1,10 @@
 <?php
-	$con = mysql_connect("localhost","root","123456");
+	$con = mysql_connect("localhost","s3311310","qwerty1234");
 	if(!$con) {
 		echo "Could not connect: " . mysql_error();
   	}
 	
-	mysql_select_db("green_it_tourism", $con);
+	mysql_select_db("s3311310", $con);
 	
 	$result = mysql_query("Select * From tour Where regionID=1");
 	
