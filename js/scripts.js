@@ -26,9 +26,6 @@ function closeDes(id){
 $(function() {
 	var now = new Date();
 	$( "#datepicker" ).datepicker({
-		showOn: "button",
-		buttonImage: "images/calendar.gif",
-		buttonImageOnly: true,
 		minDate: now,
 	});
 });
