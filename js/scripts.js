@@ -26,6 +26,9 @@ function closeDes(id){
 $(function() {
 	var now = new Date();
 	$( "#datepicker" ).datepicker({
+		altField: "#alternative",
+		dateFormat:"dd MM, yy",
+		altFormat: "DD",
 		minDate: now,
 	});
 });
