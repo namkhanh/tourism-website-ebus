@@ -1,8 +1,7 @@
 <?php
-$firstname=$_GET["firstname"]; 
-       $lastname=$_GET["lastname"]; 
-       $studentload=$_GET["load"]; 
-	   $score=$_GET["score"]; 
+
+$priceOption=$_GET["price"]; 
+$date=$_GET["date"]; 
 	   
 	$con = mysql_connect("localhost","s3312275","qwerty1234");	
 	if (!$con)
@@ -11,6 +10,30 @@ $firstname=$_GET["firstname"];
   	}	
 	mysql_select_db("s3312275", $con);
 	
+	if ($priceOption == 1) {
+		$result = mysql_query("SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and tour.tourID= tour_occurance.tourID and dayName= '$date' and price <2000000");
+	} else if ($priceOption == 2) {
+		$result = mysql_query("SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and dayName= '$date' and price >=2000000 and price <=5000000");
+	}  else if ($priceOption == 3) {
+		$result = mysql_query("SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and dayName= '$date' and price >5000000 and price <=10000000");
+	}  else if ($priceOption == 4) {
+		$result = mysql_query("SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and dayName= '$date' and price >10000000");
+	} else {
+		$result = mysql_query("SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and dayName= '$date'");
+	}
 	
-	
-	$result = mysql_query("SELECT * FROM tour, tour_ WHERE date > '".date("Y-m-d")."' ORDER BY date");
+	if(mysql_num_rows($result) > 0) {
+	while($record = mysql_fetch_array($result)) {
+		$name = $record['name'];
+		$duration = $record['duration'];
+		$price = $record['price'];
+		$description = $record['description'];
+		$image = $record['image'];
+		
+		echo $name.'<br/>'.$duration.'<br/>'.$price.'<br/>'.$description.'<br/>'.$image;
+		}
+	} else {
+		echo 'no record found';
+	}
+mysql_close($con);
+?>

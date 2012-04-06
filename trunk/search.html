@@ -111,8 +111,8 @@
 		<div id="left-top">
             <div id="title-text">Search Tour</div>
             
-            <div id="search-box">
-            	<form action="search.html" method="post">
+            <div>
+            	<form action="search.html" method="get">
             	<fieldset>
                 	<table>
                     	<tr>
@@ -156,7 +156,9 @@
 
                         <tr>
                         	<td>Date</td>
+                            
                             <td><input id="datepicker" type="text" style="position: relative; z-index: 99999"/></td>
+                            <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 99999"/></td>
                         </tr>
                         
                         <tr>
