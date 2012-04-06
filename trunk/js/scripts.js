@@ -22,3 +22,13 @@ function openDes(id){
 function closeDes(id){
 	$("span#"+id).css("display", "none");
 }	
+
+$(function() {
+	var now = new Date();
+	$( "#datepicker" ).datepicker({
+		showOn: "button",
+		buttonImage: "images/calendar.gif",
+		buttonImageOnly: true,
+		minDate: now,
+	});
+});
