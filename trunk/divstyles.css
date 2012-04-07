@@ -64,38 +64,36 @@ height:500px;
 }
 
 #top-big { 
-	margin-right: 5px;
-    float: left;
-    height: 49.5%;
-    width: 69.4%;
+float: left;
+height: 247px;
+width: 764px;
 }
 
 #top-small {
-    float: right;
-    height: 49.5%;
-    width: 30%;
+float: right;
+height: 247px;
+width: 330px;
 }
 
 #bot1 {
-margin-right: 5px;
- float: left;
-  height: 49.5%;
-  width: 32%;
+float: left;
+height: 247px;
+width: 362px;
 }
 
 #bot2 {
- margin-right: 3px;
- float: left;
-  height: 49.5%;
-  width: 35%;
+margin: 0 6px 0 6px;
+float: left;
+height: 247px;
+width: 364px;
 }
 
 #bot3 {
-
- float: right;
- height: 49.5%;
-  width: 32%;
+float: right;
+height: 247px;
+width: 362px;
 }
+
 #footer { 
 height: 50px;
 color:#FFF;
