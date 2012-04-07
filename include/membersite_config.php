@@ -7,7 +7,7 @@ $fgmembersite = new FGMembersite();
 $fgmembersite->SetWebsiteName('mekong.rmit.edu.vn');
 
 //Provide the email address where you want to get notifications
-$fgmembersite->SetAdminEmail('s3296868@rmit.edu.vn');
+$fgmembersite->SetAdminEmail('s3312275@rmit.edu.vn');
 
 //Provide your database login details here:
 //hostname, user name, password, database name and table name
