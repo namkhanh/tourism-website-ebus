@@ -7,6 +7,8 @@
 	<meta name ="keywords" content="?????"  /> 
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+    <link rel="stylesheet" type="text/css" href="content_style.css" />
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
 	
 	<!-- include CSS always before including js -->
 
@@ -15,20 +17,22 @@
 	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
 	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 	<script type="text/javascript" src ="language-en.js"></script> 
 	<script type="text/javascript" src ="nopcart.js" language="javascript"> 
+	
       //============================================================== 
       //               NOP Design JavaScript Shopping Cart               
       //-------------------------------------------------------------- 
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
 	</script> 
+
+	<script type="text/javascript" src="js/login.js"></script>
+
 </head>
 
 <body>
-
-<div id="left-corn"><img src="images/test/left-corn.png" /></div>
-<div id="right-corn"><img src="images/test/right-corn.png" /></div>
 
 	<!-- This is the page section -->
 	<div id="page_section">
@@ -52,6 +56,32 @@
 				</tr>
             </table>
         </div>
+        
+        <div id="login">
+        	<form name="login" action="" method="post">
+            	<table>
+                	<caption style="padding:10px 0;">Login</caption>
+                	<tr>
+                    	<td>Username</td>
+                        <td><input name="username" /></td>
+                    </tr>
+                    
+                    <tr>
+						<td>Password</td>
+                        <td><input name="password" type="password" /></td>
+                    </tr>
+					
+                    <tr>
+                    	<table align="center">
+                        	<tr>
+			                  	<td><input type="submit" name="submit" value="Login" /></td>
+            		            <td><input type="button" onclick="" value="Cancel" /></td>          
+                            </tr>
+                        </table>
+                    </tr>
+                </table>
+            </form>
+        </div> 
         
 		<div id="topnav">
             <ul>
@@ -77,35 +107,32 @@
                 <li><a href="">Site Map</a></li>
             </ul>
         </div>
-	
        
 
-		<div class="wan-clear"></div>
 		
-		<div class="wan-clear"></div>
 <!-- This is the content -->
 		<div id="content">
-			  <h1>Manage your cart</h1>
-		<!-- ManageCart Begin--> 
-		<center><h2>The items listed below are currently in your shopping cart: </h2>
-	
-		<form action="checkout.html" method="get"   
-        onsubmit="return ValidateCart(this)">  
-		<script type="text/javascript"> 
-       	ManageCart(); 
-      	</script> 
-        <br />
-        <center>         
-     	<input type="submit" value="   Check Out   " /> 
-		</form></center>   
-        <br />
-        <a class="menu" href="index.html">Add more</a>
-<!-- ManageCart End  --> 
- </center>
- 
-		</div> 
+			<h1>Manage your cart</h1>
+			<!-- ManageCart Begin-->
+			<center>
+				<h2>The items listed below are currently in your shopping cart:</h2>
+				<form action="checkout.html" method="get" onsubmit="return ValidateCart(this)">
+					<script type="text/javascript">
+						ManageCart();
+					</script>
+					<br />
+					<center>
+						<input type="submit" value="   Check Out   " />
+				</form>
+			</center>
+			<br /> <a class="menu" href="index.html">Add more</a>
+			<!-- ManageCart End  -->
+			</center>
+
+		</div>
+		<div class="wan-clear"></div> 
 <!-- This is end of the content -->
-<br />
+
 <!-- This is the footer -->
 		<div id="footer"> 
  
