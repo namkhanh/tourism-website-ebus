@@ -28,6 +28,8 @@
 	  //============================================================== 
 	</script> 
 
+	<script type="text/javascript" src="js/login.js"></script>
+
 </head>
 
 <body>
@@ -48,9 +50,9 @@
                     <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
                     <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
                     <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
-                    <td width="3%" align="center"><a href="register.html">Register</a></td>
+                    <td width="3%" align="center"><a href="">Register</a></td>
                     <td width="1%" align="center">|</td>
-                    <td width="3%" align="center"><a href="login.html">Login</a></td>    
+                    <td width="3%" align="center"><a href="javascript:login('show');">Login</a></td>    
 				</tr>
             </table>
         </div>
@@ -105,16 +107,12 @@
                 <li><a href="">Site Map</a></li>
             </ul>
         </div>
-        <br /><br />
-				<?php include("register.php"); ?>
 		
- 		<br /><br />
-		<div class="wan-clear"></div>
 <!-- This is the content -->
 		<div id="content">
-			
- 
+			<?php include("register.php"); ?>
 		</div> 
+		<div class="wan-clear"></div>
 <!-- This is end of the content -->
 
 <!-- This is the footer -->
