@@ -220,7 +220,6 @@ text-decoration: none;
 	font-family:Verdana, Geneva, sans-serif;
 	font-size:12px;
 	visibility:hidden; 
-=======
 }
 
 #login
@@ -243,5 +242,9 @@ text-decoration: none;
 .nopcart td{
 	border:1px solid #990000;
 	text-align:center;
->>>>>>> .r118
 }
+
+fieldset { 
+  border: 1px solid black; 
+  padding: 0.5em 0.5em 0.5em 0.5em; 
+} 
