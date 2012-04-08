@@ -32,3 +32,9 @@ $(function() {
 		minDate: now,
 	});
 });
+
+$(function() {
+	$( "#dob" ).datepicker({
+		dateFormat:"dd MM, yy",
+	});
+});
