@@ -30,9 +30,6 @@
 
 	<script type="text/javascript" src="js/login.js"></script>
 	<script type="text/javascript" src="js/register.js"></script>
-	<style type="text/css">
-		.errorInput {border: 1px solid #F3ABAB !important;}
-	</style>
 	
 </head>
 
@@ -118,35 +115,31 @@
 		<h1>Registration Form</h1>
 			<form action="register.php" method="post">
 				<fieldset>
-					<legend>Required Information</legend>
 					<table>
 						<tr>
 							<td>Username<br /> 
 								<input type="text" name="username" id="username"  required="required" onblur="checkUser();"/>
-								<span id="display_error" stype="display:none"></span>
+								<span id="user_error" stype="display:none"></span>
 							</td>
 						</tr>
 
 						<tr>
 							<td>Password</td>
 						<tr>
-							<td><input type="password" name="password"  required="required" /></td>
-							<td><input type="password" name="retypepassword"  required="required" /></td>
+							<td><input type="password" name="password"  id="password" required="required" />
+							</td>
+							<td><input type="password" name="retypepassword"  id="retypepassword" required="required" onblur="isMatchPw();" />
+								<span id="repw_error" stype="display:none"></span></td>
 						</tr>
 						<tr>
 						<tr>
-							<td>Email</td>
-						<tr>
-							<td><input type="text" name="email"  required="required" /></td>
-							<td><input type="text" name="retypeemail"  required="required" /></td>
+							<td>Email<br/>
+							<input type="text" name="email" id="email" required="required" onblur="isEmail();" />
+							<span id="email_error" stype="display:none"></span>
+							</td>
 						</tr>
 						<tr>
-					</table>
-				</fieldset>
 
-				<fieldset>
-					<legend>Personal Information</legend>
-					<table>
 						<tr>
 							<td>First Name<br /> <input type="text" name="firstname"
 								required="required" placeholder="First name" />
