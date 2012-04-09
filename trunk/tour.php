@@ -9,9 +9,7 @@
 		$region = $_GET['reg'];	
 	}
 	
-	include 'region.php';
-	
-
+	mysql_select_db("s3311310", $con);
 			
 	function display($region) 
 	{
