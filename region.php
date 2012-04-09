@@ -4,7 +4,6 @@
 		echo "Could not connect: " . mysql_error();
   	}
 	
-	mysql_select_db("s3311310", $con);
 		
 	$region = "South Vietnam";
 	
