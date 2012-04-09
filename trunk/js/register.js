@@ -12,8 +12,8 @@ function checkUser() {
 }
 
 function isEmail(){
-	   var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-	   var address = $("#email").val();
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	var address = $("#email").val();
 	   if(reg.test(address) == false) {
 			$("#email").addClass('errorInput');
 			$("#email_error").html("Invalid email address");
@@ -26,8 +26,8 @@ function isEmail(){
 }
 
 function isMatchPw(){
-			var pw = $("#password").val();
-			var retype = $("#retypepassword").val();
+	var pw = $("#password").val();
+	var retype = $("#retypepassword").val();
 			
 	   if(pw != retype) {
 		   $("#retypepassword").addClass('errorInput');
@@ -40,4 +40,8 @@ function isMatchPw(){
 		   $("#repw_error").html("");
 		   $("#repw_error").css("display", "none");
 	   }
+}
+
+function isEmpty() {
+	
 }
