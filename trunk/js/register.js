@@ -12,34 +12,57 @@ function checkUser() {
 }
 
 function checkPw() {
-	var tempUser = $("#password").val();
-	if(tempUser.length < 5) {
+	var pw = $("#password").val();
+	var retype = $("#retypepassword").val();
+	
+	if(pw.length < 5 && retype.length < 5 ) {
+		$("#retypepassword").addClass('errorInput');
 		$("#password").addClass('errorInput');
-		$("#pw_error").html("Password must be at least 6 characters");
-		$("#pw_error").css("display", "inline");
+		$("#repw_error").html("Password must be at least 6 characters");
+		$("#repw_error").css("display", "inline");
 	} else {
-		$("#password").removeClass('errorInput');
-		$("#pw_error").html("");
-		$("#pw_error").css("display", "none");
+		   if(pw != retype) {
+			   $("#retypepassword").addClass('errorInput');
+			   $("#password").addClass('errorInput');
+			   $("#repw_error").html("Not Matching password");
+			   $("#repw_error").css("display", "inline");
+		   } else {
+			   $("#retypepassword").removeClass('errorInput');
+			   $("#password").removeClass('errorInput');
+			   $("#repw_error").html("");
+			   $("#repw_error").css("display", "none");
+		   }
 	}
 }
 
-function isMatchPw(){
+/*function checkRePw() {
 	var pw = $("#password").val();
 	var retype = $("#retypepassword").val();
-			
-	   if(pw != retype) {
-		   $("#retypepassword").addClass('errorInput');
-		   $("#password").addClass('errorInput');
-		   $("#repw_error").html("Not Matching password");
-		   $("#repw_error").css("display", "inline");
-	   } else {
-		   $("#retypepassword").removeClass('errorInput');
-		   $("#password").removeClass('errorInput');
-		   $("#repw_error").html("");
-		   $("#repw_error").css("display", "none");
-	   }
-}
+	
+	if(pw.length == '' && retype.length=='') {
+		$("#retypepassword").addClass('errorInput');
+		$("#password").addClass('errorInput');
+		$("#repw_error").html("Password must be at least 6 characters");
+		$("#repw_error").css("display", "inline");
+	} else if (pw.length < 5 && retype.length < 5) {
+		$("#retypepassword").addClass('errorInput');
+		$("#password").addClass('errorInput');
+		$("#repw_error").html("Password must be at least 6 characters");
+		$("#repw_error").css("display", "inline");
+	} else {
+		   if(pw != retype) {
+			   $("#retypepassword").addClass('errorInput');
+			   $("#password").addClass('errorInput');
+			   $("#repw_error").html("Not Matching password");
+			   $("#repw_error").css("display", "inline");
+		   } else {
+			   $("#retypepassword").removeClass('errorInput');
+			   $("#password").removeClass('errorInput');
+			   $("#repw_error").html("");
+			   $("#repw_error").css("display", "none");
+		   }
+	}
+}*/
 
 function isEmail(){
 	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
