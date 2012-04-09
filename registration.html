@@ -125,35 +125,35 @@
 					<table>
 						<tr>
 							<td>Username<br /> 
-								<input type="text" name="username" id="username"  required="required" onblur="checkUser();"/>
-								<span id="user_error" style="display:none"></span>
+								<input type="text" name="username" id="username"   onblur="checkUser();"/>
+								<span id="user_error" style="display:none; color: #FF4040;"></span>
 							</td>
 						</tr>
 
 						<tr>
 							<td>Password</td>
 						<tr>
-							<td><input type="password" name="password"  id="password" required="required" />
+							<td><input type="password" name="password"  id="password"  />
 							</td>
-							<td><input type="password" name="retypepassword"  id="retypepassword" required="required" onblur="isMatchPw();" />
+							<td><input type="password" name="retypepassword"  id="retypepassword"  onblur="isMatchPw();" />
 								<span id="repw_error" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 						<tr>
 						<tr>
 							<td>Email<br/>
-							<input type="text" name="email" id="email" required="required" onblur="isEmail();" />
-							<span id="email_error" style="display:none"></span>
+							<input type="text" name="email" id="email"  onblur="isEmail();" />
+							<span id="email_error" style="display:none; color: #FF4040;"></span>
 							</td>
 						</tr>
 						<tr>
 
 						<tr>
 							<td>First Name<br /> <input type="text" name="firstname"
-								required="required" placeholder="First name" />
+								 placeholder="First name" />
 							</td>
 
 							<td>Last Name<br /> <input type="text" name="lastname"
-								required="required" placeholder="Last name" />
+								 placeholder="Last name" />
 							</td>
 						</tr>
 
@@ -162,11 +162,11 @@
 						</tr>
 
 						<tr>
-							<td>Street<br /> <input type="text" name="street"  required="required" /></td>
+							<td>Street<br /> <input type="text" name="street"   /></td>
 						</tr>
 
 						<tr>
-							<td>City<br /> <input type="text" name="city"  required="required" /></td>
+							<td>City<br /> <input type="text" name="city"   /></td>
 						</tr>
 
 						<tr>
@@ -428,7 +428,7 @@
 					</table>
 				</fieldset>
 				<input name="reset" type="reset" value="Cancel" />
-            	<input name="button" onclick="m()" type="submit" value="Register" />
+            	<input name="button" onclick="m();" type="submit" value="Register" />
 			</form>
 		</div>
 		<div class="wan-clear"></div> 
