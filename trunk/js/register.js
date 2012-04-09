@@ -42,6 +42,16 @@ function isMatchPw(){
 	   }
 }
 
-function isEmpty() {
-	
+function isEmpty(id) {
+var temp = $('#'id).val();
+		 if (temp == "" ) {
+			 $('#'id).addClass('errorInput');
+			 $('#'id).html("Not Matching password");
+			 $('#'id).css("display", "inline");
+		 } else {
+			 $("#retypepassword").removeClass('errorInput');
+			 $("#password").removeClass('errorInput');
+			 $("#repw_error").html("");
+			 $("#repw_error").css("display", "none");
+		 }
 }
