@@ -247,4 +247,8 @@ text-decoration: none;
 fieldset { 
   border: 1px solid black; 
   padding: 0.5em 0.5em 0.5em 0.5em; 
-} 
+}
+
+.errorInput {
+border: 1px solid #FF0000 !important;
+}
