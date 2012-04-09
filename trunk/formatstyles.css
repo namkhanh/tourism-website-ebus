@@ -250,5 +250,7 @@ fieldset {
 }
 
 .errorInput {
-border: 1px solid #FF0000 !important;
+-moz-box-shadow: 0 0 5px red !important;
+-webkit-box-shadow: 0 0 5px red !important;
+box-shadow: 0 0 5px red !important;
 }
