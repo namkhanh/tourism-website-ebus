@@ -149,25 +149,29 @@
 
 						<tr>
 							<td>First Name<br /> <input type="text" name="firstname"
-								 placeholder="First name"  id="firstname" onblur="iEmpty('firstname');"/>
+								 placeholder="First name"  id="firstname" onblur="isEmpty('firstname');"/>
 								 <span id="firstname" style="display:none; color: #FF4040;"></span></td>
 							</td>
 
-							<td>Last Name<br /> <input type="text" name="lastname"
+							<td>Last Name<br /> <input type="text" name="lastname" id="lastname" onblur="isEmpty('lastname');"
 								 placeholder="Last name" />
+								 <span id="lastname" style="display:none; color: #FF4040;"></span></td>
 							</td>
 						</tr>
 
 						<tr>
-							<td>Date of Birth<br /> <input id="dob" name="dob" size="25" type="text" style="position: relative; z-index: 99999"	/ name="dob"></td>
+							<td>Date of Birth<br /> <input id="dob" name="dob" onblur="isEmpty('dob');" size="25" type="text" style="position: relative; z-index: 99999">
+							 <span id="dob" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
-							<td>Street<br /> <input type="text" name="street"   /></td>
+							<td>Street<br /> <input type="text" name="street" id="street"  onblur="isEmpty('street');"/>
+							<span id="street" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
-							<td>City<br /> <input type="text" name="city"   /></td>
+							<td>City<br /> <input type="text" name="city" id="city"  onblur="isEmpty('city');" />
+							<span id="city" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
