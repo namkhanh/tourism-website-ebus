@@ -133,10 +133,10 @@
 						<tr>
 							<td>Password</td>
 						<tr>
-							<td><input type="password" name="password"  id="password"  />
-							</td>
+							<td><input type="password" name="password"  id="password"  onblur="checkPw();"/>
+							<span id="pw_error" style="display:none; color: #FF4040;"></span></td>
 							<td><input type="password" name="retypepassword"  id="retypepassword"  onblur="isMatchPw();" />
-								<span id="repw_error" style="display:none; color: #FF4040;"></span></td>
+							<span id="repw_error" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 						<tr>
 						<tr>
@@ -149,7 +149,8 @@
 
 						<tr>
 							<td>First Name<br /> <input type="text" name="firstname"
-								 placeholder="First name" />
+								 placeholder="First name"  id="firstname" onblur="iEmpty('firstname');"/>
+								 <span id="firstname" style="display:none; color: #FF4040;"></span></td>
 							</td>
 
 							<td>Last Name<br /> <input type="text" name="lastname"

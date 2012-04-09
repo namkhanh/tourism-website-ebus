@@ -11,18 +11,17 @@ function checkUser() {
 	}
 }
 
-function isEmail(){
-	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-	var address = $("#email").val();
-	   if(reg.test(address) == false) {
-			$("#email").addClass('errorInput');
-			$("#email_error").html("Invalid email address");
-			$("#email_error").css("display", "inline");
-	   } else {
-			$("#email").removeClass('errorInput');
-			$("#email_error").html("");
-			$("#email_error").css("display", "none");
-	   }
+function checkPw() {
+	var tempUser = $("#password").val();
+	if(tempUser.length < 5) {
+		$("#password").addClass('errorInput');
+		$("#pw_error").html("Password must be at least 6 characters");
+		$("#pw_error").css("display", "inline");
+	} else {
+		$("#password").removeClass('errorInput');
+		$("#pw_error").html("");
+		$("#pw_error").css("display", "none");
+	}
 }
 
 function isMatchPw(){
@@ -42,16 +41,29 @@ function isMatchPw(){
 	   }
 }
 
+function isEmail(){
+	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	var address = $("#email").val();
+	   if(reg.test(address) == false) {
+			$("#email").addClass('errorInput');
+			$("#email_error").html("Invalid email address");
+			$("#email_error").css("display", "inline");
+	   } else {
+			$("#email").removeClass('errorInput');
+			$("#email_error").html("");
+			$("#email_error").css("display", "none");
+	   }
+}
+
 function isEmpty(id) {
-var temp = $('#'id).val();
-		 if (temp == "" ) {
-			 $('#'id).addClass('errorInput');
-			 $('#'id).html("Not Matching password");
-			 $('#'id).css("display", "inline");
-		 } else {
-			 $("#retypepassword").removeClass('errorInput');
-			 $("#password").removeClass('errorInput');
-			 $("#repw_error").html("");
-			 $("#repw_error").css("display", "none");
-		 }
+	var temp = $('#'+id).val();
+			 if (temp == '') {
+				 $('#'+id).addClass('errorInput');
+				 $('span#'+id).html("Required field");
+				 $('span#'+id).css("display", "inline");
+			 } else {
+				 $('#'+id).removeClass('errorInput');
+				 $('span#'+id).html("");
+				 $('span#'+id).css("display", "none");
+			 }
 }
