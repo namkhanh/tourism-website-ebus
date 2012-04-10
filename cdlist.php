@@ -1,5 +1,5 @@
 <?php
-include ('database_config.php');
+include (dirname(__FILE__).'/database_config.php');
 	
 	$result = mysql_query("SELECT * FROM event WHERE date > '".date("Y-m-d")."' ORDER BY date");
 	
