@@ -120,13 +120,13 @@
 <!-- This is the content -->
 		<div id="content">
 		<h1>Registration Form</h1>
-			<form action="register.php" method="post" id="reg">
+			<form method="post" id="reg">
 				<fieldset>
 					<table>
 						<tr>
 							<td width="400px">Username<br /> 
 								<input type="text" name="username" id="username"   onblur="checkUser();"/>
-								<span id="user_error" style="display:none; color: #FF4040;"></span>
+								<span class="bt" id="user_error" style="display:none; color: #FF4040;"></span>
 								<div id="loading"></div>
 							</td>
 						</tr>
@@ -174,7 +174,7 @@
 							<td>City<br /> <input type="text" name="city" id="city"  onblur="isEmpty('city');" />
 							<span id="city" style="display:none; color: #FF4040;"></span></td>
 						</tr>
-
+						
 						<tr>
 							<td>Nationality<br /> <select name="country">
 									<option value="1">Afghanistan</option>
@@ -434,7 +434,7 @@
 					</table>
 				</fieldset>
 				<input name="reset" type="reset" value="Cancel" />
-            	<input name="button" onclick="submitForm();" type="submit" value="Register" />
+            	<button  name="button" onclick="submitForm();" type="button" value="Register">Register</button>
 			</form>
 		</div>
 		<div class="wan-clear"></div> 

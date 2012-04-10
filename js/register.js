@@ -3,6 +3,7 @@ function checkUser() {
 	
 	if(username.length < 5) {
 		$("#username").addClass('errorInput');
+		$("#username").removeClass('bt');
 		$("#user_error").html("Username must be at least 6 characters");
 		$("#user_error").css("display", "inline");
 	} else {
@@ -16,6 +17,7 @@ function checkUser() {
 	            if(result == 1){  
 	                //show that the username is available  
 	            	$("#username").addClass('errorInput');
+	            	$("#username").removeClass('bt');
 	        		$("#user_error").html("Username exists");
 	        		$("#user_error").css("display", "inline");  
 	            }else{  
@@ -115,8 +117,11 @@ function isEmpty(id) {
 }
 
 function submitForm(){
+	
+	alert(isFormValid());
 	if(isFormValid()){
 		$('form#reg').submit();
+		alert('ac');
 	}
 }
 
@@ -124,11 +129,10 @@ function isFormValid() {
 	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
 	var hasError = false;
 	fields.each(function() {
-		if($(this).attr("id") != 'username' && $(this).attr("id") != 'password'&& $(this).attr("id") != 'query'){
+		alert(this);
 			if ($(this).attr('class').indexOf('errorInput') >= 0) {
 				hasError = true;
 				return false;
-			}
 		}
 	});
 	if (hasError) {
