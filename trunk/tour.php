@@ -1,11 +1,5 @@
 <?php
-	$con = mysql_connect("localhost","s3311310","qwerty1234");
-	
-	if(!$con) {
-		echo "Could not connect: " . mysql_error();
-  	}
-	
-	mysql_select_db("s3311310", $con);
+	include (dirname(__FILE__).'/database_config.php');
 
 	$region = "";
 	$tourID = "";
@@ -15,8 +9,9 @@
 	{
 		$selection = "short";
 		
-		$region = $_GET['reg']; 		
-		$result = mysql_query('Select * From tour Where regionID="'.$region.'"');
+		$regionID = $_GET['reg']; 		
+		$result = mysql_query('Select tourID, t.name, duration, price, description, image, r.name From tour t, region r 
+							   Where r.regionID=t.regionID And r.regionID="'.$regionID.'"');
 
 		include("tour.html");
 	} 
@@ -31,5 +26,5 @@
 		include("tour.html");
 	}
 	
-	mysql_close($con);
+	mysql_close($db_con);
 ?>
