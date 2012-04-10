@@ -174,21 +174,38 @@
 		</div>
 		
 		<div id="right-top">
-           <?php                 
-            	while($record = mysql_fetch_array($result))
-				{
-                echo '<div id="tour">';
-        
-                echo '<table>';
+           <?php
+                if ($selection == "short") {                 
+                    while($record = mysql_fetch_array($result))
+                    {
+                    
+                    $id = $record['tourID'];
+                    $shortDescription = substr($record['description'], 0, 300);
+    
+                    echo '<div id="tour">';
+            
+                    echo '<table>';
+                    
+                    echo '<tr><td><img src="'.$record['image'].'"></td>';
+                    
+                    echo '<td valign="top"><table><a href="tour.php?tourID= '.$id.'">'.$record['name'].'</a>';
+                    
+                    echo '<tr><td>Description: '.$shortDescription.'...<br /></td></tr></table></td></tr></table><br />';		
+                    
+                    echo '</div>';
+                    }
+                }
                 
-                echo '<tr><td><img src="'.$record['image'].'"></td>';
-                
-                $shortDescription = substr($record['description'], 0, 300);
-                
-                echo '<td valign="top"><table><a href="">'.$record['name'].'</a><tr><td>Description: '.$shortDescription.'...<br /></td></tr></table></td></tr></table><br />';		
-                
-                echo '</div>';
-            	}
+                if ($selection == "detail") {
+                	while($record = mysql_fetch_array($result))
+                    {
+                        echo '<heading>'.$record['name'].'</heading><br />';
+                   		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left" padding=3px>';
+                        echo $record['description'].'<br />';
+                        echo 'Duration: '.$record['duration'].'<br />';
+                        echo 'Price: '.$record['price'].'<br />';
+                    }
+                } 
             ?>
 		</div>
 
