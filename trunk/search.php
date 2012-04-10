@@ -1,5 +1,5 @@
 <?php
-include ('database_config.php');
+include (dirname(__FILE__).'/database_config.php');
 
 $priceOption=$_GET["price"]; 
 $date=$_GET["date"]; 
