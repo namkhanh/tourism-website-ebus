@@ -119,6 +119,7 @@ function submitForm(){
 		$('form#reg').submit();
 	}
 }
+
 function isFormValid() {
 	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
 	var hasError = false;
