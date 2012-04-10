@@ -1,14 +1,8 @@
 <?php
+include ('database_config.php');
 
 $priceOption=$_GET["price"]; 
 $date=$_GET["date"]; 
-	   
-	$con = mysql_connect("localhost","s3312275","qwerty1234");	
-	if (!$con)
-  	{
-		echo "Could not connect: " . mysql_error();
-  	}	
-	mysql_select_db("s3312275", $con);
 	
 	if ($priceOption == 1) {
 		$result = mysql_query("SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and tour.tourID= tour_occurance.tourID and dayName= '$date' and price <2000000");
@@ -35,5 +29,5 @@ $date=$_GET["date"];
 			echo $name.'<br/>'.$duration.'<br/>'.$price.'<br/>'.$description.'<br/>'.$image;
 			}
 	}
-mysql_close($con);
+mysql_close($db_con);
 ?>
