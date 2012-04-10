@@ -254,3 +254,9 @@ fieldset {
 -webkit-box-shadow: 0 0 5px red !important;
 box-shadow: 0 0 5px red !important;
 }
+
+#reg
+{
+	margin:auto;
+	width: 550px;
+}
