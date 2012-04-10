@@ -1,13 +1,26 @@
 function checkUser() {
-	var tempUser = $("#username").val();
-	if(tempUser.length < 5) {
+	var username = $('#username').val(); 
+	if(username.length < 5) {
 		$("#username").addClass('errorInput');
 		$("#user_error").html("Username must be at least 6 characters");
 		$("#user_error").css("display", "inline");
 	} else {
-		$("#username").removeClass('errorInput');
-		$("#user_error").html("");
-		$("#user_error").css("display", "none");
+		 //use ajax to run the check  
+	    $.post("checkUserExist.php", { username: username },  
+	        function(result){  
+	            //if the result is 1  
+	            if(result == 1){  
+	                //show that the username is available  
+	            	$("#username").addClass('errorInput');
+	        		$("#user_error").html("Username exists");
+	        		$("#user_error").css("display", "inline");  
+	            }else{  
+	                //show that the username is NOT available  
+	            	$("#username").removeClass('errorInput');
+	        		$("#user_error").html("");
+	        		$("#user_error").css("display", "none"); 
+	            }  
+	    });  
 	}
 }
 
