@@ -13,12 +13,9 @@
 	
 	mysql_select_db("s3311310", $con);
 	
-	function getTour() {
-			
-		$result = mysql_query('Select * From tour Where regionID="'.$region.'"');
-		
-		include("tour.html");
-	}
+	$result = mysql_query('Select * From tour Where regionID="'.$region.'"');
 	
+	include("tour.html");
+			
 	mysql_close($con);
 ?>
