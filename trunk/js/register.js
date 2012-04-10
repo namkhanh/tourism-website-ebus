@@ -1,6 +1,6 @@
 function checkUser() {
 	var username = $('#username').val();
-	
+	checkRequired("#username");
 	if(username.length < 5) {
 		$("#username").addClass('errorInput');
 		$("#username").removeClass('bt');
@@ -117,25 +117,51 @@ function isEmpty(id) {
 }
 
 function submitForm(){
-	
-	alert(isFormValid());
-	if(isFormValid()){
-		$('form#reg').submit();
-		alert('ac');
-	}
+
+	// can check rq ca thang nao thi de id no vao da
+	checkRequireds('username,password');
+//	if(isFormValid()){
+////		$('form#reg').submit();
+//		alert('ac');
+//	}
 }
 
 function isFormValid() {
 	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
 	var hasError = false;
+	var fields = $('input[type=text], input[type=password], input[type=email],  textarea');
 	fields.each(function() {
-		alert(this);
-			if ($(this).attr('class').indexOf('errorInput') >= 0) {
-				hasError = true;
-				return false;
+		if ($(this).attr('class').indexOf('errorInput') >= 0) {
+			hasError = true;
+			return false;
 		}
 	});
 	if (hasError) {
 		return false;
 	} else { return true; }
 }
+
+function checkRequired(element) {
+	var value = $(element).val();
+	if (value.length < 1) {
+		$(element).addClass('errorInput');
+		return false;
+	} else {
+		$(element).removeClass('errorInput');
+	}
+	return true;
+}
+
+function checkRequireds(fieldIds) {
+	fieldIds = fieldIds.replace(/ /g, "");
+	var arrField = fieldIds.split(",");
+	for ( var i = 0; i < arrField.length; i++) {
+		var element = $('#' + arrField[i]);
+		if (element.val().length < 1) {
+			$(element).addClass('errorInput');
+		} else {
+			$(element).removeClass('errorInput');
+		}
+	}
+}
+

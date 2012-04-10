@@ -125,7 +125,7 @@
 					<table>
 						<tr>
 							<td width="400px">Username<br /> 
-								<input type="text" name="username" id="username"   onblur="checkUser();"/>
+								<input type="text" value="" name="username" id="username"   onblur="checkUser();" autocomplete="off"/>
 								<span class="bt" id="user_error" style="display:none; color: #FF4040;"></span>
 								<div id="loading"></div>
 							</td>
@@ -176,7 +176,8 @@
 						</tr>
 						
 						<tr>
-							<td>Nationality<br /> <select name="country">
+							<td>Nationality<br /> 
+								<select name="country">
 									<option value="1">Afghanistan</option>
 									<option value="2">Albania</option>
 									<option value="3">Algeria</option>
