@@ -113,3 +113,24 @@ function isEmpty(id) {
 				 $('span#'+id).css("display", "none");
 			 }
 }
+
+function submitForm(){
+	if(isFormValid()){
+		$('form#reg').submit();
+	}
+}
+function isFormValid() {
+	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
+	var hasError = false;
+	fields.each(function() {
+		if($(this).attr("id") != 'username' && $(this).attr("id") != 'password'&& $(this).attr("id") != 'query'){
+			if ($(this).attr('class').indexOf('errorInput') >= 0) {
+				hasError = true;
+				return false;
+			}
+		}
+	});
+	if (hasError) {
+		return false;
+	} else { return true; }
+}
