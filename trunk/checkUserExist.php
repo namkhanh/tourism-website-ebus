@@ -1,5 +1,8 @@
 <?php
 
+//get the username
+$username = mysql_real_escape_string($_POST['username']);
+
 $con = mysql_connect("localhost","s3312275","qwerty1234");	
 
 	if (!$con)
@@ -8,11 +11,12 @@ $con = mysql_connect("localhost","s3312275","qwerty1234");
   	}	
 	mysql_select_db("s3312275", $con);
 	
-	$result = mysql_query("SELECT * FROM customer where username='long'");
+	$result = mysql_query("SELECT * FROM customer where username='$username'");
 	
 	if(mysql_num_rows($result) == 1) {
-		$record = mysql_fetch_array($result);
-		$username = $record['username'];
+		 echo 1;  
+	} else {
+		echo 0;
 	}
 	
 
