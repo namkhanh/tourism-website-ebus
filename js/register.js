@@ -96,14 +96,15 @@ function checkRequireds(fieldIds) {
 	var arrField = fieldIds.split(",");
 	for ( var i = 0; i < arrField.length; i++) {
 		var element = $('#' + arrField[i]);
+		var spanElement = $('span#' + arrField[i]);
 		if (element.val().length < 1) {
 			$(element).addClass('errorInput');
-			//$('span' + element).html("Required field");
-			//$('span' + element).css("display", "inline");
+			$(spanElement).html("Required field");
+			$(spanElement).css("display", "inline");
 		} else {
 			$(element).removeClass('errorInput');
-			//$('span' + element).html("");
-			//$('span' + element).css("display", "none");
+			$(spanElement).html("");
+			$(spanElement).css("display", "none");
 		}
 	}
 }
