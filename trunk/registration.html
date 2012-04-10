@@ -125,9 +125,8 @@
 					<table>
 						<tr>
 							<td width="400px">Username<br /> 
-								<input type="text" value="" name="username" id="username"   onblur="checkUser();" autocomplete="off"/>
-								<span class="bt" id="user_error" style="display:none; color: #FF4040;"></span>
-								<div id="loading"></div>
+								<input type="text" value="" name="username" id="username"   onblur="checkUser();"/>
+								<span id="username" style="display:none; color: #FF4040;"></span>
 							</td>
 						</tr>
 
@@ -135,22 +134,22 @@
 							<td>Password</td>
 						<tr>
 							<td><input type="password" name="password"  id="password"  onblur="checkPw();"/>
-							<span id="pw_error" style="display:none; color: #FF4040;"></span></td>
+							<span id="password" style="display:none; color: #FF4040;"></span></td>
 							<td><input type="password" name="retypepassword"  id="retypepassword"  onblur="checkPw();" />
-							<span id="repw_error" style="display:none; color: #FF4040;"></span></td>
+							<span id="retypepassword" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 						<tr>
 						<tr>
 							<td>Email<br/>
 							<input type="text" name="email" id="email"  onblur="isEmail();" />
-							<span id="email_error" style="display:none; color: #FF4040;"></span>
+							<span id="email" style="display:none; color: #FF4040;"></span>
 							</td>
 						</tr>
 						<tr>
 
 						<tr>
-							<td>First Name<br /> <input type="text" name="firstname"
-								 placeholder="First name"  id="firstname" onblur="isEmpty('firstname');"/>
+							<td>First Name<br /> <input type="text" name="firstname" onblur="isEmpty('firstname');"
+								 placeholder="First name"  id="firstname"/>
 								 <span id="firstname" style="display:none; color: #FF4040;"></span></td>
 							</td>
 
@@ -161,17 +160,17 @@
 						</tr>
 
 						<tr>
-							<td>Date of Birth<br /> <input id="dob" name="dob" onblur="isEmpty('dob');" size="25" type="text" style="position: relative; z-index: 99999">
+							<td>Date of Birth<br /> <input id="dob" name="dob" size="25" type="text" onblur="isEmpty('dob');" style="position: relative; z-index: 99999">
 							 <span id="dob" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
-							<td>Street<br /> <input type="text" name="street" id="street"  onblur="isEmpty('street');"/>
+							<td>Street<br /> <input type="text" name="street" id="street" onblur="isEmpty('street');"/>
 							<span id="street" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
-							<td>City<br /> <input type="text" name="city" id="city"  onblur="isEmpty('city');" />
+							<td>City<br /> <input type="text" name="city" id="city" onblur="isEmpty('city');"/>
 							<span id="city" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 						
