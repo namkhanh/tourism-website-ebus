@@ -188,7 +188,7 @@
                     
                     echo '<tr><td><img src="'.$record['image'].'"></td>';
                     
-                    echo '<td valign="top"><table><a href="tour.php?tourID= '.$id.'">'.$record['name'].'</a>';
+                    echo '<td valign="top"><table><a href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a>';
                     
                     echo '<tr><td>'.$shortDescription.'...<br /></td></tr></table></td></tr></table><br />';		
                     
@@ -199,7 +199,7 @@
                 if ($selection == "detail") {
                 	while($record = mysql_fetch_array($result))
                     {
-                        echo '<heading>'.$record['name'].'</heading><br />';
+                        echo '<heading>'.$record['t_name'].'</heading><br />';
                    		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left" padding=3px>';
                         echo $record['description'].'<br />';
                         echo 'Duration: '.$record['duration'].'<br />';
