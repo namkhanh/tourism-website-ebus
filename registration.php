@@ -14,7 +14,7 @@ $nationality = $_POST["nationality"];
 // Create a unique  activation code:
 $activation = md5(time().md5($username));
 
-$query_insert_user = "INSERT INTO customer ('username', 'email', 'password', 'activation','firstname','lastname','dob','street','city','nationality') VALUES ( '$username', '$email', '$password', '$activation','$firstname','$lastname','$dob','$street','$city','$nationality')";
+$query_insert_user = "INSERT INTO customer (username,email,password,activation,firstname,lastname,dob,street,city,nationality) VALUES ( '$username', '$email', '$password', '$activation','$firstname','$lastname','$dob','$street','$city','$nationality')";
 
 $result_insert_user = mysql_query($query_insert_user);
 

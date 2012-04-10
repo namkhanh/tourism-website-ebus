@@ -1,5 +1,6 @@
 <?php
 include (dirname(__FILE__).'/database_config.php');
+
 //get the username
 $username = mysql_real_escape_string($_POST['username']);
 
@@ -12,5 +13,5 @@ $username = mysql_real_escape_string($_POST['username']);
 	}
 	
 
-mysql_close($con);
+mysql_close($db_con);
 ?>
