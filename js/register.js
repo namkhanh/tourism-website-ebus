@@ -47,24 +47,24 @@ function checkPw() {
 	}
 }
 
-function isEmail(){
+function isEmail() {
 	var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 	var address = $("#email").val();
-	
-	if (address=='') {
-		$('#email).addClass('errorInput');
-		 $('span#email').html("Required field");
-		 $('span#email').css("display", "inline");
+	if (address == '') {
+		$("#email").addClass('errorInput');
+		$("span#email").html("Required field");
+		$("span#email").css("display", "inline");
 	} else {
-	   if(reg.test(address) == false) {
+		if (reg.test(address) == false) {
 			$("#email").addClass('errorInput');
 			$("span#email").html("Invalid email address");
 			$("span#email").css("display", "inline");
-	   } else {
+		} else {
 			$("#email").removeClass('errorInput');
 			$("span#email").html("");
 			$("span#email").css("display", "none");
-	   }
+		}
+	}
 }
 
 function isEmpty(id) {
