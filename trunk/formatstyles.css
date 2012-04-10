@@ -255,6 +255,11 @@ fieldset {
 box-shadow: 0 0 5px red !important;
 }
 
+#loading {
+	background-image:url('images/loading.gif') no repeat;
+
+}
+
 #reg
 {
 	margin:auto;
