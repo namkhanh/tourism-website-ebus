@@ -1,3 +1,6 @@
+<?php 
+echo <<<HTML
+<select name="nationality">
 <option value="1">Afghanistan</option>
 <option value="2">Albania</option>
 <option value="3">Algeria</option>
@@ -251,3 +254,6 @@
 <option value="250">Yemen</option>
 <option value="251">Zambia</option>
 <option value="252">Zimbabwe</option>
+</select>
+HTML;
+?>
