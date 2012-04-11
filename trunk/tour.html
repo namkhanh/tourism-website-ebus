@@ -201,12 +201,14 @@
                 if ($selection == "detail") {
                 	while($record = mysql_fetch_array($result))
                     {
-                    	echo '<div id="tours">';
-                        echo '<div id="heading">'.$record['t_name'].'</div>';
+                    	echo '<div id="top_tour">';
                    		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
-                        echo '<b>Description: </b>'.$record['description'].'<br /><br />';
-                        echo '<b>Duration: </b>'.$record['duration'].'<br />';
-                        echo '<b>Price: </b>'.$record['price'].' VND<br />';
+                        echo '<div id="heading">'.$record['t_name'].'</div><br />';
+                        echo '<b>Duration: </b>'.$record['duration'].'<br /><br />';
+                        echo '<b>Destination: </b>'.$record['destination'].'<br /><br />';
+                        echo '<b>Price: </b>'.$record['price'].' VND</div>';
+                        
+                        echo '<div id="tour_description"><b>Description: </b>'.$record['description'].'<br /><br />';
                         echo '</div>';
                     }
                 } 

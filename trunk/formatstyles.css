@@ -275,9 +275,15 @@ box-shadow: 0 0 5px red !important;
 	font-size:20px;
 }
 
-#tour img
+#top_tour img
 {
-	padding-right:5px;	
+	padding-right:5px;
+	padding-bottom:5px;
+}
+
+#tour_description
+{
+	clear:both;	
 }
 
 #heading
