@@ -98,7 +98,8 @@ function checkRequireds(fieldIds) {
 	for ( var i = 0; i < arrField.length; i++) {
 		var element = $('#' + arrField[i]);
 		var spanElement = $('span#' + arrField[i]);
-		if (element.val().length < 1) {
+		alert($('#' + arrField[i]).attr('class') != "errorInput");
+		if (element.val().length < 1 && $('#' + arrField[i]).attr('class') != "errorInput") {
 			$(element).addClass('errorInput');
 			$(spanElement).html("Required field");
 			$(spanElement).css("display", "inline");
