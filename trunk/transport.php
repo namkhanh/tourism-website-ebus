@@ -2,8 +2,6 @@
 	include (dirname(__FILE__).'/database_config.php');
 
 	$transportID = "";
-	$name = "";
-	$description = "";
 	
 	if(isset($_GET['reg']))
 	{
