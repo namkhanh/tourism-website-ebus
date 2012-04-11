@@ -20,6 +20,7 @@ $result_insert_user = mysql_query($query_insert_user);
 
 	if (!$result_insert_user) {
 		echo 'Query Failed ';
+		$_SESSION['registration_result'] = false;
 	} else {
 		
 		//Get activation.php URI
@@ -29,11 +30,10 @@ $result_insert_user = mysql_query($query_insert_user);
 		$message = "Hi $firstname $lastname, \n\n Thank you for your registration at Green Travel. To activate your account, please click on this link:\n\n";
 		$message .= "http://".$activationURI . '?username=' . $username . "&key=$activation";
 		mail($email, 'Registration Confirmation', $message, 'From:Green Travel');
-		
-		echo '<div>Thank you for your registration at Green Travel. Please check your email '.$email.' for verification.</div>';
+		 $_SESSION['registration_result'] = true;
 	}
 
-("Location: index.html");	
+header("Location: registration_result.html");	
 mysql_close($db_con);
 ?>
 
