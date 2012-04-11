@@ -1,7 +1,6 @@
 <?php
-include (dirname(__FILE__).'/database_config.php');
 ob_start();
-session_start();
+include (dirname(__FILE__).'/database_config.php');
 
 $username = $_POST["username"]; 
 $email = $_POST["email"]; 
@@ -19,13 +18,10 @@ $activation = md5(time().md5($username));
 $query_insert_user = "INSERT INTO customer (username,email,password,activation,firstname,lastname,dob,street,city,nationality) VALUES ( '$username', '$email', '$password', '$activation','$firstname','$lastname','$dob','$street','$city','$nationality')";
 
 $result_insert_user = mysql_query($query_insert_user);
-ob_start();
-session_start();
 	if (!$result_insert_user) {
-		echo 'Query Failed ';
-		$_SESSION['registration_result'] = false;
+// 		echo 'Query Failed ';
+		$flag = "false";
 	} else {
-		
 		//Get activation.php URI
 		$activationURI = str_replace("registration.php","activate.html", $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']);
 		
@@ -33,11 +29,10 @@ session_start();
 		$message = "Hi $firstname $lastname, \n\n Thank you for your registration at Green Travel. To activate your account, please click on this link:\n\n";
 		$message .= "http://".$activationURI . '?username=' . $username . "&key=$activation";
 		mail($email, 'Registration Confirmation', $message, 'From:Green Travel');
-		 $_SESSION['registration_result'] = true;
-		 $_SESSION['email'] = $email;
+		 $flag = "true";
 	}
-
-header("Location: registration_result.html");	
 mysql_close($db_con);
+header("Location: registration_result.html?rs=" . $flag . "&email=" .$email);	
+
 ?>
 
