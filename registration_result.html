@@ -113,13 +113,9 @@
 <!-- This is the content -->
 		<div id="content">
 			<?php
-			ob_start();
-			session_start();
-			$_SESSION['registration_result'];
-			
 			if (isset($_SESSION['registration_result'])){
 				if ($_SESSION['registration_result'] == true) {
-					 echo '<div>Thank you for your registration at Green Travel. Please check your email '.$email.' for verification.</div>';
+					 echo '<div>Thank you for your registration at Green Travel. Please check your email '.$_SESSION['email'].' for verification.</div>';
 				} else {
 					 echo '<div>Error when inserting your record. Please email us at green.travel@gmail.com.</div>';
 				}
