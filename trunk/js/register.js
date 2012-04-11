@@ -15,6 +15,7 @@ function checkUser() {
 	        		$("span#username").css("display", "inline");  
 	            }else{  
 	                //show that the username is NOT available  
+	            	$("#summary_error").html("");
 	            	$("#username").removeClass('errorInput');
 	        		$("span#username").html("");
 	        		$("span#username").css("display", "none"); 
@@ -75,6 +76,7 @@ function isEmpty(id) {
 				 $('span#'+id).css("display", "inline");
 			 } else {
 				 $('#'+id).removeClass('errorInput');
+				 $("#summary_error").html("");
 				 $('span#'+id).html("");
 				 $('span#'+id).css("display", "none");
 			 }
@@ -83,11 +85,11 @@ function isEmpty(id) {
 function submitForm(){
 
 	// can check rq ca thang nao thi de id no vao da
-	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');
-//	if(isFormValid()){
-////		$('form#reg').submit();
-//		alert('ac');
-//	}
+//	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');
+	if(isFormValid()){
+//		$('form#reg').submit();
+		alert('ac');
+	}
 }
 
 
@@ -109,3 +111,23 @@ function checkRequireds(fieldIds) {
 	}
 }
 
+/**
+ * @author LongTran
+ * */
+function isFormValid() {
+	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
+	var hasError = false;
+	fields.each(function() {
+		if ($(this).attr('class') == "errorInput") {
+			hasError = true;
+			return false;
+		}
+	});
+	if (hasError) {
+		$("#summary_error").html("vui long dien day du thong tin");
+		return false;
+	} else { 
+		$("#summary_error").html("");
+		return true; 
+	}
+}
