@@ -1,5 +1,7 @@
 <?php
 include (dirname(__FILE__).'/database_config.php');
+ob_start();
+session_start();
 
 $username = $_POST["username"]; 
 $email = $_POST["email"]; 
@@ -17,7 +19,8 @@ $activation = md5(time().md5($username));
 $query_insert_user = "INSERT INTO customer (username,email,password,activation,firstname,lastname,dob,street,city,nationality) VALUES ( '$username', '$email', '$password', '$activation','$firstname','$lastname','$dob','$street','$city','$nationality')";
 
 $result_insert_user = mysql_query($query_insert_user);
-
+ob_start();
+session_start();
 	if (!$result_insert_user) {
 		echo 'Query Failed ';
 		$_SESSION['registration_result'] = false;
@@ -31,6 +34,7 @@ $result_insert_user = mysql_query($query_insert_user);
 		$message .= "http://".$activationURI . '?username=' . $username . "&key=$activation";
 		mail($email, 'Registration Confirmation', $message, 'From:Green Travel');
 		 $_SESSION['registration_result'] = true;
+		 $_SESSION['email'] = $email;
 	}
 
 header("Location: registration_result.html");	
