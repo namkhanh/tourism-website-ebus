@@ -87,7 +87,7 @@ function submitForm(){
 	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');
 	
 	if(isFormValid()){
-	
+		$('form#reg').submit();
 	}
 }
 
