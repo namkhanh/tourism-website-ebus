@@ -32,8 +32,8 @@ $result_insert_user = mysql_query($query_insert_user);
 		
 		echo '<div>Thank you for your registration at Green Travel. Please check your email '.$email.' for verification.</div>';
 	}
-	
-	
+
+("Location: index.html");	
 mysql_close($db_con);
 ?>
 
