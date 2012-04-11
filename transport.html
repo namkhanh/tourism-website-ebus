@@ -48,7 +48,7 @@
                     <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
                     <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
                     <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
-                    <td width="3%" align="center"><a href="registration.html">Register</a></td>
+                    <td width="3%" align="center"><a href="register.html">Register</a></td>
                     <td width="1%" align="center">|</td>
                     <td width="3%" align="center"><a href="login.html">Login</a></td>    
 				</tr>
@@ -95,9 +95,8 @@
                 
                 <li><a href="" class="parent_menu">Transport</a>
                     <ul>
-                        <li><a href="transport.php?reg=1">Plane</a></li>
-                        <li><a href="transport.php?reg=2">Coach</a></li>
-                        <li><a href="transport.php?reg=2">Train</a></li>
+                        <li><a href="">Transport 1</a></li>
+                        <li><a href="">Transport 2</a></li>
                     </ul>
                 </li>
                 
@@ -175,66 +174,40 @@
 		</div>
 		
 		<div id="right-top">
-            <div id="title-text">Special Tour Countdown</div>
-            											
-            <div id="spec-tour">
-				<div id="slideshow">
-					<ul id="nav">
-						<li id="prev"><a href="#">Previous</a></li>
-						<li id="next"><a href="#">Next</a></li>
-					</ul>
-					<ul id="slides">
-						<?php include("cdlist.php"); ?>
-					</ul>
-				</div>
-			</div>
+           <?php               
+                    while($record = mysql_fetch_array($result))
+                    {
+                    
+                    $id = $record['transportID'];
+    
+                    echo '<div id="transport">';
+                    
+                    echo $record['image'];
+                    
+                    echo $record['name'];
+                    
+                    echo $record['description'];
+                    
+                    echo $record['price'];	
+                    
+                    echo '</div>';
+                    }
+                } 
+            ?>
 		</div>
 
 		<div class="wan-clear"></div>
 		
-		
 		<div id="hot-spot">
-			<div id="title-text">Hot Tour</div>
-			<div id="metro-ui">
-
- 			<div id="top-big">
-			<a href="#"><img src="images/topb.jpg" height="100%" width="100%" border="0" /></a> 
-			<a href="#"><div class="transparent-box"></div></a> 
-			<a class ="non-underline" href="#"><p class="text-over-transparent">Dalat Travel</p></a>  
-			</div>
-
-			<div id="top-small">
-			<a href="#"><img src="images/tops.jpg" height="100%" width="100%" border="0" /></a> 
-			<a href="#"><div class="transparent-box"></div></a> 
-			<a class ="non-underline" href="#"><p class="text-over-transparent">Dalat Travel</p></a> 
-			</div>
 			
-			<div class="wan-clear" style="height:6px"></div>
-			
-			<div id="bot1">
-			<a href="#"><img src="images/b1.jpg" height="100%" width="100%" border="0" /></a> 
-			<a href="#"><div class="transparent-box"></div></a> 
-			<a class ="non-underline" href="#"><p class="text-over-transparent">Dalat Travel</p></a> 
-			</div>
-
-			<div id="bot2">
-			<a href="#"><img src="images/b2.jpg" height="100%" width="100%" border="0" /></a> 
-			<a href="#"><div class="transparent-box"></div></a> 
-			<a class ="non-underline" href="#"><p class="text-over-transparent">Dalat Travel</p></a> 
-			</div>
-
-			<div id="bot3">
-			<a href="#"><img src="images/b3.jpg" height="100%" width="100%" border="0" /></a> 
-			<a href="#"><div class="transparent-box"></div></a> 
-			<a class ="non-underline" href="#"><p class="text-over-transparent">Dalat Travel</p></a> 
-			</div>
+		</div>
 		
 		</div>
 		</div>
 		<div class="wan-clear"></div>
 <!-- This is the content -->
 		<div id="content">
-
+			
 		</div> 
 <!-- This is end of the content -->
 
