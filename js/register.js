@@ -98,7 +98,6 @@ function checkRequireds(fieldIds) {
 	for ( var i = 0; i < arrField.length; i++) {
 		var element = $('#' + arrField[i]);
 		var spanElement = $('span#' + arrField[i]);
-		alert($('#' + arrField[i]).attr('class') != "errorInput");
 		if (element.val().length < 1 && $('#' + arrField[i]).attr('class') != "errorInput") {
 			$(element).addClass('errorInput');
 			$(spanElement).html("Required field");
@@ -115,6 +114,7 @@ function checkRequireds(fieldIds) {
  * @author LongTran
  * */
 function isFormValid() {
+	checkUser();
 	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
 	var hasError = false;
 	fields.each(function() {
