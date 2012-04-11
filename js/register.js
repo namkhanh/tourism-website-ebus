@@ -83,12 +83,11 @@ function isEmpty(id) {
 }
 
 function submitForm(){
-
 	// can check rq ca thang nao thi de id no vao da
-//	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');
+	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');
+	
 	if(isFormValid()){
 //		$('form#reg').submit();
-		alert('ac');
 	}
 }
 
@@ -124,7 +123,7 @@ function isFormValid() {
 		}
 	});
 	if (hasError) {
-		$("#summary_error").html("vui long dien day du thong tin");
+		$("#summary_error").html("Please corret current error(s)");
 		return false;
 	} else { 
 		$("#summary_error").html("");
