@@ -268,12 +268,16 @@ box-shadow: 0 0 5px red !important;
 }
 
 /*************************Formating content*************************/
-#tour a
+.tour_heading
 {	
 	text-decoration:none;
 	color:#FF5F00;
-	font-family:Verdana, Geneva, sans-serif;
 	font-size:20px;
+}
+
+#tour img
+{
+	padding-right:5px;	
 }
 
 #heading
