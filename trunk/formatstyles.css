@@ -266,3 +266,21 @@ box-shadow: 0 0 5px red !important;
 .bt {
 	color:red;
 }
+
+/*************************Formating content*************************/
+#tour a
+{	
+	text-decoration:none;
+	color:#FF5F00;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:20px;
+}
+
+#heading
+{
+	color:#5FA92A;
+	font-size:130%;
+	text-align:center;
+	margin-bottom:5px;
+	border-bottom: 1px solid #A0A0A4;
+}
