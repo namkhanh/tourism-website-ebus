@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
@@ -112,15 +113,18 @@
 		
 <!-- This is the content -->
 		<div id="content">
-			<?php
-			if (isset($_SESSION['registration_result'])){
-				if ($_SESSION['registration_result'] == true) {
-					 echo '<div>Thank you for your registration at Green Travel. Please check your email '.$_SESSION['email'].' for verification.</div>';
+			<?php 
+error_reporting(E_ALL);
+ ini_set('display_errors', '1');
+			
+			if ((isset($_GET['rs']) && isset($_GET['email']))){
+				if ($_GET['rs'] == "true") {
+					 echo '<div>Thank you for your registration at Green Travel. Please check your email '.$_GET['email'].' for verification.</div>';
 				} else {
 					 echo '<div>Error when inserting your record. Please email us at green.travel@gmail.com.</div>';
 				}
 			} else {
-				header("Location: index.hmtml");
+				header("Location: index.html");
 			}
 			?>
 		</div>
