@@ -183,18 +183,16 @@
                     {
                                         
                     $id = $record['tourID'];
-                    $shortDescription = substr($record['description'], 0, 300);
+                    $shortDescription = substr($record['description'], 0, 250);
     				
                     echo '<div id="tour">';
             		echo '<div id="heading">'.$record['r_name'].'</div>';
+                                        
+                    echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
                     
-                    echo '<table>';
+                    echo '<a class="tour_heading" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a>';
                     
-                    echo '<tr><td><img src="'.$record['image'].'"></td>';
-                    
-                    echo '<td valign="top"><table><tr><td><a href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a></td></tr>';
-                    
-                    echo '<tr><td>'.$shortDescription.'...<br /></td></tr></table></td></tr></table><br />';		
+                    echo '<p>'.$shortDescription.'... <a href="tour.php?tourID= '.$id.'">More Details</a></p>';
                     
                     echo '</div>';
                     }
@@ -205,10 +203,10 @@
                     {
                     	echo '<div id="tour">';
                         echo '<div id="heading">'.$record['t_name'].'</div>';
-                   		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left" padding=3px>';
-                        echo $record['description'].'<br />';
-                        echo 'Duration: '.$record['duration'].'<br />';
-                        echo 'Price: '.$record['price'].'<br />';
+                   		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
+                        echo '<b>Description: </b>'.$record['description'].'<br /><br />';
+                        echo '<b>Duration: </b>'.$record['duration'].'<br />';
+                        echo '<b>Price: </b>'.$record['price'].' VND<br />';
                         echo '</div>';
                     }
                 } 
