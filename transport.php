@@ -8,8 +8,8 @@
 	if(isset($_GET['reg']))
 	{
 		
-		$regionID = $_GET['reg']; 		
-		$result = mysql_query('Select * From transport');
+		$transportID = $_GET['reg']; 		
+		$result = mysql_query('Select * From transport Where transportID ='.$transportID);
 
 		include("transport.html");
 	} 
