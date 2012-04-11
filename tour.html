@@ -175,16 +175,19 @@
 		</div>
 		
 		<div id="right-top">
-           <?php
+        	
+            <?php
+           		
                 if ($selection == "short") {                 
                     while($record = mysql_fetch_array($result))
                     {
-                    
+                                        
                     $id = $record['tourID'];
                     $shortDescription = substr($record['description'], 0, 300);
-    
+    				
                     echo '<div id="tour">';
-            
+            		echo '<div id="heading">'.$record['r_name'].'</div>';
+                    
                     echo '<table>';
                     
                     echo '<tr><td><img src="'.$record['image'].'"></td>';
@@ -200,11 +203,13 @@
                 if ($selection == "detail") {
                 	while($record = mysql_fetch_array($result))
                     {
-                        echo '<heading>'.$record['t_name'].'</heading><br />';
+                    	echo '<div id="tour">';
+                        echo '<div id="heading">'.$record['t_name'].'</div>';
                    		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left" padding=3px>';
                         echo $record['description'].'<br />';
                         echo 'Duration: '.$record['duration'].'<br />';
                         echo 'Price: '.$record['price'].'<br />';
+                        echo '</div>';
                     }
                 } 
             ?>
