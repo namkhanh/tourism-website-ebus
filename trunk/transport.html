@@ -182,13 +182,13 @@
     
                     echo '<div id="transport">';
                     
-                    echo $record['image'];
+                    echo '<img src="'.$record['image'].'">';
                     
                     echo $record['name'];
                     
-                    echo $record['description'];
+                    echo $record['description'].'<br />';
                     
-                    echo $record['price'];	
+                    echo 'Price ($): '.$record['price'];	
                     
                     echo '</div>';
                     }
