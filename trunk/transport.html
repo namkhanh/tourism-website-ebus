@@ -28,6 +28,8 @@
 	  //============================================================== 
 	</script> 
 
+	<script type="text/javascript" src="js/login.js"></script>
+
 </head>
 
 <body>
@@ -48,9 +50,9 @@
                     <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
                     <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
                     <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
-                    <td width="3%" align="center"><a href="register.html">Register</a></td>
+                    <td width="3%" align="center"><a href="">Register</a></td>
                     <td width="1%" align="center">|</td>
-                    <td width="3%" align="center"><a href="login.html">Login</a></td>    
+                    <td width="3%" align="center"><a href="javascript:login('show');">Login</a></td>    
 				</tr>
             </table>
         </div>
@@ -87,102 +89,43 @@
                 
                 <li><a href="" class="parent_menu">Tour</a>
                     <ul>
-                        <li><a href="tour.php?reg=1">North Vietnam</a></li>
-                        <li><a href="tour.php?reg=2">Middle Vietnam</a></li>
-                        <li><a href="tour.php?reg=3">South Vietnam</a></li>
+                        <li><a href="">North Vietnam</a></li>
+                        <li><a href="">Middle Vietnam</a></li>
+                        <li><a href="">South Vietnam</a></li>
                     </ul>
                 </li>
                 
                 <li><a href="" class="parent_menu">Transport</a>
-                   <ul>
+                     <ul>
                         <li><a href="transport.php?reg=1">Plane</a></li>
                         <li><a href="transport.php?reg=2">Coach</a></li>
                         <li><a href="transport.php?reg=3">Train</a></li>
                     </ul>
                 </li>
+                
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact Us</a></li>
                 <li><a href="">Site Map</a></li>
             </ul>
         </div>
-			
-		<div id="left-top">
-            <div id="title-text">Search Tour</div>
-            
-            <div>
-            	<form action="search.html" method="get">
-            	<fieldset>
-                	<table>
-                    	<tr>
-                        	<td>Start</td>
-                        	<td>
-                            	<select name="start" style="width:170px">
-                        			<option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                        		</select>
-                            </td>
-                        </tr>
-                        
- 						<tr>
-                        	<td>Desination</td>
-                            <td>
-                            	<select name="destination" style="width:170px">
-                                    <option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                                </select>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                        	<td>Price (VND)</td>
-                            <td>
-                            	<select name="price" style="width:170px">
- 		                           	<option value="0">Select</option>
-                                    <option value="1">Below 2,000,000</option>
-                                    <option value="2">2,000,000 - 5,000,000</option>
-                                    <option value="3">5,000,000 - 10,000,000</option>
-                                    <option value="4">More than 10,000,000</option>
-                                </select>
-                            </td>
-                        </tr>
+       
 
-                        <tr>
-                        	<td>Date</td>
-                            
-                            <td><input id="datepicker" size="25" type="text" style="position: relative; z-index: 99999"/></td>
-                            <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 99999"/></td>
-                        </tr>
-                        
-                        <tr>
-                        	<table align="center">
-                            	<tr>
-									<td><input name="reset" type="reset" value="Refresh" /></td>
-                            		<td><input name="submit" type="submit" value="Search" /></td>	                                
-                                </tr>
-                            </table>
-                        </tr>
-                    </table>  
-                </fieldset>
-                </form>            
-            </div>
-		</div>
 		
-		<div id="right-top">
-           <?php               
+<!-- This is the content -->
+		<div id="content">
+			 <?php               
                     while($record = mysql_fetch_array($result))
                     {
                     
                     $id = $record['transportID'];
     
-                    echo '<div id="transport">';
+                    echo '<div>';
                     
                     echo '<img src="'.$record['image'].'">';
+                    
+                    echo '</div>';
+                    
+                    echo '<div>';
                     
                     echo $record['name'];
                     
@@ -195,20 +138,7 @@
                 
             ?>
 		</div>
-
-		<div class="wan-clear"></div>
-		
-		<div id="hot-spot">
-			
-		</div>
-		
-		</div>
-		</div>
-		<div class="wan-clear"></div>
-<!-- This is the content -->
-		<div id="content">
-			
-		</div> 
+		<div class="wan-clear"></div> 
 <!-- This is end of the content -->
 
 <!-- This is the footer -->
