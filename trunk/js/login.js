@@ -1,47 +1,31 @@
-function login(showhide){
-    if(showhide == "show"){
-        document.getElementById('login').style.visibility="visible";
-    } else if (showhide == "hide"){
-        document.getElementById('login').style.visibility="hidden"; 
-    }
+function toggleLogin(){
+	$("#login_username").val("");
+	$("#login_password").val("");
+    $("#login").toggle();
 }
 
-function close()
-{
-	window.close();
+function authenticate() {
+
+$.post("authenticate.php", { username: username},
+	        function(result){
+	            //if the result is 1  
+	            if(result == 1){  
+	                //show that the username is available  
+	            	$("#username").addClass('errorInput');
+	        		$("span#username").html("Username exists");
+	        		$("span#username").css("display", "inline");  
+	            }else{
+									
+	                //show that the username is NOT available  
+	            	$("#username").removeClass('errorInput');
+	        		$("span#username").html("");
+	        		$("span#username").css("display", "none");
+					
+	            }  
+	    });  
 }
-function focususername() {
-  if (document.login.username.value == "Enter Your Username ..") {
-    document.login.username.value = "";
-  }
-}
-function blurusername() {
-  if (document.login.username.value == "") {
-    document.login.username.value = "Enter Your Username ..";
-    document.login.sub.value = "Login";
-    document.login.sub.disabled = true;
-  }
-  else {
-    var username = document.login.username.value;
-    if (username.length >= 10) {
-      document.login.sub.value = "Login as " + username.substring(0,10) + " ..";
-    }
-    else {
-      document.login.sub.value = "Login as " + username + "";
-    }
-  }
-}
-function focuspassword() {
-  if (document.login.password.value == "Password") {
-    document.login.password.value = "";
-    if (document.login.username.value != "Enter Your Username ..") {
-      document.login.sub.disabled = false;
-    }
-  }
-}
-function blurpassword() {
-  if (document.login.password.value == "") {
-    document.login.password.value = "Password";
-    document.login.sub.disabled = true;
-  }
-}
+
+	
+
+
+
