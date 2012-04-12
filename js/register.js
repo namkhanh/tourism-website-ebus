@@ -13,11 +13,15 @@ function checkUser() {
 	            	$("#username").addClass('errorInput');
 	        		$("span#username").html("Username exists");
 	        		$("span#username").css("display", "inline");  
-	            }else{  
+	            }else{
+					if (countErrorInput() ==1  && $("username").attr('class') == "errorInput") {
+						$("#summary_error").html("");
+					}				
 	                //show that the username is NOT available  
 	            	$("#username").removeClass('errorInput');
 	        		$("span#username").html("");
-	        		$("span#username").css("display", "none"); 
+	        		$("span#username").css("display", "none");
+					
 	            }  
 	    });  
 	}
@@ -26,26 +30,60 @@ function checkUser() {
 function checkPw() {
 	var pw = $("#password").val();
 	var retype = $("#retypepassword").val();
-	
-	if(pw.length < 6 && retype.length < 6 ) {
-		$("#retypepassword").addClass('errorInput');
-		$("#password").addClass('errorInput');
-		$("span#retypepassword").html("Password must be at least 6 characters");
-		$("span#retypepassword").css("display", "inline");
-	} else {
-		   if(pw != retype) {
-			   $("#retypepassword").addClass('errorInput');
-			   $("#password").addClass('errorInput');
-			   $("span#retypepassword").html("Not Matching password");
-			   $("span#retypepassword").css("display", "inline");
-		   } else {
-			   $("#retypepassword").removeClass('errorInput');
-			   $("#password").removeClass('errorInput');
-			   $("span#retypepassword").html("");
-			   $("span#retypepassword").css("display", "none");
-			   $("span#password").html("");
-			   $("span#password").css("display", "none");
-		   }
+	if (retype.length >0) {
+		if(pw.length < 6 && retype.length < 6 ) {
+			$("#retypepassword").addClass('errorInput');
+			$("#password").addClass('errorInput');
+			$("span#retypepassword").html("Password must be at least 6 characters");
+			$("span#retypepassword").css("display", "inline");
+		} else {
+			   if(pw != retype) {
+				   $("#retypepassword").addClass('errorInput');
+				   $("#password").addClass('errorInput');
+				   $("span#retypepassword").html("Not Matching password");
+				   $("span#retypepassword").css("display", "inline");
+			   } else {
+					if (countErrorInput() ==1) {
+							$("#summary_error").html("");
+					}
+				   $("#retypepassword").removeClass('errorInput');
+				   $("#password").removeClass('errorInput');
+				   $("span#retypepassword").html("");
+				   $("span#retypepassword").css("display", "none");
+				   $("span#password").html("");
+				   $("span#password").css("display", "none");
+			   }
+		}
+	}
+}
+
+function checkRePw() {
+	var pw = $("#password").val();
+	var retype = $("#retypepassword").val();
+	if (pw.length >0) {
+		if(pw.length < 6 && retype.length < 6 ) {
+			$("#retypepassword").addClass('errorInput');
+			$("#password").addClass('errorInput');
+			$("span#retypepassword").html("Password must be at least 6 characters");
+			$("span#retypepassword").css("display", "inline");
+		} else {
+			   if(pw != retype) {
+				   $("#retypepassword").addClass('errorInput');
+				   $("#password").addClass('errorInput');
+				   $("span#retypepassword").html("Not Matching password");
+				   $("span#retypepassword").css("display", "inline");
+			   } else {
+					if (countErrorInput() ==1) {
+							$("#summary_error").html("");
+					}
+				   $("#retypepassword").removeClass('errorInput');
+				   $("#password").removeClass('errorInput');
+				   $("span#retypepassword").html("");
+				   $("span#retypepassword").css("display", "none");
+				   $("span#password").html("");
+				   $("span#password").css("display", "none");
+			   }
+		}
 	}
 }
 
@@ -62,6 +100,9 @@ function isEmail() {
 			$("span#email").html("Invalid email address");
 			$("span#email").css("display", "inline");
 		} else {
+			if (countErrorInput() ==1) {
+				$("#summary_error").html("");
+			}
 			$("#email").removeClass('errorInput');
 			$("span#email").html("");
 			$("span#email").css("display", "none");
@@ -76,8 +117,10 @@ function isEmpty(id) {
 				 $('span#'+id).html("Required field");
 				 $('span#'+id).css("display", "inline");
 			 } else {
+				if (countErrorInput() ==1) {
+					$("#summary_error").html("");
+				}
 				 $('#'+id).removeClass('errorInput');
-				 $("#summary_error").html("");
 				 $('span#'+id).html("");
 				 $('span#'+id).css("display", "none");
 			 }
@@ -133,4 +176,18 @@ function isFormValid() {
 		$("#summary_error").html("");
 		return true; 
 	}
+}
+
+/**
+ * @author LongTran
+ * */
+function countErrorInput() {
+	var iCounter = 0;
+	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
+	fields.each(function() {
+		if ($(this).attr('class') == "errorInput") {
+			iCounter++;
+		}
+	});
+	return iCounter;
 }
