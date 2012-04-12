@@ -14,7 +14,7 @@ function checkUser() {
 	        		$("span#username").html("Username exists");
 	        		$("span#username").css("display", "inline");  
 	            }else{
-					if (countErrorInput() ==1  && $("username").attr('class') == "errorInput") {
+					if (countErrorInput() ==1  && $("#username").attr('class') == "errorInput") {
 						$("#summary_error").html("");
 					}				
 	                //show that the username is NOT available  
@@ -43,9 +43,9 @@ function checkPw() {
 				   $("span#retypepassword").html("Not Matching password");
 				   $("span#retypepassword").css("display", "inline");
 			   } else {
-					if (countErrorInput() ==1) {
-							$("#summary_error").html("");
-					}
+					if (countErrorInput() ==2  && $("#password").attr('class') == "errorInput") {
+						$("#summary_error").html("");
+					}	
 				   $("#retypepassword").removeClass('errorInput');
 				   $("#password").removeClass('errorInput');
 				   $("span#retypepassword").html("");
@@ -73,8 +73,8 @@ function checkRePw() {
 				   $("span#retypepassword").html("Not Matching password");
 				   $("span#retypepassword").css("display", "inline");
 			   } else {
-					if (countErrorInput() ==1) {
-							$("#summary_error").html("");
+					if (countErrorInput() ==2  && $("#password").attr('class') == "errorInput") {
+						$("#summary_error").html("");
 					}
 				   $("#retypepassword").removeClass('errorInput');
 				   $("#password").removeClass('errorInput');
@@ -100,7 +100,7 @@ function isEmail() {
 			$("span#email").html("Invalid email address");
 			$("span#email").css("display", "inline");
 		} else {
-			if (countErrorInput() ==1) {
+			if (countErrorInput() ==1  && $("#email").attr('class') == "errorInput") {
 				$("#summary_error").html("");
 			}
 			$("#email").removeClass('errorInput');
@@ -117,8 +117,8 @@ function isEmpty(id) {
 				 $('span#'+id).html("Required field");
 				 $('span#'+id).css("display", "inline");
 			 } else {
-				if (countErrorInput() ==1) {
-					$("#summary_error").html("");
+				if (countErrorInput() ==1  && $('#'+id).attr('class') == "errorInput") {
+				$("#summary_error").html("");
 				}
 				 $('#'+id).removeClass('errorInput');
 				 $('span#'+id).html("");
