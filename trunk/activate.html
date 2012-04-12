@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
@@ -112,7 +113,20 @@
 		
 <!-- This is the content -->
 		<div id="content">
-			<?php include("activate.php"); ?>
+			<?php 
+error_reporting(E_ALL);
+ ini_set('display_errors', '1');
+			
+			if ((isset($_GET['rs']) && isset($_GET['username']))){
+				if ($_GET['rs'] == "true") {
+					echo '<div>Your account '.$_GET['username'].' is now activated. You may now <a href="login.php">Log in</a></div>';
+				} else {
+					echo '<div>Your account '.$_GET['username'].' could not be activated. Please recheck the link or contact the system administrator at green.travel@gmail.com.</div>';
+				}
+			} else {
+				header("Location: index.html");
+			}
+			?>
 		</div>
 		<div class="wan-clear"></div> 
 <!-- This is end of the content -->

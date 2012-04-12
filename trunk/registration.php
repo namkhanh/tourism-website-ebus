@@ -19,11 +19,10 @@ $query_insert_user = "INSERT INTO customer (username,email,password,activation,f
 
 $result_insert_user = mysql_query($query_insert_user);
 	if (!$result_insert_user) {
-// 		echo 'Query Failed ';
 		$flag = "false";
 	} else {
 		//Get activation.php URI
-		$activationURI = str_replace("registration.php","activate.html", $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']);
+		$activationURI = str_replace("registration.php","activate.php", $_SERVER['SERVER_NAME'].$_SERVER['PHP_SELF']);
 		
 		// Send the email:
 		$message = "Hi $firstname $lastname, \n\n Thank you for your registration at Green Travel. To activate your account, please click on this link:\n\n";

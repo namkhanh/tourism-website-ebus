@@ -13,10 +13,12 @@ if(mysql_num_rows($result) == 1) {
 	$query_activate_account = "UPDATE customer SET active='1' WHERE(username ='$username' AND activation='$key')";
 	
 	if (!mysql_query($query_activate_account)) {
-		echo '<div>Your account could not be activated. Please recheck the link or contact the system administrator at green.travel@gmail.com.</div>';
+		$flag = "false";
 	} else {
-		echo '<div>Your account is now active. You may now <a href="login.php">Log in</a></div>';
+		$flag = "true";
+		
 	}
 }
 mysql_close($db_con);
+header("Location: activate.html?rs=" . $flag . "&username=" .$username);	
 ?>
