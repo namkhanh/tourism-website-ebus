@@ -1,6 +1,6 @@
 function checkUser() {
 	var username = $('#username').val();
-	if(username.length < 5) {
+	if(username.length < 6) {
 		$("#username").addClass('errorInput');
 		$("span#username").html("Username must be at least 6 characters");
 		$("span#username").css("display", "inline");
@@ -15,7 +15,6 @@ function checkUser() {
 	        		$("span#username").css("display", "inline");  
 	            }else{  
 	                //show that the username is NOT available  
-	            	$("#summary_error").html("");
 	            	$("#username").removeClass('errorInput');
 	        		$("span#username").html("");
 	        		$("span#username").css("display", "none"); 
@@ -28,7 +27,7 @@ function checkPw() {
 	var pw = $("#password").val();
 	var retype = $("#retypepassword").val();
 	
-	if(pw.length < 5 && retype.length < 5 ) {
+	if(pw.length < 6 && retype.length < 6 ) {
 		$("#retypepassword").addClass('errorInput');
 		$("#password").addClass('errorInput');
 		$("span#retypepassword").html("Password must be at least 6 characters");
@@ -44,6 +43,8 @@ function checkPw() {
 			   $("#password").removeClass('errorInput');
 			   $("span#retypepassword").html("");
 			   $("span#retypepassword").css("display", "none");
+			   $("span#password").html("");
+			   $("span#password").css("display", "none");
 		   }
 	}
 }
@@ -96,9 +97,10 @@ function checkRequireds(fieldIds) {
 	fieldIds = fieldIds.replace(/ /g, "");
 	var arrField = fieldIds.split(",");
 	for ( var i = 0; i < arrField.length; i++) {
+		if ($('#' + arrField[i]).attr('class') != "errorInput") {
 		var element = $('#' + arrField[i]);
 		var spanElement = $('span#' + arrField[i]);
-		if (element.val().length < 1 && $('#' + arrField[i]).attr('class') != "errorInput") {
+		if (element.val().length < 1) {
 			$(element).addClass('errorInput');
 			$(spanElement).html("Required field");
 			$(spanElement).css("display", "inline");
@@ -107,6 +109,7 @@ function checkRequireds(fieldIds) {
 			$(spanElement).html("");
 			$(spanElement).css("display", "none");
 		}
+		}
 	}
 }
 
@@ -114,7 +117,7 @@ function checkRequireds(fieldIds) {
  * @author LongTran
  * */
 function isFormValid() {
-	checkUser();
+	
 	var fields = $('input[type=text], input[type=password], input[type=email],  textarea, select');
 	var hasError = false;
 	fields.each(function() {
