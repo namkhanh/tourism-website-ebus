@@ -12,19 +12,19 @@ $password = mysql_real_escape_string($_POST['password']);
 $result = mysql_query("SELECT * FROM customer where username='$username' and password='$password'");
 
 if(mysql_num_rows($result) == 1) {
-	echo 1;
-	
+	$record = mysql_fetch_array($result);
 	$username = $record['username'];
-	$fistname = $record['firstname'];
-	$lastname = $record['lastname'];
+	$firstname = $record['firstName'];
+	$lastname = $record['lastName'];
 	
-	$_session['login'] = true;
-	$_session['username'] = $username;
-	$_session['firstname'] = $firstname;
-	$_session['lastname'] = $lastname;
+	$_SESSION['username'] = $username;
+	$_SESSION['firstname'] = $firstname;
+	$_SESSION['lastname'] = $lastname;
+	$_SESSION['login'] = true;
+	echo 1;
 } else {
 	echo 0;
-	$_session['login'] = false;
+	$_SESSION['login'] = false;
 }
 
 mysql_close($db_con);

@@ -52,18 +52,23 @@
 					<?php 
 						error_reporting(E_ALL);
  						ini_set('display_errors', '1');
-
-						if (isset($_session['login'])=="true") {
-							if ($_session['login'] == "true") {
-								echo <<ZHTML <td width="3%" align="center">Welcome'.$firstname.', '.$lastname.'</td> HTML;
+						echo $_SESSION['login'];
+						if (isset($_SESSION['login'])=="true") {
+							if ($_SESSION['login'] == "true") {
+								echo '<td width="3%" align="center">Welcome'.$firstname.', '.$lastname.'</td>';
 								
 							} else {
-								echo <<ZHTML <td width="3%" align="center"><a href="registration.html">Register</a></td>
+								echo ' <td width="3%" align="center"><a href="registration.html">Register</a></td>
                     			<td width="1%" align="center">|</td>
-                    			<td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td> HTML;   
+                    			<td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td>';   
 							}
+						} else {
+							echo ' <td width="3%" align="center"><a href="registration.html">Register</a></td>
+                    			<td width="1%" align="center">|</td>
+                    			<td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td>';  
 						}
  					?>
+					
 				</tr>
             </table>
         </div>
