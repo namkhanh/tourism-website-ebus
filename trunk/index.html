@@ -49,15 +49,27 @@
                     <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
                     <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
                     <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
-                    <td width="3%" align="center"><a href="registration.html">Register</a></td>
-                    <td width="1%" align="center">|</td>
-                    <td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td>    
+					<?php 
+						error_reporting(E_ALL);
+ 						ini_set('display_errors', '1');
+
+						if (isset($_session['login'])=="true") {
+							if ($_session['login'] == "true") {
+								echo <<ZHTML <td width="3%" align="center">Welcome'.$firstname.', '.$lastname.'</td> HTML;
+								
+							} else {
+								echo <<ZHTML <td width="3%" align="center"><a href="registration.html">Register</a></td>
+                    			<td width="1%" align="center">|</td>
+                    			<td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td> HTML;   
+							}
+						}
+ 					?>
 				</tr>
             </table>
         </div>
         
-        <div id="login">
-        	<form name="login" action="" method="post">
+        <div id="login" >
+        	<form name="login" method="post">
             	<table>
                 	<caption style="padding:10px 0;">Login</caption>
                 	<tr>
@@ -78,6 +90,7 @@
                             </tr>
                         </table>
                     </tr>
+                    <tr><td><div id="login_failed" style="display:none; color: #FF4040">Login failed</div></td></tr>
                 </table>
             </form>
         </div> 
