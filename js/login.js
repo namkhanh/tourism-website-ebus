@@ -1,28 +1,30 @@
 function toggleLogin(){
 	$("#login_username").val("");
 	$("#login_password").val("");
+	$("#login_failed").css("display", "none");
     $("#login").toggle();
 }
 
 function authenticate() {
-
-$.post("authenticate.php", { username: username},
+var username = $('#login_username').val();
+var password = $('#login_password').val();
+if (username.length < 1 || password.length < 1) {
+	//NOT sucessful authentication 
+	$("#login_failed").css("display", "inline");
+} else {
+	$.post("authenticate.php", { username: username,password: password},
 	        function(result){
-	            //if the result is 1  
-	            if(result == 1){  
-	                //show that the username is available  
-	            	$("#username").addClass('errorInput');
-	        		$("span#username").html("Username exists");
-	        		$("span#username").css("display", "inline");  
+	            //if the result is 1
+	            if(result == 1) {  
+	                //sucessful authentication 
+	            	$("#login_failed").css("display", "none");
 	            }else{
-									
-	                //show that the username is NOT available  
-	            	$("#username").removeClass('errorInput');
-	        		$("span#username").html("");
-	        		$("span#username").css("display", "none");
-					
+	                //NOT sucessful authentication 
+	            	$("#login_failed").css("display", "inline");
 	            }  
 	    });  
+}
+
 }
 
 	
