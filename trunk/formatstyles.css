@@ -272,24 +272,43 @@ input:focus, select:focus
 	color:red;
 }
 
+/*************************Display tour lists*************************/
+#tour
+{
+	clear:both;
+	min-height:200px;
+	margin-bottom:10px;
+}
 
-/*************************Formating content*************************/
-.tour_heading
+#tour_name
 {	
 	text-decoration:none;
 	color:#FF5F00;
 	font-size:20px;
 }
 
-#top_tour img
+#tour img
 {
 	padding-right:5px;
 	padding-bottom:5px;
 }
 
-#tour_description
+/*************************Display tour details*************************/
+#tour_content
 {
-	clear:both;	
+	border:1px solid #A0A0A4;
+	padding:5px;
+}
+
+#top_details
+{
+	clear:both;
+}
+
+#description
+{
+	text-align:justify;
+	clear:both;
 }
 
 #heading
