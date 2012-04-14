@@ -241,12 +241,35 @@ box-shadow: 0 0 5px red !important;
 }
 
 #reg {
-	margin:auto;
-	width: 550px;
+	margin-left:auto;
+	margin-right:auto;
+	width: 600px;
+  	background-color: #E8FFEE;
+  	padding: 20px;
+  	border: 2px solid #4899BE;
+  	font-family: "Tahoma", Geneva, sans-serif;
+  	font-size: 1em;
 }
+legend
+{
+  color: #FFFFFF;
+  background-color: #4899BE;
+  font-family: Arial, Helvetica, Sans-serif;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 5px;
+  border: 1px solid #3E4A49;
+  text-align:center;
+}
+input:focus, select:focus
+{
+  border: 1px solid #4899BE;
+}
+
 .bt {
 	color:red;
 }
+
 
 /*************************Formating content*************************/
 .tour_heading
