@@ -24,6 +24,7 @@ function authenticate() {
 			if (result == 1) {
 				//sucessful authentication 
 				$("#login_failed").css("display", "none");
+				location.href = document.URL;
 			} else {
 				//NOT sucessful authentication 
 				$("#login_failed").css("display", "inline");
