@@ -178,10 +178,14 @@
             <?php
            		
                 if ($selection == "short") {
-                    
-                    echo $regionName;
-                    while($record = mysql_fetch_array($result))
-                    { 
+                    $first=true;
+                    while($record = mysql_fetch_array($result)){
+                                         
+                        if ($first==true) {
+                            echo '<div id="heading">'.$record['r_name'].'</div>';
+                            $first=false;
+                        }
+                        
                     $id = $record['tourID'];
                     $shortDescription = substr($record['description'], 0, 200);
     
