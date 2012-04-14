@@ -276,9 +276,13 @@ box-shadow: 0 0 5px red !important;
 	        rgb(43,43,43) 74%,
 	        rgb(60,60,60) 100%
 	        );
+	      border-radius: 10px;
 	     -moz-border-radius: 10px;
 	     -webkit-border-radius: 10px;
-	     border-radius: 10px;
+	     -o-border-radius: 10px;
+		-icab-border-radius: 10px;
+		-khtml-border-radius: 10px;
+	     
 	     width: 35%;
 }
 #registration h1 {
@@ -304,36 +308,29 @@ legend
   border: 1px solid #4899BE;
 }
 #registration input {
-	     -webkit-border-radius: 15px;
-	     -moz-border-radius: 15px;
-	     border-radius: 15px;
-	     border:solid 1px #444;
-	     font-size: 14px;
-	     width: 90%;
-	     padding: 7px 8px 7px 8px;
-	     background: #ddd;
-     	 background: -moz-linear-gradient(
-	          center bottom,
-	          rgb(225,225,225) 0%,
-	          rgb(215,215,215) 54%,
-	          rgb(173,173,173) 100%
-	     );
-	     background: -webkit-gradient(
-	          linear,
-	          left bottom,
-	          left top,
-	          color-stop(0, rgb(225,225,225)),
-	          color-stop(0.54, rgb(215,215,215)),
-	          color-stop(1, rgb(173,173,173))
-	      );
-	      color:#333;
-	      text-shadow:0px 1px 0px #FFF;
-	      -moz-box-shadow: 0px 1px 0px #777;
-	      -webkit-box-shadow: 0px 1px 0px #777;
-	      box-shadow: 0px 1px 0px #777;
+	border: solid 1px #444;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-o-border-radius: 15px;
+	-icab-border-radius: 15px;
+	-khtml-border-radius: 15px;
+	font-size: 14px;
+	width: 90%;
+	padding: 7px 8px 7px 8px;
+	background: #ddd;
+	background: -moz-linear-gradient(center bottom, rgb(225, 225, 225) 0%,
+		rgb(215, 215, 215) 54%, rgb(173, 173, 173) 100% );
+	background: -webkit-gradient(linear, left bottom, left top, color-stop(0, rgb(225,
+		225, 225) ), color-stop(0.54, rgb(215, 215, 215) ),
+		color-stop(1, rgb(173, 173, 173) ) );
+	color: #333;
+	text-shadow: 0px 1px 0px #FFF;
+	-moz-box-shadow: 0px 1px 0px #777;
+	-webkit-box-shadow: 0px 1px 0px #777;
+	box-shadow: 0px 1px 0px #777;
 }
 
-	 
 #registration fieldset {
 	      padding: 20px;
 		  border:none;
