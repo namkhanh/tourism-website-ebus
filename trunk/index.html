@@ -79,18 +79,14 @@
                     
                     <tr>
 						<td>Password</td>
-                        <td><input id="login_password"name="password" type="password" /></td>
+                        <td><input id="login_password" name="password" type="password" /></td>
                     </tr>
-					
-                    <tr>
-                    	<table align="center">
-                        	<tr>
-			                  	<td><input type="button" onclick="authenticate();" value="Login" /></td>
-            		            <td><input type="button" onclick="toggleLogin();" value="Cancel" /></td>          
-                            </tr>
-                        </table>
-                    </tr>
-                    <tr><td><div id="login_failed" style="display:none; color: #FF4040">Login failed</div></td></tr>
+
+					<tr>
+						<td><input type="button" onclick="authenticate();" value="Login" /></td>
+						<td><input type="button" onclick="toggleLogin();" value="Cancel" /></td>
+					</tr>
+					<tr><td><div id="login_failed" style="display:none; color: #FF4040">Login failed</div></td></tr>
                 </table>
             </form>
         </div>
@@ -186,16 +182,12 @@
                             <td><input id="datepicker" size="25" type="text" style="position: relative; z-index: 99999"/></td>
                             <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 99999"/></td>
                         </tr>
-                        
-                        <tr>
-                        	<table align="center">
-                            	<tr>
-									<td><input name="reset" type="reset" value="Refresh" /></td>
-                            		<td><input name="submit" type="submit" value="Search" /></td>	                                
-                                </tr>
-                            </table>
-                        </tr>
-                    </table>  
+
+						<tr>
+							<td><input name="reset" type="reset" value="Refresh" /></td>
+							<td><input name="submit" type="submit" value="Search" /></td>
+						</tr>
+						</table>  
                 </fieldset>
                 </form>            
             </div>
