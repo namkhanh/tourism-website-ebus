@@ -9,7 +9,9 @@
 	{
 		$selection = "short";
 		
-		$regionID = $_GET['reg']; 		
+		$regionID = $_GET['reg'];
+		
+		$regionName = mysql_query('Select r_name From region Where regionID="'.$regionID.'"');
 		$result = mysql_query('Select * From tour t, region r Where r.regionID=t.regionID And r.regionID="'.$regionID.'"');
 
 		include("tour.html");
