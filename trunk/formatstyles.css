@@ -241,16 +241,31 @@ box-shadow: 0 0 5px red !important;
 }
 
 /************Decorate registration form ****************/
-#reg {
+#registration {
 	margin-left:auto;
 	margin-right:auto;
-	width: 600px;
-  	background-color: #E8FFEE;
-  	padding: 20px;
-  	border: 2px solid #4899BE;
-  	font-family: "Tahoma", Geneva, sans-serif;
-  	font-size: 1em;
+	color: #fff;
+	    background: #2d2d2d;
+	    background: -webkit-gradient(
+	        linear,
+	        left bottom,
+	        left top,
+	        color-stop(0, rgb(60,60,60)),
+	        color-stop(0.74, rgb(43,43,43)),
+	        color-stop(1, rgb(60,60,60))
+	        );
+	     background: -moz-linear-gradient(
+	        center bottom,
+	        rgb(60,60,60) 0%,
+	        rgb(43,43,43) 74%,
+	        rgb(60,60,60) 100%
+	        );
+	     -moz-border-radius: 10px;
+	     -webkit-border-radius: 10px;
+	     border-radius: 10px;
+	     width: 500px;
 }
+/*
 legend
 {
   color: #FFFFFF;
@@ -261,20 +276,21 @@ legend
   padding: 5px;
   border: 1px solid #3E4A49;
   text-align:center;
-  width:588px;
+  width:488px;
 }
+*/
 
-input:focus, select:focus
+#registration input:focus, select:focus
 {
   border: 1px solid #4899BE;
 }
-input {
+#registration input {
 	     -webkit-border-radius: 15px;
 	     -moz-border-radius: 15px;
 	     border-radius: 15px;
 	     border:solid 1px #444;
 	     font-size: 14px;
-	     width: 150px;
+	     width: 90%;
 	     padding: 7px 8px 7px 8px;
 	     background: #ddd;
      	 background: -moz-linear-gradient(
@@ -298,6 +314,36 @@ input {
 	      box-shadow: 0px 1px 0px #777;
 }
 
+	 
+#registration fieldset {
+	      padding: 20px;
+		  border:none;
+}
+#registration button {
+	color: #fff;
+	text-shadow: 0px -1px 0px #000;
+	text-align: center;
+	padding: 18px;
+	margin: 0px;
+	font-weight: normal;
+	      font-size: 24px;
+	      font-family: Lucida Grande, Helvetica, Arial, sans-serif;
+	border-bottom: solid #181818 1px;
+	-moz-box-shadow: 0px 1px 0px #3a3a3a;
+	-webkit-box-shadow: 0px 1px 0px #3a3a3a;
+	box-shadow: 0px 1px 0px #3a3a3a;
+}
+#registerNew {
+	width: 203px;
+	height: 40px;
+	border: none;
+	text-indent: -9999px;
+	background: url('images/createAccountButton.png') no-repeat;
+	cursor: pointer;
+	float: none;
+}
+#registerNew:hover { background-position: 0px -41px; }
+#registerNew:active { background-position: 0px -82px; }
 
 /*************Not decoration registration form**************/
 .bt {

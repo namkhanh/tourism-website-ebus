@@ -120,40 +120,45 @@
 <!-- This is the content -->
 		<div id="content">
 		<h1>Registration Form</h1>
-			<form action="registration.php" method="post" id="reg">
-            <legend>Please fullfil the form with your information</legend>
+			<form action="registration.php" method="post" id="registration">
 				<fieldset>
 					<table>
 						<tr>
-							<td width="400px">Username<br /> 
-								<input type="text" value="" name="username" id="username"   onblur="checkUser();" autocomplete="off"/>
+							<td width="500px">Username<br /> 
+								<input type="text" value="" name="username" id="username"   onblur="checkUser();" autocomplete="off"
+                                placeholder="Account username"/>
 								<span id="username" style="display:none; color: #FF4040;"></span>
 							</td>
 						</tr>
 
 						<tr>
-							<td>Password</td>
-						<tr>
-							<td><input type="password" name="password"  id="password" onblur="checkPw();"/>
+							<td>Password<br />
+							<input type="password" name="password"  id="password" onblur="checkPw();" placeholder="Account password"/>
 							<span id="password" style="display:none; color: #FF4040;"></span></td>
-							<td><input type="password" name="retypepassword"  id="retypepassword"  onblur="checkRePw();" />
-							<span id="retypepassword" style="display:none; color: #FF4040;"></span></td>
 						</tr>
+                        
+                        <tr>
+                        	<td>Retype your password<br />
+                        	<input type="password" name="retypepassword"  id="retypepassword"  onblur="checkRePw();" 
+                            placeholder="Re-enter password"/>
+							<span id="retypepassword" style="display:none; color: #FF4040;"></span></td>
+                        </tr>
+                        
 						<tr>
-						<tr>
-							<td>Email<br/>
-							<input type="text" name="email" id="email"  onblur="isEmail();" />
+                        	<td>Email<br/>
+                        	<input type="text" name="email" id="email"  onblur="isEmail();" placeholder="Email address" />
 							<span id="email" style="display:none; color: #FF4040;"></span>
 							</td>
 						</tr>
-						<tr>
-
+					
 						<tr>
 							<td>First Name<br /> <input type="text" name="firstname" onblur="isEmpty('firstname');"
 								 placeholder="First name"  id="firstname"/>
 								 <span id="firstname" style="display:none; color: #FF4040;"></span></td>
 							</td>
-
+						</tr>
+                        
+                        <tr>
 							<td>Last Name<br /> <input type="text" name="lastname" id="lastname" onblur="isEmpty('lastname');"
 								 placeholder="Last name" />
 								 <span id="lastname" style="display:none; color: #FF4040;"></span></td>
@@ -161,17 +166,19 @@
 						</tr>
 
 						<tr>
-							<td>Date of Birth<br /> <input id="dob" name="dob" size="25" type="text" onblur="isEmpty('dob');" style="position: relative; z-index: 99999">
+							<td>Date of Birth<br /> <input id="dob" name="dob" size="25" type="text" onblur="isEmpty('dob');" 
+                            style="position: relative; z-index: 99999" placeholder="Select a date">
 							 <span id="dob" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
-							<td>Street<br /> <input type="text" name="street" id="street" onblur="isEmpty('street');"/>
+							<td>Street<br /> <input type="text" name="street" id="street" onblur="isEmpty('street');" 
+                            placeholder="Street name"/>
 							<span id="street" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
 						<tr>
-							<td>City<br /> <input type="text" name="city" id="city" onblur="isEmpty('city');"/>
+							<td>City<br /> <input type="text" name="city" id="city" onblur="isEmpty('city');" placeholder="City name"/>
 							<span id="city" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 						
@@ -183,8 +190,8 @@
 					<div id="summary_error"></div>
 				</fieldset>
                 <br />
-				<center><button name="reset" type="reset" value="Cancel" >Cancel </button>
-            	<button name="button"  type="button" value="Register" onclick="submitForm();">Register</button></center>
+				<center>
+            	<button id="registerNew" name="button"  type="button" value="Register" onclick="submitForm();">Register</button></center>
 			</form>
 		</div>
 		<div class="wan-clear"></div> 
