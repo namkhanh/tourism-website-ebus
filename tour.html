@@ -177,6 +177,7 @@
 		<div id="right-top">	
             <?php
            		
+                
                 if ($selection == "short") {
                     $first=true;
                     while($record = mysql_fetch_array($result)){
@@ -186,18 +187,18 @@
                             $first=false;
                         }
                         
-                    $id = $record['tourID'];
-                    $shortDescription = substr($record['description'], 0, 200);
-    
-                    echo '<div id="tour">';
-                    
-                    echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
-                    
-                    echo '<a id="tour_name" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a><br /><br />';
-                    
-                    echo $shortDescription.'...<br /><a href="tour.php?tourID= '.$id.'">More Details</a><br /><br />';		
-                    
-                    echo '</div>';
+                        $id = $record['tourID'];
+                        $shortDescription = substr($record['description'], 0, 200);
+        
+                        echo '<div id="tour">';
+                        
+                        echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
+                        
+                        echo '<a id="tour_name" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a><br /><br />';
+                        
+                        echo $shortDescription.'...<br /><a href="tour.php?tourID= '.$id.'">More Details</a><br /><br />';		
+                        
+                        echo '</div>';
                     }
                 }
                 
