@@ -220,6 +220,22 @@ text-decoration: none;
 	font-size:12px;
 }
 
+#signout {
+	margin:0; 
+	margin-left:40%; 
+	margin-right:40%;
+	margin-top:100px; 
+	
+	height:100px; 
+	position:absolute; 
+	background:#FBFBF0;
+	display:none;
+	border:solid #000000 2px; 
+	z-index:9; 
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;
+}
+
 .nopcart td{
 	border:1px solid #990000;
 	text-align:center;

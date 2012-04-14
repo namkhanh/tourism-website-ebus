@@ -1,6 +1,7 @@
 <?php
 ob_start();
 session_start();
+
 include (dirname(__FILE__).'/database_config.php');
 
 //get the username

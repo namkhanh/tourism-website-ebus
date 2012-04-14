@@ -46,27 +46,22 @@
     	<div id="task">
         	<table>
 				<tr>
-                    <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
-                    <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
-                    <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
+                    <td align="right">Chuyển đổi ngôn ngữ sang</td>
+                    <td align="left"><a href="">Tiếng Việt</a></td>
+                    <td align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
 					<?php 
+						session_start();
 						error_reporting(E_ALL);
  						ini_set('display_errors', '1');
-						echo $_SESSION['login'];
-						if (isset($_SESSION['login'])=="true") {
-							if ($_SESSION['login'] == "true") {
-								echo '<td width="3%" align="center">Welcome'.$firstname.', '.$lastname.'</td>';
-								
+						if (isset($_SESSION['login'])==true) {
+								echo '<td align="center">Welcome '.$_SESSION['firstname'].', '.$_SESSION['lastname'].'</td>
+										<td width="1%" align="center">|</td>
+										<td align="center"><a href="javascript:toggleSignout();">Sign Out</a></td>';
 							} else {
-								echo ' <td width="3%" align="center"><a href="registration.html">Register</a></td>
-                    			<td width="1%" align="center">|</td>
-                    			<td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td>';   
+								echo ' <td align="center"><a href="registration.html">Register</a></td>
+                    			<td align="center">|</td>
+                    			<td align="center"><a href="javascript:toggleLogin();">Login</a></td>';   
 							}
-						} else {
-							echo ' <td width="3%" align="center"><a href="registration.html">Register</a></td>
-                    			<td width="1%" align="center">|</td>
-                    			<td width="3%" align="center"><a href="javascript:toggleLogin();">Login</a></td>';  
-						}
  					?>
 					
 				</tr>
@@ -91,15 +86,28 @@
                     	<table align="center">
                         	<tr>
 			                  	<td><input type="button" onclick="authenticate();" value="Login" /></td>
-            		            <td><input type="button" onclick="toggleLogin();" value="Cancel" /></td>          
+            		            <td><input type="button" onclick="toggleLoginSignout();" value="Cancel" /></td>          
                             </tr>
                         </table>
                     </tr>
                     <tr><td><div id="login_failed" style="display:none; color: #FF4040">Login failed</div></td></tr>
                 </table>
             </form>
-        </div> 
-        
+        </div>
+		<div id="signout">
+			<form name="signout" method="post" action="logout.php">
+				<table>
+					<tr><td>Are you sure to log out?</td></tr>
+					<tr>
+						<td><input type="submit" 
+							value="Yes" /></td>
+						<td><input type="button" onclick="toggleSignout();"
+							value="No" /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
 		<div id="topnav">
             <ul>
                 <li class="current"><a href="index.html">Home</a></li>
