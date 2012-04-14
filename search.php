@@ -20,7 +20,7 @@ $date=$_GET["date"];
 		echo 'no record found';
 	} else {
 		while($record = mysql_fetch_array($result)) {
-			$name = $record['name'];
+			$name = $record['t_name'];
 			$duration = $record['duration'];
 			$price = $record['price'];
 			$description = $record['description'];
