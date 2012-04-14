@@ -263,7 +263,10 @@ box-shadow: 0 0 5px red !important;
 	     -moz-border-radius: 10px;
 	     -webkit-border-radius: 10px;
 	     border-radius: 10px;
-	     width: 500px;
+	     width: 35%;
+}
+#registration h1 {
+	color:#FFF;
 }
 /*
 legend
