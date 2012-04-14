@@ -174,25 +174,24 @@
             </div>
 		</div>
 		
-		<div id="right-top">
-        	
+		<div id="right-top">	
             <?php
            		
-                if ($selection == "short") {                 
+                if ($selection == "short") {
+                    
+                    echo $regionName;
                     while($record = mysql_fetch_array($result))
-                    {
-                                        
+                    { 
                     $id = $record['tourID'];
-                    $shortDescription = substr($record['description'], 0, 250);
-    				
+                    $shortDescription = substr($record['description'], 0, 200);
+    
                     echo '<div id="tour">';
-            		echo '<div id="heading">'.$record['r_name'].'</div>';
-                                        
+                    
                     echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
                     
-                    echo '<a class="tour_heading" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a>';
+                    echo '<a id="tour_name" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a><br /><br />';
                     
-                    echo '<p>'.$shortDescription.'... <a href="tour.php?tourID= '.$id.'">More Details</a></p>';
+                    echo $shortDescription.'...<br /><a href="tour.php?tourID= '.$id.'">More Details</a><br /><br />';		
                     
                     echo '</div>';
                     }
@@ -201,15 +200,18 @@
                 if ($selection == "detail") {
                 	while($record = mysql_fetch_array($result))
                     {
-                    	echo '<div id="top_tour">';
-                   		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
-                        echo '<div id="heading">'.$record['t_name'].'</div><br />';
-                        echo '<b>Duration: </b>'.$record['duration'].'<br /><br />';
-                        echo '<b>Destination: </b>'.$record['destination'].'<br /><br />';
-                        echo '<b>Price: </b>'.$record['price'].' VND</div>';
+                    	echo '<div id="tour_content">';
+                    	echo '<div id="heading">'.$record['t_name'].'</div>';
                         
-                        echo '<div id="tour_description"><b>Description: </b>'.$record['description'].'<br /><br />';
-                        echo '</div>';
+                    	echo '<div id="top_details">';
+                   		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
+                        echo '<br /><b>Duration: </b>'.$record['duration'].'<br /><br />';
+                        echo '<b>Destination: </b>'.$record['destination'].'<br /><br />';
+                        echo '<b>Price: </b>'.$record['price'].' VND<br /><br />';
+                        echo '<input type="button" value="Book Now" onclick="AddToCart(this.form)" /></div>';
+                        
+                        echo '<div id="description"><b>Description: </b>'.$record['description'];
+                        echo '</div></div>';
                     }
                 } 
             ?>
@@ -225,7 +227,7 @@
 <!-- This is the content -->
 		<div id="content">
 			
-		</div> 
+		</div>
 <!-- This is end of the content -->
 
 <!-- This is the footer -->
