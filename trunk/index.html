@@ -66,26 +66,22 @@
 			<ul>
         </div>
         <div class="wan-clear"></div>
-        <div id="login" >
-        	<form name="login" method="post">
-            	<table>
-                	<caption style="padding:10px 0;">Login</caption>
-                	<tr>
-                    	<td>Username</td>
-                        <td><input type="text" id="login_username" name="username" /></td>
-                    </tr>
-                    
-                    <tr>
-						<td>Password</td>
-                        <td><input id="login_password" name="password" type="password" /></td>
-                    </tr>
-
-					<tr>
-						<td><input type="button" onclick="authenticate();" value="Login" /></td>
-						<td><input type="button" onclick="toggleLogin();" value="Cancel" /></td>
-					</tr>
-					<tr><td><div id="login_failed" style="display:none; color: #FF4040">Login failed</div></td></tr>
-                </table>
+       	<div id="login" >
+        	<form name="login" method="post" id="login-section">
+                <h3><span>Login</span></h3>
+               	<fieldset><legend>Login form</legend>
+                <p class="first">
+					<label for="username">Username</label>
+					<input type="text" id="login_username" name="username"/>
+				</p>
+               	<p>
+					<label for="email">Password</label>
+					<input type="password" name="password" id="login_password"/>
+				</p>
+                <p class="submit"><button type="cancel" onclick="toggleLogin();">Cancel</button>
+                <button type="submit" onclick="authenticate();">Login</button>
+              	</p> 
+                </fieldset>  
             </form>
         </div>
 		<div id="signout">
