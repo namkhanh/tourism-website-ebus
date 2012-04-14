@@ -260,12 +260,14 @@ legend
   padding: 5px;
   border: 1px solid #3E4A49;
   text-align:center;
+  width:588px;
 }
 
 input:focus, select:focus
 {
   border: 1px solid #4899BE;
 }
+
 .bt {
 	color:red;
 }
