@@ -96,6 +96,8 @@ text-decoration: none;
 /* Formatting Menu */
 #topnav 
 {
+top: -16px;
+position:relative;
 	height:50px;
 	margin:0;
 	padding:0;
@@ -116,8 +118,8 @@ text-decoration: none;
 
 #topnav ul li 
 {		
+
   	display:block;
-  	position:relative;
   	float:left;
 }
 
@@ -186,15 +188,24 @@ text-decoration: none;
   	font-size:12px;
 }
 
-#task table
-{
-	width:1100px;
-	height:30px;
+#task {
+top:-16px;
+height:40px;
 	background-image:url('images/test/brushed_alu.png');
+	position:relative;
 }
 
-#task a
-{
+#task ul {
+list-style:none;
+
+}
+#task ul li {
+padding: 0px 4px 0px 4px;
+float:right;
+position:relative;
+top: 10px;
+}
+#task a{
 	text-decoration:none;
 	color:#0080FF;	
 }
