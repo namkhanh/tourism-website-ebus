@@ -38,3 +38,12 @@ $(function() {
 		dateFormat:"dd MM, yy",
 	});
 });
+
+$(function(){
+	$("#starify").children().not(":input").hide();
+	
+	// Create stars from :radio boxes
+	$("#starify").stars({
+		cancelShow: false
+	});
+});

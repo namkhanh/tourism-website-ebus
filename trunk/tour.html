@@ -7,7 +7,6 @@
 	<meta name ="keywords" content="?????"  /> 
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
-    <link rel="stylesheet" type="text/css" href="content_style.css" />
     <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
 	
 	<!-- include CSS always before including js -->
@@ -18,8 +17,22 @@
 	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
-	<script type="text/javascript" src ="language-en.js"></script> 
-	<script type="text/javascript" src ="nopcart.js" language="javascript"> 
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css"/>
+	<style type="text/css" media="screen"> 
+		@import "style/css/uni-form.css"; 
+	</style>
+	
+	<!-- Demo page js -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
+	
+	<!-- Star Rating widget stuff here... -->
+	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
+	<script type="text/javascript" src ="js/language-en.js"></script> 
+	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
 	
       //============================================================== 
       //               NOP Design JavaScript Shopping Cart               
@@ -28,39 +41,8 @@
 	  //============================================================== 
 	</script> 
 
-<!-- Demo page css --> 
-	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css?b38"/>
 
-	<!-- Uni-Form style sheet --> 
-	<style type="text/css" media="screen"> 
-		@import "style/css/uni-form.css?b38"; 
-	</style>
-	<!--[if lte ie 7]>
-	<style type="text/css" media="screen">
-		.uniForm, .uniForm fieldset, .uniForm .ctrlHolder, .uniForm .formHint, .uniForm .buttonHolder, .uniForm .ctrlHolder .multiField, .uniForm .inlineLabel{ zoom:1; }
-		.uniForm .inlineLabels label, .uniForm .inlineLabels .label, .uniForm .blockLabels label, .uniForm .blockLabels .label, .uniForm .inlineLabel span{ padding-bottom: .2em; }
-		.uniForm .inlineLabel input, .uniForm .inlineLabels .inlineLabel input, .uniForm .blockLabels .inlineLabel input{ margin-top: -.3em; }
-	</style>
-	<![endif]-->
 
-	<!-- Demo page js -->
-	<script type="text/javascript" src="js/jquery.min.js?v=1.4.2"></script>
-	<script type="text/javascript" src="js/jquery-ui.custom.min.js?v=1.8"></script>
-	<script type="text/javascript" src="js/jquery.uni-form.js?v=1.3"></script>
-	
-	<!-- Star Rating widget stuff here... -->
-	<script type="text/javascript" src="js/jquery.ui.stars.js?v=3.0.0b38"></script>
-	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css?v=2.0.3b38"/>
-	<script type="text/javascript">
-		$(function(){
-			$("#starify").children().not(":input").hide();
-			
-			// Create stars from :radio boxes
-			$("#starify").stars({
-				cancelShow: false
-			});
-		});
-	</script>
 </head>
 
 <body>
