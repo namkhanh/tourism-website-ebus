@@ -38,155 +38,24 @@
 
 		<!-- This is the banner --> 
 		<div id="banner"> 
- 			<a href="index.html" id="banner">Home Page</a>
-           
+ 			<?php include("banner.php"); ?>
 		</div> 
-<!-- This is end of the banner --> 
+		<!-- This is end of the banner --> 
     
-    	<div id="task">
-		<ul>
-					<?php 
-						session_start();
-						error_reporting(E_ALL);
- 						ini_set('display_errors', '1');
-						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
-								echo '<li><a href="javascript:toggleSignout();">Sign Out</a></li>
-								<li>|</li>
-								<li>Welcome '.$_SESSION['firstname'].', '.$_SESSION['lastname'].'</li>';
-							} else {
-								echo '<li><a href="javascript:toggleLogin();">Login</a></li>
-                    			<li>|</li>
-                    			<li><a href="registration.html">Register</a></li>';   
-							}
- 					?>
-			<li style="top:7px !important"><a href="managecart.html" ><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></li>
-        	<li style="margin-right:7px">Chuyển đổi ngôn ngữ sang <a href="">Tiếng Việt</a><li>
-           
-					
-			<ul>
+    	<div id="user-cpanel">
+		<?php include("user_cpanel.php"); ?>
         </div>
         <div class="wan-clear"></div>
-       	<div id="login" >
-        	<form name="login" method="post" id="login-section">
-                <h3><span>Login</span></h3>
-               	<fieldset><legend>Login form</legend>
-                <p class="first">
-					<label for="username">Username</label>
-					<input type="text" id="login_username" name="username"/>
-				</p>
-               	<p>
-					<label for="email">Password</label>
-					<input type="password" name="password" id="login_password"/>
-				</p>
-                <p class="submit">
-                <button type="button" onclick="authenticate();">Login</button>
-                <button type="button" onclick="toggleLogin();">Cancel</button>
-              	</p> 
-                </fieldset>
-                <div id="login_failed" style="display:none; color:red">Login failed. Please try again.</div>  
-            </form>
-        </div>
-		<div id="signout">
-			<form name="signout" method="post" action="logout.php">
-				<table>
-					<tr><td>Are you sure to log out?</td></tr>
-					<tr>
-						<td><input type="submit" 
-							value="Yes" /></td>
-						<td><input type="button" onclick="toggleSignout();"
-							value="No" /></td>
-					</tr>
-				</table>
-			</form>
+        <div id="user-form">
+       	<?php include("user-form.php"); ?>
 		</div>
-
 		<div id="topnav">
-            <ul>
-                <li class="current"><a href="index.html">Home</a></li>
-                
-                <li><a href="" class="parent_menu">Tour</a>
-                    <ul>
-                        <li><a href="tour.php?reg=1">North Vietnam</a></li>
-                        <li><a href="tour.php?reg=2">Middle Vietnam</a></li>
-                        <li><a href="tour.php?reg=3">South Vietnam</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="" class="parent_menu">Transport</a>
-                    <ul>
-                        <li><a href="transport.php?reg=1">Plane</a></li>
-                        <li><a href="transport.php?reg=2">Coach</a></li>
-                        <li><a href="transport.php?reg=3">Train</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Site Map</a></li>
-            </ul>
+           <?php include("top-nav.php"); ?>
         </div>
 			
 		<div id="left-top">
             <div id="title-text">Search Tour</div>
-            
-            <div>
-            	<form action="search.html" method="get">
-            	<fieldset>
-                	<table>
-                    	<tr>
-                        	<td>Start</td>
-                        	<td>
-                            	<select name="start" style="width:170px">
-                        			<option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                        		</select>
-                            </td>
-                        </tr>
-                        
- 						<tr>
-                        	<td>Desination</td>
-                            <td>
-                            	<select name="destination" style="width:170px">
-                                    <option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                                </select>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                        	<td>Price (VND)</td>
-                            <td>
-                            	<select name="price" style="width:170px">
- 		                           	<option value="0">Select</option>
-                                    <option value="1">Below 2,000,000</option>
-                                    <option value="2">2,000,000 - 5,000,000</option>
-                                    <option value="3">5,000,000 - 10,000,000</option>
-                                    <option value="4">More than 10,000,000</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr>
-                        	<td>Date</td>
-                            
-                            <td><input id="datepicker" size="25" type="text" style="position: relative; z-index: 99999"/></td>
-                            <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 99999"/></td>
-                        </tr>
-
-						<tr>
-							<td><input name="reset" type="reset" value="Refresh" /></td>
-							<td><input name="submit" type="submit" value="Search" /></td>
-						</tr>
-						</table>  
-                </fieldset>
-                </form>            
-            </div>
+            <?php include("search-form.php"); ?>	    
 		</div>
 		
 		<div id="right-top">
@@ -247,10 +116,7 @@
 		</div>
 		</div>
 		<div class="wan-clear"></div>
-<!-- This is the content -->
-		<div id="content">
 
-		</div> 
 <!-- This is end of the content -->
 
 <!-- This is the footer -->

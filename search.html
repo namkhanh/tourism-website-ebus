@@ -39,140 +39,26 @@
 
 		<!-- This is the banner --> 
 		<div id="banner"> 
- 			<a href="index.html" id="banner">Home Page</a>
-           
+ 			<?php include("banner.php"); ?>
 		</div> 
-<!-- This is end of the banner --> 
+		<!-- This is end of the banner --> 
     
-    	<div id="task">
-        	<table>
-				<tr>
-                    <td width="50%" align="right">Chuyển đổi ngôn ngữ sang</td>
-                    <td width="39%" align="left"><a href="">Tiếng Việt</a></td>
-                    <td width="4%" align="center"><a href="managecart.html"><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></td>
-                    <td width="3%" align="center"><a href="">Register</a></td>
-                    <td width="1%" align="center">|</td>
-                    <td width="3%" align="center"><a href="javascript:login('show');">Login</a></td>    
-				</tr>
-            </table>
+    	<div id="user-cpanel">
+		<?php include("user_cpanel.php"); ?>
         </div>
+        <div class="wan-clear"></div>
         
-        <div id="login">
-        	<form name="login" action="" method="post">
-            	<table>
-                	<caption style="padding:10px 0;">Login</caption>
-                	<tr>
-                    	<td>Username</td>
-                        <td><input name="username" /></td>
-                    </tr>
-                    
-                    <tr>
-						<td>Password</td>
-                        <td><input name="password" type="password" /></td>
-                    </tr>
-					
-                    <tr>
-                    	<table align="center">
-                        	<tr>
-			                  	<td><input type="submit" name="submit" value="Login" /></td>
-            		            <td><input type="button" onclick="" value="Cancel" /></td>          
-                            </tr>
-                        </table>
-                    </tr>
-                </table>
-            </form>
-        </div> 
-        
+        <div id="user-form">
+       	<?php include("user-form.php"); ?>
+		</div>
+		
 		<div id="topnav">
-            <ul>
-                <li class="current"><a href="index.html">Home</a></li>
-                
-                <li><a href="" class="parent_menu">Tour</a>
-                    <ul>
-                        <li><a href="">North Vietnam</a></li>
-                        <li><a href="">Middle Vietnam</a></li>
-                        <li><a href="">South Vietnam</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="" class="parent_menu">Transport</a>
-                    <ul>
-                        <li><a href="">Transport 1</a></li>
-                        <li><a href="">Transport 2</a></li>
-                    </ul>
-                </li>
-                
-                <li><a href="">About Us</a></li>
-                <li><a href="">Contact Us</a></li>
-                <li><a href="">Site Map</a></li>
-            </ul>
+           <?php include("top-nav.php"); ?>
         </div>
 			
 		<div id="left-top">
             <div id="title-text">Search Tour</div>
-            
-            <div>
-            	<form action="search.html" method="get">
-            	<fieldset>
-                	<table>
-                    	<tr>
-                        	<td>Start</td>
-                        	<td>
-                            	<select name="start" style="width:170px">
-                        			<option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                        		</select>
-                            </td>
-                        </tr>
-                        
- 						<tr>
-                        	<td>Desination</td>
-                            <td>
-                            	<select name="destination" style="width:170px">
-                                    <option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                                </select>
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                        	<td>Price (VND)</td>
-                            <td>
-                            	<select name="price" style="width:170px">
- 		                           	<option value="0">Select</option>
-                                    <option value="1">Below 2,000,000</option>
-                                    <option value="2">2,000,000 - 5,000,000</option>
-                                    <option value="3">5,000,000 - 10,000,000</option>
-                                    <option value="4">More than 10,000,000</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr>
-                        	<td>Date</td>
-                            
-                            <td><input id="datepicker" size="25" type="text" style="position: relative; z-index: 99999"/></td>
-                            <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 99999"/></td>
-                        </tr>
-                        
-                        <tr>
-                        	<table align="center">
-                            	<tr>
-									<td><input name="reset" type="reset" value="Refresh" /></td>
-                            		<td><input name="submit" type="submit" value="Search" /></td>	                                
-                                </tr>
-                            </table>
-                        </tr>
-                    </table>  
-                </fieldset>
-                </form>            
-            </div>
+            <?php include("search-form.php"); ?>	    
 		</div>
 		
 		<div id="right-top">
