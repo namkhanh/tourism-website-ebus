@@ -10,7 +10,7 @@
     /* This is the main unit that contains our form elements */
     .uniForm .ctrlHolder{ padding: 7px; border-bottom: 1px solid #dfdfdf; }
     
-    .uniForm .buttonHolder{ text-align: left; }
+    .uniForm .buttonHolder{ text-align: right; }
       .uniForm .resetButton{ float: left; }
       .uniForm .primaryAction{ font-weight: bold; }
     
@@ -68,7 +68,7 @@
     .uniForm .inlineLabels .label{ width: 75px; /* <- Required property */ margin: .3em 2% 0 0; /* <- Required property */ }
     
     .uniForm .inlineLabels .textInput,
-    .uniForm .inlineLabels .fileUpload{ width: 80%; /* <- Required property */ }
+    .uniForm .inlineLabels .fileUpload{ width: 55%; /* <- Required property */ }
     
     .uniForm .inlineLabels .selectInput,
     .uniForm .inlineLabels select{ width: 45%; /* <- Required property */ }
