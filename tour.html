@@ -28,6 +28,39 @@
 	  //============================================================== 
 	</script> 
 
+<!-- Demo page css --> 
+	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css?b38"/>
+
+	<!-- Uni-Form style sheet --> 
+	<style type="text/css" media="screen"> 
+		@import "style/css/uni-form.css?b38"; 
+	</style>
+	<!--[if lte ie 7]>
+	<style type="text/css" media="screen">
+		.uniForm, .uniForm fieldset, .uniForm .ctrlHolder, .uniForm .formHint, .uniForm .buttonHolder, .uniForm .ctrlHolder .multiField, .uniForm .inlineLabel{ zoom:1; }
+		.uniForm .inlineLabels label, .uniForm .inlineLabels .label, .uniForm .blockLabels label, .uniForm .blockLabels .label, .uniForm .inlineLabel span{ padding-bottom: .2em; }
+		.uniForm .inlineLabel input, .uniForm .inlineLabels .inlineLabel input, .uniForm .blockLabels .inlineLabel input{ margin-top: -.3em; }
+	</style>
+	<![endif]-->
+
+	<!-- Demo page js -->
+	<script type="text/javascript" src="js/jquery.min.js?v=1.4.2"></script>
+	<script type="text/javascript" src="js/jquery-ui.custom.min.js?v=1.8"></script>
+	<script type="text/javascript" src="js/jquery.uni-form.js?v=1.3"></script>
+	
+	<!-- Star Rating widget stuff here... -->
+	<script type="text/javascript" src="js/jquery.ui.stars.js?v=3.0.0b38"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css?v=2.0.3b38"/>
+	<script type="text/javascript">
+		$(function(){
+			$("#starify").children().not(":input").hide();
+			
+			// Create stars from :radio boxes
+			$("#starify").stars({
+				cancelShow: false
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -217,6 +250,39 @@
                         
                         echo '<div id="description"><b>Description: </b>'.$record['description'];
                         echo '</div></div>';
+						echo '<form class="uniForm" action="add_review.php" method="post" style="width:500px;">
+
+		<fieldset class="inlineLabels">
+
+			<div class="ctrlHolder">
+				<label for="name">Title *</label>
+				<input name="name" id="name" type="text" class="textInput" />
+			</div>
+
+			<div class="ctrlHolder">
+				<label for="message">Comment *</label>
+				<textarea name="message" id="message"></textarea>
+			</div>
+
+			<div class="ctrlHolder">
+			<p class="label">Rate *</p>
+				<div class="multiField" id="starify">
+					<label for="vote1" class="blockLabel"><input type="radio" name="vote" id="vote1" value="1" /> Poor</label>
+					<label for="vote2" class="blockLabel"><input type="radio" name="vote" id="vote2" value="2" /> Fair</label>
+					<label for="vote3" class="blockLabel"><input type="radio" name="vote" id="vote3" value="3" /> Average</label>
+					<label for="vote4" class="blockLabel"><input type="radio" name="vote" id="vote4" value="4" /> Good</label>
+					<label for="vote5" class="blockLabel"><input type="radio" name="vote" id="vote5" value="5" /> Excellent</label>
+				</div>
+			</div>
+
+			<div class="buttonHolder">
+				<button type="submit" class="primaryAction">Submit</button>
+				<button type="button" class="primaryAction" onclick="javascript:document.forms[0].reset();">Reset</button>
+			</div>
+
+		</fieldset>
+		
+	</form>';
                     }
                 } 
             ?>
