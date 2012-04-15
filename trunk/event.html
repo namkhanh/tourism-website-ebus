@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<?php
+	if(!isset($_COOKIE["ID"])){
+    	header("Location: login.html");    
+	}
+?>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+		<link rel="stylesheet" type="text/css" href="styles.css" />        
+		<title>RMIT Sports & Recreation Center</title>		
+		<script type="text/javascript" src="fade-transitions.js"></script>        
+	</head>
+
+	<body>
+    	<!--This is topbar section-->
+    	<div id="topbar">
+        	<div id="topbar_content">
+        		<?php include("topbar.php"); ?>
+            </div>		
+        </div>
+	    
+        <!--This is page section-->
+   		<div id="page_section">        
+        	
+        	<!--This is top banner section-->
+        	<div id="banner">
+        	        	
+        		<!--This is top menu section-->
+        		<div id="topmenu">        			
+        			<?php include("topmenu.php"); ?>
+            	</div>
+        		
+        		<!--This is top images slideshow-->
+        		<div id="bannershow">
+            		<img id="slide" src="images/banner5.jpg" alt="RMIT Sports & Recreation Center" />            		
+            		<script type="text/javascript">							
+            			var n = 0, slides = ["images/banner1", "images/banner2", "images/banner3", "images/banner4", "images/banner5"];
+						function sequence(){
+    						Transitions.fade("#slide", slides[n] + ".jpg", "RMIT Sports & Recreation Center", "3", 
+    						function(){
+        						if(++n < slides.length) { setTimeout("sequence()",3000);
+        					} else {
+        						n = 0;setTimeout("sequence()",3000);
+        					}});
+						}							
+						setTimeout("sequence()",3000);							          	
+            		</script>
+            	</div>
+            </div>
+            
+			<!--This is navigation section-->
+			<div id="navigation">
+				<?php include("navigation.php"); ?>	       	  
+           	</div>
+            
+            <!--This is content section-->
+            <div id="content">
+            	<?php
+                	$ID = $_GET['eventID'];
+                          
+                	$con = mysql_connect("localhost","s3312289","qwerty1234");	
+					if (!$con)
+  					{
+						echo "Could not connect: " . mysql_error();
+  					}	
+					mysql_select_db("s3312289", $con);
+	
+					$result = mysql_query("SELECT * FROM event WHERE eventID='".$ID."'");
+	
+					$count = 0;
+	
+					while($record = mysql_fetch_array($result))
+					{
+                    	echo '
+                        	<img width="750px" height="433px" src="'.$record['image'].'" />
+                        	<h1 style="color:#bb1714">'.$record['name'].'<br /><span style="color:#999;font-size:50%;font-weight:normal;">'.$record['date'].'</span></h1>
+                            <span style="text-align:justify;"><p><b>'.$record['intro'].'</b></p>';                   	
+                        echo $record['description'].'<br /><br /><br />';
+                    }
+                    
+                    $result2 = mysql_query("SELECT * FROM event WHERE date>'".date("Y-m-d")."' AND eventID<>'".$ID."' ORDER BY date");
+	
+					$count = 0;
+                    
+                    echo 'View other upcoming events:<br />';
+	
+					while($record2 = mysql_fetch_array($result2))
+					{
+                    	echo '<a href="event.html?eventID='.$record2['eventID'].'">'.$record2['date'].' - '.$record2['name'].'</a><br />';
+                    }
+                    
+                    mysql_close($con);
+				?>
+            </div>
+            
+            <!--This is footer section-->
+            <div id="footer">
+            
+				INTE2435 - E-Business System 1<br />
+				RMIT International University Vietnam
+				
+				<div style="float: right">
+					Copyright © 2011 Angry Birds | <a href="contact-us.html">Contact Us</a>
+            	</div>
+            </div>
+            <div style="width:780px;float:right;"><center>This page is a student project that is intended to be used only for academic purposes.<br />This page was created by Giang, Tran Thi Ngan - s3276744.<br /><br /></center></div>        
+        </div>    
+	</body>    
+</html>
