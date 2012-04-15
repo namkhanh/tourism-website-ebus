@@ -1,13 +1,7 @@
 /**
  * tune up the Demo page
  */
-body, p {	
-	margin: 0;
-	padding: 0;
-}
-body {
-	font: normal normal 12px/1.6em Verdana, Arial, sans-serif;
-}
+
 .pageBody {
 	margin: 1em;
 }

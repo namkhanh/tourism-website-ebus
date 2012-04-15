@@ -188,29 +188,29 @@ position:relative;
   	font-size:12px;
 }
 
-#task {
+#user-cpanel {
 top:-16px;
 height:40px;
 	background-image:url('images/test/brushed_alu.png');
 	position:relative;
 }
 
-#task ul {
+#user-cpanel ul {
 list-style:none;
 
 }
-#task ul li {
+#user-cpanel ul li {
 padding: 0px 4px 0px 4px;
 float:right;
 position:relative;
 top: 10px;
 }
-#task a{
+#user-cpanel a{
 	text-decoration:none;
 	color:#0080FF;	
 }
 
-#task a:hover
+#user-cpanel a:hover
 {
 	text-decoration:underline;
 }
