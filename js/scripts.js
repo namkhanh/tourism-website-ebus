@@ -34,8 +34,14 @@ $(function() {
 });
 
 $(function() {
+	var yearNow = new Date().getFullYear();
+	var year100 = yearNow - 100;
+	var yearRange = year100 + ':' + yearNow;
 	$( "#dob" ).datepicker({
-		dateFormat:"dd MM, yy",
+		dateFormat:"dd/mm/yy",
+		changeMonth: true,
+		changeYear: true,
+		yearRange: yearRange,
 	});
 });
 
