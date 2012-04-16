@@ -318,7 +318,7 @@ legend
 {
   border: 1px solid #4899BE;
 }
-#registration input {
+#registration input, select {
 	border: solid 1px #444;
 	border-radius: 15px;
 	-webkit-border-radius: 15px;
