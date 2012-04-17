@@ -111,13 +111,12 @@ function isEmail() {
 }
 
 function isEmptyDatepicker() {
-	if ($("#dob").datepicker("getDate") === null || ) {
+	if ($("#dob").datepicker("getDate") == null) {
 		$("#dob").addClass('errorInput');
 		$("span#dob").html("Required field");
 		$("span#dob").css("display", "inline");
 	} else {
-		if (countErrorInput() == 1
-				&& $("#username").attr('class') == "errorInput") {
+		if (countErrorInput() == 1 && $("#dob").attr('class') == "errorInput") {
 			$("#summary_error").html("");
 		}
 		// show that the username is NOT available
