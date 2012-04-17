@@ -25,7 +25,6 @@
 	</style>
 	
 	<!-- Demo page js -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
 	
 	<!-- Star Rating widget stuff here... -->
@@ -116,7 +115,7 @@
 
 						<tr>
 							<td>Date of Birth<br /> <input id="dob" name="dob" size="25" type="text" 
-                            style="position: relative; z-index: 99999" placeholder="Select a date">
+                            style="position: relative; z-index: 99999" onchange="validdate();" placeholder="Select a date">
 							 <span id="dob" style="display:none; color: #FF4040;"></span></td>
 						</tr>
 
