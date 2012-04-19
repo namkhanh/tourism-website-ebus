@@ -110,22 +110,6 @@ function isEmail() {
 	}
 }
 
-function isEmpty(id) {
-	var temp = $('#'+id).val();
-			 if (temp == '') {
-				 $('#'+id).addClass('errorInput');
-				 $('span#'+id).html("Required field");
-				 $('span#'+id).css("display", "inline");
-			 } else {
-				if (countErrorInput() ==1  && $('#'+id).attr('class') == "errorInput") {
-				$("#summary_error").html("");
-				}
-				 $('#'+id).removeClass('errorInput');
-				 $('span#'+id).html("");
-				 $('span#'+id).css("display", "none");
-			 }
-}
-
 function submitForm(){
 	// can check rq ca thang nao thi de id no vao da
 	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');

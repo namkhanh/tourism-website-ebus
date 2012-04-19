@@ -18,14 +18,13 @@
 	<script type="text/javascript" src="js/scripts.js"></script>
 	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>
-	<script type="text/javascript" src="js/register.js"></script>
+	<script type="text/javascript" src="js/comment.js"></script>
 	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css"/>
 	<style type="text/css" media="screen"> 
 		@import "style/css/uni-form.css"; 
 	</style>
 	
 	<!-- Demo page js -->
-	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
 	
 	<!-- Star Rating widget stuff here... -->
@@ -100,8 +99,9 @@
                 }
                 
                 if ($selection == "detail") {
-                	while($record = mysql_fetch_array($result))
-                    {
+                	$record = mysql_fetch_array($result);
+						$username = $_SESSION['username'];
+						$tourID = $record['tourID'];
                     	echo '<div id="tour_content">';
                     	echo '<div id="heading">'.$record['t_name'].'</div>';
                         
@@ -114,40 +114,56 @@
                         
                         echo '<div id="description"><b>Description: </b>'.$record['description'];
                         echo '</div></div>';
-						echo '<form class="uniForm" action="add_review.php" method="post" style="width:500px;" id="review">
+						
+						
 
+						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+	
+						
+	$result = mysql_query("SELECT * FROM tour_booking where username='$username' and tourID = '$tourID'");
+	
+	if(mysql_num_rows($result) > 0) {
+		echo '<form class="uniForm" action="add_review.php" method="post" style="width:500px;" id="review">
+		
 		<fieldset class="inlineLabels">
-
-			<div class="ctrlHolder">
-				<label for="name">Title *</label>
-				<input name="name" id="name" type="text" class="textInput" />
-			</div>
-
-			<div class="ctrlHolder">
-				<label for="message">Comment *</label>
-				<textarea name="message" id="message"></textarea>
-			</div>
-
-			<div class="ctrlHolder">
-			<p class="label">Rate *</p>
-				<div class="multiField" id="starify">
-					<label for="vote1" class="blockLabel"><input type="radio" name="vote" id="vote1" value="1" /> Poor</label>
-					<label for="vote2" class="blockLabel"><input type="radio" name="vote" id="vote2" value="2" /> Fair</label>
-					<label for="vote3" class="blockLabel"><input type="radio" name="vote" id="vote3" value="3" /> Average</label>
-					<label for="vote4" class="blockLabel"><input type="radio" name="vote" id="vote4" value="4" /> Good</label>
-					<label for="vote5" class="blockLabel"><input type="radio" name="vote" id="vote5" value="5" /> Excellent</label>
-				</div>
-			</div>
-
-			<div class="buttonHolder">
-				<button type="submit" class="primaryAction">Submit</button>
-				<button type="reset" class="primaryAction">Reset</button>
-			</div>
-
+		
+		<div class="ctrlHolder">
+		<label for="name">Title *</label>
+		<input name="title" id="title" type="text"size="35" onchange="isEmpty(\'title\');"/>
+		<span id="title" style="display:none; color: #FF4040;"></span>
+		</div>
+		
+		<div class="ctrlHolder">
+		<label for="message">Comment *</label>
+		<textarea name="comment" id="comment" onchange="isEmpty(\'comment\');" ></textarea>
+		<span id="comment" style="display:none;color: #FF4040;margin-left:85px;"></span>
+		</div>
+		
+		<div class="ctrlHolder">
+		<p class="label">Rate *</p>
+		<div class="multiField" id="starify">
+		<label for="vote1" class="blockLabel"><input type="radio" name="vote" id="vote1" value="1" /> Poor</label>
+		<label for="vote2" class="blockLabel"><input type="radio" name="vote" id="vote2" value="2" /> Fair</label>
+		<label for="vote3" class="blockLabel"><input type="radio" name="vote" id="vote3" value="3" /> Average</label>
+		<label for="vote4" class="blockLabel"><input type="radio" name="vote" id="vote4" value="4" /> Good</label>
+		<label for="vote5" class="blockLabel"><input type="radio" name="vote" id="vote5" value="5" /> Excellent</label>
+		</div>
+		<span id="vote" style="display:none;color: #FF4040;margin-left:15px;"></span>
+		</div>
+		<div id="summary_error" style="color:red"></div>
+		<div class="buttonHolder" style="margin-top:10px">
+		<button type="button" onclick="submitCommentForm();" class="primaryAction">Submit</button>
+		<button type="reset" class="primaryAction">Reset</button>
+		</div>
+		
 		</fieldset>
 		
-	</form>';
-                    }
+		</form>';
+	}
+}	
+						
+						
+                    
                 } 
             ?>
 		</div>
