@@ -22,7 +22,7 @@
 		
 		$tourID = $_GET['tourID'];
 
-		$result = mysql_query('Select * From tour Where tourID="'.$tourID.'"');
+		$result = mysql_query('Select * From tour t, tour_occurance o Where t.tourID=o.tourID And t.tourID="'.$tourID.'"');
 		include("tour.html");
 	}
 	
