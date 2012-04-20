@@ -493,8 +493,9 @@ legend
 
 #book caption
 {
-	font-size:32px;
+	font-size:28px;
 	color:blue;	
+	margin-bottom:15px;
 }
 
 #book select, input
@@ -505,4 +506,17 @@ legend
 #book .label
 {
 	width:150px;	
+}
+
+.tour_name
+{
+	color:#FF5F00;
+	font-weight:bold;
+}
+
+.note
+{
+	text-align:center;
+	font-style:italic;
+	color:red;	
 }
