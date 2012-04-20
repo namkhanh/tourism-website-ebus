@@ -16,7 +16,7 @@
                         <li><a href="transport.php?reg=3">Train</a></li>
                     </ul>
                 </li>
-                
+                <li><a href="ebook.php">Ebook</a></li>
                 <li><a href="">About Us</a></li>
                 <li><a href="">Contact Us</a></li>
                 <li><a href="">Site Map</a></li>
