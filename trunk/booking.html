@@ -81,8 +81,8 @@
                 	<caption>Tour Information</caption>
                 	<tr>
                     	<td class="label">Tour name</td>
-                        <td><?php
-                        	echo $tour_name;
+                        <td class="input"><?php
+                        	echo '<div class="tour_name">'.$tour_name.'</div>';
                         ?></td>
                     </tr>
                     
@@ -109,36 +109,9 @@
                     	<td class="label">Date *</td>
                         <td><input name="date" /></td>
                     </tr>
-                </table><br /><br />
-                
-                <table>
-                	<caption>Customer Information</caption>
-                    
-                    <tr>
-                    	<td class="label">First Name *</td>
-                        <td><input name="first" /></td>
-                    </tr>
-                    
-                	<tr>
-                    	<td class="label">Last Name *</td>
-                        <td><input name="last" /></td>
-                    </tr>
-                    
-                    <tr>
-                    	<td class="label">Address *</td>
-                        <td><input name="address" /></td>
-                    </tr>
-                    
-                    <tr>
-                    	<td class="label">Phone Number *</td>
-                        <td><input name="phone" /></td>                    
-                    </tr>
-                    
-                    <tr>
-                    	<td class="label">E-mail *</td>
-                        <td><input name="mail" /></td>
-                    </tr>
                 </table>
+                <div class="note">(*) These fields are required</div>
+                <center><a href="managecart.html"><input type="button" name="book" value="Add to Cart" /></a></center>
             </fieldset>
 		</div>
 
