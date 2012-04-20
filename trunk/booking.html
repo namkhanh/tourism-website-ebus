@@ -76,7 +76,7 @@
         
 			<div id="title-text">Tour Packages</div>
             
-            <fieldset id="book">
+            <form id="order"><fieldset id="book">
             	<table>
                 	<caption>Tour Information</caption>
                 	<tr>
@@ -86,6 +86,10 @@
                         ?></td>
                     </tr>
                     
+                    <?php
+                    	echo '<input type="hidden" name="PRICE" value="'.$price.'" />
+                    	<input type="hidden" name="NAME" value="'.$tour_name.'" />';
+					?>
                     <tr>
                     	<td class="label">Number of visitors *</td>
                         <td>
@@ -112,7 +116,7 @@
                 </table>
                 <div class="note">(*) These fields are required</div>
                 <center><a href="managecart.html"><input type="button" name="book" onclick="AddToCart(this.form)" value="Add to Cart" /></a></center>
-            </fieldset>
+            </fieldset></form>
 		</div>
 
 		<div class="wan-clear"></div>
