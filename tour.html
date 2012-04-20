@@ -102,14 +102,16 @@
                 	$record = mysql_fetch_array($result);
 						$username = $_SESSION['username'];
 						$tourID = $record['tourID'];
-                    	echo '<div id="tour_content">';
-                    	echo '<div id="heading">'.$record['t_name'].'</div>';
+                        
+                    	echo '<div id="tour_content">
+                    		  <div id="heading">'.$record['t_name'].'</div>';
                         
                     	echo '<div id="top_details">';
                    		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
                         echo '<br /><b>Duration: </b>'.$record['duration'].'<br /><br />';
                         echo '<b>Destination: </b>'.$record['destination'].'<br /><br />';
                         echo '<b>Price: </b>'.$record['price'].' VND<br /><br />';
+                        echo '<b>Occurance Day: </b>'.$record['dayName'].'<br />';
                         echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a></div>';
                         
                         echo '<div id="description"><b>Description: </b>'.$record['description'];
