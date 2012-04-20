@@ -67,78 +67,44 @@
 
 <!-- This is the content -->
 		<div id="content">
-		 <center>
-		<h1>Check out procedure</h1>
-			<!-- Checkout Begin--> 
-		<h2>The items listed below are currently in your shopping cart: </h2>
-             
-		<form action="mailto:s3296868@rmit.edu.vn" method ="post">  
-		<script type="text/javascript"> 
-  		CheckoutCart(); 
-  		</script>  
-  		          
-        <h2>Please enter credit card details to perform purchase:</h2>
-        <img src="images/visa-credit.jpg" height="100" width="300" align="middle" alt="visa logo" />
-        <table>
-        <tr><td>
-        Credit card number: 
-        </td>
-        <td><input type="text" name="b_last" /></td>
-		</tr>
-        <tr><td>Security code: 
-        </td>
-        <td><input type="text" name="b_email" /></td>
-        </tr> 
-        <tr><td>
-        Expire date:</td>
-        <td>
-        <select name="rangeHTML">
-                    	
-							<option value="1">1</option>
-							<option value="2">2</option>
-
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        
-						</select>
-                        <select name="year">
-                    	
-							<option value="1">2013</option>
-							<option value="2">2014</option>
-
-                            <option value="3">2015</option>
-                            <option value="4">2016</option>
-                            <option value="5">2017</option>
-                            <option value="6">2018</option>
-                            <option value="7">2019</option>
-                            <option value="8">2020</option>
-
-                            <option value="9">2021</option>
-                            <option value="10">2022</option>
-                            <option value="11">2023</option>
-                            
-                        
-						</select>
-              </td></tr>
-      	
-        </table>
-        <br /> 
-        <input type="submit" value="   Submit Order   " /> 
-        <br /><br />
-        <a class="menu" href="ebook.php">Add more</a>
+         <?php      
+         			echo '<table align="center">';     
+                    while($record = mysql_fetch_array($result))
+                    {
+                    
+                    echo '<tr><td><form id="'.$record['ebookID'].'">';
+                    
+                    echo '<img src="'.$record['img'].'" width="200" height="200" />';
+                    
+                    echo '</td>';
+                    
+                    echo '<td>';
+                    
+                    echo '<b>Ebook name:</b> '.$record['name'].'<br />';
+                    
+                    echo '<b>Description: </b>'.$record['description'].'<br />';
+                    
+                    echo '<input type="hidden" name="PRICE" value="'.$record['price'].'" />
+                    <input type="hidden" name="NAME" value="'.$record['name'].'" />
+                    <input type="hidden" name="ID_NUM" value="ID '.$record['ebookID'].'" /> 
+                    <br />
+                    <b>Price:</b>'.$record['price'].'';
+                    
+                    echo '</td>';
+                    
+                    echo '<td>';
+                    
+                    echo '<input type="button" value="  Add to Cart  " onclick="AddToCart(this.form)" /> </form>';
+                    
+                    echo '</td></tr>';
+                    
+                    
+                    }
+                    
+                    echo '</table>';
+                
+            ?>
        
- </form>  
- <!-- Checkout End  -->  
- </center>
 		</div> 
 <!-- This is end of the content -->
 <br />

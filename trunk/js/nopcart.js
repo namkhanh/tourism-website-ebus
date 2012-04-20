@@ -87,10 +87,10 @@
 //Options for Everyone:
 MonetarySymbol        = '$';
 DisplayNotice         = true;
-DisplayShippingColumn = true;
-DisplayShippingRow    = true;
+DisplayShippingColumn = false;
+DisplayShippingRow    = false;
 DisplayTaxRow         = false;
-TaxRate               = 0.07;
+TaxRate               = 0;
 TaxByRegion           = false;
 TaxPrompt             = 'For tax purposes, please select if you are an Arizona resident before continuing';
 TaxablePrompt         = 'Arizona Residents';
