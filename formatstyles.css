@@ -96,8 +96,8 @@ text-decoration: none;
 /* Formatting Menu */
 #topnav 
 {
-top: -16px;
-position:relative;
+	top: -16px;
+	position:relative;
 	height:50px;
 	margin:0;
 	padding:0;
@@ -113,12 +113,11 @@ position:relative;
   	padding:0;
   	list-style: none;
 	position:relative;
-	z-index:999
+	z-index:999;
 }
 
 #topnav ul li 
 {		
-
   	display:block;
   	float:left;
 }
@@ -131,18 +130,15 @@ position:relative;
 	width: 105px;	
   	text-decoration:none;
 
-  	/*color: #FFFBF0;  Apply for orange menu */
 	color:#808080;
 	text-align:center;
 
     text-decoration: none; /* Make underline (of hyperlink) loss/disappeared */	
-/*	border-right:1px solid #FFFBF0;*/
-	/*background: url(images/topnav_separator.png) no-repeat right center;*/
 }
 
 #topnav ul li ul a
 {
-	border-top:1px solid #FFFBF0;
+	border-bottom:1px solid #FFFBF0;
 	background:#FAE347;
 }
 
