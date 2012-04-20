@@ -1,7 +1,7 @@
 <?php
 	include (dirname(__FILE__).'/database_config.php');
 
-	$tour_name = $record['t_name'];
+	$tour_name = $_GET['tourName'];
 	
 	include("booking.html");
 	
