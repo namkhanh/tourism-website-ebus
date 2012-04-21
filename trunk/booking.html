@@ -88,24 +88,20 @@
                     
                     <?php
                     	echo '<input type="hidden" name="PRICE" value="'.$price.'" />
-                    	<input type="hidden" name="NAME" value="'.$tour_name.'" />';
+                    	      <input type="hidden" name="NAME" value="'.$tour_name.'" />';
 					?>
                     
                     <tr>
                     	<td class="label">Number of visitors *</td>
                         <td>
                         	<select name="numVisitor">
-                           		<option value="0">Select</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
+                            	<?php
+                                	echo '<option value="0">Select</option>';
+                                	for ($i=1; $i<11; $i++)
+                                    {
+                                     	echo '<option value="'.$i.'">'.$i.'</option>';   
+                                    }
+                                ?>
                         	</select>
                         </td>
                     </tr>
@@ -113,12 +109,15 @@
                     <tr>
                     	<td class="label">Transportation</td>
                         <td>
-                        	<select name="transport">
-                            	<option value="0">Select</option>
-                                <option value="1">Plan</option>
-                                <option value="2">Coach</option>
-                                <option value="3">Train</option>
-                            </select>
+							<select name="transport">
+                                <?php
+									echo '<option value="0">Select</option>';
+									while ($record = mysql_fetch_array($transport_result))
+                                    {
+                                        echo '<option value="'.$record['transportID'].'">'.$record['name'].'</option>';
+                                    }                
+                                ?>
+							</select>
                         </td>
                     </tr>
                     
