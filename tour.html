@@ -86,15 +86,12 @@
                         $id = $record['tourID'];
                         $shortDescription = substr($record['description'], 0, 200);
         
-                        echo '<div id="tour">';
+                        echo '<div id="tour">
                         
-                        echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
+                        	  <img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
+                        	  <a id="tour_name" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a><br /><br />';
                         
-                        echo '<a id="tour_name" href="tour.php?tourID= '.$id.'">'.$record['t_name'].'</a><br /><br />';
-                        
-                        echo $shortDescription.'...<br /><a href="tour.php?tourID= '.$id.'">More Details</a><br /><br />';		
-                        
-                        echo '</div>';
+                        echo $shortDescription.'...<br /><a href="tour.php?tourID= '.$id.'">More Details</a><br /><br /></div>';
                     }
                 }
                 
@@ -104,70 +101,61 @@
 						$tourID = $record['tourID'];
                         
                     	echo '<div id="tour_content">
-                    		  <div id="heading">'.$record['t_name'].'</div>';
-                        
-                    	echo '<div id="top_details">';
-                   		echo '<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">';
-                        echo '<br /><b>Duration: </b>'.$record['duration'].'<br /><br />';
-                        echo '<b>Destination: </b>'.$record['destination'].'<br /><br />';
-                        echo '<b>Price: </b>'.$record['price'].' VND<br /><br />';
-                        echo '<b>Occurance Day: </b>'.$record['dayName'].'<br />';
-                        echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a></div>';
-                        
-                        echo '<div id="description"><b>Description: </b>'.$record['description'];
-                        echo '</div></div>';
+                    		  	<div id="heading">'.$record['t_name'].'</div>
+                                
+                        		<div id="top_details">
+									<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left"><br />
+                                    <b>Duration: </b>'.$record['duration'].'<br /><br />
+									<b>Destination: </b>'.$record['destination'].'<br /><br />
+									<b>Price: </b>'.$record['price'].' VND<br /><br />
+									<b>Occurance Day: </b>'.$record['dayName'].'<br />
+									<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>
+                                </div>
+                                
+                        		<div id="description"><b>Description: </b>'.$record['description'].'</div>
+						      </div>';
 						
-						
-
 						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
-	
-						
-	$result = mysql_query("SELECT * FROM tour_booking where username='$username' and tourID = '$tourID'");
-	
-	if(mysql_num_rows($result) > 0) {
-		echo '<form class="uniForm" action="add_review.php" method="post" style="width:500px;" id="review">
-		
-		<fieldset class="inlineLabels">
-		
-		<div class="ctrlHolder">
-		<label for="name">Title *</label>
-		<input name="title" id="title" type="text"size="35" onchange="isEmpty(\'title\');"/>
-		<span id="title" style="display:none; color: #FF4040;"></span>
-		</div>
-		
-		<div class="ctrlHolder">
-		<label for="message">Comment *</label>
-		<textarea name="comment" id="comment" onchange="isEmpty(\'comment\');" ></textarea>
-		<span id="comment" style="display:none;color: #FF4040;margin-left:85px;"></span>
-		</div>
-		
-		<div class="ctrlHolder">
-		<p class="label">Rate *</p>
-		<div class="multiField" id="starify">
-		<label for="vote1" class="blockLabel"><input type="radio" name="vote" id="vote1" value="1" /> Poor</label>
-		<label for="vote2" class="blockLabel"><input type="radio" name="vote" id="vote2" value="2" /> Fair</label>
-		<label for="vote3" class="blockLabel"><input type="radio" name="vote" id="vote3" value="3" /> Average</label>
-		<label for="vote4" class="blockLabel"><input type="radio" name="vote" id="vote4" value="4" /> Good</label>
-		<label for="vote5" class="blockLabel"><input type="radio" name="vote" id="vote5" value="5" /> Excellent</label>
-		</div>
-		<span id="vote" style="display:none;color: #FF4040;margin-left:15px;"></span>
-		</div>
-		<div id="summary_error" style="color:red"></div>
-		<div class="buttonHolder" style="margin-top:10px">
-		<button type="button" onclick="submitCommentForm();" class="primaryAction">Submit</button>
-		<button type="reset" class="primaryAction">Reset</button>
-		</div>
-		
-		</fieldset>
-		
-		</form>';
-	}
-}	
-						
-						
-                    
-                } 
-            ?>
+        					$result = mysql_query("SELECT * FROM tour_booking where username='$username' and tourID = '$tourID'");
+       
+        					if(mysql_num_rows($result) > 0) {
+            					echo '<form class="uniForm" action="add_review.php" method="post" style="width:500px;" id="review">
+            
+            					<fieldset class="inlineLabels">
+            
+                                    <div class="ctrlHolder">
+                                    <label for="name">Title *</label>
+                                    <input name="title" id="title" type="text"size="35" onchange="isEmpty(\'title\');"/>
+                                    <span id="title" style="display:none; color: #FF4040;"></span>
+                                    </div>
+                                    
+                                    <div class="ctrlHolder">
+                                    <label for="message">Comment *</label>
+                                    <textarea name="comment" id="comment" onchange="isEmpty(\'comment\');" ></textarea>
+                                    <span id="comment" style="display:none;color: #FF4040;margin-left:85px;"></span>
+                                    </div>
+                                    
+                                    <div class="ctrlHolder">
+                                    <p class="label">Rate *</p>
+                                    <div class="multiField" id="starify">
+                                    <label for="vote1" class="blockLabel"><input type="radio" name="vote" id="vote1" value="1" /> Poor</label>
+                                    <label for="vote2" class="blockLabel"><input type="radio" name="vote" id="vote2" value="2" /> Fair</label>
+                                    <label for="vote3" class="blockLabel"><input type="radio" name="vote" id="vote3" value="3" /> Average</label>
+                                    <label for="vote4" class="blockLabel"><input type="radio" name="vote" id="vote4" value="4" /> Good</label>
+                                    <label for="vote5" class="blockLabel"><input type="radio" name="vote" id="vote5" value="5" /> Excellent</label>
+                                    </div>
+                                    <span id="vote" style="display:none;color: #FF4040;margin-left:15px;"></span>
+                                    </div>
+                                    <div id="summary_error" style="color:red"></div>
+                                    <div class="buttonHolder" style="margin-top:10px">
+                                    <button type="button" onclick="submitCommentForm();" class="primaryAction">Submit</button>
+                                    <button type="reset" class="primaryAction">Reset</button>
+                                    </div>
+								</fieldset></form>';
+							}
+						}	
+					} 
+            	?>
 		</div>
 
 		<div class="wan-clear"></div>
