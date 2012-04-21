@@ -97,20 +97,25 @@
                 
                 if ($selection == "detail") {
                 	$record = mysql_fetch_array($result);
-						$username = $_SESSION['username'];
 						$tourID = $record['tourID'];
                         
                     	echo '<div id="tour_content">
                     		  	<div id="heading">'.$record['t_name'].'</div>
                                 
                         		<div id="top_details">
-									<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left"><br />
+									<img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
                                     <b>Duration: </b>'.$record['duration'].'<br /><br />
 									<b>Destination: </b>'.$record['destination'].'<br /><br />
 									<b>Price: </b>'.$record['price'].' VND<br /><br />
-									<b>Occurance Day: </b>'.$record['dayName'].'<br />
-									<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>
-                                </div>
+									<b>Occurance Day: </b>'.$record['dayName'].'<br /><br />';
+                                    
+                                    if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+                                    	echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>';
+                                    } else {
+                                    	echo '<i>You need to <a href="javascript:toggleLogin();">login</a> before booking tour. Do not have an account? Click <a href="registration.html">here</a></i>';
+                                    }
+                                    
+                                echo '</div>
                                 
                         		<div id="description"><b>Description: </b>'.$record['description'].'</div>
 						      </div>';

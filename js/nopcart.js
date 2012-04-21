@@ -214,6 +214,20 @@ function AddToCart(thisForm) {
    else
       strSHIPPING  = thisForm.SHIPPING.value;
 
+/*******************************************************************************/
+/*******************************************************************************/
+   if ( thisForm.transport == 0 )
+      errMess = "You have to select your Transportation" + errMess;
+   else
+      strTransport = thisForm.transport.value;
+	
+   if ( thisForm.numVisitor == 0 )
+      errMess = "You have to specify number of visitors" + errMess;
+   else
+      strNumVisitor = thisForm.numVisitor.value;
+/*******************************************************************************/
+/*******************************************************************************/
+
    if ( thisForm.ADDITIONALINFO == null ) {
       strADDTLINFO = "";
    } else {
