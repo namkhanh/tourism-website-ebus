@@ -121,6 +121,7 @@
 						      </div>';
 						
 						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+							$username = $_SESSION['username'];
         					$result = mysql_query("SELECT * FROM tour_booking where username='$username' and tourID = '$tourID'");
        
         					if(mysql_num_rows($result) > 0) {
