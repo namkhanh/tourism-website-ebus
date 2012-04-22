@@ -119,7 +119,25 @@
                                 
                         		<div id="description"><b>Description: </b>'.$record['description'].'</div>
 						      </div>';
-						
+
+						if(mysql_num_rows($result_review) > 0) {
+							echo '<div id="title-text" style="margin-top:20px">Tour Review</div>';
+									while ($record_review =  mysql_fetch_array($result_review)) {
+									$title = $record_review['title'];
+									$comment = $record_review['comment'];
+									$rate = $record_review['rate'];
+									$username = $record_review['username'];
+									echo '<div id="review_section">
+											<div id="review">';
+									echo '<table><tr><td>'.$title.' by '.$username.'</td><td>'.$rate.'</td></tr>
+												<tr><td rowspan=2>'.$comment.'</td></tr></table>
+											</div>
+											</div>';
+									
+
+								}
+								}	
+
 						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
 							$username = $_SESSION['username'];
         					$result = mysql_query("SELECT * FROM tour_booking where username='$username' and tourID = '$tourID'");

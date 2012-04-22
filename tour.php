@@ -24,6 +24,7 @@
 
 		$result = mysql_query('Select * From tour t, tour_occurance o Where t.tourID=o.tourID And t.tourID="'.$tourID.'"');
 		
+		$result_review = mysql_query('Select * From tour_booking, review, tour, customer Where customer.username = tour_booking.username and tour_booking.tourID = tour.tourID and tour_booking.tour_booking_id = review.tour_booking_id and tour.tourID='.$tourID);
 		include("tour.html");
 	}
 	
