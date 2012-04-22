@@ -510,9 +510,16 @@ legend
 	font-weight:bold;
 }
 
-.note
-{
+.note {
 	text-align:center;
 	font-style:italic;
 	color:red;	
+}
+
+#review_section {
+	
+}
+
+#review{
+	
 }
