@@ -4,6 +4,8 @@
 
 		
 		$result = mysql_query('Select * From ebook');
+		
+		
 
 		include("ebook.html");
 	
