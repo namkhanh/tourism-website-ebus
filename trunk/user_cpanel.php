@@ -6,7 +6,8 @@
 						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
 								echo '<li><a href="javascript:toggleSignout();">Sign Out</a></li>
 								<li>|</li>
-								<li>Welcome '.$_SESSION['firstname'].', '.$_SESSION['lastname'].'</li>';
+								<li>Welcome '.$_SESSION['firstname'].', '.$_SESSION['lastname'].'</li>
+								<li><a href="ebookhistory.html">Purchased List</a></li>';
 							} else {
 								echo '<li><a href="javascript:toggleLogin();">Login</a></li>
                     			<li>|</li>

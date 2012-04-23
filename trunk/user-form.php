@@ -19,9 +19,9 @@
             </form>
         </div>
 		<div id="signout">
-			<form name="signout" method="post" action="logout.php">
+			<form name="signout" method="post" action="logout.php" id="signoutform">
+            	<h3>Are you sure to log out?</h3>
 				<table>
-					<tr><td>Are you sure to log out?</td></tr>
 					<tr>
 						<td><input type="submit" 
 							value="Yes" /></td>
