@@ -60,6 +60,6 @@ $(function(){
 	$("#avg").children().not(":input").hide();
 	$("#avg").stars({
 		cancelShow: false,
-split:4,
+		disabled: true,
 	});
 });

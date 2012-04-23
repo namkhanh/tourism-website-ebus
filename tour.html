@@ -119,23 +119,11 @@
                                 if(mysql_num_rows($result_rate) > 0) {
                                 $record_rate =  mysql_fetch_array($result_rate);
 								echo '<div id="avg">
-                                <input type="radio" name="rate_avg" value ="1" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="1.25" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="1.5" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="1.75" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="2" disabled="disabled"/>
-								<input type="radio" name="rate_avg" value ="2.25" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="2.5" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="2.75" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="3" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="3.25" disabled="disabled"/>
-								<input type="radio" name="rate_avg" value ="3.5" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="3.75" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="4" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="4.25" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="4.5" disabled="disabled"/>
-								<input type="radio" name="rate_avg" value ="4.75" disabled="disabled"/>
-                                <input type="radio" name="rate_avg" value ="5" disabled="disabled"/>
+                                <input type="radio" id="avg1" name="rate_avg" value ="1" />
+                                <input type="radio" id="avg2" name="rate_avg" value ="2" />
+                                <input type="radio" id="avg3" name="rate_avg" value ="3" />
+                                <input type="radio" id="avg4" name="rate_avg" value ="4" />
+                                <input type="radio" id="avg5" name="rate_avg" value ="5" />
                                 </div>';
                                 echo '<b>Rate: </b>'.round($record_rate['sum']/$record_rate['count'],2).'<br /><br />'; 
                                 }
