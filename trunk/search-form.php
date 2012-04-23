@@ -1,28 +1,15 @@
 <form action="search.html" method="get">
             	<fieldset>
                 	<table>
-                    	<tr>
-                        	<td>Start</td>
-                        	<td>
-                            	<select name="start" style="width:170px">
-                        			<option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
-                        		</select>
-                            </td>
-                        </tr>
-                        
  						<tr>
                         	<td>Desination</td>
                             <td>
                             	<select name="destination" style="width:170px">
                                     <option value="0">Select</option>
-                                    <option value="1">Ho Chi Minh</option>
-                                    <option value="2">Ha Noi</option>
-                                    <option value="3">Da Nang</option>
-                                    <option value="4">Another</option>
+                                    <option value="Ho Chi Minh">Ho Chi Minh</option>
+                                    <option value="Ha Noi">Ha Noi</option>
+                                    <option value="Da Nang">Da Nang</option>
+                                    <option value="Ha Long">Ha Long</option>
                                 </select>
                             </td>
                         </tr>
