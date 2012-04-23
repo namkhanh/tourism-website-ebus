@@ -96,6 +96,7 @@
                     echo '<td>';
 
                 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+					echo "<script> var login= true;</script>";
 					$username = $_SESSION['username'];
 					$result_purchased = mysql_query('Select * From ebook_shopping where ebookID ="'.$ebookID.'" and username="'.$username.'"');
 					
@@ -105,6 +106,7 @@
 						echo '<input type="button" style="width:100px" value="Add to Cart" onclick="AddToCart(this.form)" /> </form>';
 					}
 				} else {
+					echo "<script> var login= false;</script>";
                  echo '<input type="button" style="width:100px" value="Add to Cart" onclick="AddToCart(this.form)" /> </form>';
                  }
                     

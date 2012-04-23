@@ -181,126 +181,127 @@ function CKquantity(checkString) {
 // PURPOSE:     Adds a product to the user's shopping cart             ||
 //---------------------------------------------------------------------||
 function AddToCart(thisForm) {
-   var iNumberOrdered = 0;
-   var bAlreadyInCart = false;
-   var notice = "";
-   iNumberOrdered = GetCookie("NumberOrdered");
+	
+	if (login == true) {
+		var iNumberOrdered = 0;
+		var bAlreadyInCart = false;
+		var notice = "";
+		iNumberOrdered = GetCookie("NumberOrdered");
 
-   if ( iNumberOrdered == null )
-      iNumberOrdered = 0;
+		if (iNumberOrdered == null)
+			iNumberOrdered = 0;
 
-   if ( thisForm.ID_NUM == null )
-      strID_NUM    = "";
-   else
-      strID_NUM    = thisForm.ID_NUM.value;
+		if (thisForm.ID_NUM == null)
+			strID_NUM = "";
+		else
+			strID_NUM = thisForm.ID_NUM.value;
 
-   if ( thisForm.QUANTITY == null )
-      strQUANTITY  = "1";
-   else
-      strQUANTITY  = thisForm.QUANTITY.value;
+		if (thisForm.QUANTITY == null)
+			strQUANTITY = "1";
+		else
+			strQUANTITY = thisForm.QUANTITY.value;
 
-   if ( thisForm.PRICE == null )
-      strPRICE     = "0.00";
-   else
-      strPRICE     = thisForm.PRICE.value;
+		if (thisForm.PRICE == null)
+			strPRICE = "0.00";
+		else
+			strPRICE = thisForm.PRICE.value;
 
-   if ( thisForm.NAME == null )
-      strNAME      = "";
-   else
-      strNAME      = thisForm.NAME.value;
+		if (thisForm.NAME == null)
+			strNAME = "";
+		else
+			strNAME = thisForm.NAME.value;
 
-   if ( thisForm.SHIPPING == null )
-      strSHIPPING  = "0.00";
-   else
-      strSHIPPING  = thisForm.SHIPPING.value;
+		if (thisForm.SHIPPING == null)
+			strSHIPPING = "0.00";
+		else
+			strSHIPPING = thisForm.SHIPPING.value;
 
-   if ( thisForm.ADDITIONALINFO == null ) {
-      strADDTLINFO = "";
-   } else {
-      strADDTLINFO = thisForm.ADDITIONALINFO[thisForm.ADDITIONALINFO.selectedIndex].value;
-   }
-   if ( thisForm.ADDITIONALINFO2 != null ) {
-      strADDTLINFO += "; " + thisForm.ADDITIONALINFO2[thisForm.ADDITIONALINFO2.selectedIndex].value;
-   }
-   if ( thisForm.ADDITIONALINFO3 != null ) {
-      strADDTLINFO += "; " + thisForm.ADDITIONALINFO3[thisForm.ADDITIONALINFO3.selectedIndex].value;
-   }
-   if ( thisForm.ADDITIONALINFO4 != null ) {
-      strADDTLINFO += "; " + thisForm.ADDITIONALINFO4[thisForm.ADDITIONALINFO4.selectedIndex].value;
-   }
+		if (thisForm.ADDITIONALINFO == null) {
+			strADDTLINFO = "";
+		} else {
+			strADDTLINFO = thisForm.ADDITIONALINFO[thisForm.ADDITIONALINFO.selectedIndex].value;
+		}
+		if (thisForm.ADDITIONALINFO2 != null) {
+			strADDTLINFO += "; "
+					+ thisForm.ADDITIONALINFO2[thisForm.ADDITIONALINFO2.selectedIndex].value;
+		}
+		if (thisForm.ADDITIONALINFO3 != null) {
+			strADDTLINFO += "; "
+					+ thisForm.ADDITIONALINFO3[thisForm.ADDITIONALINFO3.selectedIndex].value;
+		}
+		if (thisForm.ADDITIONALINFO4 != null) {
+			strADDTLINFO += "; "
+					+ thisForm.ADDITIONALINFO4[thisForm.ADDITIONALINFO4.selectedIndex].value;
+		}
 
-   //Is this product already in the cart?  If so, increment quantity instead of adding another.
-   for ( i = 1; i <= iNumberOrdered; i++ ) {
-      NewOrder = "Order." + i;
-      database = "";
-      database = GetCookie(NewOrder);
+		// Is this product already in the cart? If so, increment quantity
+		// instead of
+		// adding another.
+		for (i = 1; i <= iNumberOrdered; i++) {
+			NewOrder = "Order." + i;
+			database = "";
+			database = GetCookie(NewOrder);
 
-      Token0 = database.indexOf("|", 0);
-      Token1 = database.indexOf("|", Token0+1);
-      Token2 = database.indexOf("|", Token1+1);
-      Token3 = database.indexOf("|", Token2+1);
-      Token4 = database.indexOf("|", Token3+1);
+			Token0 = database.indexOf("|", 0);
+			Token1 = database.indexOf("|", Token0 + 1);
+			Token2 = database.indexOf("|", Token1 + 1);
+			Token3 = database.indexOf("|", Token2 + 1);
+			Token4 = database.indexOf("|", Token3 + 1);
 
-      fields = new Array;
-      fields[0] = database.substring( 0, Token0 );
-      fields[1] = database.substring( Token0+1, Token1 );
-      fields[2] = database.substring( Token1+1, Token2 );
-      fields[3] = database.substring( Token2+1, Token3 );
-      fields[4] = database.substring( Token3+1, Token4 );
-      fields[5] = database.substring( Token4+1, database.length );
+			fields = new Array;
+			fields[0] = database.substring(0, Token0);
+			fields[1] = database.substring(Token0 + 1, Token1);
+			fields[2] = database.substring(Token1 + 1, Token2);
+			fields[3] = database.substring(Token2 + 1, Token3);
+			fields[4] = database.substring(Token3 + 1, Token4);
+			fields[5] = database.substring(Token4 + 1, database.length);
 
-      if ( fields[0] == strID_NUM &&
-           fields[2] == strPRICE  &&
-           fields[3] == strNAME   &&
-           fields[5] == strADDTLINFO
-         ) {
-         bAlreadyInCart = true;
-         dbUpdatedOrder = strID_NUM    + "|" +
-                          (parseInt(strQUANTITY)+parseInt(fields[1]))  + "|" +
-                          strPRICE     + "|" +
-                          strNAME      + "|" +
-                          strSHIPPING  + "|" +
-                          strADDTLINFO;
-         strNewOrder = "Order." + i;
-         DeleteCookie(strNewOrder, "/");
-         SetCookie(strNewOrder, dbUpdatedOrder, null, "/");
-         notice = strQUANTITY + " " + strNAME + strAdded;
-         break;
-      }
-   }
+			if (fields[0] == strID_NUM && fields[2] == strPRICE
+					&& fields[3] == strNAME && fields[5] == strADDTLINFO) {
+				bAlreadyInCart = true;
+				dbUpdatedOrder = strID_NUM + "|"
+						+ (parseInt(strQUANTITY) + parseInt(fields[1])) + "|"
+						+ strPRICE + "|" + strNAME + "|" + strSHIPPING + "|"
+						+ strADDTLINFO;
+				strNewOrder = "Order." + i;
+				DeleteCookie(strNewOrder, "/");
+				SetCookie(strNewOrder, dbUpdatedOrder, null, "/");
+				notice = strQUANTITY + " " + strNAME + strAdded;
+				break;
+			}
+		}
 
+		if (!bAlreadyInCart) {
+			iNumberOrdered++;
 
-   if ( !bAlreadyInCart ) {
-      iNumberOrdered++;
+			if (iNumberOrdered > 12)
+				alert(strSorry);
+			else {
+				dbUpdatedOrder = strID_NUM + "|" + strQUANTITY + "|" + strPRICE
+						+ "|" + strNAME + "|" + strSHIPPING + "|"
+						+ strADDTLINFO;
 
-      if ( iNumberOrdered > 12 )
-         alert( strSorry );
-      else {
-         dbUpdatedOrder = strID_NUM    + "|" + 
-                          strQUANTITY  + "|" +
-                          strPRICE     + "|" +
-                          strNAME      + "|" +
-                          strSHIPPING  + "|" +
-                          strADDTLINFO;
+				strNewOrder = "Order." + iNumberOrdered;
+				SetCookie(strNewOrder, dbUpdatedOrder, null, "/");
+				SetCookie("NumberOrdered", iNumberOrdered, null, "/");
+				notice = strQUANTITY + " " + strNAME + strAdded;
+			}
+		}
 
-         strNewOrder = "Order." + iNumberOrdered;
-         SetCookie(strNewOrder, dbUpdatedOrder, null, "/");
-         SetCookie("NumberOrdered", iNumberOrdered, null, "/");
-         notice = strQUANTITY + " " + strNAME + strAdded;
-      }
-   }
-
-   if ( DisplayNotice )
-      alert(notice);
+		if (DisplayNotice)
+			alert(notice);
+	} else {
+		alert('Please login before purchasing ebook');
+	}
 }
 
 
-//---------------------------------------------------------------------||
-// FUNCTION:    getCookieVal                                           ||
-// PARAMETERS:  offset                                                 ||
-// RETURNS:     URL unescaped Cookie Value                             ||
-// PURPOSE:     Get a specific value from a cookie                     ||
-//---------------------------------------------------------------------||
+// ---------------------------------------------------------------------||
+// FUNCTION: getCookieVal ||
+// PARAMETERS: offset ||
+// RETURNS: URL unescaped Cookie Value ||
+// PURPOSE: Get a specific value from a cookie ||
+// ---------------------------------------------------------------------||
 function getCookieVal (offset) {
    var endstr = document.cookie.indexOf (";", offset);
 
@@ -310,12 +311,12 @@ function getCookieVal (offset) {
 }
 
 
-//---------------------------------------------------------------------||
-// FUNCTION:    FixCookieDate                                          ||
-// PARAMETERS:  date                                                   ||
-// RETURNS:     date                                                   ||
-// PURPOSE:     Fixes cookie date, stores back in date                 ||
-//---------------------------------------------------------------------||
+// ---------------------------------------------------------------------||
+// FUNCTION: FixCookieDate ||
+// PARAMETERS: date ||
+// RETURNS: date ||
+// PURPOSE: Fixes cookie date, stores back in date ||
+// ---------------------------------------------------------------------||
 function FixCookieDate (date) {
    var base = new Date(0);
    var skew = base.getTime();
@@ -324,12 +325,12 @@ function FixCookieDate (date) {
 }
 
 
-//---------------------------------------------------------------------||
-// FUNCTION:    GetCookie                                              ||
-// PARAMETERS:  Name                                                   ||
-// RETURNS:     Value in Cookie                                        ||
-// PURPOSE:     Retrieves cookie from users browser                    ||
-//---------------------------------------------------------------------||
+// ---------------------------------------------------------------------||
+// FUNCTION: GetCookie ||
+// PARAMETERS: Name ||
+// RETURNS: Value in Cookie ||
+// PURPOSE: Retrieves cookie from users browser ||
+// ---------------------------------------------------------------------||
 function GetCookie (name) {
    var arg = name + "=";
    var alen = arg.length;
