@@ -9,6 +9,6 @@
 
 		include("ebook.html");
 	
-	
+
 	mysql_close($db_con);
 ?>
