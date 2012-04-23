@@ -132,7 +132,13 @@
       	
         </table>
         <br /> 
-        <input type="submit" value="   Submit Order   " /> 
+        <?php
+        if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+        echo '<input type="submit" value="   Submit Order   " />';
+        } else {
+        echo '<i>You need to <a href="javascript:toggleLogin();">login</a> before checking out. Do not have an account? Click <a href="registration.html">here</a></i>';
+        }
+        ?>
         <br /><br />
         <a class="menu" href="ebook.php">Add more</a>
        
