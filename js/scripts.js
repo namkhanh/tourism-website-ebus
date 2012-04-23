@@ -46,10 +46,15 @@ $(function() {
 });
 
 $(function(){
+	$("#avg").children().not(":input").hide();
 	$("#starify").children().not(":input").hide();
 	
 	// Create stars from :radio boxes
 	$("#starify").stars({
+		cancelShow: false
+	});
+	
+	$("#avg").stars({
 		cancelShow: false
 	});
 });
