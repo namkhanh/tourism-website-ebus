@@ -71,7 +71,8 @@
          			echo '<table align="center">';     
                     while($record = mysql_fetch_array($result))
                     {
-                    
+                    $link =$record['download'];
+					$ebookID = $record['ebookID'];
                     echo '<tr><td><form id="'.$record['ebookID'].'">';
                     
                     echo '<img src="'.$record['img'].'" width="200" height="200" />';
@@ -93,12 +94,20 @@
                     echo '</td>';
                     
                     echo '<td>';
-                    
-                    echo '<input type="button" style="width:100px" value="  Add to Cart  " onclick="AddToCart(this.form)" /> </form>';
+
+                if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+					$username = $_SESSION['username'];
+					$result_purchased = mysql_query('Select * From ebook_shopping where ebookID ="'.$ebookID.'" and username="'.$username.'"');
+					
+					if(mysql_num_rows($result_purchased) > 0) {
+						echo '<input type="button" style="width:100px" value="Download" onclick=window.open("'.$link.'") /> </form>';
+					} else {
+						echo '<input type="button" style="width:100px" value="Add to Cart" onclick="AddToCart(this.form)" /> </form>';
+					}
+				}
                     
                     echo '</td></tr>';
-                    
-                    
+
                     }
                     
                     echo '</table>';
