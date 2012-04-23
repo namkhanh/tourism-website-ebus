@@ -91,7 +91,7 @@
                         	  <img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
                         	  <a id="tour_name" href="tour.php?tourID='.$id.'">'.$record['t_name'].'</a><br /><br />';
                         
-                        echo $shortDescription.'...<br /><a href="tour.php?tourID= '.$id.'">More Details</a><br /><br /></div>';
+                        echo $shortDescription.'...<br /><a href="tour.php?tourID='.$id.'">More Details</a><br /><br /></div>';
                     }
                 }
                 
@@ -117,7 +117,14 @@
                                 
                                 if(mysql_num_rows($result_rate) > 0) {
                                 $record_rate =  mysql_fetch_array($result_rate);
-                                echo '<b>Rate: </b>'.$record['sum']/$record['count'].'<br /><br />'; 
+								echo '<div id="avg">
+                                <label for="vote1" class="blockLabel"><input type="radio" name="avg" id="vote1" value="1" disabled="disabled"/> Poor</label>
+                                <label for="vote2" class="blockLabel"><input type="radio" name="avg" id="vote2" value="2" disabled="disabled"/> Fair</label>
+                                <label for="vote3" class="blockLabel"><input type="radio" name="avg" id="vote3" value="3" disabled="disabled"/> Average</label>
+                                <label for="vote4" class="blockLabel"><input type="radio" name="avg" id="vote4" value="4" disabled="disabled"/> Good</label>
+                                <label for="vote5" class="blockLabel"><input type="radio" name="avg" id="vote5" value="5" disabled="disabled"/> Excellent</label>
+                                </div>';
+                                echo '<b>Rate: </b>'.$record_rate['sum']/$record_rate['count'].'<br /><br />'; 
                                 }
 
                                 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
