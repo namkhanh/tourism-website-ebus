@@ -29,6 +29,7 @@
 	
 	<!-- Star Rating widget stuff here... -->
 	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/jquery.ui.stars.css"/>
 	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
 	<script type="text/javascript" src ="js/language-en.js"></script> 
 	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
@@ -118,13 +119,25 @@
                                 if(mysql_num_rows($result_rate) > 0) {
                                 $record_rate =  mysql_fetch_array($result_rate);
 								echo '<div id="avg">
-                                <label for="vote1" class="blockLabel"><input type="radio" name="avg" id="vote1" value="1" disabled="disabled"/> Poor</label>
-                                <label for="vote2" class="blockLabel"><input type="radio" name="avg" id="vote2" value="2" disabled="disabled"/> Fair</label>
-                                <label for="vote3" class="blockLabel"><input type="radio" name="avg" id="vote3" value="3" disabled="disabled"/> Average</label>
-                                <label for="vote4" class="blockLabel"><input type="radio" name="avg" id="vote4" value="4" disabled="disabled"/> Good</label>
-                                <label for="vote5" class="blockLabel"><input type="radio" name="avg" id="vote5" value="5" disabled="disabled"/> Excellent</label>
+                                <input type="radio" name="rate_avg" value ="1" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="1.25" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="1.5" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="1.75" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="2" disabled="disabled"/>
+								<input type="radio" name="rate_avg" value ="2.25" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="2.5" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="2.75" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="3" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="3.25" disabled="disabled"/>
+								<input type="radio" name="rate_avg" value ="3.5" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="3.75" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="4" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="4.25" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="4.5" disabled="disabled"/>
+								<input type="radio" name="rate_avg" value ="4.75" disabled="disabled"/>
+                                <input type="radio" name="rate_avg" value ="5" disabled="disabled"/>
                                 </div>';
-                                echo '<b>Rate: </b>'.$record_rate['sum']/$record_rate['count'].'<br /><br />'; 
+                                echo '<b>Rate: </b>'.round($record_rate['sum']/$record_rate['count'],2).'<br /><br />'; 
                                 }
 
                                 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
