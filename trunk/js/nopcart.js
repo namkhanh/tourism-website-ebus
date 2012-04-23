@@ -87,10 +87,10 @@
 //Options for Everyone:
 MonetarySymbol        = '$';
 DisplayNotice         = true;
-DisplayShippingColumn = false;
-DisplayShippingRow    = false;
+DisplayShippingColumn = true;
+DisplayShippingRow    = true;
 DisplayTaxRow         = false;
-TaxRate               = 0;
+TaxRate               = 0.07;
 TaxByRegion           = false;
 TaxPrompt             = 'For tax purposes, please select if you are an Arizona resident before continuing';
 TaxablePrompt         = 'Arizona Residents';
@@ -213,20 +213,6 @@ function AddToCart(thisForm) {
       strSHIPPING  = "0.00";
    else
       strSHIPPING  = thisForm.SHIPPING.value;
-
-/*******************************************************************************/
-/*******************************************************************************/
-   if ( thisForm.transport == 0 )
-      errMess = "You have to select your Transportation" + errMess;
-   else
-      strTransport = thisForm.transport.value;
-	
-   if ( thisForm.numVisitor == 0 )
-      errMess = "You have to specify number of visitors" + errMess;
-   else
-      strNumVisitor = thisForm.numVisitor.value;
-/*******************************************************************************/
-/*******************************************************************************/
 
    if ( thisForm.ADDITIONALINFO == null ) {
       strADDTLINFO = "";
