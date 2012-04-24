@@ -410,7 +410,7 @@ legend
 		}
 	#login-section h3{
 		margin:0;
-		background:url(images/form_heading.gif) repeat;		
+		background:#51584F;		
 		color:#fff;
 		font-size:20px;
 		font-style:normal;
@@ -424,7 +424,7 @@ legend
 	
 	#login_failed h3{
 		margin:0;
-		background:url(images/form_heading.gif) repeat;		
+		background:url(images/loginbg.png) repeat;		
 		color:#FF0;
 		font-size:15px;
 		font-style:italic;
@@ -463,7 +463,7 @@ legend
 		height:32px;
 		line-height:32px;		
 		border:1px solid #70ad2e;
-		background:#5aae00 url(images/form_button.gif) repeat-x;
+		background:#000000;
 		color:#fff;
 		cursor:pointer;		
 		text-align:center;		
@@ -581,9 +581,10 @@ legend
 		}
 	#signoutform h3{
 		margin:0;
-		background:url(images/form_heading.gif) repeat;		
+		background:#51584F;		
 		color:#fff;
 		font-size:20px;
+		font-style:normal;
 		border: none;
 		border-bottom:none;
 		}		
@@ -606,17 +607,17 @@ legend
 		height:32px;
 		line-height:32px;		
 		border:1px solid #70ad2e;
-		background:#5aae00 url(images/form_button.gif) repeat-x;
+		background:#000000;
 		color:#fff;
 		cursor:pointer;		
-		text-align:center;
+		text-align:center;		
 		}			
 	#signoutform p.submit{
 		text-align:center;
 		}
-	#login-section button:hover{
+	#signoutform input:hover{
 		background:#3EE106;
 	}
-	#login-section button:active{
+	#signoutform input:active{
 		background:#0DA209;
 	}
