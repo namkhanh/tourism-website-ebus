@@ -218,7 +218,6 @@ top: 10px;
 	margin-top:3%;
 	
 	position:absolute; 
-	background:#FBFBF0;
 	display:none;
 	border:solid #000000 2px; 
 	z-index:9; 
@@ -227,12 +226,11 @@ top: 10px;
 }
 
 #signout {
-	margin-left:27%; 
+	margin-left:30%; 
 	margin-right:25%;
 	margin-top:5%; 
 	 
 	position:absolute; 
-	background:#FBFBF0;
 	display:none;
 	border:solid #000000 2px; 
 	z-index:9; 
@@ -403,23 +401,39 @@ legend
 		}
 	#login-section h3{
 		margin:0;
-		background:#57a700 url(images/form_heading.gif) repeat-x;		
+		background:url(images/form_heading.gif) repeat;		
 		color:#fff;
 		font-size:20px;
+		font-style:normal;
 		border: none;
 		border-bottom:none;
 		}		
 	#login-section h3 span{
 		display:block;
+		padding:10px 20px;	
+	}
+	
+	#login_failed h3{
+		margin:0;
+		background:url(images/form_heading.gif) repeat;		
+		color:#FF0;
+		font-size:15px;
+		font-style:italic;
+		border: none;
+		border-bottom:none;
+	}
+	
+	#login_failed h3 span{
+		display:block;
 		padding:10px 20px;
-		background:url(images/form_ico.gif) no-repeat 93% 50%;			
-		}				
+	}
+	
 	#login-section fieldset{
 		margin:0;
 		padding:0;
 		border:none;	
 		border-top:3px solid #000;
-		background:#000 url(images/form_top.gif) repeat-x;		
+		background: url(images/loginbg.png) repeat;		
 		padding-bottom:1em;
 		}
 	#login-section legend{display:none;}	
@@ -550,31 +564,50 @@ legend
 
 
 /******* Design for logout form ********/
-#signoutform input {
-	width: 260px; height: 35px; padding: 5px 20px 0px 20px; margin: 0 0 20px 0;
-	background: #5E768D;
-	background: -moz-linear-gradient(top, #546A7F 0%, #5E768D 20%); /* firefox */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#546A7F), color-stop(20%,#5E768D)); /* webkit */
-	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
-	-moz-box-shadow: 0px 1px 0px #f2f2f2;-webkit-box-shadow: 0px 1px 0px #f2f2f2;
-	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0px -1px 0px #334f71;
+	#signoutform{
+		color:#fff;
+		width:400px;
+		text-align:center;
+		border:none;
+		}
+	#signoutform h3{
+		margin:0;
+		background:url(images/form_heading.gif) repeat;		
+		color:#fff;
+		font-size:20px;
+		border: none;
+		border-bottom:none;
+		}		
+	#signoutform h3 span{
+		display:block;
+		padding:10px 20px;	
+		}				
+	#signoutform fieldset{
+		margin:0;
+		padding:0;
+		border:none;	
+		border-top:3px solid #000;
+		background: url(images/loginbg.png) repeat;		
+		padding-bottom:1em;
+		}
+	#signoutform legend{display:none;}	
+	#signoutform p{margin:fix;}	
+	#signoutform input{		
+		padding:0 20px;
+		height:32px;
+		line-height:32px;		
+		border:1px solid #70ad2e;
+		background:#5aae00 url(images/form_button.gif) repeat-x;
+		color:#fff;
+		cursor:pointer;		
+		text-align:center;
+		}			
+	#signoutform p.submit{
+		text-align:center;
+		}
+	#login-section button:hover{
+		background:#3EE106;
 	}
-#signoutform input::-webkit-input-placeholder  {
-    	color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
+	#login-section button:active{
+		background:#0DA209;
 	}
-#signoutform input:-moz-placeholder {
-	    color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
-	}
-#signoutform h3 {
-	font-size: 32px; color: #445668; text-transform: uppercase;
-	text-align: center; margin: 0 0 35px 0; text-shadow: 0px 1px 0px #f2f2f2;
-}
-
-#signoutform {
-	margin-left: auto;
-	margin-right: auto;
-	padding: 4px 2px;
-	background: #c9d0de; border: 1px solid #e1e1e1;
-	-moz-box-shadow: 0 0 31px #444;
-	-webkit-box-shadow: 0px 0px 8px #444;
-}
