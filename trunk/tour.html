@@ -29,8 +29,8 @@
 	
 	<!-- Star Rating widget stuff here... -->
 	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
-	<link rel="stylesheet" type="text/css" href="style/css/jquery.ui.stars.css"/>
 	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
+	<link rel="stylesheet" type="text/css" href="style/css/jquery.ui.stars.css"/>
 	<script type="text/javascript" src ="js/language-en.js"></script> 
 	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
 	
@@ -101,34 +101,22 @@
                                 <b>Destination: </b>'.$record['destination'].'<br /><br />
                                 <b>Price: </b>'.$record['price'].' VND<br /><br />
 								<b>Occurance Day: </b>';
-                                
-                                while ($occurance = mysql_fetch_array($occurance_result))
-                                {
+                                $stringOccurance ="";
+                                while ($occurance = mysql_fetch_array($occurance_result)) {
 									/*Still working*/
-                                    echo $occurance['dayName'].', ';
-
+									$stringOccurance .= $occurance['dayName'].', ';
                                 }
-                                
-                                echo '<br /><br />';
+								echo substr($stringOccurance,0,strlen($stringOccurance)-2);
+
+                                echo '<br />';
                                 
                                 if(mysql_num_rows($result_rate) > 0) {
                                 $record_rate =  mysql_fetch_array($result_rate);
-								echo '<span id="avg">
-                                <input type="radio" id="avg1" name="rate_avg" value ="1" />
-                                <input type="radio" id="avg2" name="rate_avg" value ="2" />
-                                <input type="radio" id="avg3" name="rate_avg" value ="3" />
-                                <input type="radio" id="avg4" name="rate_avg" value ="4" />
-                                <input type="radio" id="avg5" name="rate_avg" value ="5" />
-                                </span>';
-                                echo '<b>Rate:</b>'.round($record_rate['sum']/$record_rate['count'],2).'<br /><br />'; 
+								$avg = round($record_rate['sum']/$record_rate['count'],1);
+											
+                                echo '<b>Rate:</b><div id="avg">'.$avg.'/5</div> from '.$record_rate['count'].' review(s)<br /><br />'; 
                                 } else {
-								echo '<span id="avg">
-                                <input type="radio" id="avg1" name="rate_avg" value ="1" />
-                                <input type="radio" id="avg2" name="rate_avg" value ="2" />
-                                <input type="radio" id="avg3" name="rate_avg" value ="3" />
-                                <input type="radio" id="avg4" name="rate_avg" value ="4" />
-                                <input type="radio" id="avg5" name="rate_avg" value ="5" />
-                                </span> with no review<br/><br/>';
+								echo '<b>Rate:</b><div id="avg">0</div>review<br /><br />';
 								}
 
                                 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
@@ -151,8 +139,46 @@
                                 $username = $record_review['username'];
                                 echo '<div id="review_section">
                                         <div id="review">';
-                                echo '<table><tr><td>'.$title.' by '.$username.'</td><td>'.$rate.'</td></tr>
-                                            <tr><td rowspan=2>'.$comment.'</td></tr></table>
+                                echo '<table><tr><td>'.$title.' by '.$username.'</td><td>';
+								if ($rate ==1) {
+									echo '<div id="rate">
+                                	<input type="radio" id="rate1"  value ="1"  checked="checked" />
+                                	<input type="radio" id="rate2"  value ="2" />
+                                	<input type="radio" id="rate3"  value ="3" />
+                                	<input type="radio" id="rate4"  value ="4" />
+                                	<input type="radio" id="rate5"  value ="5" /></div>';
+								} else if ($rate ==2) {
+									echo '<div id="rate">
+                                	<input type="radio" id="rate1"  value ="1" />
+                                	<input type="radio" id="rate2"  value ="2" checked="checked" />
+                                	<input type="radio" id="rate3"  value ="3" />
+                                	<input type="radio" id="rate4"  value ="4" />
+                                	<input type="radio" id="rate5"  value ="5" /></div>';
+								} else if ($rate ==3) {
+									echo '<div id="rate">
+                                	<input type="radio" id="rate1"  value ="1" />
+                           	    	<input type="radio" id="rate2"  value ="2" />
+                                	<input type="radio" id="rate3"  value ="3" checked="checked" />
+                           	     	<input type="radio" id="rate4"  value ="4" />
+                        	        <input type="radio" id="rate5"  value ="5" /></div>';
+								} else if ($rate ==4) {
+									echo '<div id="rate">
+                                	<input type="radio" id="rate1"  value ="1" />
+                               	 	<input type="radio" id="rate2"  value ="2" />
+                                	<input type="radio" id="rate3"  value ="3" />
+                                	<input type="radio" id="rate4"  value ="4" checked="checked" />
+                                	<input type="radio" id="rate5"  value ="5" /></div>';
+								} else if ($rate ==5) {
+									echo '<div id="rate">
+                                	<input type="radio" id="rate1"  value ="1" />
+                                	<input type="radio" id="rate2"  value ="2"/>
+                                	<input type="radio" id="rate3"  value ="3" />
+                                	<input type="radio" id="rate4"  value ="4" />
+                                	<input type="radio" id="rate5"  value ="5" checked="checked" /></div>';
+								}
+						
+								echo '</td></tr>
+                                <tr><td rowspan=2>'.$comment.'</td></tr></table>
                                         </div>
                                         </div>';
                                 

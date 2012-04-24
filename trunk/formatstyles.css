@@ -621,3 +621,18 @@ legend
 	#signoutform input:active{
 		background:#0DA209;
 	}
+
+#avg {
+	background: url("images/avg-star.png") no-repeat scroll 0 0 transparent;
+    color: black;
+    display: inline-block;
+    font-family: tahoma;
+    font-size: 12px;
+    font-weight: bold;
+    height: 66px;
+    line-height: 66px;
+    padding-right: 5px;
+    text-align: center;
+    vertical-align: middle;
+    width: 66px;
+}
