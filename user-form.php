@@ -15,19 +15,17 @@
                 <button type="button" onclick="toggleLogin();">Cancel</button>
               	</p> 
                 </fieldset>
-                <div id="login_failed" style="display:none; color:red">Login failed. Please try again.</div>  
+                <div id="login_failed"><h3><span>Login failed. Please try again.</span></h3></div>  
             </form>
         </div>
 		<div id="signout">
 			<form name="signout" method="post" action="logout.php" id="signoutform">
-            	<h3>Are you sure to log out?</h3>
-				<table>
-					<tr>
-						<td><input type="submit" 
-							value="Yes" /></td>
-						<td><input type="button" onclick="toggleSignout();"
-							value="No" /></td>
-					</tr>
-				</table>
+            	<h3><span>Are you sure to log out?</span></h3>
+                <fieldset><legend>Login form</legend>
+				 <p class="submit">
+                 <input type="submit" value="Yes" />
+                 <input type="button" onclick="toggleSignout();" value="No" />
+                 </p> 
+                 </fieldset>
 			</form>
 		</div>
