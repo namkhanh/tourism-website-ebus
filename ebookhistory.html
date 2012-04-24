@@ -1,3 +1,4 @@
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
@@ -56,7 +57,7 @@
     
     	<div id="user-cpanel">
 		<?php include("user_cpanel.php"); ?>
-        <?php include("ebookhistory.php"); ?>
+		<?php include("session.php"); ?>
         </div>
         <div class="wan-clear"></div>
         <div id="user-form">
@@ -70,9 +71,13 @@
 		<div id="content">
 
          <?php
-         			echo '<table align="center">';     
-                    while($record = mysql_fetch_array($result))
-                    {
+         
+	include (dirname(__FILE__).'/database_config.php');
+	$username = $_SESSION['username'];
+	$result = mysql_query('Select * From ebook e, ebook_shopping es, customer c Where e.ebookID = es.ebookID And c.username = es.username And es.username = "'.$username.'"');
+	
+	echo '<table align="center">';     
+                    while($record = mysql_fetch_array($result)) {
                     $link =$record['download'];
 					$ebookID = $record['ebookID'];
                     echo '<tr><td><form id="'.$record['ebookID'].'">';
@@ -102,6 +107,7 @@
                     
                     echo '</table>';
                 	echo '<center><a class="menu" href="index.html">Back to home</a></center>';
+         			
             ?>
        
 		</div> 
