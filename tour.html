@@ -113,15 +113,23 @@
                                 
                                 if(mysql_num_rows($result_rate) > 0) {
                                 $record_rate =  mysql_fetch_array($result_rate);
-								echo '<div id="avg">
+								echo '<span id="avg">
                                 <input type="radio" id="avg1" name="rate_avg" value ="1" />
                                 <input type="radio" id="avg2" name="rate_avg" value ="2" />
                                 <input type="radio" id="avg3" name="rate_avg" value ="3" />
                                 <input type="radio" id="avg4" name="rate_avg" value ="4" />
                                 <input type="radio" id="avg5" name="rate_avg" value ="5" />
-                                </div>';
-                                echo '<b>Rate: </b>'.round($record_rate['sum']/$record_rate['count'],2).'<br /><br />'; 
-                                }
+                                </span>';
+                                echo '<b>Rate:</b>'.round($record_rate['sum']/$record_rate['count'],2).'<br /><br />'; 
+                                } else {
+								echo '<span id="avg">
+                                <input type="radio" id="avg1" name="rate_avg" value ="1" />
+                                <input type="radio" id="avg2" name="rate_avg" value ="2" />
+                                <input type="radio" id="avg3" name="rate_avg" value ="3" />
+                                <input type="radio" id="avg4" name="rate_avg" value ="4" />
+                                <input type="radio" id="avg5" name="rate_avg" value ="5" />
+                                </span> with no review<br/><br/>';
+								}
 
                                 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
                                     echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>';
