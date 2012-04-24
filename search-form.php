@@ -30,8 +30,8 @@
                         <tr>
                         	<td>Date</td>
                             
-                            <td><input id="datepicker" size="25" type="text" style="position: relative; z-index: 99999"/></td>
-                            <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 99999"/></td>
+                            <td><input id="datepicker" size="25" type="text" style="position: relative; z-index: 15"/></td>
+                            <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 15"/></td>
                         </tr>
 
 						<tr>
