@@ -1,6 +1,5 @@
 <?php
 
-// Inialize session
 session_start();
 
 // Delete certain session
