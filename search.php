@@ -54,16 +54,19 @@ if ($priceOption == 0 && $destination == "0" && empty($date)) {
 		$result = mysql_query( "SELECT * FROM tour, tour_occurance WHERE tour.tourID= tour_occurance.tourID and tour.destination like '%$destination%' and dayName= '$date' and price >10000000" );
 	}
 }
-if(mysql_num_rows($result) > 0) { 
+if (mysql_num_rows ( $result ) > 0) {
 	
 	while ( $record = mysql_fetch_array ( $result ) ) {
-		$name = $record ['t_name'];
-		$duration = $record ['duration'];
-		$price = $record ['price'];
-		$description = $record ['description'];
-		$image = $record ['image'];
-	
-		echo $name . '<br/>' . $duration . '<br/>' . $price . '<br/>' . $description . '<br/>' . $image;
+		
+		$id = $record ['tourID'];
+		$shortDescription = substr ( $record ['description'], 0, 200 );
+		
+		echo '<div id="tour">
+                        
+                        	  <img src="' . $record ['image'] . '" alt="Image cannot be loaded" align="left">
+                        	  <a id="tour_name" href="tour.php?tourID=' . $id . '">' . $record ['t_name'] . '</a><br /><br />';
+		
+		echo $shortDescription . '...<br /><a href="tour.php?tourID=' . $id . '">More Details</a><br /><br /></div>';
 	}
 } else {
 	echo 'No record found';
