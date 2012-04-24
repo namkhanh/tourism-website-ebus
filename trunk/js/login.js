@@ -1,12 +1,31 @@
-function toggleLogin(){
+var showLogin=true;
+var showSignout=true;
+function toggleLogin() {
 	$("#login_username").val("");
 	$("#login_password").val("");
 	$("#login_failed").css("display", "none");
-    $("#login").toggle();
+	if (showLogin == true) {
+		$("#fade").css("display", "inline");
+		$('#login').show();
+		showLogin=false;
+	} else {
+		showLogin=true;
+		$("#fade").css("display", "none");
+		$('#login').hide();
+	}
+	
 }
 
 function toggleSignout(){
-    $("#signout").toggle();
+	if (showSignout == true) {
+		$("#fade").css("display", "inline");
+		$('#signout').show();
+		showSignout=false;
+	} else {
+		showSignout=true;
+		$("#fade").css("display", "none");
+		$('#signout').hide();
+	}
 }
 
 function authenticate() {
