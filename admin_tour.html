@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
+    <title>Welcome to Green Travel</title>
+    <meta name="description" content="E-Business"  /> 
+	<meta name ="keywords" content="?????"  /> 
+	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
+	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
+	
+	<!-- include CSS always before including js -->
+
+	<!-- include jQuery library -->
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/comment.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css"/>
+	<style type="text/css" media="screen"> 
+		@import "style/css/uni-form.css"; 
+	</style>
+	
+	<!-- Demo page js -->
+	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
+	
+	<!-- Star Rating widget stuff here... -->
+	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
+	<link rel="stylesheet" type="text/css" href="style/css/jquery.ui.stars.css"/>
+	<script type="text/javascript" src ="js/language-en.js"></script> 
+	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
+	
+      //============================================================== 
+      //               NOP Design JavaScript Shopping Cart               
+      //-------------------------------------------------------------- 
+	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
+	  //============================================================== 
+	</script> 
+
+
+
+</head>
+
+<body>
+<div id="fade" style="display:none;"></div>
+	<!-- This is the page section -->
+	<div id="page_section">
+
+		<!-- This is the banner --> 
+		<div id="banner"> 
+ 			<?php include("banner.php"); ?>
+		</div> 
+		<!-- This is end of the banner --> 
+    
+    	<div id="user-cpanel">
+		<?php include("user_cpanel.php"); ?>
+        </div>
+        <div class="wan-clear"></div>
+        <div id="user-form">
+       	<?php include("user-form.php"); ?>
+		</div>
+		<div id="topnav">
+           <?php include("top-nav.php"); ?>
+        </div>
+		
+		
+		<div id="content">
+		<div id="title-text">Tour Packages</div>	
+            <?php
+            echo '<input type="button" value="Add New Tour" />';
+                while($record = mysql_fetch_array($result)){
+					$tourID = $record['tourID'];
+                    echo '<div id="tour_content">
+                            <div id="heading" style="text-align:left">'.$record['t_name'].'<span><input type="button" onclick=location.href="edit_tour.php?tourID='.$tourID.'" value="Edit" /><input type="button" value="Delete" /></span></div>
+                            <div id="top_details">
+                                <img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
+                                <b>Duration: </b>'.$record['duration'].'<br /><br />
+                                <b>Destination: </b>'.$record['destination'].'<br /><br />
+                                <b>Price: </b>'.$record['price'].' VND<br /><br />
+								<b>Occurance Day: </b>';
+
+								$occurance_result = mysql_query('Select * From tour_occurance Where tourID='.$tourID);
+                                $stringOccurance ="";
+                                while ($occurance = mysql_fetch_array($occurance_result)) {
+									/*Still working*/
+									$stringOccurance .= $occurance['dayName'].', ';
+                                }
+								echo substr($stringOccurance,0,strlen($stringOccurance)-2);
+
+                                echo '<br />';
+
+                                $result_rate = mysql_query('Select sum(rate) as sum, count(*) as count from tour_booking, review where tour_booking.tour_booking_id = review.tour_booking_id and tourID="'.$tourID.'" having count >0');
+                                if(mysql_num_rows($result_rate) > 0) {
+                                $record_rate =  mysql_fetch_array($result_rate);
+								$avg = round($record_rate['sum']/$record_rate['count'],1);
+											
+                                echo '<b>Rate:</b><div id="avg">'.$avg.'/5</div> from '.$record_rate['count'].' review(s)<br /><br />'; 
+                                } else {
+								echo '<b>Rate:</b><div id="avg">0</div>review<br /><br />';
+								}
+
+                                
+                            echo '</div>
+                            
+                            <div id="description"><b>Description: </b>'.$record['description'].'</div>
+                          </div><br/>';
+				}
+            ?>
+		</div>
+
+		<div class="wan-clear"></div>
+		
+<!-- This is end of the content -->
+
+<!-- This is the footer -->
+		<div id="footer"> 
+ 
+			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
+
+			
+		</div> 
+<!-- This is end of the footer -->
+	</div> 
+<!-- This is end of the page section -->
+</body>
+
+</html>
