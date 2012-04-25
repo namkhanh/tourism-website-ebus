@@ -132,6 +132,7 @@
 
                     if(mysql_num_rows($result_review) > 0) {
                         echo '<div id="title-text" style="margin-top:20px">Tour Review</div>';
+								$id =1;
                                 while ($record_review =  mysql_fetch_array($result_review)) {
                                 $title = $record_review['title'];
                                 $comment = $record_review['comment'];
@@ -140,36 +141,37 @@
                                 echo '<div id="review_section">
                                         <div id="review">';
                                 echo '<table><tr><td>'.$title.' by '.$username.'</td><td>';
+
 								if ($rate ==1) {
-									echo '<div id="rate">
+									echo '<div id="'.$id.'">
                                 	<input type="radio" id="rate1"  value ="1"  checked="checked" />
                                 	<input type="radio" id="rate2"  value ="2" />
                                 	<input type="radio" id="rate3"  value ="3" />
                                 	<input type="radio" id="rate4"  value ="4" />
                                 	<input type="radio" id="rate5"  value ="5" /></div>';
 								} else if ($rate ==2) {
-									echo '<div id="rate">
+									echo '<div id="'.$id.'">
                                 	<input type="radio" id="rate1"  value ="1" />
                                 	<input type="radio" id="rate2"  value ="2" checked="checked" />
                                 	<input type="radio" id="rate3"  value ="3" />
                                 	<input type="radio" id="rate4"  value ="4" />
                                 	<input type="radio" id="rate5"  value ="5" /></div>';
 								} else if ($rate ==3) {
-									echo '<div id="rate">
+									echo '<div id="'.$id.'">
                                 	<input type="radio" id="rate1"  value ="1" />
                            	    	<input type="radio" id="rate2"  value ="2" />
                                 	<input type="radio" id="rate3"  value ="3" checked="checked" />
                            	     	<input type="radio" id="rate4"  value ="4" />
                         	        <input type="radio" id="rate5"  value ="5" /></div>';
 								} else if ($rate ==4) {
-									echo '<div id="rate">
+									echo '<div id="'.$id.'">
                                 	<input type="radio" id="rate1"  value ="1" />
                                	 	<input type="radio" id="rate2"  value ="2" />
                                 	<input type="radio" id="rate3"  value ="3" />
                                 	<input type="radio" id="rate4"  value ="4" checked="checked" />
                                 	<input type="radio" id="rate5"  value ="5" /></div>';
 								} else if ($rate ==5) {
-									echo '<div id="rate">
+									echo '<div id="'.$id.'">
                                 	<input type="radio" id="rate1"  value ="1" />
                                 	<input type="radio" id="rate2"  value ="2"/>
                                 	<input type="radio" id="rate3"  value ="3" />
@@ -181,10 +183,18 @@
                                 <tr><td rowspan=2>'.$comment.'</td></tr></table>
                                         </div>
                                         </div>';
-                                
-
+							echo'<script>
+							$(function(){
+								$("#'.$id.'").children().not(":radio").hide();
+								$("#'.$id.'").stars({
+								cancelShow: false,
+								disabled: true,
+								});
+							});							
+							</script>';
+							$id +=1;
                             }
-                            }	
+                    }	
 
                     if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
                         $username = $_SESSION['username'];

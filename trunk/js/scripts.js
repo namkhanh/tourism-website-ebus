@@ -53,10 +53,3 @@ $(function(){
 	});
 });
 
-$(function(){
-	$("#rate").children().not(":radio").hide();
-	$("#rate").stars({
-	cancelShow: false,
-	disabled: true,
-	});
-});
