@@ -35,8 +35,9 @@ $(function() {
 
 $(function() {
 	var yearNow = new Date().getFullYear();
+	var limitYear = yearNow -10;
 	var year100 = yearNow - 100;
-	var yearRange = year100 + ':' + yearNow;
+	var yearRange = year100 + ':' + limitYear;
 	$( "#dob" ).datepicker({
 		dateFormat:"dd/mm/yy",
 		changeMonth: true,
