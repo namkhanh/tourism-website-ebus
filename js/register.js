@@ -26,7 +26,21 @@ function checkUser() {
 	    });  
 	}
 }
-
+function isEmpty(id) {
+	var temp = $('#'+id).val();
+			 if (temp == '') {
+				 $('#'+id).addClass('errorInput');
+				 $('span#'+id).html("Required field");
+				 $('span#'+id).css("display", "inline");
+			 } else {
+				if (countErrorInput() ==1  && $('#'+id).attr('class') == "errorInput") {
+				$("#summary_error").html("");
+				}
+				 $('#'+id).removeClass('errorInput');
+				 $('span#'+id).html("");
+				 $('span#'+id).css("display", "none");
+			 }
+}
 function checkPw() {
 	var pw = $("#password").val();
 	var retype = $("#retypepassword").val();
@@ -115,7 +129,7 @@ function submitForm(){
 	checkRequireds('username,password,retypepassword,email,firstname,lastname,dob,street,city');
 	
 	if(isFormValid()){
-		$('form#reg').submit();
+		$('form#registration').submit();
 	}
 }
 
