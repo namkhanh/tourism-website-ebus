@@ -86,6 +86,7 @@ $(function(){
 
 						for(var i=0,l=imgs.length; i<l; i++){
 							$PhotoPrevs.append('<img width ="300" height="200" src="uploads/'+ imgs[i].filename +'?d='+ (new Date()).getTime() +'" />');
+							$PhotoPrevs.append('<input type="hidden" name="newImg" value="uploads/'+ imgs[i].filename +'?d='+ (new Date()).getTime() +'" />');
 						}
 					}
 				});
