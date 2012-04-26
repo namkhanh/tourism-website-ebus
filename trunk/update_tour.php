@@ -8,8 +8,13 @@ $description = $_POST['description'];
 $destination = $_POST['destination'];
 $occurance = $_POST['dayName'];
 $regionID = $_POST['region'];
-
-$updateTour_query = ("Update tour set t_name='$tourName', duration='$duration', price='$price', description='$description', destination='$destination',  regionID='$regionID' where tourID='$tourID'");
+if (empty($_POST['newImg'])) {
+	$image = $_POST['oldImg'];
+} else {
+	$image = $_POST['newImg'];
+}
+echo $image;
+$updateTour_query = ("Update tour set t_name='$tourName', duration='$duration', price='$price', description='$description', destination='$destination', image='$image', regionID='$regionID' where tourID='$tourID'");
 $result_update_tour = mysql_query($updateTour_query);
 
 $deleteOccurance_query ="DELETE FROM tour_occurance where tourID='$tourID'";
