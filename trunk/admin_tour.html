@@ -41,8 +41,6 @@
 	  //============================================================== 
 	</script> 
 
-
-
 </head>
 
 <body>
@@ -74,8 +72,9 @@
             echo '<input type="button" value="Add New Tour" />';
                 while($record = mysql_fetch_array($result)){
 					$tourID = $record['tourID'];
+					$t_name = $record['t_name'];
                     echo '<div id="tour_content">
-                            <div id="heading" style="text-align:left">'.$record['t_name'].'<span><input type="button" onclick=location.href="edit_tour.php?tourID='.$tourID.'" value="Edit" /><input type="button" value="Delete" /></span></div>
+                            <div id="heading" style="text-align:left">'.$record['t_name'].'<span><input type="button" onclick=location.href="edit_tour.php?tourID='.$tourID.'" value="Edit" /><input type="button" onclick="confirmDeleteTour(\''.$t_name.'\',\''.$tourID.'\')" value="Delete" /></span></div>
                             <div id="top_details">
                                 <img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
                                 <b>Duration: </b>'.$record['duration'].'<br /><br />
