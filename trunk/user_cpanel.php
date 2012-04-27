@@ -14,7 +14,7 @@
            							<li><a href="admin_transport.php">Transport</a></li>
             						<li><a href="admin_ebook.php">Ebook</a></li>
         							</ul>
-									<li>|</li>';
+									<li></li>';
 								}
 								echo '<li>Welcome '.$_SESSION['firstname'].', '.$_SESSION['lastname'].'</li>';
 								

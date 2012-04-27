@@ -3,13 +3,10 @@
 			
 	$tourID = $_GET['tourID'];
 	
-	$result = mysql_query('Select * From tour Where tourID="'.$tourID.'"');
-	$record = mysql_fetch_array($result);
+	$tourResult = mysql_query('Select * From tour Where tourID="'.$tourID.'"');
+	$tourRecord = mysql_fetch_array($tourResult);
 	
-	$tour_name = $record['t_name'];
-	$price = $record['price'];
-	
-	$transport_result = mysql_query('Select * From transport');
+	$transportResult = mysql_query('Select * From transport');
 	
 	include("booking.html");
 			
