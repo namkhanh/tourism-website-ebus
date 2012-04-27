@@ -75,24 +75,13 @@
 			 <?php               
                     while($record = mysql_fetch_array($result))
                     {
-                    
-                    $id = $record['transportID'];
-    
-                    echo '<div>';
-                    
-                    echo '<img src="'.$record['image'].'">';
-                    
-                    echo '</div>';
-                    
-                    echo '<div>';
-                    
-                    echo $record['name'];
-                    
-                    echo $record['description'].'<br />';
-                    
-                    echo 'Price ($): '.$record['price'];	
-                    
-                    echo '</div>';
+                        echo '<div id="heading">'.$record['name'].'</div>
+                        	  <img src="'.$record['image'].'" alt="Image cannot be load" align="left" />
+                              
+                        	  <div>';
+                        echo $record['description'].'<br /><br />';
+                        
+                        echo '<b>Price: </b>'.$record['price'].' VND</div>';
                     }
                 
             ?>
