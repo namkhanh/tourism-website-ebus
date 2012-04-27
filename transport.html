@@ -65,8 +65,13 @@
            <?php include("top-nav.php"); ?>
         </div>
 		
-<!-- This is the content -->
-		<div id="content">
+		<div id="left-top">
+            <div id="title-text">Search Tour</div>
+            <?php include("search-form.php"); ?>	    
+		</div>
+		
+		<div id="right-top">
+        	<div id="title-text">Transport</div>
 			 <?php               
                     while($record = mysql_fetch_array($result))
                     {

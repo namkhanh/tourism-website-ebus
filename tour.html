@@ -131,7 +131,7 @@
                           </div>';
 
                     if(mysql_num_rows($result_review) > 0) {
-                        echo '<div id="title-text" style="margin-top:20px">Tour Review</div>';
+                        echo '<div id="title-text" style="margin-top:20px">Customer Review</div>';
 								$id =1;
                                 while ($record_review =  mysql_fetch_array($result_review)) {
                                 $title = $record_review['title'];
@@ -140,7 +140,7 @@
                                 $username = $record_review['username'];
                                 echo '<div id="review_section">
                                         <div id="review">';
-                                echo '<table><tr><td>'.$title.' by '.$username.'</td><td>';
+                                echo '<table width=100% border=1><tr><td><b>Subject: </b>'.$title.'</td></tr><tr><td>';
 
 								if ($rate ==1) {
 									echo '<div id="'.$id.'">
@@ -179,7 +179,7 @@
                                 	<input type="radio" id="rate5"  value ="5" checked="checked" /></div>';
 								}
 						
-								echo '</td></tr>
+								echo '<div id="light"> by '.$username.' on</div></td></tr>
                                 <tr><td rowspan=2>'.$comment.'</td></tr></table>
                                         </div>
                                         </div>';
