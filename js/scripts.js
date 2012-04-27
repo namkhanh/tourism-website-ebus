@@ -53,3 +53,20 @@ $(function(){
 		cancelShow: false,
 	});
 });
+
+
+function confirmDeleteTour(t_name,tourID) {
+	var answer = confirm("Are you sure to delete " + t_name + " ?");
+	if (answer) {
+		 $.post("delete_tour.php", { tourID: tourID},
+			        function(result){
+			            // if the result is 1
+			            if(result == 1){  
+			            alert("Deleted " + t_name);
+			            location.href = document.URL;
+			            } else {
+			            alert("Not sucessfully delete " + t_name);
+			            }
+			        }); 
+	}
+}
