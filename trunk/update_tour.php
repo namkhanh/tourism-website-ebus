@@ -13,7 +13,6 @@ if (empty($_POST['newImg'])) {
 } else {
 	$image = $_POST['newImg'];
 }
-echo $image;
 $updateTour_query = ("Update tour set t_name='$tourName', duration='$duration', price='$price', description='$description', destination='$destination', image='$image', regionID='$regionID' where tourID='$tourID'");
 $result_update_tour = mysql_query($updateTour_query);
 

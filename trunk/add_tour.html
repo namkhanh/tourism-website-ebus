@@ -40,7 +40,17 @@
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
 	</script> 
-
+		
+		<!-- Upload & Crop Image -->
+		<link href="css/default.css" rel="stylesheet" type="text/css" />
+		<link href="scripts/fileuploader/fileuploader.css" rel="stylesheet" type="text/css" />
+		<link href="scripts/Jcrop/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript" src="scripts/jquery-impromptu.js"></script>
+		<script type="text/javascript" src="scripts/fileuploader/fileuploader.js"></script>
+		<script type="text/javascript" src="scripts/Jcrop/jquery.Jcrop.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery-uberuploadcropper.js"></script>
+		<script type="text/javascript" src="js/upload.js"></script>
 </head>
 
 <body>
@@ -64,65 +74,53 @@
 		<div id="topnav">
            <?php include("top-nav.php"); ?>
         </div>
-		
-		
+
+
 		<div id="content">
-		<div id="title-text">Tour Packages</div>	
-            <?php
-            echo '<input type="button" onclick=location.href="add_tour.html" value="Add New Tour" />';
-                while($record = mysql_fetch_array($result)){
-					$tourID = $record['tourID'];
-					$t_name = $record['t_name'];
-                    echo '<div id="tour_content">
-                            <div id="heading" style="text-align:left">'.$record['t_name'].'<span><input type="button" onclick=location.href="edit_tour.php?tourID='.$tourID.'" value="Edit" /><input type="button" onclick="confirmDeleteTour(\''.$t_name.'\',\''.$tourID.'\')" value="Delete" /></span></div>
-                            <div id="top_details">
-                                <img src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
-                                <b>Duration: </b>'.$record['duration'].'<br /><br />
-                                <b>Destination: </b>'.$record['destination'].'<br /><br />
-                                <b>Price: </b>'.$record['price'].' VND<br /><br />
-								<b>Occurance Day: </b>';
+			<div id="title-text">Tour Packages</div>
+			<form method="post" action="add_tour.php">
+				Tour Name:<input size="50" name="tour_name" type="text" value="" /><br /> 
+				Duration:<input size="50" type="text" name="duration" value="" /><br /> 
+				Price:<input size="25" type="text" name="price" /><br />
+				Description: <textarea name="description" rows="15" cols="100" /></textarea><br /> 
+				Destination: <input name="destination" size="25" type="text" /><br /> 
+				
+				Occurance: <input type="checkbox" name="dayName[]" value="Monday" />Monday<br /> 
+				<input type="checkbox" name="dayName[]" value="Tuesday" />Tuesday<br /> 
+				<input type="checkbox" name="dayName[]" value="Wednesday" />Wednesday<br /> 
+				<input type="checkbox" name="dayName[]" value="Thursday" />Thursday<br /> 
+				<input type="checkbox" name="dayName[]" value="Friday" />Friday<br /> 
+				<input type="checkbox" name="dayName[]" value="Saturnday" />Saturnday<br /> 
+				<input type="checkbox" name="dayName[]" value="Sunday" />Sunday<br /> 
+				
+				<select name="region">
+					<option value="1">North Vietnam</option>
+					<option value="2">Middle Vietnam</option>
+					<option value="3">South Vietnam</option>
+				</select>
 
-								$occurance_result = mysql_query('Select * From tour_occurance Where tourID='.$tourID);
-                                $stringOccurance ="";
-                                while ($occurance = mysql_fetch_array($occurance_result)) {
-									/*Still working*/
-									$stringOccurance .= $occurance['dayName'].', ';
-                                }
-								echo substr($stringOccurance,0,strlen($stringOccurance)-2);
+				<div id="UploadImages">
+					<noscript>Please enable javascript to upload and crop images.</noscript>
+				</div>
 
-                                echo '<br />';
-
-                                $result_rate = mysql_query('Select sum(rate) as sum, count(*) as count from tour_booking, review where tour_booking.tour_booking_id = review.tour_booking_id and tourID="'.$tourID.'" having count >0');
-                                if(mysql_num_rows($result_rate) > 0) {
-                                $record_rate =  mysql_fetch_array($result_rate);
-								$avg = round($record_rate['sum']/$record_rate['count'],1);
-											
-                                echo '<b>Rate:</b><div id="avg">'.$avg.'/5</div> from '.$record_rate['count'].' review(s)<br /><br />'; 
-                                } else {
-								echo '<b>Rate:</b><div id="avg">0</div>review<br /><br />';
-								}
-
-                                
-                            echo '</div>
-                            
-                            <div id="description"><b>Description: </b>'.$record['description'].'</div>
-                          </div><br/>';
-				}
-            ?>
+				<div id="PhotoPrevs">
+					<!-- The cropped images will be populated here -->
+				</div>
+			<input type="submit" value="Submit" /> 
+			<input type="reset" value="Reset" />
+		</form>
 		</div>
-
+		
 		<div class="wan-clear"></div>
 		
 <!-- This is end of the content -->
 
 <!-- This is the footer -->
 		<div id="footer"> 
- 
 			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
-
-			
 		</div> 
 <!-- This is end of the footer -->
+
 	</div> 
 <!-- This is end of the page section -->
 </body>
