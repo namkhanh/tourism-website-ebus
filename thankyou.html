@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
+    <title>Welcome to Green Travel</title>
+    <meta name="description" content="E-Business"  /> 
+	<meta name ="keywords" content="?????"  /> 
+	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
+	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
+	
+	<!-- include CSS always before including js -->
+
+	<!-- include jQuery library -->
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/comment.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css"/>
+	<style type="text/css" media="screen"> 
+		@import "style/css/uni-form.css"; 
+	</style>
+	
+	<!-- Demo page js -->
+	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
+	
+	<!-- Star Rating widget stuff here... -->
+	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
+	<link rel="stylesheet" type="text/css" href="style/css/jquery.ui.stars.css"/>
+	<script type="text/javascript" src ="js/language-en.js"></script> 
+	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
+	
+      //============================================================== 
+      //               NOP Design JavaScript Shopping Cart               
+      //-------------------------------------------------------------- 
+	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
+	  //============================================================== 
+	</script> 
+
+
+
+</head>
+
+<body>
+<div id="fade" style="display:none;"></div>
+	<!-- This is the page section -->
+	<div id="page_section">
+
+		<!-- This is the banner --> 
+		<div id="banner"> 
+ 			<?php include("banner.php"); ?>
+		</div> 
+		<!-- This is end of the banner --> 
+    
+    	<div id="user-cpanel">
+		<?php include("user_cpanel.php"); ?>
+        </div>
+        <div class="wan-clear"></div>
+        <div id="user-form">
+       	<?php include("user-form.php"); ?>
+		</div>
+		<div id="topnav">
+           <?php include("top-nav.php"); ?>
+        </div>
+			
+		<div id="content">
+        	
+        	<?php            
+            	include (dirname(__FILE__).'/database_config.php');
+                
+                $username = $_POST['username'];
+                $bookingID = $_POST['bookingID'];
+                $date = $_POST['date'];
+                $tourID = $_POST['tourID'];
+                $transportID = $_POST['transportID'];
+                $numVisitor = $_POST['numVisitor'];
+                
+                $bookingSQL = "INSERT INTO tour_booking (tour_booking_id, date, username, tourID, transportID, no_ppl) ";
+                $bookingSQL = $bookingSQL."VALUES ('$bookingID', '$date', '$username', '$tourID', '$transportID', '$numVisitor' )";
+                          
+                mysql_query($bookingSQL);
+            ?>
+            
+            <center>Thank You For Shopping With Us</center>
+		</div> 
+<!-- This is end of the footer -->
+	</div> 
+<!-- This is end of the page section -->
+</body>
+
+</html>

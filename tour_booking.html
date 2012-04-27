@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
     <title>Welcome to Green Travel</title>
-    <meta name="description" content="E-Business"  /> 
+   <meta name="description" content="E-Business"  /> 
 	<meta name ="keywords" content="?????"  /> 
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
@@ -40,9 +40,6 @@
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
 	</script> 
-
-
-
 </head>
 
 <body>
@@ -66,72 +63,84 @@
 		<div id="topnav">
            <?php include("top-nav.php"); ?>
         </div>
-			
-		<div id="left-top">
-            <div id="title-text">Search Tour</div>
-            <?php include("search-form.php"); ?>	    
-		</div>
-		
-		<div id="right-top">
-        
-			<div id="title-text">Tour Packages</div>
+       
+<!-- This is the content -->
+		<div id="content">
+			<h1>Booking Information</h1>
+			<!-- ManageCart Begin-->
+			<center>
+            <?php                
+                echo '<div id="tour_booking"><table>
+                        <tr>
+                            <th>Tour name</th>
+                            <th>Tour Price</th>
+                            <th>Number of Visitors</th>
+                            <th>Transportation</th>
+                            <th>Transport Price</th>
+                            <th>Date</th>
+                        </tr>
+                        <tr>
+                            <td>'.$tourName.'</td>
+                            <td>'.$tourPrice.'</td>
+                            <td>'.$numVisitor.'</td>
+                            <td>'.$transportRecord['name'].'</td>
+                            <td>'.$transportRecord['price'].'</td>
+                            <td>'.$date.'</td>                                                                
+                        </tr>   
+                      </table>
+                     </div>    
+            <h2>Please enter credit card details to perform purchase:</h2>
             
-            <form id="book" action="tour_booking.php" method="post"><fieldset>
-            	<table>
-                	<caption>Tour Information</caption>
-                	<tr>
-                    	<td class="label">Tour name</td>
-                        <td class="tour_name">
-							<?php echo $tourRecord['t_name'];
-                            	  echo '<input type="hidden" name="tourID" value="'.$tourRecord['tourID'].'" />
-                                  		<input type="hidden" name="tourName" value="'.$tourRecord['t_name'].'" />
-                                  		<input type="hidden" name="tourPrice" value="'.$tourRecord['price'].'" />';
-                            ?>
-                        </td>
-                    </tr>
-                               
+            <img src="images/visa-credit.jpg" height="100" width="300" align="middle" alt="visa logo" />
+            
+            <form action="thankyou.html" method="post">
+                <table>
                     <tr>
-                    	<td class="label">Number of visitors *</td>
-                        <td>
-                        	<select name="numVisitor" style="width:170px">
-                            	<?php
-                                	echo '<option value="0">Select</option>';
-                                	for ($i=1; $i<11; $i++)
-                                    {
-                                     	echo '<option value="'.$i.'">'.$i.'</option>';   
-                                    }
-                                ?>
-                        	</select>
-                        </td>
+                        <td>Credit card number</td>
+                        <td><input type="text" name="b_last" /></td>
                     </tr>
                     
                     <tr>
-                    	<td class="label">Transportation *</td>
-                        <td>
-							<select name="transportID" style="width:170px">
-                                <?php
-									echo '<option value="0">Select</option>';
-									while ($record = mysql_fetch_array($transportResult))
-                                    {
-                                        echo '<option value="'.$record['transportID'].'">'.$record['name'].'</option>';
-                                    }                
-                                ?>
-							</select>
+                        <td>Security code</td>
+                        <td><input type="text" name="b_email" /></td>
+                    </tr> 	
+
+                    <tr>
+                        <td>Expire date</td>
+                        <td><select name="rangeHTML">';
+                                for ($i=1; $i<=12; $i++)
+                                {
+                                    echo '<option value="'.$i.'">'.$i.'</option>';   
+                                }
+                            echo '</select>
+                            
+                            <select name="year">';       	
+                                for ($i=date("Y"); $i<=date("Y")+10; $i++)
+                                {
+                                    echo '<option value="'.$i.'">'.$i.'</option>';   
+                                }
+                            echo '</select>
                         </td>
-                    </tr>
-                    
-					<tr>
-                    	<td class="label">Date *</td>
-                        <td><input name="date" style="width:170px"/></td>
                     </tr>
                 </table>
-                <div class="note">(*) These fields are required</div>
-                <center><input type="submit" name="book" value="Submit" /></center>
-            </fieldset></form>
+                <br /> ';
+                
+                $username = $_SESSION['username'];
+                
+                echo '
+                <input type="hidden" name="username" value="'.$username.'" />
+                <input type="hidden" name="bookingID" value="'.$bookingID.'" />
+                <input type="hidden" name="tourID" value="'.$tourID.'" />
+                <input type="hidden" name="date" value="'.$date.'" />
+                <input type="hidden" name="transportID" value="'.$transportID.'" />
+                <input type="hidden" name="numVisitor" value="'.$numVisitor.'" />
+                
+                <input type="submit" value="   Submit Order   " /><br /><br />
+            </form>';
+            ?>
+			</center>
 		</div>
-
-		<div class="wan-clear"></div>
-		
+		<div class="wan-clear"></div> 
 <!-- This is end of the content -->
 
 <!-- This is the footer -->
