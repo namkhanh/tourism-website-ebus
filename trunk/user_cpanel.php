@@ -11,7 +11,6 @@
 									echo '<li><a  class="parent_menu">Admin Control</a></li>
 									<ul>
             						<li><a href="admin_tour.php">Tour</a></li>
-           							<li><a href="admin_transport.php">Transport</a></li>
             						<li><a href="admin_ebook.php">Ebook</a></li>
         							</ul>
 									<li></li>';
