@@ -27,7 +27,7 @@ $result_insert_user = mysql_query($query_insert_user);
 		// Send the email:
 		$message = "Hi $firstname $lastname, \n\n Thank you for your registration at Green Travel. To activate your account, please click on this link:\n\n";
 		$message .= "http://".$activationURI . '?username=' . $username . "&key=$activation";
-		mail($email, 'Registration Confirmation', $message, 'From:Green Travel');
+		mail($email, 'Registration Confirmation', $message,'From:Green Travel');
 		 $flag = "true";
 	}
 mysql_close($db_con);
