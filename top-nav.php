@@ -17,7 +17,7 @@
         </ul>
     </li>
     <li><a href="ebook.php">Ebook</a></li>
-    <li><a href="">About Us</a></li>
-    <li><a href="">Contact Us</a></li>
-    <li><a href="">Site Map</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="contact.html">Contact Us</a></li>
+    <li><a href="sitemap.html">Site Map</a></li>
 </ul>
