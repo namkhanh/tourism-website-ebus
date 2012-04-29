@@ -16,6 +16,8 @@
 	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
 	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
 	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/tablecloth.js"></script>
+    <link href="css/tablecloth.css" rel="stylesheet" type="text/css" media="screen" />
 	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>
 	<script type="text/javascript" src="js/comment.js"></script>
@@ -40,8 +42,6 @@
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
 	</script> 
-
-
 
 </head>
 
@@ -140,7 +140,8 @@
                                 $date = $record_review['date'];
                                 $username = $record_review['username'];
                                 echo '<div id="review">
-                               		  <table><tr><td><b>Subject: '.$title.'</b></td></tr><tr><td>';
+                               		  <table id="tablecloth"><tr><th><b>Subject: '.$title.'</b></th></tr>
+                                      <tr><td>';
 
 								if ($rate ==1) {
 									echo '<div id="'.$id.'">
