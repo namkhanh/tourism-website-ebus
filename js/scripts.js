@@ -70,3 +70,19 @@ function confirmDeleteTour(t_name,tourID) {
 			        }); 
 	}
 }
+
+function confirmDeleteEbook(name,ebookID) {
+	var answer = confirm("Are you sure to delete " + name + " ?");
+	if (answer) {
+		 $.post("delete_ebook.php", { ebookID: ebookID},
+			        function(result){
+			            // if the result is 1
+			            if(result == 1){  
+			            alert("Deleted " + name);
+			            location.href = document.URL;
+			            } else {
+			            alert("Not sucessfully delete " + name);
+			            }
+			        }); 
+	}
+}

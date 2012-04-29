@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
+    <title>Welcome to Green Travel</title>
+    <meta name="description" content="E-Business"  /> 
+	<meta name ="keywords" content="?????"  /> 
+	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
+	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
+	
+	<!-- include CSS always before including js -->
+
+	<!-- include jQuery library -->
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/comment.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css"/>
+	<style type="text/css" media="screen"> 
+		@import "style/css/uni-form.css"; 
+	</style>
+	
+	<!-- Demo page js -->
+	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
+	
+	<!-- Star Rating widget stuff here... -->
+	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
+	<link rel="stylesheet" type="text/css" href="style/css/jquery.ui.stars.css"/>
+	<script type="text/javascript" src ="js/language-en.js"></script> 
+	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
+	
+      //============================================================== 
+      //               NOP Design JavaScript Shopping Cart               
+      //-------------------------------------------------------------- 
+	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
+	  //============================================================== 
+	</script> 
+		
+		<!-- Upload & Crop Image -->
+		<link href="css/default.css" rel="stylesheet" type="text/css" />
+		<link href="scripts/fileuploader/fileuploader.css" rel="stylesheet" type="text/css" />
+		<link href="scripts/Jcrop/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript" src="scripts/jquery-impromptu.js"></script>
+		<script type="text/javascript" src="scripts/fileuploader/fileuploader.js"></script>
+		<script type="text/javascript" src="scripts/Jcrop/jquery.Jcrop.min.js"></script>
+		<script type="text/javascript" src="scripts/jquery-uberuploadcropper.js"></script>
+		<script type="text/javascript" src="js/upload.js"></script>
+</head>
+
+<body>
+<div id="fade" style="display:none;"></div>
+	<!-- This is the page section -->
+	<div id="page_section">
+
+		<!-- This is the banner --> 
+		<div id="banner"> 
+ 			<?php include("banner.php"); ?>
+		</div> 
+		<!-- This is end of the banner --> 
+    
+    	<div id="user-cpanel">
+		<?php include("user_cpanel.php"); ?>
+        </div>
+        <div class="wan-clear"></div>
+        <div id="user-form">
+       	<?php include("user-form.php"); ?>
+		</div>
+		<div id="topnav">
+           <?php include("top-nav.php"); ?>
+        </div>
+
+
+		<div id="content">
+			<div id="title-text">Tour Packages</div>
+			<form method="post" action="add_tour.php">
+				Tour Name:<input size="50" name="tour_name" type="text" value="" /><br /> 
+				Duration:<input size="50" type="text" name="duration" value="" /><br /> 
+				Price:<input size="25" type="text" name="price" /><br />
+				Description: <textarea name="description" rows="15" cols="100" /></textarea><br /> 
+				Destination: <input name="destination" size="25" type="text" /><br /> 
+				
+				Occurance: <input type="checkbox" name="dayName[]" value="Monday" />Monday<br /> 
+				<input type="checkbox" name="dayName[]" value="Tuesday" />Tuesday<br /> 
+				<input type="checkbox" name="dayName[]" value="Wednesday" />Wednesday<br /> 
+				<input type="checkbox" name="dayName[]" value="Thursday" />Thursday<br /> 
+				<input type="checkbox" name="dayName[]" value="Friday" />Friday<br /> 
+				<input type="checkbox" name="dayName[]" value="Saturnday" />Saturnday<br /> 
+				<input type="checkbox" name="dayName[]" value="Sunday" />Sunday<br /> 
+				
+				<select name="region">
+					<option value="1">North Vietnam</option>
+					<option value="2">Middle Vietnam</option>
+					<option value="3">South Vietnam</option>
+				</select>
+
+				<div id="UploadImages">
+					<noscript>Please enable javascript to upload and crop images.</noscript>
+				</div>
+
+				<div id="PhotoPrevs">
+					<!-- The cropped images will be populated here -->
+				</div>
+			<input type="submit" value="Submit" /> 
+			<input type="reset" value="Reset" />
+		</form>
+		</div>
+		
+		<div class="wan-clear"></div>
+		
+<!-- This is end of the content -->
+
+<!-- This is the footer -->
+		<div id="footer"> 
+			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
+		</div> 
+<!-- This is end of the footer -->
+
+	</div> 
+<!-- This is end of the page section -->
+</body>
+
+</html>
