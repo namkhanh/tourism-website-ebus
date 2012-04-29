@@ -67,87 +67,8 @@
 
 <!-- This is the content -->
 		<div id="content">
-		 <center>
-		<h1>Check out procedure</h1>
-			<!-- Checkout Begin--> 
-		<h2>The items listed below are currently in your shopping cart: </h2>
-             
-		<form>  
-		<script type="text/javascript"> 
-  		CheckoutCart(); 
-  		</script>  
-  		          
-        <h2>Please enter credit card details to perform purchase:</h2>
-        <img src="images/visa-credit.jpg" height="100" width="300" align="middle" alt="visa logo" />
-        <table>
-        <tr><td>
-        Credit card number: 
-        </td>
-        <td><input type="text" /></td>
-		</tr>
-        <tr><td>Security code: 
-        </td>
-        <td><input type="text" /></td>
-        </tr> 
-        <tr><td>
-        Expire date:</td>
-        <td>
-        <select name="rangeHTML">
-                    	
-							<option value="1">1</option>
-							<option value="2">2</option>
-
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        
-						</select>
-                        <select name="year">
-                    	
-							<option value="1">2013</option>
-							<option value="2">2014</option>
-
-                            <option value="3">2015</option>
-                            <option value="4">2016</option>
-                            <option value="5">2017</option>
-                            <option value="6">2018</option>
-                            <option value="7">2019</option>
-                            <option value="8">2020</option>
-
-                            <option value="9">2021</option>
-                            <option value="10">2022</option>
-                            <option value="11">2023</option>
-                            
-                        
-						</select>
-              </td></tr>
-      	
-        </table>
-        <br /> 
-        <?php
-        if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
-							
-								echo '<input type="button" onclick="thanks.html" value="Submit Order" />';
-								
-							} else {
-								echo '<a class="menu" href="javascript:toggleLogin();">Login</a></li>';   
-							}
-        ?>
-        
-        <br />
-        <a class="menu" href="ebook.php">Add more</a>
-       
- </form>  
- <!-- Checkout End  -->  
- </center>
+		<h3>Thank you for purchasing</h3>
+        <h3>Please click <a href="index.html">here</a> to go back to our home page</h3>
 		</div> 
 <!-- This is end of the content -->
 <br />

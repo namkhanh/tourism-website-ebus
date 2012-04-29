@@ -95,7 +95,7 @@ TaxByRegion           = false;
 TaxPrompt             = 'For tax purposes, please select if you are an Arizona resident before continuing';
 TaxablePrompt         = 'Arizona Residents';
 NonTaxablePrompt      = 'Other States';
-MinimumOrder          = 0.00;
+MinimumOrder          = 1;
 MinimumOrderPrompt    = 'Your order is below our minimum order, please order more before checking out.';
 
 //Payment Processor Options:
