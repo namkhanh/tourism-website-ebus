@@ -67,9 +67,10 @@
 		
 		
 		<div id="content">
+        <div id="admin-ebook">
 		<div id="title-text">Ebook</div>	
             <?php
-            echo '<input type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />';
+            echo '<input style="margin-left:45%" type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />';
                echo '<table align="center">';     
                     while($record = mysql_fetch_array($result)) {
                     $link =$record['download'];
@@ -96,15 +97,15 @@
                     
                     echo '</td>';
                     
-                    echo '<td>';
+                    echo '<td style="width: 230px">';
 				echo '<input type="button" style="width:100px" value="Edit" onclick=location.href="edit_ebook.php?ebookID='.$ebookID.'" />';
 
-                 echo '<input type="button" style="width:100px" value="Delete" onclick="confirmDeleteEbook(\''.$record['name'].'\',\''.$record['ebookID'].'\')" /> </form>';
+                 echo '<input type="button" style="width:100px; margin-left: 6%" value="Delete" onclick="confirmDeleteEbook(\''.$record['name'].'\',\''.$record['ebookID'].'\')" /> </form>';
                  }
                     echo '</table>';
             ?>
 		</div>
-
+		</div>
 		<div class="wan-clear"></div>
 		
 <!-- This is end of the content -->
