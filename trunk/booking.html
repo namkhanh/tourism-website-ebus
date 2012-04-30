@@ -123,34 +123,36 @@
 					<tr>
                     	<td class="label">Date *</td>
 						<?php 
-                        echo '<td><input id="booking'.$tourID.'" name="date" style="width:170px"/></td>';
-                        
-                        
-            $data_arrs = array();
-$arrs = array('1'=>'Monday','2'=>'Tuesday','3'=>'Wednesday','4'=>'Thursday','5'=>'Friday','6'=>'Saturnday','0'=>'Sunday');
-                                while ($record_occurance = mysql_fetch_array($occurance_result)) {
-								array_push($data_arrs,$record_occurance['dayName']);
-                                }
-$stringDay ="";
-foreach ($arrs as $key => $value) {
-if (!in_array($value,$data_arrs)) {
-$stringDay .= "day != '$key' && ";
-}
-}
-echo '<script>$(function() {
-var now = new Date();
-	$( "#booking'.$tourID.'" ).datepicker({
-		minDate: now,
-		beforeShowDay: function(date) {
-	        var day = date.getDay();
-	     return [('.substr($stringDay,0,strlen($stringDay)-4).')];';
-	    echo '}
-	});
-});
-</script>';
-
-
-?>
+                            echo '<td><input id="booking'.$tourID.'" name="date" style="width:170px"/></td>';
+                                        
+                            $data_arrs = array();
+                            $arrs = array('1'=>'Monday','2'=>'Tuesday','3'=>'Wednesday','4'=>'Thursday','5'=>'Friday','6'=>'Saturnday','0'=>'Sunday');
+                                    
+                            while ($record_occurance = mysql_fetch_array($occurance_result)) {
+                            	array_push($data_arrs,$record_occurance['dayName']);
+                            }
+							
+                            $stringDay ="";
+							foreach ($arrs as $key => $value) {
+								if (!in_array($value,$data_arrs)) {
+									$stringDay .= "day != '$key' && ";
+								}
+							}
+                            
+							echo '<script>$(function() 
+							{
+								var now = new Date();
+								$( "#booking'.$tourID.'" ).datepicker({
+									minDate: now,
+									
+									beforeShowDay: function(date) {
+										var day = date.getDay();
+										return [('.substr($stringDay,0,strlen($stringDay)-4).')];
+									}
+								});
+							});
+							</script>';
+						?>
                     </tr>
                 </table>
                 <div class="note">(*) These fields are required</div>

@@ -479,7 +479,31 @@ legend
 }
 
 /*************************Display tour details*************************/
+#tour_content
+{
+	border:1px solid #A0A0A4;
+	padding:5px;
+}
 
+#top_details
+{
+	clear:both;
+}
+
+#description
+{
+	text-align:justify;
+	clear:both;
+}
+
+#heading
+{
+	color:#5FA92A;
+	font-size:130%;
+	text-align:center;
+	margin-bottom:5px;
+	border-bottom: 1px solid #A0A0A4;
+}
 
 #book table
 {
@@ -730,15 +754,31 @@ legend
 }
 
 /***** Decorate comment table *******/
-/* general styles */
 
-#review table, #review table td{
-	font:100% Arial, Helvetica, sans-serif; 
+#review table
+{
+	width:100%;
+	border-collapse:collapse;
+	margin:1em 0;
 }
-#review table{width:100%;border-collapse:collapse;margin:1em 0;}
-#review table th, td{text-align:left;padding:.5em;border:1px solid #fff;}
-#review th{background:#328aa4 url(images/tr_back.gif) repeat-x;color:#fff;}
-#review td{background:#e5f1f4;}
+
+#review table th, #review table td
+{
+	text-align:left;
+	padding:.5em;
+	border:1px solid #fff;
+}
+
+#review th
+{
+	background:#328aa4 url(images/tr_back.gif) repeat-x;
+	color:#fff;
+}
+
+#review td
+{
+	background:#e5f1f4;
+}
 
 
 /************ End of table comment decoration ************/
@@ -770,6 +810,7 @@ legend
 	background:#8080FF;
 }
 
+/*
 #tour_content
 {
 	
