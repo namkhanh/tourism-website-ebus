@@ -78,12 +78,12 @@
 
 		<div id="content">
 			<div id="title-text">Tour Packages</div>
-			<form method="post" action="add_ebook.php">
+			<form method="post" action="add_ebook.php" enctype="multipart/form-data">
 				Ebook Name:<input size="50" name="ebook_name" type="text" value="" /><br /> 
 				Author:<input size="50" type="text" name="author" value="" /><br /> 
 				Price:<input size="25" type="text" name="price" /><br />
 				Description: <textarea name="description" rows="15" cols="100" /></textarea><br /> 
-				New Ebook file:<input size="25" type="file" name="file" /><br/>
+				New Ebook file:<input type="file" size="25" name="file-ebook"/><br/>
 				<div id="UploadEbookImg">
 					<noscript>Please enable javascript to upload and crop images.</noscript>
 				</div>

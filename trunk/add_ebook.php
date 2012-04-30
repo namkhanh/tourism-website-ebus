@@ -11,20 +11,19 @@ if (!empty($_POST['newImg'])) {
 	$image ="";
 }
 
-if ($_FILES ["file"] ["error"] > 0) {
+if ($_FILES ["file-ebook"] ["error"] > 0) {
 	$file = "";
 } else {
-	if (file_exists ( "ebook/" . $_FILES ["file"] ["name"] )) {
-		$file = "ebook/" . $_FILES ["file"] ["name"];
+	if (file_exists ( "ebook/" . $_FILES ["file-ebook"] ["name"] )) {
+		$file = "ebook/" . $_FILES ["file-ebook"] ["name"];
 	} else {
-		move_uploaded_file ( $_FILES ["file"] ["tmp_name"], "ebook/" . $_FILES ["file"] ["name"] );
-		$file = "ebook/" . $_FILES ["file"] ["name"];
+		move_uploaded_file ( $_FILES ["file-ebook"] ["tmp_name"], "ebook/" . $_FILES ["file-ebook"] ["name"] );
+		$file = "ebook/" . $_FILES ["file-ebook"] ["name"];
 	}
 }
-
+echo $file;
 $add_ebook_query = "INSERT INTO ebook (name,author,price,description,download,img) VALUES ('$name', '$author','$price','$description','$file','$image')";
 $result_ebook = mysql_query($add_ebook_query);
 
-echo $result_ebook;
 
 ?>
