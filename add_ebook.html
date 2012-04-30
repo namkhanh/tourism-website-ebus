@@ -2,9 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
 	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
-    <title>Welcome to Green Travel</title>
-    <meta name="description" content="E-Business"  /> 
-	<meta name ="keywords" content="?????"  /> 
+    <title>Add E-Book</title>
+    <meta name="description" content=""  /> 
+	<meta name ="keywords" content=""  /> 
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
     <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
@@ -75,27 +75,55 @@
            <?php include("top-nav.php"); ?>
         </div>
 
-
 		<div id="content">
-			<div id="title-text">Tour Packages</div>
-			<form method="post" action="add_ebook.php" enctype="multipart/form-data">
-				Ebook Name:<input size="50" name="ebook_name" type="text" value="" /><br /> 
-				Author:<input size="50" type="text" name="author" value="" /><br /> 
-				Price:<input size="25" type="text" name="price" /><br />
-				Description: <textarea name="description" rows="15" cols="100" /></textarea><br /> 
-				New Ebook file:<input type="file" size="25" name="file-ebook"/><br/>
-				<div id="UploadEbookImg">
-					<noscript>Please enable javascript to upload and crop images.</noscript>
-				</div>
-
-				<div id="ImgPrevs">
-					<!-- The cropped images will be populated here -->
-				</div>
-				
-				
-			<input type="submit" value="Submit" /> 
-			<input type="reset" value="Reset" />
-		</form>
+			<div id="title-text">Add New E-Book</div>
+            <form method="post" action="add_ebook.php" enctype="multipart/form-data">
+                <table>
+                    <tr>
+                        <td>Ebook Name</td>
+                        <td><input size="50" name="ebook_name" type="text" value="" /></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Author</td>
+                        <td><input size="50" type="text" name="author" value="" /></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Price</td>
+                        <td><input size="50" type="text" name="price" /></td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Description</td>
+                        <td><textarea name="description" rows="10" cols="39" /></textarea></td>
+                    </tr> 
+                    
+                    <tr>
+                        <td>New Ebook file</td>
+                        <td><input type="file" size="25" name="file-ebook"/></td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div id="UploadEbookImg">
+                                <noscript>Please enable javascript to upload and crop images.</noscript>
+                            </div>
+            
+                            <div id="ImgPrevs">
+                                <!-- The cropped images will be populated here -->
+                            </div>                                                            
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <td colspan="2" align="center">
+                            <input type="submit" value="Submit" /> 
+                            <input type="reset" value="Reset" />                            
+                        </td>
+                    </tr>                                   
+                </table>
+            </form>
 		</div>
 		
 		<div class="wan-clear"></div>
