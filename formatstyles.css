@@ -534,9 +534,6 @@ legend
 	color:red;	
 }
 
-#review table {
-	width:100%;
-}
 
 #make_review 
 {
@@ -755,4 +752,18 @@ legend
 	margin:auto;
 	padding:5px;	
 }
+
+/***** Decorate comment table *******/
+/* general styles */
+
+#review table, #review table td{
+	font:100% Arial, Helvetica, sans-serif; 
+}
+#review table{width:100%;border-collapse:collapse;margin:1em 0;}
+#review table th, td{text-align:left;padding:.5em;border:1px solid #fff;}
+#review th{background:#328aa4 url(images/tr_back.gif) repeat-x;color:#fff;}
+#review td{background:#e5f1f4;}
+
+
+/************ End of table comment decoration ************/
 
