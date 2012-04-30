@@ -116,7 +116,7 @@ text-decoration: none;
 	z-index:15;
 }
 
-#topnav ul li 
+#topnav ul li
 {		
   	display:block;
   	float:left;
@@ -140,23 +140,23 @@ text-decoration: none;
 	background:#FAE347;
 }
 
-#topnav ul li a:hover, li:hover a 
+#topnav ul li a:hover, #user-cpanel a:hover, li:hover a 
 {
 	text-decoration:underline;
 }
 
-#topnav ul li ul 
+#topnav ul li ul, #user-cpanel ul li ul
 { 
 	display: none;
 }
 
-#topnav li:hover ul 
+#topnav li:hover ul, #user-cpanel li:hover ul
 {
   	display: block;
   	position: absolute;
 }
 
-#topnav li:hover li 
+#topnav li:hover li
 {
   	float:none;
   	font-size:11px;	
@@ -183,31 +183,44 @@ text-decoration: none;
 }
 
 #user-cpanel {
-top:-16px;
-height:40px;
+	top:-16px;
+	height:40px;
 	background-image:url('images/test/brushed_alu.png');
 	position:relative;
+	margin:0;
+	padding:0;	
 }
 
 #user-cpanel ul {
-list-style:none;
-
+	list-style:none;
+	position:relative;
+	z-index:100;
+	margin:0;
+	padding:0;	
 }
+
 #user-cpanel ul li {
-padding: 0px 4px 0px 4px;
-float:right;
-position:relative;
-top: 10px;
-}
-#user-cpanel a{
-	text-decoration:none;
-	color:#0080FF;	
+	padding: 0px 4px 0px 4px;
+	float:right;
+	position:relative;
+	top: 10px;
 }
 
-#user-cpanel a:hover
+#user-cpanel ul li a
 {
-	text-decoration:underline;
+	text-decoration:none;
+	color:#0080FF;
+	text-align:center;
+	display:block;
+	background:#F0F;
 }
+
+#user-cpanel li:hover li
+{
+	text-align:center;
+	border-bottom:1px solid black;
+}
+
 #fade {
 width: 100%;
 height: 100%;
@@ -874,3 +887,4 @@ legend
 	background:#8080FF;
 } 
 /***** End of ebook admin decoration ********/
+

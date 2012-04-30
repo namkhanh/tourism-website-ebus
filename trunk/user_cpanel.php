@@ -7,12 +7,12 @@
 								<li><a href="ebookhistory.html">Purchased List</a></li>
 								<li>|</li>';
 								if ($_SESSION['login']=='inte') {
-									echo '<li><a  class="parent_menu">Admin Control</a></li>
-									<ul>
-            						<li><a href="admin_tour.php">Tour</a></li>
-            						<li><a href="admin_ebook.php">Ebook</a></li>
-        							</ul>
-									<li></li>';
+									echo '<li><a>Admin Control</a>
+											<ul>
+												<li><a href="admin_tour.php">Modify Tour</a></li>
+												<li><a href="admin_ebook.php">Modify Ebook</a></li>
+											</ul>
+										  </li>';
 								}
 								echo '<li>Welcome '.$_SESSION['firstname'].', '.$_SESSION['lastname'].'</li>';
 								
@@ -24,6 +24,4 @@
  					?>
 			<li style="top:7px !important"><a href="managecart.html" ><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></li>
 
-           
-					
 <ul>
