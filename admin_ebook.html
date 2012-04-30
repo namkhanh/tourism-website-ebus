@@ -69,7 +69,7 @@
 		<div id="content">
 		<div id="title-text">Ebook</div>	
             <?php
-            echo '<input type="button" onclick=location.href="add_.html" value="Add New Ebook" />';
+            echo '<input type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />';
                echo '<table align="center">';     
                     while($record = mysql_fetch_array($result)) {
                     $link =$record['download'];
@@ -97,7 +97,7 @@
                     echo '</td>';
                     
                     echo '<td>';
-				echo '<input type="button" style="width:100px" value="Edit" onclick="" />';
+				echo '<input type="button" style="width:100px" value="Edit" onclick=location.href="edit_ebook.php?ebookID='.$ebookID.'" />';
 
                  echo '<input type="button" style="width:100px" value="Delete" onclick="confirmDeleteEbook(\''.$record['name'].'\',\''.$record['ebookID'].'\')" /> </form>';
                  }

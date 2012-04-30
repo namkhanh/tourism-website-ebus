@@ -3,7 +3,7 @@ include (dirname(__FILE__).'/database_config.php');
 $title = mysql_real_escape_string($_POST["title"]);
 $comment = mysql_real_escape_string($_POST["comment"]);
 $rate = mysql_real_escape_string($_POST["rate"]);
-$today = date("F j, Y");
+$today = date("Y-m-d");
 
 $query_insert_comment = "INSERT INTO review (title,comment,rate,r_date,tour_booking_id) VALUES ('$title', '$comment', '$rate', '$today', '1')";
 
