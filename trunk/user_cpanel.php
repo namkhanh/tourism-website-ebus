@@ -2,7 +2,6 @@
 					<?php 
 						session_start();
 						if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
-							
 								echo '<li><a href="javascript:toggleSignout();">Sign Out</a></li>
 								<li>|</li>
 								<li><a href="ebookhistory.html">Purchased List</a></li>

@@ -563,7 +563,6 @@ function ManageCart( ) {
       strOutput = "<TABLE CLASS=\"nopcart\"><TR>" +
                   "<TD CLASS=\"nopheader\"><B>"+strILabel+"</B></TD>" +
                   "<TD CLASS=\"nopheader\"><B>"+strDLabel+"</B></TD>" +
-                  "<TD CLASS=\"nopheader\"><B>"+strQLabel+"</B></TD>" +
                   "<TD CLASS=\"nopheader\"><B>"+strPLabel+"</B></TD>" +
                   (DisplayShippingColumn?"<TD CLASS=\"nopheader\"><B>"+strSLabel+"</B></TD>":"") +
                   "<TD CLASS=\"nopheader\"><B>"+strRLabel+"</B></TD></TR>";
@@ -591,8 +590,8 @@ function ManageCart( ) {
       fields[4] = database.substring( Token3+1, Token4 );          // Shipping Cost
       fields[5] = database.substring( Token4+1, database.length ); //Additional Information
 
-      fTotal     += (parseInt(fields[1]) * parseFloat(fields[2]) );
-      fShipping  += (parseInt(fields[1]) * parseFloat(fields[4]) );
+      fTotal     += (parseFloat(fields[2]) );
+      fShipping  += (parseFloat(fields[4]) );
       fTax        = (fTotal * TaxRate);
       strTotal    = moneyFormat(fTotal);
       strTax      = moneyFormat(fTax);
@@ -606,7 +605,6 @@ function ManageCart( ) {
          else
             strOutput += "<TD CLASS=\"nopentry\">"  + fields[3] + " - <I>"+ fields[5] + "</I></TD>";
 
-         strOutput += "<TD CLASS=\"nopentry\"><INPUT TYPE=TEXT NAME=Q SIZE=2 VALUE=\"" + fields[1] + "\" onChange=\"ChangeQuantity("+i+", this.value);\"></TD>";
          strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[2]) + "/ea</TD>";
 
          if ( DisplayShippingColumn ) {
@@ -636,19 +634,19 @@ function ManageCart( ) {
    }
 
    if ( bDisplay ) {
-      strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=4><B>"+strSUB+"</B></TD>";
-      strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2><B>" + MonetarySymbol + strTotal + "</B></TD>";
+      strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strSUB+"</B></TD>";
+      strOutput += "<TD CLASS=\"noptotal\" COLSPAN=1><B>" + MonetarySymbol + strTotal + "</B></TD>";
       strOutput += "</TR>";
 
       if ( DisplayShippingRow ) {
-         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=4><B>"+strSHIP+"</B></TD>";
+         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strSHIP+"</B></TD>";
          strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2><B>" + MonetarySymbol + strShipping + "</B></TD>";
          strOutput += "</TR>";
       }
 
       if ( DisplayTaxRow || TaxByRegion ) {
          if ( TaxByRegion ) {
-            strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=4><B>"+strTAX+"</B></TD>";
+            strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strTAX+"</B></TD>";
             strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2><B>";
             strOutput += "<input type=radio name=\""+OutputOrderTax+"\" value=\"" + strTax + "\">";
             strOutput += TaxablePrompt + ": " + MonetarySymbol + strTax;
@@ -657,14 +655,14 @@ function ManageCart( ) {
             strOutput += "</B></TD>";
             strOutput += "</TR>";
          } else {
-            strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=4><B>"+strTAX+"</B></TD>";
+            strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strTAX+"</B></TD>";
             strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2><B>" + MonetarySymbol + strTax + "</B></TD>";
             strOutput += "</TR>";
          }
       }
 
       if ( !TaxByRegion ) {
-         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=4><B>"+strTOT+"</B></TD>";
+         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strTOT+"</B></TD>";
          strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2><B>" + MonetarySymbol + moneyFormat((fTotal + fShipping + fTax)) + "</B></TD>";
          strOutput += "</TR>";
       }
@@ -738,10 +736,9 @@ function CheckoutCart( ) {
    }
 
    if ( bDisplay )
-      strOutput = "<TABLE CLASS=\"nopcart\"><TR>" +
+      strOutput = "<FORM action=\"checkout.php\" method=\"get\"><TABLE CLASS=\"nopcart\"><TR>" +
                   "<TD CLASS=\"nopheader\"><B>"+strILabel+"</B></TD>" +
                   "<TD CLASS=\"nopheader\"><B>"+strDLabel+"</B></TD>" +
-                  "<TD CLASS=\"nopheader\"><B>"+strQLabel+"</B></TD>" +
                   "<TD CLASS=\"nopheader\"><B>"+strPLabel+"</B></TD>" +
                   (DisplayShippingColumn?"<TD CLASS=\"nopheader\"><B>"+strSLabel+"</B></TD>":"") +
                   "</TR>";
@@ -765,22 +762,21 @@ function CheckoutCart( ) {
       fields[4] = database.substring( Token3+1, Token4 );          // Shipping Cost
       fields[5] = database.substring( Token4+1, database.length ); //Additional Information
 
-      fTotal     += (parseInt(fields[1]) * parseFloat(fields[2]) );
-      fShipping  += (parseInt(fields[1]) * parseFloat(fields[4]) );
+      fTotal     += (parseFloat(fields[2]) );
+      fShipping  += (parseFloat(fields[4]) );
       if ( !TaxByRegion ) fTax = (fTotal * TaxRate);
       strTotal    = moneyFormat(fTotal);
       if ( !TaxByRegion ) strTax = moneyFormat(fTax);
       strShipping = moneyFormat(fShipping);
 
       if ( bDisplay ) {
-         strOutput += "<TR><TD CLASS=\"nopentry\">"  + fields[0] + "</TD>";
+         strOutput += "<TR><TD CLASS=\"nopentry\"><INPUT TYPE=\"hidden\" NAME=\"ebookID" + i + "\" VALUE=\"" + fields[0] + "\"/>"  + fields[0] + "</TD>";
 
          if ( fields[5] == "" )
             strOutput += "<TD CLASS=\"nopentry\">"  + fields[3] + "</TD>";
          else
             strOutput += "<TD CLASS=\"nopentry\">"  + fields[3] + " - <I>"+ fields[5] + "</I></TD>";
 
-         strOutput += "<TD CLASS=\"nopentry\">" + fields[1] + "</TD>";
          strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[2]) + "/ea</TD>";
 
          if ( DisplayShippingColumn ) {
@@ -818,23 +814,23 @@ function CheckoutCart( ) {
    }
 
    if ( bDisplay ) {
-      strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strSUB+"</B></TD>";
+      strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=2><B>"+strSUB+"</B></TD>";
       strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2 ALIGN=RIGHT><B>" + MonetarySymbol + strTotal + "</B></TD>";
       strOutput += "</TR>";
 
       if ( DisplayShippingRow ) {
-         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strSHIP+"</B></TD>";
+         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=2><B>"+strSHIP+"</B></TD>";
          strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2 ALIGN=RIGHT><B>" + MonetarySymbol + strShipping + "</B></TD>";
          strOutput += "</TR>";
       }
 
       if ( DisplayTaxRow || TaxByRegion ) {
-         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strTAX+"</B></TD>";
+         strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=2><B>"+strTAX+"</B></TD>";
          strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2 ALIGN=RIGHT><B>" + MonetarySymbol + strTax + "</B></TD>";
          strOutput += "</TR>";
       }
 
-      strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=3><B>"+strTOT+"</B></TD>";
+      strOutput += "<TR><TD CLASS=\"noptotal\" COLSPAN=2><B>"+strTOT+"</B></TD>";
       strOutput += "<TD CLASS=\"noptotal\" COLSPAN=2 ALIGN=RIGHT><B>" + MonetarySymbol + moneyFormat((fTotal + fShipping + fTax)) + "</B></TD>";
       strOutput += "</TR>";
 

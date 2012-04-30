@@ -72,7 +72,6 @@
 			<!-- Checkout Begin--> 
 		<h2>The items listed below are currently in your shopping cart: </h2>
              
-		<form>  
 		<script type="text/javascript"> 
   		CheckoutCart(); 
   		</script>  
@@ -132,15 +131,7 @@
       	
         </table>
         <br /> 
-        <?php
-        if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
-							
-								echo '<input type="button" onclick="thanks.html" value="Submit Order" />';
-								
-							} else {
-								echo '<a class="menu" href="javascript:toggleLogin();">Login</a></li>';   
-							}
-        ?>
+        <input type="submit" value="Submit Order" />
         
         <br />
         <a class="menu" href="ebook.php">Add more</a>
