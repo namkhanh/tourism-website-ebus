@@ -11,7 +11,7 @@
     
     <li><a href="javascript://" class="parent_menu">Transport</a>
         <ul>
-            <li><a href="transport.php?reg=1">Plane</a></li>
+            <li><a href="transport.php?reg=1">Flight</a></li>
             <li><a href="transport.php?reg=2">Coach</a></li>
             <li><a href="transport.php?reg=3">Train</a></li>
         </ul>
