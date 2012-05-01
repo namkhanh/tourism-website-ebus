@@ -76,7 +76,12 @@
         </div>
 
 		<div id="content">
-			<div id="title-text">Add New E-Book</div>
+      	
+        <?php  
+      	
+        if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
+			echo '
+            <div id="title-text">Add New E-Book</div>
             <form method="post" action="add_ebook.php" enctype="multipart/form-data">
                 <table>
                     <tr>
@@ -123,7 +128,11 @@
                         </td>
                     </tr>                                   
                 </table>
-            </form>
+            </form>';
+        } else {
+        	include("notice.php");
+        }    
+        ?>
 		</div>
 		
 		<div class="wan-clear"></div>

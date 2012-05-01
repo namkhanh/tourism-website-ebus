@@ -77,6 +77,11 @@
 
 
 		<div id="content">
+        
+        <?php
+        
+        if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
+        	echo'
 			<div id="title-text">Tour Packages</div>
 			<form method="post" action="add_tour.php">
 				Tour Name:<input size="50" name="tour_name" type="text" value="" /><br /> 
@@ -108,7 +113,11 @@
 				</div>
 			<input type="submit" value="Submit" /> 
 			<input type="reset" value="Reset" />
-		</form>
+		</form>';
+        } else {
+        	include("notice.php");
+        }
+        ?>
 		</div>
 		
 		<div class="wan-clear"></div>
