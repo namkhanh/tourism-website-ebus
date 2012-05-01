@@ -30,6 +30,7 @@ body {
 	 text-align:center}
  h3 {font-style:italic;}
 
+/*
 a.menu
 {
 	display:block;
@@ -42,10 +43,7 @@ a.menu
 	text-decoration:none;
 	text-transform:uppercase;
 }
-a:hover,a:active
-{
-	/*background-color:#09C;*/
-}
+*/
 .footer
 {
 	text-align:center;
@@ -93,14 +91,18 @@ text-decoration: none;
 
 /*********************************************/
 
-/* Formatting Menu */
+/*********************** Start Of Formatting Menu (includes Admin drop-down also)***********************/
+#topnav, #topnav ul, #user-cpanel, #user-cpanel ul
+{
+	position:relative;	
+	margin:0;
+	padding:0;	
+}
+
 #topnav 
 {
 	top: -16px;
-	position:relative;
 	height:50px;
-	margin:0;
-	padding:0;
 	background: url(images/topnav_yellow.jpg) no-repeat left top;
 }
 
@@ -109,10 +111,7 @@ text-decoration: none;
   	font-family:Verdana, Geneva, sans-serif;
   	font-size:14px;
 	font-weight:bold;
-  	margin:0;
-  	padding:0;
   	list-style: none;
-	position:relative;
 	z-index:15;
 }
 
@@ -125,11 +124,9 @@ text-decoration: none;
 #topnav ul li a 
 {
 	padding: 16px 2px;
-
   	display:block;
 	width: 105px;	
   	text-decoration:none;
-
 	color:#808080;
 	text-align:center;
 }
@@ -140,7 +137,20 @@ text-decoration: none;
 	background:#FAE347;
 }
 
-#topnav ul li a:hover, #user-cpanel a:hover, li:hover a 
+#topnav li:hover li
+{
+  	float:none;
+  	font-size:11px;	
+}
+
+#topnav a.parent_menu
+{
+	background-image: url(images/navdown_white.gif);
+	background-position: bottom center;
+	background-repeat: no-repeat;
+}
+
+#topnav ul li a:hover, #user-cpanel ul li a:hover, li:hover a 
 {
 	text-decoration:underline;
 }
@@ -156,53 +166,23 @@ text-decoration: none;
   	position: absolute;
 }
 
-#topnav li:hover li
-{
-  	float:none;
-  	font-size:11px;	
-}
-
-#topnav li.current a
-{
-	background:url('images/menuhover1.png') center center no-repeat;
-	/*background-color:#DFDA15;*/
-	color:white;
-}
-
-#topnav a.parent_menu
-{
-	background-image: url(images/navdown_white.gif);
-	background-position: bottom center;
-	background-repeat: no-repeat;
-}
-
-#search-box
-{
-	font-family:Verdana, Geneva, sans-serif;
-  	font-size:12px;
-}
-
 #user-cpanel {
 	top:-16px;
 	height:40px;
-	background-image:url('images/test/brushed_alu.png');
-	position:relative;
-	margin:0;
-	padding:0;	
+	background-image:url('images/test/brushed_alu.png');	
 }
 
 #user-cpanel ul {
 	list-style:none;
-	position:relative;
 	z-index:100;
-	margin:0;
-	padding:0;	
 }
 
 #user-cpanel ul li {
+	/*Create padding for admin items*/
 	padding: 0px 4px 0px 4px;
 	float:right;
 	position:relative;
+	dislay:block;
 	top: 10px;
 }
 
@@ -210,15 +190,42 @@ text-decoration: none;
 {
 	text-decoration:none;
 	color:#0080FF;
-	text-align:center;
 	display:block;
-	background:#F0F;
+	text-align:center;
 }
 
-#user-cpanel li:hover li
+#user-cpanel ul li ul a, #user-cpanel .admin
 {
-	text-align:center;
-	border-bottom:1px solid black;
+	/*Fix width of Admin Control & its Items to be equal*/
+	width:100px;
+}
+
+#user-cpanel ul li ul a
+{
+	opacity:0.4;
+	padding:4px 0;
+	background:#ffffff;
+	color:#2A00FF;
+	font-weight:bolder;
+	border-bottom:1px solid #A0A0A4;
+}
+
+#user-cpanel ul li ul a:hover
+{
+	color:#808080;
+}
+
+#user-cpanel ul li ul li
+{
+	/*Fix sub-items lef-align with Admin Contrl*/
+	padding-left:0;
+}
+/*********************** End Of Formatting Menu (includes Admin drop-down also)***********************/
+
+#search-box
+{
+	font-family:Verdana, Geneva, sans-serif;
+  	font-size:12px;
 }
 
 #fade {
@@ -325,15 +332,11 @@ legend
 }
 */
 
-#registration input:focus
+#registration input:focus, #registration select:focus
 {
   border: 1px solid #4899BE;
 }
 
-#registration select:focus
-{
-  border: 1px solid #4899BE;
-}
 #registration input, #registration select {
 	border: solid 1px #444;
 	border-radius: 15px;
@@ -359,8 +362,8 @@ legend
 }
 
 #registration fieldset {
-	      padding: 20px;
-		  border:none;
+	padding: 20px;
+	border:none;
 }
 #registration button {
 	color: #fff;
@@ -490,6 +493,7 @@ legend
 	padding-right:5px;
 	padding-bottom:5px;
 }
+/*************************End of Display tour lists*************************/
 
 /*************************Display tour details*************************/
 #tour_content
@@ -517,7 +521,70 @@ legend
 	margin-bottom:5px;
 	border-bottom: 1px solid #A0A0A4;
 }
+/*************************End of Display tour details*************************/
 
+/***********Decorate Customer Review***********/
+#make_review 
+{
+	width:100%;
+}
+
+#make_review legend
+{
+	color:#5FA92A;
+	font-size:130%;	
+}
+
+#make_review table
+{
+	margin:auto;	
+}
+
+#make_review input, #make_review textarea
+{
+	width:600px;
+}
+
+#make_review textarea
+{
+	height:100px;	
+}
+/***********End of Decorate Customer Review***********/
+
+/***** Decorate comment table *******/
+#review table
+{
+	width:100%;
+	border-collapse:collapse;
+	margin:1em 0;
+}
+
+#review table th, #review table td
+{
+	text-align:left;
+	padding:.5em;
+	border:1px solid #fff;
+}
+
+#review th
+{
+	background:#328aa4 url(images/tr_back.gif) repeat-x;
+	color:#fff;
+}
+
+#review td
+{
+	background:#e5f1f4;
+}
+
+#light /*Use to express username & date*/
+{
+	color:#808080;
+	font-weight:bold;
+}
+/************ End of table comment decoration ************/
+
+/*************************Decorate Booking Form*************************/
 #book table
 {
 	margin:auto;
@@ -547,32 +614,16 @@ legend
 	color:red;	
 }
 
-
-#make_review 
+#tour_booking table, #tour_booking th, #tour_booking tr, #tour_booking td
 {
-	width:100%;
+	border:1px solid black;
+	border-collapse:collapse;
+	text-align:center;
+	margin:auto;
+	padding:5px;	
 }
+/*************************End of Decorate Booking Form*************************/
 
-#make_review legend
-{
-	color:#5FA92A;
-	font-size:130%;	
-}
-
-#make_review table
-{
-	margin:auto;	
-}
-
-#make_review input, #make_review textarea
-{
-	width:600px;
-}
-
-#make_review textarea
-{
-	height:100px;	
-}
 /******* Design for logout form ********/
 	#signoutform{
 		color:#fff;
@@ -637,7 +688,6 @@ legend
     text-align: center;
     vertical-align: middle;
     width: 66px;
-<<<<<<< .mine
 }
 
 /******* Design for about page********/
@@ -751,52 +801,6 @@ legend
 }
 /******* End of contact form design********/
 
-#light
-{
-	color:#808080;
-	font-weight:bold;
-}
-
-#tour_booking table, #tour_booking th, #tour_booking tr, #tour_booking td
-{
-	border:1px solid black;
-	border-collapse:collapse;
-	text-align:center;
-	margin:auto;
-	padding:5px;	
-}
-
-/***** Decorate comment table *******/
-
-#review table
-{
-	width:100%;
-	border-collapse:collapse;
-	margin:1em 0;
-}
-
-#review table th, #review table td
-{
-	text-align:left;
-	padding:.5em;
-	border:1px solid #fff;
-}
-
-#review th
-{
-	background:#328aa4 url(images/tr_back.gif) repeat-x;
-	color:#fff;
-}
-
-#review td
-{
-	background:#e5f1f4;
-}
-
-
-/************ End of table comment decoration ************/
-
-
 /*********** Tour Admin function decoration ***********/
 #adminbutton {
 	float:right;
@@ -822,52 +826,6 @@ legend
 	border-color: #C9C9C9;
 	background:#8080FF;
 }
-
-/*
-#tour_content
-{
-	
-	padding:5px;
-    border: solid 1px #E5E5E5;  
-    outline: 0;  
-    font: normal 13px/100% Verdana, Tahoma, sans-serif;   
-    background: #FFFFFF url('bg_form.png') left top repeat-x;  
-    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
-    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
-    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
-    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
-    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
-    } 
-}
-
-#top_details
-{
-	clear:both;
-}
-
-#top_details b
-{
-	margin-left:2%;
-}
-
-
-#description {
-	margin-top:5%;
-	margin-left: 1%;
-	text-align:justify;
-	clear:both;
-}
-
-#heading
-{
-	color:#5FA92A;
-	font-size:160%;
-	font-weight:bold;
-	text-align:center;
-	margin-bottom:5px;
-	border-bottom: 1px solid #A0A0A4;
-}
-
 /***** End of tour admin decoration ********/
 
 /******** Ebook admin decoration **********/

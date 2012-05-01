@@ -7,7 +7,7 @@
 								<li><a href="ebookhistory.html">Purchased List</a></li>
 								<li>|</li>';
 								if ($_SESSION['login']=='inte') {
-									echo '<li><a>Admin Control</a>
+									echo '<li><a class="admin">Admin Control</a>
 											<ul>
 												<li><a href="admin_tour.php">Modify Tour</a></li>
 												<li><a href="admin_ebook.php">Modify Ebook</a></li>
