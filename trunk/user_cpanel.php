@@ -6,7 +6,7 @@
 								<li>|</li>
 								<li><a href="ebookhistory.html">Purchased List</a></li>
 								<li>|</li>';
-								if ($_SESSION['login']=='inte') {
+								if ($_SESSION['username']=="inte") {
 									echo '<li><a class="admin">Admin Control</a>
 											<ul>
 												<li><a href="admin_tour.php">Modify Tour</a></li>
