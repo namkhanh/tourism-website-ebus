@@ -846,3 +846,8 @@ legend
 } 
 /***** End of ebook admin decoration ********/
 
+/**********Decorate SiteMap***********/
+#sitemap li, a:visited
+{
+	color:#2A1FFF;
+}
