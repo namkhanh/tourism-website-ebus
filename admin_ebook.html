@@ -67,45 +67,52 @@
 		
 		
 		<div id="content">
-        <div id="admin-ebook">
-		<div id="title-text">Ebook</div>	
-            <?php
-            echo '<input style="margin-left:45%" type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />';
-               echo '<table align="center">';     
-                    while($record = mysql_fetch_array($result)) {
-                    $link =$record['download'];
-					$ebookID = $record['ebookID'];
-                    echo '<tr><td><form id="'.$record['ebookID'].'">';
-                    
-                    echo '<img src="'.$record['img'].'" width="200" height="200" />';
-                    
-                    echo '</td>';
-                    
-                    echo '<td>';
-                    
-                    echo '<b>Ebook name:</b> '.$record['name'].'<br />';
-                    
-                    echo '<b>Author:</b> '.$record['author'].'<br />';
-                    
-                    echo '<b>Description: </b>'.$record['description'].'<br />';
-                    
-                    echo '<input type="hidden" name="PRICE" value="'.$record['price'].'" />
-                    <input type="hidden" name="NAME" value="'.$record['name'].'" />
-                    <input type="hidden" name="ID_NUM" value="ID '.$record['ebookID'].'" /> 
-                    <br />
-                    <b>Price:</b>'.$record['price'].'';
-                    
-                    echo '</td>';
-                    
-                    echo '<td style="width: 230px">';
-				echo '<input type="button" style="width:100px" value="Edit" onclick=location.href="edit_ebook.php?ebookID='.$ebookID.'" />';
-
-                 echo '<input type="button" style="width:100px; margin-left: 6%" value="Delete" onclick="confirmDeleteEbook(\''.$record['name'].'\',\''.$record['ebookID'].'\')" /> </form>';
-                 }
-                    echo '</table>';
-            ?>
-		</div>
-		</div>
+        
+        <?php        
+        	if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
+                echo '<div id="admin-ebook">
+                      <div id="title-text">Ebook</div>	
+            
+                      <input style="margin-left:45%" type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />
+                      
+                      <table align="center">';     
+                        while($record = mysql_fetch_array($result)) {
+                        $link =$record['download'];
+                        $ebookID = $record['ebookID'];
+                        echo '<tr><td><form id="'.$record['ebookID'].'">';
+                        
+                        echo '<img src="'.$record['img'].'" width="200" height="200" />';
+                        
+                        echo '</td>';
+                        
+                        echo '<td>';
+                        
+                        echo '<b>Ebook name:</b> '.$record['name'].'<br />';
+                        
+                        echo '<b>Author:</b> '.$record['author'].'<br />';
+                        
+                        echo '<b>Description: </b>'.$record['description'].'<br />';
+                        
+                        echo '<input type="hidden" name="PRICE" value="'.$record['price'].'" />
+                        <input type="hidden" name="NAME" value="'.$record['name'].'" />
+                        <input type="hidden" name="ID_NUM" value="ID '.$record['ebookID'].'" /> 
+                        <br />
+                        <b>Price:</b>'.$record['price'].'';
+                        
+                        echo '</td>';
+                        
+                        echo '<td style="width: 230px">';
+                        echo '<input type="button" style="width:100px" value="Edit" onclick=location.href="edit_ebook.php?ebookID='.$ebookID.'" />';
+    
+                        echo '<input type="button" style="width:100px; margin-left: 6%" value="Delete" onclick="confirmDeleteEbook(\''.$record['name'].'\',\''.$record['ebookID'].'\')" /> </form>';
+                     }
+                        echo '</table>
+                </div>
+                </div>';
+        	} else {
+            	include("notice.php");
+            }
+        ?>
 		<div class="wan-clear"></div>
 		
 <!-- This is end of the content -->

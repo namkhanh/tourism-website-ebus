@@ -77,17 +77,20 @@
 		
 		
 		<div id="content">
-		<div id="title-text">Tour Packages</div>	
             <?php
             
+            if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
+            	echo '<div id="title-text">Tour Packages</div>';
+                
                 while($record = mysql_fetch_array($result)){
-$tourName = $record['t_name'];
-$duration = $record['duration'];
-$price = $record['price'];
-$description = $record['description'];
-$destination = $record['destination'];
-$regionID = $record['regionID'];
-$image = $record['image'];
+                    $tourName = $record['t_name'];
+                    $duration = $record['duration'];
+                    $price = $record['price'];
+                    $description = $record['description'];
+                    $destination = $record['destination'];
+                    $regionID = $record['regionID'];
+                    $image = $record['image'];
+                    
 					echo '<form method="post" action="update_tour.php">Tour Name:<input size="50" name="tour_name" type="text" value="'.$tourName.'"/><br/>';
 					echo '<input type="hidden" name="tourID" value="'.$tourID.'"/>';
 					echo 'Duration:<input size="50" type="text" name="duration" value="'.$duration.'"/><br/>';
@@ -95,43 +98,49 @@ $image = $record['image'];
 					echo 'Description:<textarea name="description" rows="15" cols="100"/>'.$description.'</textarea><br/>';
 					echo 'Destination:<input name="destination" size="25" type="text" value="'.$destination.'"/><br/>';
 
-$data_arrs = array();
-$arrs = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday','Sunday');
-                                while ($occurance = mysql_fetch_array($occurance_result)) {
-									/*Still working*/
-									array_push($data_arrs,$occurance['dayName']);
-                                }
-foreach($arrs as $val){
-   $checked = in_array($val, $data_arrs) ? 'checked = "checked"' : '';
-   echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br/>';
-}
-
-echo '<select name="region">';
-$arrs_region = array('1'=>'North Vietnam','2'=>'Middle Vietnam','3'=>'South Vietnam');
-foreach($arrs_region as $key => $val){
-	if ($regionID == $key) {
-	echo '<option value="'.$key.'" selected >'.$val.'</option>';
-	} else {
- 	echo '<option value="'.$key.'">'.$val.'</option>';
-	}
-}
-echo '</select>';
+					$data_arrs = array();
+					$arrs = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday','Sunday');
+                    
+                    while ($occurance = mysql_fetch_array($occurance_result)) {
+                        array_push($data_arrs,$occurance['dayName']);
+                    }
+                    
+                    foreach($arrs as $val){
+                       $checked = in_array($val, $data_arrs) ? 'checked = "checked"' : '';
+                       echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br/>';
+                    }
+                    
+                    echo '<select name="region">';
+                    $arrs_region = array('1'=>'North Vietnam','2'=>'Middle Vietnam','3'=>'South Vietnam');
+                    foreach($arrs_region as $key => $val){
+                        if ($regionID == $key) {
+                        echo '<option value="'.$key.'" selected >'.$val.'</option>';
+                        } else {
+                        echo '<option value="'.$key.'">'.$val.'</option>';
+                        }
+                    }
+                    echo '</select>';
 
 					echo 'Current Image: <img width ="300" height="200" src="'.$image.'"/><br/>';
-					echo'<input type="hidden" value="'.$image.'" name="oldImg"/><div>
-			<div id="UploadImages">
-				<noscript>Please enable javascript to upload and crop images.</noscript>
-			</div>
-
-			<div id="PhotoPrevs">
-				<!-- The cropped images will be populated here -->
-			</div>
-		</div>
-		<input type="submit" value="Submit"/>
-<input type="reset" value="Reset"/>
-		</form>';
-
+					echo'<input type="hidden" value="'.$image.'" name="oldImg"/>
+                    
+                    <div>                    
+                        <div id="UploadImages">
+                            <noscript>Please enable javascript to upload and crop images.</noscript>
+                        </div>
+            
+                        <div id="PhotoPrevs">
+                            <!-- The cropped images will be populated here -->
+                        </div>
+					</div>
+                    
+					<input type="submit" value="Submit"/>
+					<input type="reset" value="Reset"/>
+					</form>';
 				}
+			} else {
+            	include("notice.php");
+            }
             ?>
 		</div>
 	
