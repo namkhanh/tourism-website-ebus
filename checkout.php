@@ -1,7 +1,9 @@
 <?php
 include (dirname(__FILE__).'/database_config.php');
+ob_start();
+session_start();
 
-if (isset($_SESSION['login'])==true && ( $_SESSION['login'])==true && isset($_SESSION['username']) ) {
+if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
 	$username = $_SESSION['username'];
 }
 
