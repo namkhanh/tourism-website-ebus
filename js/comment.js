@@ -5,8 +5,9 @@ function submitCommentForm(){
 	if(isFormValid()){
 		var title = $('#title').val();
 		var comment = $('#comment').val();
+		var tourID = $('#tourID').val();
 		var rate = $('input[name$="vote"]').val();
-		$.post("add_review.php", { title: title, comment : comment, rate : rate},
+		$.post("add_review.php", { title: title, comment : comment, tourID : tourID,rate : rate},
 		        function(result){
 		            //if the result is 1  
 		            if(result == 1){  
