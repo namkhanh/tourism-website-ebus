@@ -812,12 +812,12 @@ legend
     -webkit-border-radius: 5px;  
 }
 
-#adminbutton input:hover, input:focus {  
+#adminbutton input:hover, #addtour input:focus {  
     border-color: #C9C9C9;
 	background:#8080FF;
 } 
 
-#addtour input:hover, input:focus {
+#addtour input:hover, #addtour input:focus {
 	border-color: #C9C9C9;
 	background:#8080FF;
 }
@@ -835,14 +835,14 @@ legend
     -webkit-border-radius: 5px;  
 }
 
-#admin-ebook input:hover, input:focus {  
+#admin-ebook input:hover, #admin-ebook input:focus {  
     border-color: #C9C9C9;
 	background:#8080FF;
 } 
 /***** End of ebook admin decoration ********/
 
 /**********Decorate SiteMap***********/
-#sitemap li, a:visited
+#sitemap li, #sitemap a:visited
 {
 	color:#2A1FFF;
 }
