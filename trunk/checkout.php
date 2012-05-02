@@ -17,6 +17,7 @@ if($noorder == 0) {
 	mysql_query("INSERT INTO ebook_shopping (username,ebookID,date) VALUES('".$username."','".$ebookID."','".date("Y-m-d")."')");
 	}
 		setcookie('NumberOrdered', NULL, 1, "/");
+		header('Location: ebook.php');
 }
 ?>
                     

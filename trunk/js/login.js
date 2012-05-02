@@ -43,7 +43,14 @@ function authenticate() {
 			if (result == 1) {
 				//sucessful authentication 
 				$("#login_failed").css("display", "none");
-				location.href = document.URL;
+				var sPath = document.URL;
+				var sPage = sPath.substring(sPath.lastIndexOf('/') + 1);
+				if (sPage == 'registration.html') {
+					location.href = 'index.html';
+				} else {
+					location.href = sPath;
+				}
+				
 			} else {
 				//NOT sucessful authentication 
 				$("#login_failed").css("display", "inline");

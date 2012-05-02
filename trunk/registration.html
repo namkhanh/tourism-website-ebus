@@ -55,6 +55,11 @@
     
     	<div id="user-cpanel">
 		<?php include("user_cpanel.php"); ?>
+		<?php 
+				if (isset($_SESSION['login']) && ($_SESSION['login'])) {
+					header('Location: index.html');
+				}		
+ ?>
         </div>
         <div class="wan-clear"></div>
         <div id="user-form">

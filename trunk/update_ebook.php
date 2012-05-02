@@ -22,7 +22,6 @@ if ($_FILES ["file"] ["error"] > 0) {
 		$file = "ebook/" . $_FILES ["file"] ["name"];
 	}
 }
-echo $file;
 $updateEbook_query = ("Update ebook set name='$name', author='$author', price='$price', description='$description',  img='$image', download='$file' where ebookID='$ebookID'");
 $result_update_ebook = mysql_query($updateEbook_query);
 
@@ -32,7 +31,7 @@ if ($result_update_ebook) {
 	$flag = true;
 }
 
-echo $flag;
+header('Location: admin_ebook.php');
 mysql_close($db_con);
 ?>
                     

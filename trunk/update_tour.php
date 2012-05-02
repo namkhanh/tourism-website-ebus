@@ -33,7 +33,7 @@ if ($result_update_tour && $result_delete_occurance) {
 	$flag = true;
 }
 
-echo $flag;
+header('Location: admin_tour.php');
 mysql_close($db_con);
 ?>
                     
