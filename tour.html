@@ -74,6 +74,22 @@
 		<div id="right-top">
 		<div id="title-text">Tour Packages</div>	
             <?php
+            	if ($selection == "general") {
+                	echo '
+                    <div id="tour_general">
+                    	<p>Please select the region you are looking for</p>
+                        <table>
+                            <tr>';
+                                $i = 1;
+                                while ($record = mysql_fetch_array($result)) {
+                                    echo '<td><a href="tour.php?reg='.$i.'">'.$record['r_name'].'</td>';
+                                    $i = $i + 1;
+                                } echo '
+                            </tr>
+                        </table>
+                    </div>';
+                }
+                
                 if ($selection == "short") {
                     $first=true;
                     while($record = mysql_fetch_array($result)){

@@ -914,3 +914,47 @@ legend
 	margin-bottom:5px;
 	border-bottom: 1px solid #A0A0A4;
 }
+
+/**********Decorate for selecting Tour Region**********/
+#tour_general p
+{
+	text-align:center;
+	font-size:24px;
+	color:#5FA92A;
+}
+
+#tour_general table
+{
+	width:100%;
+	text-align:center;
+	background:#6697DF;
+	border-collapse:collapse;
+}
+
+#tour_general td
+{
+	border:1px solid white;
+}
+
+#tour_general a, #tour_general a:visited
+{
+	text-decoration:none;
+	font-size:30px;
+	color:white;
+}
+
+#tour_general a:hover
+{
+	text-decoration:underline;	
+}
+/**********End of Decorate for selecting Tour Region**********/
+
+/**********Thank You Style**********/
+.thank
+{
+	text-align:center;
+	font-size:24px;
+	color:#5FA92A;	
+}
+/**********End of Thank You Style**********/
+

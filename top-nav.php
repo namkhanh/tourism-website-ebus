@@ -1,7 +1,7 @@
 <ul>
     <li><a href="index.html">Home</a></li>
     
-    <li><a href="javascript://" class="parent_menu">Tour</a>
+    <li><a href="tour.php?reg=0" class="parent_menu">Tour</a>
         <ul>
             <li><a href="tour.php?reg=1">North Vietnam</a></li>
             <li><a href="tour.php?reg=2">Middle Vietnam</a></li>
