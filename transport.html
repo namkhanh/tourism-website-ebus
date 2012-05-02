@@ -75,15 +75,13 @@
 			 <?php               
                     while($record = mysql_fetch_array($result))
                     {
-                        echo '<div id="heading">'.$record['name'].'</div>
-                        	  <img src="'.$record['image'].'" alt="Image cannot be load" align="left" />
-                              
-                        	  <div>';
+                        echo '
+                        	<div id="transport">
+                                <img src="'.$record['image'].'" alt="Image cannot be load" align="left" />
+                                <div id="transport_name">'.$record['name'].'</div>';
                         echo $record['description'].'<br /><br />';
-                        
                         echo '<b>Price: </b>'.$record['price'].' VND</div>';
-                    }
-                
+                    }      
             ?>
 		</div>
 		<div class="wan-clear"></div> 
