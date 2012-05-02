@@ -94,14 +94,12 @@ text-decoration: none;
 /*********************** Start Of Formatting Menu (includes Admin drop-down also)***********************/
 #topnav, #topnav ul, #user-cpanel, #user-cpanel ul
 {
-	position:relative;	
 	margin:0;
 	padding:0;	
 }
 
 #topnav 
 {
-	top: -16px;
 	height:50px;
 	background: url(images/topnav_yellow.jpg) no-repeat left top;
 }
@@ -167,7 +165,6 @@ text-decoration: none;
 }
 
 #user-cpanel {
-	top:-16px;
 	height:40px;
 	background-image:url('images/test/brushed_alu.png');	
 }
@@ -202,11 +199,9 @@ text-decoration: none;
 
 #user-cpanel ul li ul a
 {
-	opacity:0.4;
 	padding:4px 0;
-	background:#ffffff;
-	color:#2A00FF;
-	font-weight:bolder;
+	background:url('images/transparent-bg.png');
+	color:#E5E8C4;
 	border-bottom:1px solid #A0A0A4;
 }
 
