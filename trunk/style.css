@@ -53,6 +53,8 @@ div#slideshow ul#slides li {
 }
 
 div#slideshow ul#slides li span.caption {
+	text-align:center;
+	color:#EAE977;
 	position: absolute;
 	top: 190px;
 	left: 0;
