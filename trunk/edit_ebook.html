@@ -95,7 +95,7 @@
                 
                 	echo '
                     <form method="post" enctype="multipart/form-data" action="update_ebook.php">
-                        <table>
+                        <table id="edit">
                             <tr>
                                 <td>Ebook Name</td>
                                 <td><input size="50" name="ebook_name" type="text" value="'.$name.'"/></td>
@@ -127,22 +127,28 @@
                                 <td><input size="25" type="file" name="file" /></td>
                             </tr>
 
-                            <tr>
-                                <td valign="top">Current Image<br /><br />
+                            <tr valign="top">
+                                <td>Current Image</td>
+                                <td>
+                                	<img width ="300" height="200" src="'.$image.'" alt="Image cannot be load" title="Current Image" />
+                                    <input type="hidden" value="'.$image.'" name="oldImg" />
+								</td>
+                                
+                                <td>
                                     <div id="UploadEbookImg">
                                         <noscript>Please enable javascript to upload and crop images.</noscript>
                                     </div>
-            
+            					</td>
+                                
+                                <td>
                                     <div id="ImgPrevs">
                                         <!-- The cropped images will be populated here -->
                                     </div>                                                                            
                                 </td>
-                                <td><img width ="300" height="200" src="'.$image.'" alt="Image cannot be load" title="Current Image" /></td>
-                                <input type="hidden" value="'.$image.'" name="oldImg" />                                    
                             </tr>
 
                             <tr>
-                                <td colspan="2" align="center">
+                                <td colspan="4" align="center">
                                     <input type="submit" value="Submit"/>
                                     <input type="reset" value="Reset"/>	    
                                 </td>

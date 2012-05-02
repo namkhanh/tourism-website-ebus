@@ -92,51 +92,95 @@
                     $regionID = $record['regionID'];
                     $image = $record['image'];
                     
-					echo '<form method="post" action="update_tour.php">Tour Name:<input size="50" name="tour_name" type="text" value="'.$tourName.'"/><br/>';
-					echo '<input type="hidden" name="tourID" value="'.$tourID.'"/>';
-					echo 'Duration:<input size="50" type="text" name="duration" value="'.$duration.'"/><br/>';
-					echo 'Price:<input size="25" type="text" name="price" value="'.$price.'"/><br/>';
-					echo 'Description:<textarea name="description" rows="15" cols="100"/>'.$description.'</textarea><br/>';
-					echo 'Destination:<input name="destination" size="25" type="text" value="'.$destination.'"/><br/>';
+					echo '<form method="post" action="update_tour.php">
+                    		<table>
+                            	<tr>
+                                	<td>Tour Name</td>
+                                    <td><input size="50" name="tour_name" type="text" value="'.$tourName.'"/></td>
+                                    <input type="hidden" name="tourID" value="'.$tourID.'"/>
+                                </tr>
+                                
+                            	<tr>
+                                	<td>Duration</td>
+                                    <td><input size="50" type="text" name="duration" value="'.$duration.'"/></td>
+                                </tr>
+                                
+                            	<tr>
+                                	<td>Price</td>
+                                    <td><input size="50" type="text" name="price" value="'.$price.'"/></td>
+                                </tr>
+                                
+                            	<tr>
+                                	<td valign="top">Description</td>
+                                    <td><textarea name="description" rows="10" cols="39"/>'.$description.'</textarea></td>
+                                </tr>
+                                
+                            	<tr>
+                                	<td>Destination</td>
+                                    <td><input name="destination" size="50" type="text" value="'.$destination.'"/></td>
+                                </tr>
+                                
+                                <tr>
+                                	<td valign="top">Occurance</td>
+                                    <td>';
+                                        $data_arrs = array();
+                                        $arrs = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday','Sunday');                        					
+                                        
+                                        while ($occurance = mysql_fetch_array($occurance_result)) {
+                                            array_push($data_arrs,$occurance['dayName']);
+                                        }
+                                        
+                                        foreach($arrs as $val){
+                                           $checked = in_array($val, $data_arrs) ? 'checked = "checked"' : '';
+                                           echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br/>';
 
-					$data_arrs = array();
-					$arrs = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday','Sunday');
-                    
-                    while ($occurance = mysql_fetch_array($occurance_result)) {
-                        array_push($data_arrs,$occurance['dayName']);
-                    }
-                    
-                    foreach($arrs as $val){
-                       $checked = in_array($val, $data_arrs) ? 'checked = "checked"' : '';
-                       echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br/>';
-                    }
-                    
-                    echo '<select name="region">';
-                    $arrs_region = array('1'=>'North Vietnam','2'=>'Middle Vietnam','3'=>'South Vietnam');
-                    foreach($arrs_region as $key => $val){
-                        if ($regionID == $key) {
-                        echo '<option value="'.$key.'" selected >'.$val.'</option>';
-                        } else {
-                        echo '<option value="'.$key.'">'.$val.'</option>';
-                        }
-                    }
-                    echo '</select>';
-
-					echo 'Current Image: <img width ="300" height="200" src="'.$image.'"/><br/>';
-					echo'<input type="hidden" value="'.$image.'" name="oldImg"/>
-                    
-                    <div>                    
-                        <div id="UploadImages">
-                            <noscript>Please enable javascript to upload and crop images.</noscript>
-                        </div>
-            
-                        <div id="PhotoPrevs">
-                            <!-- The cropped images will be populated here -->
-                        </div>
-					</div>
-                    
-					<input type="submit" value="Submit"/>
-					<input type="reset" value="Reset"/>
+                                        }                                                                                        
+                              echo '</td>
+                                </tr>
+                                
+                                <tr>
+									<td>Region</td>
+                                    <td>
+                          				<select name="region">';
+                                            $arrs_region = array('1'=>'North Vietnam','2'=>'Middle Vietnam','3'=>'South Vietnam');
+                                            foreach($arrs_region as $key => $val){
+                                                if ($regionID == $key) {
+	                                                echo '<option value="'.$key.'" selected >'.$val.'</option>';
+                                                } else {
+    	                                            echo '<option value="'.$key.'">'.$val.'</option>';
+                                                }
+                                            }
+		                    	  echo '</select>
+                                    </td>
+								</tr>
+                                
+                                <tr valign="top">
+                                	<td>Current Image</td>
+                                    <td>
+                                    	<img width ="300" height="200" src="'.$image.'"/>
+                                    	<input type="hidden" value="'.$image.'" name="oldImg"/>
+                                    </td>
+                                    
+                                    <td>
+										<div id="UploadImages">
+                            				<noscript>Please enable javascript to upload and crop images.</noscript>
+                        				</div>
+                                    </td>
+                                    
+                                    <td>
+                                        <div id="PhotoPrevs">
+                                            <!-- The cropped images will be populated here -->
+                                        </div>                                    
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                	<td colspan="4" align="center">
+										<input type="submit" value="Submit"/>
+										<input type="reset" value="Reset"/>
+                                    </td>
+                                </tr>
+                            </table>
 					</form>';
 				}
 			} else {
