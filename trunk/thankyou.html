@@ -80,8 +80,10 @@
                 $transportID = $_POST['transportID'];
                 $numVisitor = $_POST['numVisitor'];
                 
-                $bookingSQL = "INSERT INTO tour_booking (tour_booking_id, date, username, tourID, transportID, no_ppl) ";
-                $bookingSQL = $bookingSQL."VALUES ('$bookingID', '$date', '$username', '$tourID', '$transportID', '$numVisitor' )";
+                $today = date("Y-m-d");
+
+                $bookingSQL = "INSERT INTO tour_booking (tour_booking_id, date, date_booking, username, tourID, transportID, no_ppl) ";
+                $bookingSQL = $bookingSQL."VALUES ('$bookingID', '$date', '$today', '$username', '$tourID', '$transportID', '$numVisitor' )";
                           
                 mysql_query($bookingSQL);
             ?>
