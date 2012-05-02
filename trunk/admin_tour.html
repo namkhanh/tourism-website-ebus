@@ -103,8 +103,7 @@
 
                                 echo '<br />';
 
-                                $result_rate = mysql_query('Select sum(rate) as sum, count(*) as count from tour_booking, review where
-                                tour_booking.tour_booking_id = review.tour_booking_id and tourID="'.$tourID.'" having count >0');
+                                $result_rate = mysql_query('Select sum(rate) as sum, count(*) as count from tour, review, tour_booking where tour.tourID = review.tourID and tour_booking.tourID = tour.tourID and tour_booking.tourID="'.$tourID.'" having count >0');
                                 
                                 if(mysql_num_rows($result_rate) > 0) {
 	                                $record_rate =  mysql_fetch_array($result_rate);
