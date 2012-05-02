@@ -27,14 +27,14 @@ width:210px
 }
 
 #left-top{
-margin-top:2%;
+margin-top:20px;
 float:left;
-width:25%;
+width:275px;
 height:260px;
 }
 
 #ver-border {
-margin-top:2%;
+margin-top:20px;
 float:left;
 height:125px;
 width:8px;
@@ -44,9 +44,9 @@ background-position:right;
 }
 
 #right-top{
-margin-top:2%;
+margin-top:20px;
 float:right;
-width:72.4%;
+width:803px;
 }
 
 #spec-tour{
@@ -54,7 +54,7 @@ margin:auto;
 }
 
 #hot-spot {
-margin-top:4%;
+margin-top:5px;
 }
 
 #metro-ui {
@@ -100,5 +100,5 @@ color:#FFF;
     
  
 #content {
-margin-top:2%;
+margin-top:220px;
 }

@@ -15,7 +15,7 @@
                         </tr>
                         
                         <tr>
-                        	<td>Price (VND)</td>
+                        	<td>Price<br/>(VND)</td>
                             <td>
                             	<select name="price" style="width:170px">
  		                           	<option value="0">Select</option>
