@@ -847,13 +847,7 @@ legend
 	color:#2A1FFF;
 }
 
-
-
-
-
-
-/*
-#tour_content
+#admin_tour
 {
 	
 	padding:5px;
@@ -869,25 +863,25 @@ legend
     } 
 }
 
-#top_details
+#admin_top_details
 {
 	clear:both;
 }
 
-#top_details b
+#admin_top_details b
 {
 	margin-left:2%;
 }
 
 
-#description {
+#admin_description {
 	margin-top:5%;
 	margin-left: 1%;
 	text-align:justify;
 	clear:both;
 }
 
-#heading
+#admin_heading
 {
 	color:#5FA92A;
 	font-size:160%;
