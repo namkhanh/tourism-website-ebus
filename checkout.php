@@ -16,6 +16,7 @@ if($noorder == 0) {
 	$ebookID = $_GET["ebookID".$i];
 	mysql_query("INSERT INTO ebook_shopping (username,ebookID,date) VALUES('".$username."','".$ebookID."','".date("Y-m-d")."')");
 	}
+		setcookie('NumberOrdered', NULL, 1, "/");
 }
 ?>
                     
