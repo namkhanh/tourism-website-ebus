@@ -7,11 +7,16 @@
 	
 	if(isset($_GET['reg']))
 	{
-		$selection = "short";
-		
 		$regionID = $_GET['reg'];
 		
-		$result = mysql_query('Select * From tour t, region r Where r.regionID=t.regionID And r.regionID='.$regionID);
+		if($regionID == 0)
+		{
+			$selection = "general";
+			$result = mysql_query('Select * From region');
+		} else {
+			$selection = "short";
+			$result = mysql_query('Select * From tour t, region r Where r.regionID=t.regionID And r.regionID='.$regionID);
+		}
 
 		include("tour.html");
 	} 
