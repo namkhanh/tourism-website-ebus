@@ -500,14 +500,14 @@ legend
 	margin-bottom:10px;
 }
 
-#tour_name
+#tour_name, #transport_name
 {	
 	text-decoration:none;
 	color:#FF5F00;
 	font-size:20px;
 }
 
-#tour img
+#tour img, #transport img
 {
 	padding-right:5px;
 	padding-bottom:5px;
