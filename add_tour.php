@@ -13,7 +13,7 @@ if (!empty($_POST['newImg'])) {
 	$image ="";
 }
 
-$add_tour_query = "INSERT INTO tour (t_name,duration,price,description,destination,regionID,image) VALUES ('$tourName', '$duration','$price','$description','$destination','$regionID','$image')";
+$add_tour_query = "INheader('Location: admin_tour.php');SERT INTO tour (t_name,duration,price,description,destination,regionID,image) VALUES ('$tourName', '$duration','$price','$description','$destination','$regionID','$image')";
 $result_tour = mysql_query($add_tour_query);
 
 $id_query = "Select tourID from tour where t_name ='$tourName' and duration='$duration' and price='$price' and description='$description' and destination='$destination' and regionID='$regionID' and image='$image'";
@@ -32,5 +32,5 @@ if (!empty($_POST['dayName'])) {
 		}
 	}
 }
-
+header('Location: admin_tour.php');
 ?>

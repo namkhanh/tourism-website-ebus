@@ -21,9 +21,8 @@ if ($_FILES ["file-ebook"] ["error"] > 0) {
 		$file = "ebook/" . $_FILES ["file-ebook"] ["name"];
 	}
 }
-echo $file;
 $add_ebook_query = "INSERT INTO ebook (name,author,price,description,download,img) VALUES ('$name', '$author','$price','$description','$file','$image')";
 $result_ebook = mysql_query($add_ebook_query);
 
-
+header('Location: admin_ebook.php');
 ?>

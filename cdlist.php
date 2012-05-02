@@ -11,7 +11,7 @@ include (dirname(__FILE__).'/database_config.php');
 			$year = idate("Y",strtotime($record['date']));
 			$ID = $record['eventID'];
 		
-			echo '<li onmouseover="openDes(\''.$ID.'\')" onmouseout="closeDes((\''.$ID.'\'))" ><a href="event.html?eventID='.$ID.'" ><img  src="'.$record['image'].'" border="0" /><span id="'.$ID.'" class="caption" style="display:none">Countdown</span></a>';;
+			echo '<li onmouseover="openDes(\''.$ID.'\')" onmouseout="closeDes((\''.$ID.'\'))" ><a href="event.php?eventID='.$ID.'" ><img  src="'.$record['image'].'" border="0" /><span id="'.$ID.'" class="caption" style="display:none">Countdown</span></a>';;
 			echo '
 				<script language="javascript" type="text/javascript">
 					var montharray'.$ID.'=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
