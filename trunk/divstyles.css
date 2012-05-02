@@ -23,18 +23,18 @@ background-image:url(images/hor-line.jpg);
 background-repeat:repeat-x;
 background-position:22px 22px;
 margin-bottom:5px;
-width:210px
+width:210px;
 }
 
 #left-top{
-margin-top:20px;
+margin-top:2%;
 float:left;
-width:275px;
+width:25%;
 height:260px;
 }
 
 #ver-border {
-margin-top:20px;
+margin-top:2%;
 float:left;
 height:125px;
 width:8px;
@@ -44,9 +44,9 @@ background-position:right;
 }
 
 #right-top{
-margin-top:20px;
+margin-top:2%;
 float:right;
-width:803px;
+width:72%;
 }
 
 #spec-tour{
@@ -54,7 +54,7 @@ margin:auto;
 }
 
 #hot-spot {
-margin-top:5px;
+margin-top:4%;
 }
 
 #metro-ui {
@@ -100,5 +100,5 @@ color:#FFF;
     
  
 #content {
-margin-top:220px;
+margin-top:2%;
 }
