@@ -96,6 +96,12 @@ width: 362px;
 #footer { 
 height: 50px;
 color:#FFF;
+width:1100px;
+background:url(images/footer.png);
+text-align:center;
+margin:auto;
+vertical-align:middle;
+color:#003;
 }
     
  
