@@ -81,7 +81,7 @@
             <?php
             
             if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
-            	echo '<div id="title-text">Tour Packages</div>';
+            	echo '<div id="title-text">Edit Tour</div>';
                 
                 while($record = mysql_fetch_array($result)){
                     $tourName = $record['t_name'];
@@ -92,10 +92,10 @@
                     $regionID = $record['regionID'];
                     $image = $record['image'];
                     
-					echo '<form method="post" action="update_tour.php">
+					echo '<center><form id="edit_tour" method="post" action="update_tour.php">
                     		<table>
                             	<tr>
-                                	<td>Tour Name</td>
+                                	<td><label for="tour_name">Tour Name</label> </td>
                                     <td><input size="50" name="tour_name" type="text" value="'.$tourName.'"/></td>
                                     <input type="hidden" name="tourID" value="'.$tourID.'"/>
                                 </tr>
@@ -132,7 +132,7 @@
                                         
                                         foreach($arrs as $val){
                                            $checked = in_array($val, $data_arrs) ? 'checked = "checked"' : '';
-                                           echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br/>';
+                                           echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br />';
 
                                         }                                                                                        
                               echo '</td>
@@ -175,13 +175,13 @@
                                 </tr>
                                 
                                 <tr>
-                                	<td colspan="4" align="center">
+                                	<td id="edit_submit" colspan="4" align="center">
 										<input type="submit" value="Submit"/>
 										<input type="reset" value="Reset"/>
                                     </td>
                                 </tr>
                             </table>
-					</form>';
+					</form></center>';
 				}
 			} else {
             	include("notice.php");
