@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Ho_Chi_Minh");
 include (dirname(__FILE__).'/database_config.php');
 $title = mysql_real_escape_string($_POST["title"]);
 $comment = mysql_real_escape_string($_POST["comment"]);
@@ -10,7 +11,7 @@ session_start();
 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
 	$username = $_SESSION['username'];
 }
-$today = date("Y-m-d");
+$today = date("Y-m-d H:m:s");
 
 $query_insert_comment = "INSERT INTO review (title,comment,rate,r_date,tourID,username) VALUES ('$title', '$comment', '$rate', '$today', '$tourID','$username')";
 
