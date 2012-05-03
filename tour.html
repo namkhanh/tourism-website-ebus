@@ -151,7 +151,8 @@
                                 $title = $record_review['title'];
                                 $comment = $record_review['comment'];
                                 $rate = $record_review['rate'];
-                                $date = $record_review['r_date'];
+								$temp = date_create($record_review['r_date']);
+								$date= date_format($temp,"F j, Y");
                                 $username = $record_review['username'];
                                 echo '<div id="review">
                                		  <table><tr><th><b>Subject: '.$title.'</b></th></tr>
