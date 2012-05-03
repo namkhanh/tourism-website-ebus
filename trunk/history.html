@@ -68,37 +68,37 @@
         </div>
 			
 		<div id="content">
-        	<center><div id="title-text">Booking History</div></center><br />
-        	<table id="history">
-            	<tr>
-                    <th>Tour Booking Id</th>
-                    <th>User name</th>
-                    <th>TourID</th>
-                    <th>Booking Date</th>
-                    <th>Date of Departure</th>
-                    <th>TransportID</th>
-                    <th>Number of customer</th>
-                </tr>
-                
-                <?php
-                    while ($record = mysql_fetch_array($history_result)) {
-                        echo '
-                        <tr>
-                            <td>'.$record['tour_booking_id'].'</td>
-                            <td>'.$record['username'].'</td>
-                            <td>'.$record['tourID'].'</td>
-                            <td>'.$record['date_booking'].'</td>
-                            <td>'.$record['date'].'</td>
-                            <td>'.$record['transportID'].'</td>                        
-                            <td>'.$record['no_ppl'].'</td>
-                        </tr>';
+        	<?php
+            	$first = true;
+            	while ($record = mysql_fetch_array($history_result)) {
+                	if ($first == true) {
+                    	echo '
+	                    <center><div id="heading">Booking History of '.$record['t_name'].'</div></center><br />
+    	                <table id="history">
+                            <tr>
+                                <th>Tour Booking Id</th>
+                                <th>User name</th>
+                                <th>Booking Date</th>
+                                <th>Date of Departure</th>
+                                <th>TransportID</th>
+                                <th>Number of visitors</th>
+                            </tr>';
+						$first = false;
+					}
+                    
+                    echo '
+                    <tr>
+                        <td>'.$record['tour_booking_id'].'</td>
+                        <td>'.$record['username'].'</td>
+                        <td>'.$record['date_booking'].'</td>
+                        <td>'.$record['date'].'</td>
+                        <td>'.$record['transportID'].'</td>                        
+                        <td>'.$record['no_ppl'].'</td>
+                    </tr>';
                     }
+					echo '</table><br />
+                    	  <center><a href="tour.php?tourID='.$tourID.'"><input type="button" value="Back to Previous Page" /></a></center>';
                 ?>
-            </table><br />
-            
-            <?php
-				echo '<center><a href="tour.php?tourID='.$tourID.'"><input type="button" value="Back to Previous Page" /></a></center>';
-            ?>
 		</div>
         
         <div id="footer"></div> 
