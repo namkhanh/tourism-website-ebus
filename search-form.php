@@ -30,13 +30,13 @@
                         <tr>
                         	<td>Date</td>
                             
-                            <td><input id="datepicker" type="text" style="width: 170px; position: relative; z-index: 15"/></td>
+                            <td><input id="datepicker" type="text" style="width: 165px; position: relative; z-index: 15"/></td>
                             <td><input name="date" id="alternative" type="hidden" style="position: relative; z-index: 15"/></td>
                         </tr>
 
-						<tr>
-							<td><input name="reset" type="reset" value="Refresh" /></td>
-							<td><input name="submit" type="submit" value="Search" /></td>
+						<tr align="center">
+							<td colspan="2"><input name="reset" type="reset" value="Reset" />
+											<input name="submit" type="submit" value="Search" /></td>
 						</tr>
 						</table>  
                 </fieldset>
