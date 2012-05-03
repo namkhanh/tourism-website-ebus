@@ -33,9 +33,6 @@
 		$result_rate = mysql_query('Select sum(rate) as sum, count(*) as count from tour, review, tour_booking where tour.tourID = review.tourID and tour_booking.tourID = tour.tourID and tour_booking.tourID="'.$tourID.'" having count >0');
 		
 		$result_review = mysql_query('Select * From tour_booking, review, tour Where tour_booking.tourID = tour.tourID and review.tourID = tour_booking.tourID and tour.tourID="'.$tourID.'" ORDER BY r_date DESC');
-
-		//Still working on retrieve history		
-		$history_result = mysql_query('Select * From tour_booking Where tourID='.$tourID);
 	}
 	
 	include("tour.html");
