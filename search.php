@@ -63,7 +63,7 @@ if (mysql_num_rows ( $result ) > 0) {
 		
 		echo '<div id="tour">
                         
-                        	  <img src="' . $record ['image'] . '" alt="Image cannot be loaded" align="left">
+                        	  <img width="300" height="200" src="' . $record ['image'] . '" alt="Image cannot be loaded" align="left">
                         	  <a id="tour_name" href="tour.php?tourID=' . $id . '">' . $record ['t_name'] . '</a><br /><br />';
 		
 		echo $shortDescription . '...<br /><a href="tour.php?tourID=' . $id . '">More Details</a><br /><br /></div>';
