@@ -218,13 +218,16 @@
                     if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
                         $username = $_SESSION['username'];
                         $result = mysql_query("SELECT * FROM tour_booking where username='$username' and tourID = '$tourID'");
-   
+                        
+   						$record = mysql_fetch_array($result);
+                        
                         if(mysql_num_rows($result) > 0) {
                             echo '<!-- <form class="uniForm" action="add_review.php" method="post" style="width:500px;" id="review"> -->
                             	  <form action="add_review.php" method="post" id="make_review">	
         
                             <fieldset><legend>Comment</legend>
-        						<input type="hidden" id="tourID" value="'.$tourID.'">
+        						<input type="hidden" id="tourID" value="'.$tourID.'" />
+                                <input type="hidden" id="tour_booking_id" value="'.$record['tour_booking_id'].'" />
                                 <table>
                                 	<tr>
                                     	<div class="ctrlHolder">
