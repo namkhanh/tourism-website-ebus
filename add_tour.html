@@ -84,7 +84,7 @@
         if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
         	echo'
 			<div id="title-text">Add Tour</div>
-			<form method="post" action="add_tour.php">
+			<center><form id="add_t" method="post" action="add_tour.php">
             	<table>
                 	<tr>
                     	<td>Tour Name</td>
@@ -149,13 +149,13 @@
                     </tr>
                     
                     <tr>
-                    	<td colspan="2" align="center">                		
+                    	<td id="add_t_submit" colspan="2" align="center">                		
                             <input type="submit" value="Submit" /> 
                             <input type="reset" value="Reset" />        
                         </td>
                     </tr>
                 </table>
-			</form>';
+			</form></center>';
         } else {
         	include("notice.php");
         }

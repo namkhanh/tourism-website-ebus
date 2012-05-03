@@ -83,7 +83,7 @@
         if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
 			echo '
             <div id="title-text">Add New E-Book</div>
-            <form method="post" action="add_ebook.php" enctype="multipart/form-data">
+            <center><form id="add_ebook_form" method="post" action="add_ebook.php" enctype="multipart/form-data">
                 <table>
                     <tr>
                         <td>Ebook Name</td>
@@ -125,7 +125,7 @@
                     </tr>
                     
                     <tr>
-                        <td colspan="2" align="center">
+                        <td id="add_ebook_submit" colspan="2" align="center">
                             <input type="submit" value="Submit" /> 
                             <input type="reset" value="Reset" />                            
                         </td>

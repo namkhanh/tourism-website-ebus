@@ -952,8 +952,8 @@ legend
 }
 /**********End of Thank You Style**********/
 
-/**********Decoration for edit tour**********/
-#edit_tour input, #edit_tour textarea, #edit_tour select {   
+/**********Decoration for edit tour and add tour**********/
+#edit_tour input, #edit_tour textarea, #edit_tour select, #add_t input, #add_t textarea, #add_t select {   
     padding: 9px;  
     border: solid 1px #E5E5E5;  
     outline: 0;  
@@ -965,27 +965,22 @@ legend
     -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
     -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
     } 
-#edit_tour select {
+#edit_tour select, #add_t select {
 	width:100%;
 }
-#edit_tour textarea {
+#edit_tour textarea, #add_t textarea {
 		width:95%;
         height: 150px;  
         line-height: 150%;  
         }  
       
-#edit_tour input:hover, #edit_tour textarea:hover, #edit_tour select:hover
-#edit_tour input:focus, #edit_tour textarea:focus, #edit_tour select:focus {  
+#edit_tour input:hover, #edit_tour textarea:hover, #edit_tour select:hover, #add_t input:hover, #add_t textarea:hover, #add_t select:hover
+#edit_tour input:focus, #edit_tour textarea:focus, #edit_tour select:focus, #add_t input:focus, #add_t textarea:focus, #add_t select:focus  {  
         border-color: #C9C9C9;  
         -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
         }  
-      
-#edit_tour form label {  
-        margin-left: 10px;  
-        color: #999999;  
-        }  
-      
-#edit_submit input {
+		
+#edit_submit input, #add_t_submit input {
 		width:80px;
         padding: 9px 15px;  
         background: #617798;  
@@ -994,6 +989,53 @@ legend
         color: #FFFFFF;  
         -moz-border-radius: 5px;  
         -webkit-border-radius: 5px;  
-        }  
+        }
+#edit_submit input:hover, #edit_submit input:focus, #add_t_submit input:hover, #add_t_submit input:focus {  
+    border-color: #C9C9C9;
+	background:#8080FF;edit_ebook_form
+} 
+/**********End of decoration for edit and add tour**********/
 
-/**********End of decoration for edit tour**********/
+/**********Decoration for edit ebook and add ebook**********/
+#edit_ebook_form input, #edit_ebook_form textarea, #edit_ebook_form select, #add_ebook_form input, #add_ebook_form textarea, #add_ebook_form select {   
+    padding: 9px;  
+    border: solid 1px #E5E5E5;  
+    outline: 0;  
+    font: normal 13px/100% Verdana, Tahoma, sans-serif;  
+    background: #FFFFFF url('bg_form.png') left top repeat-x;  
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));  
+    background: -moz-linear-gradient(top, #FFFFFF, #EEEEEE 1px, #FFFFFF 25px);  
+    box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -moz-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    -webkit-box-shadow: rgba(0,0,0, 0.1) 0px 0px 8px;  
+    } 
+#edit_ebook_form select, #add_ebook_form select {
+	width:100%;
+}
+#edit_ebook_form textarea, #add_ebook_form textarea {
+		width:95%;
+        height: 150px;  
+        line-height: 150%;  
+        }  
+      
+#edit_ebook_form input:hover, #edit_ebook_form textarea:hover, #edit_ebook_form select:hover, #add_ebook_form input:hover, #add_ebook_form textarea:hover, #add_ebook_form select:hover
+#edit_ebook_form input:focus, #edit_ebook_form textarea:focus, #edit_ebook_form select:focus, #add_ebook_form input:focus, #add_ebook_form textarea:focus, #add_ebook_form select:focus  {  
+        border-color: #C9C9C9;  
+        -webkit-box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 8px;  
+        }  
+		
+#edit_ebook_submit input, #add_ebook_submit input {
+		width:80px;
+        padding: 9px 15px;  
+        background: #617798;  
+        border: 0;  
+        font-size: 14px;  
+        color: #FFFFFF;  
+        -moz-border-radius: 5px;  
+        -webkit-border-radius: 5px;  
+        }
+#edit_ebook_submit input:hover, #edit_ebook_submit input:focus, #add_ebook_submit input:hover, #add_ebook_submit input:focus {  
+    border-color: #C9C9C9;
+	background:#8080FF;
+} 
+/**********End of decoration for edit and add ebook**********/
