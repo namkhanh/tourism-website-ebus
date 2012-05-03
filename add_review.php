@@ -11,7 +11,8 @@ session_start();
 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
 	$username = $_SESSION['username'];
 }
-$today = date("Y-m-d H:m:s");
+
+$today = date("d-m-Y H:m:s");
 
 $query_insert_comment = "INSERT INTO review (title,comment,rate,r_date,tourID,username) VALUES ('$title', '$comment', '$rate', '$today', '$tourID','$username')";
 
