@@ -2,10 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
 	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
-    <title>Thank You For Shopping With Us</title>
-    <meta name="description" content="E-Business"  /> 
+    <title>Booking History</title>
+    <meta name="description" content=""  /> 
 	<meta name ="keywords" content="?????"  />
-    <meta http-equiv="refresh" content="5;url=https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0" />
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
     <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
@@ -69,26 +68,37 @@
         </div>
 			
 		<div id="content">
-        	
-        	<?php            
-            	include (dirname(__FILE__).'/database_config.php');
+        	<center><div id="title-text">Booking History</div></center><br />
+        	<table id="history">
+            	<tr>
+                    <th>Tour Booking Id</th>
+                    <th>User name</th>
+                    <th>TourID</th>
+                    <th>Booking Date</th>
+                    <th>Date of Departure</th>
+                    <th>TransportID</th>
+                    <th>Number of customer</th>
+                </tr>
                 
-                $username = $_POST['username'];
-                $bookingID = $_POST['bookingID'];
-                $date = $_POST['date'];
-                $tourID = $_POST['tourID'];
-                $transportID = $_POST['transportID'];
-                $numVisitor = $_POST['numVisitor'];
-                
-                $today = date("d-m-Y");
-
-                $bookingSQL = "INSERT INTO tour_booking (tour_booking_id, date, date_booking, username, tourID, transportID, no_ppl) ";
-                $bookingSQL = $bookingSQL."VALUES ('$bookingID', '$date', '$today', '$username', '$tourID', '$transportID', '$numVisitor' )";
-                          
-                mysql_query($bookingSQL);
-            ?>
+                <?php
+                    while ($record = mysql_fetch_array($history_result)) {
+                        echo '
+                        <tr>
+                            <td>'.$record['tour_booking_id'].'</td>
+                            <td>'.$record['username'].'</td>
+                            <td>'.$record['tourID'].'</td>
+                            <td>'.$record['date_booking'].'</td>
+                            <td>'.$record['date'].'</td>
+                            <td>'.$record['transportID'].'</td>                        
+                            <td>'.$record['no_ppl'].'</td>
+                        </tr>';
+                    }
+                ?>
+            </table><br />
             
-			<div class="thank">Thank you for purchasing a tour. You will be back to Tour page in 5 seconds...</div>
+            <?php
+				echo '<center><a href="tour.php?tourID='.$tourID.'"><input type="button" value="Back to Previous Page" /></a></center>';
+            ?>
 		</div>
         
         <div id="footer"></div> 

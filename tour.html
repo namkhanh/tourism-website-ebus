@@ -135,6 +135,10 @@
 
                                 if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
                                     echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>';
+                                    
+                                    if ($_SESSION['username']=="inte") {
+                                    	echo '<a href="history.php?tourID='.$tourID.'"><input type="button" value="Retrieve History" /></a>';
+                                    }
                                 } else {
                                     echo '<i>You need to <a href="javascript:toggleLogin();">login</a> before booking tour. Do not have an account? Click <a href="registration.html">here</a></i>';
                                 }
