@@ -952,6 +952,21 @@ legend
 }
 /**********End of Thank You Style**********/
 
+/**********History Style**********/
+#history, #history th, #history tr, #history td
+{
+	border:1px solid black;
+	border-collapse:collapse;
+	margin:auto;
+	text-align:center;
+}
+
+#history th
+{
+	padding:5px;	
+}
+/**********End of History Style**********/
+
 /**********Decoration for edit tour and add tour**********/
 #edit_tour input, #edit_tour textarea, #edit_tour select, #add_t input, #add_t textarea, #add_t select {   
     padding: 9px;  
@@ -1038,4 +1053,4 @@ legend
     border-color: #C9C9C9;
 	background:#8080FF;
 } 
-/**********End of decoration for edit and add ebook**********/
+/**********End of decoration for edit and add ebook**********/>>>>>>> .r381
