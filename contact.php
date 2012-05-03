@@ -6,4 +6,5 @@
 		$messageform = $_POST['message'];
 		$header = 'From: '.$_POST['email'];
 		mail('s3296868@rmit.edu.vn', $name, $messageform, $header);
+		header('Location: index.html');
 ?>
