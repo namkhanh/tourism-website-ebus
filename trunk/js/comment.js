@@ -7,7 +7,8 @@ function submitCommentForm(){
 		var comment = $('#comment').val();
 		var tourID = $('#tourID').val();
 		var rate = $('input[name$="vote"]').val();
-		$.post("add_review.php", { title: title, comment : comment, tourID : tourID,rate : rate},
+		var tour_booking_id = $('#tour_booking_id').val();
+		$.post("add_review.php", { title: title, comment : comment, tourID : tourID,rate : rate, tour_booking_id : tour_booking_id},
 		        function(result){
 		            //if the result is 1  
 		            if(result == 1){  
