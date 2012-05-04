@@ -50,29 +50,32 @@
 	<div id="page_section">
 
 		<!-- This is the banner --> 
-		<div id="banner"> 
+		<div> 
  			<?php include("banner.php"); ?>
 		</div> 
 		<!-- This is end of the banner --> 
     
     	<div id="user-cpanel">
-		<?php include("user_cpanel.php"); ?>
+			<?php include("user_cpanel.php"); ?>
         </div>
+        
         <div class="wan-clear"></div>
+        
         <div id="user-form">
-       	<?php include("user-form.php"); ?>
+       		<?php include("user-form.php"); ?>
 		</div>
+        
 		<div id="topnav">
            <?php include("top-nav.php"); ?>
         </div>
 			
 		<div id="left-top">
-            <div id="title-text">Search Tour</div>
+            <div class="title-text">Search Tour</div>
             <?php include("search-form.php"); ?>	    
 		</div>
 		
 		<div id="right-top">
-		<div id="title-text">Tour Packages</div>	
+		<div class="title-text">Tour Packages</div>	
             <?php
             	if ($selection == "general") {
                 	echo '
@@ -82,7 +85,7 @@
                             <tr>';
                                 $i = 1;
                                 while ($record = mysql_fetch_array($result)) {
-                                    echo '<td><a href="tour.php?reg='.$i.'">'.$record['r_name'].'</td>';
+                                    echo '<td><a href="tour.php?reg='.$i.'">'.$record['r_name'].'</a></td>';
                                     $i = $i + 1;
                                 } echo '
                             </tr>
@@ -92,17 +95,17 @@
                 
                 if ($selection == "short") {
                     $first=true;
+
                     while($record = mysql_fetch_array($result)){
-                                         
-                        $id = $record['tourID'];
-                        $shortDescription = substr($record['description'], 0, 200);
-        				
-                        echo '<div id="tour">
-                        
-                        	  <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
-                        	  <a id="tour_name" href="tour.php?tourID='.$id.'">'.$record['t_name'].'</a><br /><br />';
-                        
-                        echo $shortDescription.'...<br /><a href="tour.php?tourID='.$id.'"><input type="button" value="More Details" /></a><br /><br /></div>';
+                    	echo '<div class="tour">';
+                            $id = $record['tourID'];
+                            $shortDescription = substr($record['description'], 0, 200);
+                            echo '
+                            <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
+                            <a class="tour_name" href="tour.php?tourID='.$id.'">'.$record['t_name'].'</a><br /><br />';
+                            
+                            echo $shortDescription.'...<br /><a href="tour.php?tourID='.$id.'"><input type="button" value="More Details" /></a><br /><br />';
+						echo '</div>';
                     }
                 }
                 
@@ -111,7 +114,7 @@
                             <div id="heading">'.$record['t_name'].'</div>
                             
                             <div id="top_details">
-                                <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left">
+                                <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
                                 <b>Duration: </b>'.$record['duration'].'<br /><br />
                                 
                                 <b>Price: </b>'.$record['price'].' VND<br /><br />
@@ -150,17 +153,19 @@
 
                     if(mysql_num_rows($result_review) > 0) {
                         echo '<div id="title-text" style="margin-top:20px">Customer Review</div>';
-								$id =1;
-                                while ($record_review =  mysql_fetch_array($result_review)) {
+                            $id =1;
+                            echo '<div id="review">';
+                            while ($record_review =  mysql_fetch_array($result_review)) {
                                 $title = $record_review['title'];
                                 $comment = $record_review['comment'];
                                 $rate = $record_review['rate'];
 								$temp = date_create($record_review['r_date']);
 								$date= date_format($temp,"F j, Y");
                                 $username = $record_review['username'];
-                                echo '<div id="review">
-                               		  <table><tr><th><b>Subject: '.$title.'</b></th></tr>
-                                      <tr><td>';
+                                
+                                echo '
+                                <table><tr><th><b>Subject: '.$title.'</b></th></tr>
+                                <tr><td>';
 
 								if ($rate ==1) {
 									echo '<div id="'.$id.'">
@@ -199,21 +204,22 @@
                                 	<input type="radio" id="rate5"  value ="5" checked="checked" /></div>';
 								}
 						
-								echo '<div id="light"> by <i>'.$username.'</i> on '.$date.'</div></td></tr>
-                                <tr><td>'.$comment.'</td></tr></table><br /></div>';
+								echo '<div class="light"> by <i>'.$username.'</i> on '.$date.'</div></td></tr>
+                                <tr><td>'.$comment.'</td></tr></table><br />';
                                 
-							echo'<script>
-							$(function(){
-								$("#'.$id.'").children().not(":radio").hide();
-								$("#'.$id.'").stars({
-								cancelShow: false,
-								disabled: true,
-								});
-							});							
-							</script>';
-							$id +=1;
-                            }
-                    }	
+                                echo'<script>
+                                $(function(){
+                                    $("#'.$id.'").children().not(":radio").hide();
+                                    $("#'.$id.'").stars({
+                                    cancelShow: false,
+                                    disabled: true,
+                                    });
+                                });							
+                                </script>';
+                                $id +=1;
+                                }
+                            echo '</div>';
+                    	}	
 
                     if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
                         $username = $_SESSION['username'];
@@ -222,7 +228,7 @@
    						$record = mysql_fetch_array($result);
                         
                         if(mysql_num_rows($result) > 0) {
-                            echo '<!-- <form class="uniForm" action="add_review.php" method="post" style="width:500px;" id="review"> -->
+                            echo '
                             	  <form action="add_review.php" method="post" id="make_review">	
         
                             <fieldset><legend>Comment</legend>
@@ -279,10 +285,7 @@
 
 <!-- This is the footer -->
 		<div id="footer"> 
- 
-			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
-
-			
+			This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang
 		</div> 
 <!-- This is end of the footer -->
 	</div> 

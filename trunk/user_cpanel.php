@@ -24,4 +24,4 @@
  					?>
 			<li style="top:7px !important"><a href="managecart.html" ><img src="images/cart.png" height="32" width="32" border="0" alt="Your Cart" title="Your Cart"/></a></li>
 
-<ul>
+</ul>
