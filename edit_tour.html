@@ -122,7 +122,7 @@
                                 
                                 <tr>
                                 	<td valign="top">Occurance</td>
-                                    <td>';
+                                    <td align="left">';
                                         $data_arrs = array();
                                         $arrs = array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturnday','Sunday');                        					
                                         
@@ -133,7 +133,6 @@
                                         foreach($arrs as $val){
                                            $checked = in_array($val, $data_arrs) ? 'checked = "checked"' : '';
                                            echo '<input type="checkbox" name="dayName[]" value="'.$val.'" '.$checked.'/>'.$val.'<br />';
-
                                         }                                                                                        
                               echo '</td>
                                 </tr>
