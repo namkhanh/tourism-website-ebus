@@ -487,14 +487,14 @@ legend
 }
 
 /*************************Display tour lists*************************/
-#tour
+.tour
 {
 	clear:both;
 	min-height:200px;
 	margin-bottom:10px;
 }
 
-#tour_name, #transport_name
+.tour_name, #transport_name
 {	
 	text-decoration:none;
 	color:#FF5F00;
@@ -526,13 +526,12 @@ legend
 	clear:both;
 }
 
-#heading
+#heading, #history caption
 {
 	color:#5FA92A;
 	font-size:130%;
 	text-align:center;
 	margin-bottom:5px;
-	border-bottom: 1px solid #A0A0A4;
 }
 /*************************End of Display tour details*************************/
 
@@ -590,7 +589,7 @@ legend
 	background:#e5f1f4;
 }
 
-#light /*Use to express username & date*/
+#class /*Use to express username & date*/
 {
 	color:#808080;
 	font-weight:bold;
@@ -613,12 +612,6 @@ legend
 #book select, #book input, #book .label
 {
 	width:150px;	
-}
-
-.tour_name
-{
-	color:#FF5F00;
-	font-weight:bold;
 }
 
 .note {
