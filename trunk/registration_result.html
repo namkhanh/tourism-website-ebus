@@ -73,7 +73,9 @@ error_reporting(E_ALL);
 			
 			if ((isset($_GET['rs']) && isset($_GET['email']))){
 				if ($_GET['rs'] == "true") {
-					 echo '<div>Thank you for your registration at Green Travel. Please check your email '.$_GET['email'].' for verification.</div>';
+					 echo '<div><center>Thank you for your registration at Green Travel. Please check your email '.$_GET['email'].' for verification.
+                     <br />
+                     Click <a href="index.html" style="text-decoration:underline" />here</a> to return to home page.</center></div>';
 				} else {
 					 echo '<div>Error when inserting your record. Please email us at green.travel@gmail.com.</div>';
 				}
