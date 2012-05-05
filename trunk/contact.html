@@ -76,23 +76,26 @@
  
 			<div class="field">
     		<label for="name">Name:</label>
-    		<input type="text" class="input" name="name" id="name" />
+    		<input type="text" name="name" id="input_name" onchange="isEmpty('input_name');"/><br/>
+    		<span id="input_name" style="display:none; color: #FF4040;"></span><br/><br/>
     		<p class="hint">Enter your name.</p>
 			</div>
  
 			<div class="field">
     		<label for="email">Email:</label>
-    		<input type="text" class="input" name="email" id="email" />
+    		<input type="text"  name="email" id="input_email" onchange="isEmail();"/><br/>
+    		<span id="input_email" style="display:none; color: #FF4040;"></span><br/><br/>
     		<p class="hint">Enter your email.</p>
 			</div>
  
 			<div class="field">
     		<label for="message">Message:</label>
-    		<textarea class="input textarea" rows="5" cols="10" name="message" id="message"></textarea>
+    		<textarea rows="5" cols="10" name="message" id="input_message" onchange="isEmpty('input_message');"></textarea><br/>
+    		<span id="input_message" style="display:none; color: #FF4040;"></span><br/><br/>
     		<p class="hint">Write your message.</p>
 			</div>
  
-			<input type="submit" name="Submit"  class="button" value="Submit" />
+			<input type="submit" name="submit_contact"  class="button" value="Submit"/>
 			</form>
             </center>
 		</div>

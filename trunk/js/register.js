@@ -133,7 +133,6 @@ function submitForm(){
 	}
 }
 
-
 function checkRequireds(fieldIds) {
 	fieldIds = fieldIds.replace(/ /g, "");
 	var arrField = fieldIds.split(",");
