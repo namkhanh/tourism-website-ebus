@@ -16,7 +16,7 @@ a {
 }
 
 body {
-	background-image: url(images/test/brushed_alu.png);
+	background-image: url(images/background.jpg);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -99,7 +99,7 @@ text-decoration: none;
 #topnav 
 {
 	height:50px;
-	background: url(images/topnav_yellow.jpg) no-repeat left top;
+	background: url(images/topnav.jpg) no-repeat left top;
 }
 
 #topnav ul 
@@ -123,8 +123,8 @@ text-decoration: none;
   	display:block;
 	width: 105px;	
   	text-decoration:none;
-	color:#808080;
 	text-align:center;
+	color:#0F0;
 }
 
 #topnav ul li ul a
@@ -164,7 +164,7 @@ text-decoration: none;
 
 #user-cpanel {
 	height:40px;
-	background-image:url('images/test/brushed_alu.png');	
+	background-image:url(images/background.jpg);	
 }
 
 #user-cpanel ul {
@@ -857,7 +857,7 @@ legend
 /***** End of ebook admin decoration ********/
 
 /**********Decorate SiteMap***********/
-#sitemap li, #sitemap a:visited, #reference a, a:visited
+#sitemap li, #sitemap a:visited, #reference a, #reference a:visited
 {
 	color:#00C;
 }
@@ -1063,3 +1063,20 @@ legend
 	border-collapse:collapse;
 }
 /**********End of Reference**********/
+.dynamic_drive
+{
+	background-image:url(images/hor-line.jpg);
+	background-repeat:repeat-x;
+	background-position:22px 22px;
+	margin-bottom:5px;
+	width:auto;
+	color:#5FA92A;	
+}
+
+.dynamic_drive a
+{
+	padding-left:7px;
+	padding-right:7px;
+	color:#5FA92A;
+	font-size:130%;
+}

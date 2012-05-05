@@ -25,7 +25,7 @@
 		
 		$tourID = $_GET['tourID'];
 		
-		$result = mysql_query('Select * From tour Where tourID='.$tourID);
+		$result = mysql_query('Select * From tour t, region r Where r.regionID = t.regionID And tourID='.$tourID);
 		$record = mysql_fetch_array($result);
 		
 		$occurance_result = mysql_query('Select * From tour_occurance Where tourID='.$tourID);

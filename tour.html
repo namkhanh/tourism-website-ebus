@@ -75,10 +75,13 @@
 		</div>
 		
 		<div id="right-top">
-		<div class="title-text">Tour Packages</div>	
             <?php
             	if ($selection == "general") {
                 	echo '
+                    <div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
+                            				<a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour</a>
+    				</div>
+                                        
                     <div id="display_general">
                     	<p>Please select the region you are looking for</p>
                         <table>
@@ -94,10 +97,17 @@
                 }
                 
                 if ($selection == "short") {
-                    $first=true;
-
+                	$first = true;
                     while($record = mysql_fetch_array($result)){
-                    	echo '<div class="tour">';
+                    	if ($first == true) {
+                            echo '<div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
+                                                        <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour Package</a> >>                  
+                                                        <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg='.$regionID.'">'.$record['r_name'].'</a>
+								  </div>';
+                            $first = false;
+                        }
+                        echo'
+                    	<div class="tour">';
                             $id = $record['tourID'];
                             $shortDescription = substr($record['description'], 0, 200);
                             echo '
@@ -110,46 +120,50 @@
                 }
                 
                 if ($selection == "detail") {
-                    echo '<div id="tour_content">
-                            <div id="heading">'.$record['t_name'].'</div>
+                    echo '<div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
+                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour Package</a> >>                  
+                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg='.$record['regionID'].'">'.$record['r_name'].'</a> >>
+                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?tourID='.$tourID.'">'.$record['t_name'].'</a>
+        				  </div>
+                    <div id="tour_content">
+                        <div id="heading">'.$record['t_name'].'</div>
+                        
+                        <div id="top_details">
+                            <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
+                            <b>Duration: </b>'.$record['duration'].'<br /><br />
                             
-                            <div id="top_details">
-                                <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
-                                <b>Duration: </b>'.$record['duration'].'<br /><br />
-                                
-                                <b>Price: </b>'.$record['price'].' VND<br /><br />
-								<b>Occurance Day: </b>';
-                                $stringOccurance ="";
-                                while ($occurance = mysql_fetch_array($occurance_result)) {
-									$stringOccurance .= $occurance['dayName'].', ';
-                                }
-								echo substr($stringOccurance,0,strlen($stringOccurance)-2);
+                            <b>Price: </b>'.$record['price'].' VND<br /><br />
+                            <b>Occurance Day: </b>';
+                            $stringOccurance ="";
+                            while ($occurance = mysql_fetch_array($occurance_result)) {
+                                $stringOccurance .= $occurance['dayName'].', ';
+                            }
+                            echo substr($stringOccurance,0,strlen($stringOccurance)-2);
 
-                                echo '<br />';
-                                
-                                if(mysql_num_rows($result_rate) > 0) {
+                            echo '<br />';
+                            
+                            if(mysql_num_rows($result_rate) > 0) {
                                 $record_rate =  mysql_fetch_array($result_rate);
-								$avg = round($record_rate['sum']/$record_rate['count'],1);
-											
-                                echo '<b>Rate:</b><div id="avg">'.$avg.'/5</div> from '.$record_rate['count'].' review(s)<br />'; 
-                                } else {
-								echo '<b>Rate:</b><div id="avg">0</div>review<br />';
-								}
+                                $avg = round($record_rate['sum']/$record_rate['count'],1);
+                                        
+                            	echo '<b>Rate:</b><div id="avg">'.$avg.'/5</div> from '.$record_rate['count'].' review(s)<br />'; 
+                            } else {
+                            	echo '<b>Rate:</b><div id="avg">0</div>review<br />';
+                            }
 
-                                if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
-                                    echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>';
-                                    
-                                    if ($_SESSION['username']=="inte") {
-                                    	echo '<a href="history.php?tourID='.$tourID.'"><input type="button" value="Retrieve History" /></a>';
-                                    }
-                                } else {
-                                    echo '<i>You need to <a href="javascript:toggleLogin();">login</a> before booking tour. Do not have an account? Click <a href="registration.html">here</a></i>';
-                                }
+                            if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
+                                echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>';
                                 
-                            echo '</div>
+                                if ($_SESSION['username']=="inte") {
+                                    echo '<a href="history.php?tourID='.$tourID.'"><input type="button" value="Retrieve History" /></a>';
+                                }
+                            } else {
+                                echo '<i>You need to <a href="javascript:toggleLogin();">login</a> before booking tour. Do not have an account? Click <a href="registration.html">here</a></i>';
+                            }
+                                
+						echo '</div>
                             
-                            <div id="description"><b>Description: </b><br /><br />'.$record['description'].'</div>
-                          </div>';
+						<div id="description"><b>Description: </b><br /><br />'.$record['description'].'</div></div>';
 
                     if(mysql_num_rows($result_review) > 0) {
                         echo '<div id="title-text" style="margin-top:20px">Customer Review</div>';
