@@ -64,7 +64,7 @@ a.menu
 .transparent-box {
 width: 100%;
 height: 50px;
-margin-top: -50px;
+margin-top: -55px;
 background-color:#ffffff;
 opacity:0.45;
 filter:alpha(opacity=45); /* For IE8 and earlier */
