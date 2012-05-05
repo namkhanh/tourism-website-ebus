@@ -72,9 +72,9 @@
         <?php        
         	if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
                 echo '<div id="admin-ebook">
-                      <div id="title-text">Ebook</div>	
+                      <div class="title-text">Ebook</div>	
             
-                      <input style="margin-left:74%" type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />
+                      <input style="margin-left:82%" type="button" onclick=location.href="add_ebook.html" value="Add New Ebook" />
                       
                       <table align="center">';     
                         while($record = mysql_fetch_array($result)) {
