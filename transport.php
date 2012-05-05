@@ -1,11 +1,11 @@
 <?php
 	include (dirname(__FILE__).'/database_config.php');
 
-	$transportID = "";
-	
 	if(isset($_GET['reg']))
 	{
-		if ($region == 0) {
+		$transportID = $_GET['reg'];
+			
+		if ($transportID == 0) {
 			$selection = "general";
 			$result = mysql_query('Select * From transport');					
 		} else {
