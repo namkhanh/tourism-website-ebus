@@ -75,7 +75,22 @@
 		
 		<div id="right-top">
         	<div class="title-text">Transport</div>
-			 <?php               
+			 <?php
+            	if ($selection == "general") {
+                	echo '
+                    <div id="display_general">
+                    	<p>Please select the region you are looking for</p>
+                        <table>
+                            <tr>';
+                                $i = 1;
+                                while ($record = mysql_fetch_array($result)) {
+                                    echo '<td><a href="transport.php?reg='.$i.'">'.$record['name'].'</a></td>';
+                                    $i = $i + 1;
+                                } echo '
+                            </tr>
+                        </table>
+                    </div>';
+                } else {
                     while($record = mysql_fetch_array($result))
                     {
                         echo '
@@ -84,7 +99,8 @@
                                 <div id="transport_name">'.$record['name'].'</div>';
                         echo $record['description'].'<br /><br />';
                         echo '<b>Price: </b>'.$record['price'].' VND</div>';
-                    }      
+                    }
+				}   
             ?>
 		</div>
 		<div class="wan-clear"></div> 

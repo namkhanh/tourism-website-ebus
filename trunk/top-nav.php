@@ -9,7 +9,7 @@
         </ul>
     </li>
     
-    <li><a href="javascript://" class="parent_menu">Transport</a>
+    <li><a href="transport.php?reg=0" class="parent_menu">Transport</a>
         <ul>
             <li><a href="transport.php?reg=1">Flight</a></li>
             <li><a href="transport.php?reg=2">Coach</a></li>
