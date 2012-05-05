@@ -126,7 +126,7 @@
                               <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?tourID='.$tourID.'">'.$record['t_name'].'</a>
         				  </div>
                     <div id="tour_content">
-                        <div id="heading">'.$record['t_name'].'</div>
+                        <div class="tour_name"><center>'.$record['t_name'].'</center></div>
                         
                         <div id="top_details">
                             <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
@@ -166,7 +166,7 @@
 						<div id="description"><b>Description: </b><br /><br />'.$record['description'].'</div></div>';
 
                     if(mysql_num_rows($result_review) > 0) {
-                        echo '<div id="title-text" style="margin-top:20px">Customer Review</div>';
+                        echo '<div class="title-text" style="margin-top:20px">Customer Review</div>';
                             $id =1;
                             echo '<div id="review">';
                             while ($record_review =  mysql_fetch_array($result_review)) {

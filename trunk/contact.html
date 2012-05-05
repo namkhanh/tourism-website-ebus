@@ -41,6 +41,7 @@
 	  //============================================================== 
 	</script>
 
+	<script type="text/javascript" src="js/validate.js"></script>
 </head>
 
 <body>
@@ -71,7 +72,7 @@
 <!-- This is the content -->
 		<div id="content">
         <center>
-			<form id="contactform" class="rounded" method="post" action="contact.php">
+			<form id="contactform" class="rounded" onsubmit="return validateContactForm()" method="post" action="contact.php">
 			<h3>Contact Form</h3>
  
 			<div class="field">
