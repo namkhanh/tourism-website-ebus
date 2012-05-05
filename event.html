@@ -67,7 +67,7 @@
         </div>
 			
 		<div id="left-top">
-            <div id="title-text">Search Tour</div>
+            <div class="title-text">Search Tour</div>
             <?php include("search-form.php"); ?>	    
 		</div>
 		
@@ -80,11 +80,13 @@
 			$month = idate("m",strtotime($record['date']));
 			$year = idate("Y",strtotime($record['date']));
 			$ID = $record['eventID'];
-				echo '<div id="title-text">'.$record['name'].'</div>';
-				echo '<div id="">'.$record['description'].'</div>';
+			$date = $record['date'];
+				echo '<div class="title-text">'.$record['name'].' ('.$date.')</div>';
 				echo '<img src="'.$record['image'].'" />';
+				echo '<br/><br/><div style="color:#17A7AE">'.$record['description'].'</div><br/>';
+				
 
-echo '<div id="'.$ID.'" class="caption" >Countdown</div>';
+echo '<div id="'.$ID.'" class="caption" style="color: #BB1714; text-align:center;font-family: Helvetica,sans-serif;font-size:150%" >Countdown</div>';
 			echo '
 				<script language="javascript" type="text/javascript">
 					var montharray'.$ID.'=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
