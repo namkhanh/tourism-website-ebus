@@ -4,7 +4,8 @@
 	if(isset($_GET['reg']))
 	{
 		$transportID = $_GET['reg'];
-			
+		$selection = "";
+		
 		if ($transportID == 0) {
 			$selection = "general";
 			$result = mysql_query('Select * From transport');					
