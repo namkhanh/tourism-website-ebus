@@ -90,7 +90,7 @@
                             </tr>
                         </table>
                     </div>';
-                } else {
+                } 
                     while($record = mysql_fetch_array($result))
                     {
                         echo '
@@ -100,7 +100,7 @@
                         echo $record['description'].'<br /><br />';
                         echo '<b>Price: </b>'.$record['price'].' VND</div>';
                     }
-				}   
+				  
             ?>
 		</div>
 		<div class="wan-clear"></div> 
