@@ -857,7 +857,7 @@ legend
 /***** End of ebook admin decoration ********/
 
 /**********Decorate SiteMap***********/
-#sitemap li, #sitemap a:visited
+#sitemap li, #sitemap a:visited, #reference a, a:visited
 {
 	color:#00C;
 }
@@ -1054,4 +1054,12 @@ legend
     border-color: #C9C9C9;
 	background:#8080FF;
 } 
-/**********End of decoration for edit and add ebook**********/>>>>>>> .r381
+/**********End of decoration for edit and add ebook**********/
+
+/**********Reference**********/
+#reference, #reference td, #reference th, #reference tr
+{
+	border:1px solid black;
+	border-collapse:collapse;
+}
+/**********End of Reference**********/
