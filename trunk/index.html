@@ -49,32 +49,29 @@
 	<div id="page_section">
 		
 		<!-- This is the banner --> 
-		<div> 
+		<div id="banner"> 
  			<?php include("banner.php"); ?>
 		</div> 
 		<!-- This is end of the banner --> 
     
     	<div id="user-cpanel">
-			<?php include("user_cpanel.php"); ?>
+		<?php include("user_cpanel.php"); ?>
         </div>
-        
         <div class="wan-clear"></div>
-        
         <div id="user-form">
-       		<?php include("user-form.php"); ?>
+       	<?php include("user-form.php"); ?>
 		</div>
-        
 		<div id="topnav">
            <?php include("top-nav.php"); ?>
         </div>
 			
 		<div id="left-top">
-            <div class="title-text">Search Tour</div>
+            <div id="title-text">Search Tour</div>
             <?php include("search-form.php"); ?>	    
 		</div>
 		
 		<div id="right-top">
-            <div class="title-text">Special Tour Countdown</div>
+            <div id="title-text">Special Tour Countdown</div>
             											
             <div id="spec-tour">
 				<div id="slideshow">
@@ -91,42 +88,44 @@
 
 		<div class="wan-clear"></div>
 		
+		
 		<div id="hot-spot">
 			<div class="title-text">Hot Tour</div>
 			<div id="metro-ui">
 
-                <div id="top-big">
-                    <a href="#"><img src="images/topb.png" height="100%" width="100%" border="0" alt="Image cannot be loaded" /></a> 
-                    <div class="transparent-box"><a href="#"></a></div>
-                    <p class="text-over-transparent"><a class ="non-underline" href="#">Phu Yen Travel</a></p>
-                </div>
-    
-                <div id="top-small">
-                    <a href="#"><img src="images/tops.png" height="100%" width="100%" border="0" alt="Image cannot be loaded" /></a> 
-                    <div class="transparent-box"><a href="#"></a></div>
-                    <p class="text-over-transparent"><a class ="non-underline" href="#">Da Lat Travel</a></p>
-                </div>
-                
-                <div class="wan-clear" style="height:6px"></div>
-                
-                <div id="bot1">
-                    <a href="#"><img src="images/b1.png" height="100%" width="100%" border="0" alt="Image cannot be loaded" /></a> 
-                    <div class="transparent-box"><a href="#"></a></div>
-                    <p class="text-over-transparent"><a class ="non-underline" href="#">Can Tho Travel</a></p>
-                </div>
-    
-                <div id="bot2">
-                    <a href="#"><img src="images/b2.png" height="100%" width="100%" border="0" alt="Image cannot be loaded" /></a> 
-                    <div class="transparent-box"><a href="#"></a></div>
-                    <p class="text-over-transparent"><a class ="non-underline" href="#">Dai Nam - Binh Duong</a></p>
-                </div>
-    
-                <div id="bot3">
-                    <a href="tour.php?tourID=4"><img src="images/b3.png" height="100%" width="100%" border="0" alt="Image cannot be loaded" /></a> 
-                    <div class="transparent-box"><a href="tour.php?tourID=4"></a></div>
-                    <p class="text-over-transparent"><a class ="non-underline" href="tour.php?tourID=4">Ha Long Travel</a></p>
-                </div>
+ 			<div id="top-big">
+			<a class ="non-underline" href="#"><img src="images/topb.png" height="100%" width="100%" border="0" />
+			<div class="transparent-box"></div>
+			<p class="text-over-transparent">Phu Yen Travel</p></a>  
 			</div>
+
+			<div id="top-small">
+			<a class ="non-underline" href="#"><img src="images/tops.png" height="100%" width="100%" border="0" /> 
+			<div class="transparent-box"></div>
+			<p class="text-over-transparent">Da Lat Travel</p></a> 
+			</div>
+			
+			<div class="wan-clear" style="height:6px"></div>
+			
+			<div id="bot1">
+			<a class ="non-underline" href="#"><img src="images/b1.png" height="100%" width="100%" border="0" />
+			<div class="transparent-box"></div>
+			<p class="text-over-transparent">Can Tho Travel</p></a> 
+			</div>
+
+			<div id="bot2">
+			<a class ="non-underline" href="#"><img src="images/b2.png" height="100%" width="100%" border="0" />
+			<div class="transparent-box"></div>
+			<p class="text-over-transparent">Dai Nam - Binh Duong</p></a> 
+			</div>
+
+			<div id="bot3">
+			<a class ="non-underline" href="tour.php?tourID=4"><img src="images/b3.png" height="100%" width="100%" border="0" /> 
+			<div class="transparent-box"></div>
+			<p class="text-over-transparent">Ha Long Travel</p></a> 
+			</div>
+		
+		</div>
 		</div>
 		<div class="wan-clear"></div>
 
@@ -134,7 +133,10 @@
 
 <!-- This is the footer -->
 		<div id="footer"> 
-			This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang
+ 
+			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
+
+			
 		</div> 
 <!-- This is end of the footer -->
 	</div> 
