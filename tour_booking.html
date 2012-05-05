@@ -32,14 +32,15 @@
 	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
 	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
 	<script type="text/javascript" src ="js/language-en.js"></script> 
-	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
-	
+	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 	
       //============================================================== 
       //               NOP Design JavaScript Shopping Cart               
       //-------------------------------------------------------------- 
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
-	</script> 
+	</script>
+    
+	<script type="text/javascript" src="js/validate_card.js"></script>
 </head>
 
 <body>
@@ -96,16 +97,16 @@
             
             <img src="images/visa-credit.jpg" height="100" width="300" align="middle" alt="visa logo" />
             
-            <form action="thankyou.html" method="post">
+            <form name="card" onsubmit="return validateCard()" action="thankyou.html" method="post">
                 <table>
                     <tr>
                         <td>Credit card number</td>
-                        <td><input type="text" name="b_last" /></td>
+                        <td><input type="text" name="c_number" /></td>
                     </tr>
                     
                     <tr>
                         <td>Security code</td>
-                        <td><input type="text" name="b_email" /></td>
+                        <td><input type="text" name="s_code" /></td>
                     </tr> 	
 
                     <tr>
