@@ -129,8 +129,8 @@ text-decoration: none;
 
 #topnav ul li ul a
 {
-	border-bottom:1px solid #FFFBF0;
-	background:#FAE347;
+	border-bottom:1px solid white;
+	background:#008080;
 }
 
 #topnav li:hover li
@@ -164,7 +164,7 @@ text-decoration: none;
 
 #user-cpanel {
 	height:40px;
-	background-image:url(images/background.jpg);	
+	background-image:url(images/background.jpg);
 }
 
 #user-cpanel ul {
@@ -532,7 +532,7 @@ legend
 
 #heading, #history caption
 {
-	color:#5FA92A;
+	color:#FF5F00;
 	font-size:130%;
 	text-align:center;
 	margin-bottom:5px;
