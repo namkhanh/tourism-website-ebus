@@ -74,10 +74,13 @@
 		</div>
 		
 		<div id="right-top">
-        	<div class="title-text">Transport</div>
 			 <?php
             	if ($selection == "general") {
-                	echo '
+             	echo '
+                    <div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
+                            				<a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/transport.php?reg=0">Transport</a>
+    				</div>
+                	
                     <div id="display_general">
                     	<p>Please select the transport you are looking for</p>
                         <table>
@@ -94,11 +97,17 @@
                     while($record = mysql_fetch_array($result))
                     {
                         echo '
-                        	<div id="transport">
-                                <img src="'.$record['image'].'" alt="Image cannot be load" align="left" />
-                                <div id="transport_name">'.$record['name'].'</div>';
-                        echo $record['description'].'<br /><br />';
-                        echo '<b>Price: </b>'.$record['price'].' VND</div>';
+                        <div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
+                        						<a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/transport.php?reg=0">Transport</a> >>
+                        						<a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/transport.php?reg='.$transportID.'">'.$record['name'].'</a>
+						</div>
+                        
+                        <div id="transport">
+                            <img src="'.$record['image'].'" alt="Image cannot be load" align="left" />
+                            <div id="transport_name">'.$record['name'].'</div>';
+                            echo $record['description'].'<br /><br />';
+                            echo '<b>Price: </b>'.$record['price'].' VND
+                        </div>';
                     }
 				}				  
             ?>
