@@ -61,12 +61,13 @@ if (mysql_num_rows ( $result ) > 0) {
 		$id = $record ['tourID'];
 		$shortDescription = substr ( $record ['description'], 0, 200 );
 		
-		echo '<div id="tour">
+		echo '<div class="tour">
                         
                         	  <img width="300" height="200" src="' . $record ['image'] . '" alt="Image cannot be loaded" align="left">
-                        	  <a id="tour_name" href="tour.php?tourID=' . $id . '">' . $record ['t_name'] . '</a><br /><br />';
+                        	  <a class="tour_name" href="tour.php?tourID=' . $id . '">' . $record ['t_name'] . '</a><br /><br />';
 		
-		echo $shortDescription . '...<br /><a href="tour.php?tourID=' . $id . '">More Details</a><br /><br /></div>';
+		                            echo $shortDescription.'...<br /><a href="tour.php?tourID='.$id.'"><input type="button" value="More Details" /></a><br /><br />';
+		echo '</div>';
 	}
 } else {
 	echo 'No record found';
