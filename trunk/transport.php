@@ -9,7 +9,7 @@
 			$selection = "general";
 			$result = mysql_query('Select * From transport');					
 		} else {
-			$transportID = $_GET['reg']; 		
+			$selection = "detail";
 			$result = mysql_query('Select * From transport Where transportID ='.$transportID);
 		}
 	} 
