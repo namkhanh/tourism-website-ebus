@@ -71,7 +71,7 @@
             <?php
             
             if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true && ($_SESSION['username']=="inte")) {
-            echo '<div id="title-text">Tour Packages</div>
+            echo '<div class="title-text">Tour Packages</div>
             	  <div id="addtour"><input style="margin-left:87%; margin-bottom: 10px" type="button" onclick=location.href="add_tour.html" value="Add New Tour" /></div>';
                 while($record = mysql_fetch_array($result)){
 					$tourID = $record['tourID'];
