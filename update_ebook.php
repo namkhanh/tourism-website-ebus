@@ -1,10 +1,10 @@
 <?php
 include (dirname(__FILE__).'/database_config.php');
-$ebookID = $_POST['ebookID'];
-$name = $_POST['ebook_name'];
-$author = $_POST['author'];
-$price = $_POST['price'];
-$description = $_POST['description'];
+$ebookID = mysql_real_escape_string($_POST['ebookID']);
+$name = mysql_real_escape_string($_POST['ebook_name']);
+$author = mysql_real_escape_string($_POST['author']);
+$price = mysql_real_escape_string($_POST['price']);
+$description = mysql_real_escape_string($_POST['description']);
 
 if (empty($_POST['newImg'])) {
 	$image = $_POST['oldImg'];
