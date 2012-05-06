@@ -11,8 +11,8 @@
 								if ($_SESSION['username']=="inte") {
 									echo '<li><a class="admin">Admin Control</a>
 											<ul>
-												<li><a href="admin_tour.php">Modify Tour</a></li>
-												<li><a href="admin_ebook.php">Modify Ebook</a></li>
+												<li><a href="admin_tour.php">Tour Management</a></li>
+												<li><a href="admin_ebook.php">Ebook Management</a></li>
 											</ul>
 										  </li>';
 								}
