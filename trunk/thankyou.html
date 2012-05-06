@@ -76,13 +76,14 @@
                 
                 $username = $_POST['username'];
                 $bookingID = $_POST['bookingID'];
-                $date = $_POST['date'];
+				$temp = date_create( $_POST['date']);
+				$date= date_format($temp,"Y-m-d");
                 $tourID = $_POST['tourID'];
                 $transportID = $_POST['transportID'];
                 $numVisitor = $_POST['numVisitor'];
                 $c_number = $_POST['c_number'];
                 
-                $today = date("d-m-Y");
+                $today = date("Y-m-d");
 
                 $bookingSQL = "INSERT INTO tour_booking (tour_booking_id, date, date_booking, username, tourID, transportID, no_ppl) ";
                 $bookingSQL = $bookingSQL."VALUES ('$bookingID', '$date', '$today', '$username', '$tourID', '$transportID', '$numVisitor' )";
