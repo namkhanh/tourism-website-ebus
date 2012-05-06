@@ -198,14 +198,13 @@ text-decoration: none;
 #user-cpanel ul li ul a
 {
 	padding:4px 0;
-	background:url('images/transparent-bg.png');
-	color:#E5E8C4;
+	background:#ffffff;
 	border-bottom:1px solid #A0A0A4;
 }
 
 #user-cpanel ul li ul a:hover
 {
-	color:#FF0;
+	color:red;
 }
 
 #user-cpanel ul li ul li
