@@ -14,7 +14,6 @@ if (empty($_POST['newImg'])) {
 	$image = $_POST['newImg'];
 }
 $updateTour_query = ('Update tour set t_name="'.$tourName.'", duration="'.$duration.'", price="'.$price.'", description="'.$description.'", destination="'.$destination.'", image="'.$image.'", regionID="'.$regionID.'" where tourID="'.$tourID.'"');
-echo $updateTour_query;
 $result_update_tour = mysql_query($updateTour_query);
 
 $deleteOccurance_query ="DELETE FROM tour_occurance where tourID='$tourID'";
