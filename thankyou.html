@@ -5,7 +5,6 @@
     <title>Thank You For Shopping With Us</title>
     <meta name="description" content="E-Business"  /> 
 	<meta name ="keywords" content="?????"  />
-    <meta http-equiv="refresh" content="5;url=https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0" />
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
 	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
     <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
@@ -81,16 +80,32 @@
                 $tourID = $_POST['tourID'];
                 $transportID = $_POST['transportID'];
                 $numVisitor = $_POST['numVisitor'];
+                $c_number = $_POST['c_number'];
                 
                 $today = date("d-m-Y");
 
                 $bookingSQL = "INSERT INTO tour_booking (tour_booking_id, date, date_booking, username, tourID, transportID, no_ppl) ";
                 $bookingSQL = $bookingSQL."VALUES ('$bookingID', '$date', '$today', '$username', '$tourID', '$transportID', '$numVisitor' )";
                           
-                mysql_query($bookingSQL);
-            ?>
-            
-			<div class="thank">Thank you for purchasing a tour. You will be back to Tour page in 5 seconds...</div>
+                mysql_query($bookingSQL);           
+
+			echo '
+            <form name="sendmail" method="post" action="sendmail.php">
+                <input type="hidden" name="username" value="'.$username.'"/>
+                <input type="hidden" name="numVisitor" value="'.$numVisitor.'"/>
+                <input type="hidden" name="date" value="'.$date.'"/>
+                <input type="hidden" name="tourID" value="'.$tourID.'"/>
+                <input type="hidden" name="transportID" value="'.$transportID.'"/>
+                <input type="hidden" name="c_number" value="'.$c_number.'"/> 
+                
+                <script language="JavaScript" type="text/javascript">
+                	var t = setTimeout("document.sendmail.submit();",1000);
+                </script>
+            </form>';            
+			?>
+			<div class="thank">
+            	Thank you for your purchase. An email contains booking information will be sent to your e-mail address soon.<br />
+            </div>
 		</div>
         
         
