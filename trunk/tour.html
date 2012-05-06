@@ -88,8 +88,8 @@
             <?php
             	if ($selection == "general") {
                 	echo '
-                    <div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
-                            				<a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour</a>
+                    <div class="dynamic_drive">
+						<a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour</a>
     				</div>
                                         
                     <div id="display_general">
@@ -111,9 +111,9 @@
 					
                     while($record = mysql_fetch_array($result)){
                     	if ($first == true) {
-                            echo '<div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
-                                                        <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour Package</a> >>                  
-                                                        <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg='.$regionID.'">'.$record['r_name'].'</a>
+                            echo '<div class="dynamic_drive">
+                                      <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour</a> >>                  
+                                      <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg='.$regionID.'">'.$record['r_name'].'</a>
 								  </div>';
                             $first = false;
                         }
@@ -131,10 +131,9 @@
                 }
                 
                 if ($selection == "detail") {
-                    echo '<div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
-                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour Package</a> >>                  
-                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg='.$record['regionID'].'">'.$record['r_name'].'</a> >>
-                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?tourID='.$tourID.'">'.$record['t_name'].'</a>
+                    echo '<div class="dynamic_drive">
+                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0">Tour</a> >> 
+                              <a href="https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg='.$record['regionID'].'">'.$record['r_name'].'</a>
         				  </div>
                     <div id="tour_content">
                         <div class="tour_name"><center>'.$record['t_name'].'</center></div>
