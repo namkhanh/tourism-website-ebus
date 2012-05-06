@@ -95,7 +95,7 @@
                                 <th>Date of Departure</th>
                                 <th>Transport</th>
                                 <th>Number of visitors</th>
-								<th>Remove</th>
+								<th>Cancel</th>
                             </tr>';
                             $first = false;
                         }
@@ -112,7 +112,7 @@
 							if ($record['date'] <  $today) {
 							echo '<td>&nbsp;</td>';
 							} else {
-							echo '<td><input type="button" value="delete" onclick="confirmDeleteBooking(\''.$record['t_name'].'\',\''.$record['tour_booking_id'].'\',\''.$record['date'].'\')" /></td>';
+							echo '<td><input type="button" value="Cancel" onclick="confirmDeleteBooking(\''.$record['t_name'].'\',\''.$record['tour_booking_id'].'\',\''.$record['date'].'\')" /></td>';
 							}
 							
                         echo '</tr>';
