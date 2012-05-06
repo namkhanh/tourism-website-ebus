@@ -5,6 +5,8 @@
 								echo '<li><a href="javascript:toggleSignout();">Sign Out</a></li>
 								<li>|</li>
 								<li><a href="ebookhistory.html">Purchased List</a></li>
+								<li>|</li>
+								<li><a href="user_booking.html">Tour Booking</a></li>
 								<li>|</li>';
 								if ($_SESSION['username']=="inte") {
 									echo '<li><a class="admin">Admin Control</a>
