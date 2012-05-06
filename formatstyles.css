@@ -504,7 +504,7 @@ legend
 	font-size:20px;
 }
 
-#tour img, #transport img
+.tour img, .transport img, #top_details img
 {
 	padding-right:5px;
 	padding-bottom:5px;
