@@ -30,7 +30,7 @@
 	$c_number = $_POST['c_number'];
 	
 	$name = 'Thank you for your purchase';
-	$header = 'From: s3311310@rmit.edu.vn';
+	$header = 'From: green.travel@green.vn';
 	
 	$messageform = 'Dear '.$first.', '.$last."\n\n"
 				 . 'Thank you for your recent purchase on Green Travel.' . "\n\n"
