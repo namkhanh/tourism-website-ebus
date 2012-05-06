@@ -34,15 +34,12 @@ $(function() {
 });
 
 $(function() {
-	var yearNow = new Date().getFullYear();
-	var limitYear = yearNow -10;
-	var year100 = yearNow - 80;
-	var yearRange = year100 + ':' + limitYear;
 	$( "#dob" ).datepicker({
 		dateFormat:"dd-mm-yy",
 		changeMonth: true,
 		changeYear: true,
-		yearRange: yearRange,
+		yearRange: "-80:+0",
+		defaultDate: "-18y",
 	});
 });
 
