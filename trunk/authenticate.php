@@ -10,7 +10,7 @@ $username = mysql_real_escape_string($_POST['username']);
 //get the password
 $password = mysql_real_escape_string($_POST['password']);
 
-$result = mysql_query("SELECT * FROM customer where username='$username' and password='$password'");
+$result = mysql_query("SELECT * FROM customer where username='$username' and password='$password' and active='1'");
 
 if(mysql_num_rows($result) == 1) {
 	$record = mysql_fetch_array($result);
