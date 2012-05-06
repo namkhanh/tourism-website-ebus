@@ -30,7 +30,7 @@
 	$c_number = $_POST['c_number'];
 	
 	$name = 'Thank you for your purchase';
-	$header = 'From: green.travel@green.vn';
+	$header = 'From: Green Travel';
 	
 	$messageform = 'Dear '.$first.', '.$last."\n\n"
 				 . 'Thank you for your recent purchase on Green Travel.' . "\n\n"
@@ -46,5 +46,5 @@
 				 
 	mail($email, $name, $messageform, $header);
 	
-	header("Location: https://mekong.rmit.edu.vn/~s3312275/green-travel/tour.php?reg=0");
+	header("Location: tour.php?reg=0");
 ?>
