@@ -1,11 +1,11 @@
 <?php
 include (dirname(__FILE__).'/database_config.php');
-$tourID = $_POST['tourID'];
-$tourName = $_POST['tour_name'];
-$duration = $_POST['duration'];
-$price = $_POST['price'];
-$description = $_POST['description'];
-$destination = $_POST['destination'];
+$tourID = mysql_real_escape_string($_POST['tourID']);
+$tourName = mysql_real_escape_string($_POST['tour_name']);
+$duration = mysql_real_escape_string($_POST['duration']);
+$price = mysql_real_escape_string($_POST['price']);
+$description = mysql_real_escape_string($_POST['description']);
+$destination = mysql_real_escape_string($_POST['destination']);
 $occurance = $_POST['dayName'];
 $regionID = $_POST['region'];
 if (empty($_POST['newImg'])) {
