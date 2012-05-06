@@ -1,4 +1,4 @@
-<form action="search.html" method="get">
+<form name="search" onsubmit="validateSearch()" action="search.html" method="get">
             	<fieldset>
                 	<table>
  						<tr>
@@ -10,6 +10,8 @@
                                     <option value="Ha Noi">Ha Noi</option>
                                     <option value="Da Nang">Da Nang</option>
                                     <option value="Ha Long">Ha Long</option>
+									<option value="Can Tho">Can Tho</option>
+									<option value="Binh Duong">Binh Duong</option>
                                 </select>
                             </td>
                         </tr>

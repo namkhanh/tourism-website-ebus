@@ -2,7 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml"> 
 <head>
 	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
-    <title>Tour Information</title>
+    <?php 
+		if ($selection == "general") {
+			echo '<title>Tour Information</title>';
+		} else if ($selection == "detail") {
+			echo '<title>'.$record['t_name'].'</title>';
+		} else if ($selection == "short") {
+			$result_region = mysql_query("Select * From region Where regionID='$regionID'");
+			$record_region = mysql_fetch_array($result_region);
+			echo '<title>'.$record_region['r_name'].'</title>';
+		}
+	?>
     <meta name="description" content="Green Travel Tour Information"  /> 
 	<meta name="keywords" content="tour, green travel, rmit, project, e-business, semester 2012A, tour information, vietnam, vietnam travel"  /> 
 	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
@@ -41,7 +51,7 @@
 	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
 	  //============================================================== 
 	</script> 
-
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 </head>
 
 <body>
@@ -98,6 +108,7 @@
                 
                 if ($selection == "short") {
                 	$first = true;
+					
                     while($record = mysql_fetch_array($result)){
                     	if ($first == true) {
                             echo '<div class="dynamic_drive"><a href="https://mekong.rmit.edu.vn/~s3312275/green-travel">Home</a> >>
@@ -130,9 +141,9 @@
                         
                         <div id="top_details">
                             <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
-                            <b>Duration: </b>'.$record['duration'].'<br /><br />
+                            <b>Duration: </b>'.$record['duration'].'<br />
                             
-                            <b>Price: </b>'.$record['price'].' VND<br /><br />
+                            <b>Price: </b>'.$record['price'].' VND<br />
                             <b>Occurance Day: </b>';
                             $stringOccurance ="";
                             while ($occurance = mysql_fetch_array($occurance_result)) {
@@ -153,17 +164,18 @@
 
                             if (isset($_SESSION['login'])==true &&( $_SESSION['login'])==true) {
                                 echo '<a href="booking.php?tourID='.$tourID.'"><input type="button" value="Book Now" /></a>';
-                                
                                 if ($_SESSION['username']=="inte") {
                                     echo '<a href="history.php?tourID='.$tourID.'"><input type="button" value="Retrieve History" /></a>';
                                 }
                             } else {
                                 echo '<i>You need to <a href="javascript:toggleLogin();">login</a> before booking tour. Do not have an account? Click <a href="registration.html">here</a></i>';
                             }
-                                
-						echo '</div>
-                            
-						<div id="description"><b>Description: </b><br /><br />'.$record['description'].'</div></div>';
+                         
+						echo '</div>';
+                        $currentURL = $_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+						echo '<div class="fb-like" data-href="'.$currentURL.'" data-send="true" data-width="450" data-show-faces="false"></div><br/>
+                        <g:plusone></g:plusone>';
+						echo '<div id="description"><b>Description: </b><br /><br />'.$record['description'].'</div></div>';
 
                     if(mysql_num_rows($result_review) > 0) {
                         echo '<div class="title-text" style="margin-top:20px">Customer Review</div>';

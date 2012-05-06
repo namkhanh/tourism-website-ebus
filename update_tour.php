@@ -13,7 +13,8 @@ if (empty($_POST['newImg'])) {
 } else {
 	$image = $_POST['newImg'];
 }
-$updateTour_query = ("Update tour set t_name='$tourName', duration='$duration', price='$price', description='$description', destination='$destination', image='$image', regionID='$regionID' where tourID='$tourID'");
+$updateTour_query = ('Update tour set t_name="'.$tourName.'", duration="'.$duration.'", price="'.$price.'", description="'.$description.'", destination="'.$destination.'", image="'.$image.'", regionID="'.$regionID.'" where tourID="'.$tourID.'"');
+echo $updateTour_query;
 $result_update_tour = mysql_query($updateTour_query);
 
 $deleteOccurance_query ="DELETE FROM tour_occurance where tourID='$tourID'";
@@ -33,7 +34,7 @@ if ($result_update_tour && $result_delete_occurance) {
 	$flag = true;
 }
 
-header('Location: admin_tour.php');
+header ('Location: admin_tour.php');
 mysql_close($db_con);
 ?>
                     

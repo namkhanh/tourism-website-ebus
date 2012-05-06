@@ -21,5 +21,4 @@
     <li><a href="contact.html">Contact Us</a></li>
     <li><a href="sitemap.html">Site Map</a></li>
 	<li><a href="reference.html">Reference</a></li>
-	<li><a href="advance.html">Advance Features</a></li>    
 </ul>
