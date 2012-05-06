@@ -39,7 +39,7 @@ $(function() {
 	var year100 = yearNow - 80;
 	var yearRange = year100 + ':' + limitYear;
 	$( "#dob" ).datepicker({
-		dateFormat:"dd/mm/yy",
+		dateFormat:"dd-mm-yy",
 		changeMonth: true,
 		changeYear: true,
 		yearRange: yearRange,
@@ -86,3 +86,11 @@ function confirmDeleteEbook(name,ebookID) {
 			        }); 
 	}
 }
+
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));

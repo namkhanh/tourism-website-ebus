@@ -73,7 +73,7 @@ error_reporting(E_ALL);
 			
 			if ((isset($_GET['rs']) && isset($_GET['username']))){
 				if ($_GET['rs'] == "true") {
-					echo '<div>Your account '.$_GET['username'].' is now activated. You may now <a href="login.php">Log in</a></div>';
+					echo '<div>Your account '.$_GET['username'].' is now activated. You may now <a href="javascript:toggleLogin();">Log in</a></div>';
 				} else {
 					echo '<div>Your account '.$_GET['username'].' could not be activated. Please recheck the link or contact the system administrator at green.travel@gmail.com.</div>';
 				}

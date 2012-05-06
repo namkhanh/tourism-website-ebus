@@ -190,7 +190,7 @@ function countErrorInput() {
 // Function to validate Date from 1900 to 2200
 var dminyear = 1900;
 var dmaxyear = 2200;
-var chsep = "/";
+var chsep = "-";
 
 function checkinteger(str1) {
 	var x;
