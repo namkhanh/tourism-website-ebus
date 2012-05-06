@@ -106,7 +106,7 @@
                             <img src="'.$record['image'].'" alt="Image cannot be load" align="left" />
                             <div id="transport_name">'.$record['name'].'</div>';
                             echo $record['description'].'<br /><br />';
-                            echo '<b>Price: </b>'.$record['price'].' VND
+                            echo '<b>Price: </b>'.number_format($record['price']).' VND
                         </div>';
                     }
 				}				  

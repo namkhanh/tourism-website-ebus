@@ -142,7 +142,7 @@
                             <img width ="300" height="200" src="'.$record['image'].'" alt="Image cannot be loaded" align="left" />
                             <b>Duration: </b>'.$record['duration'].'<br />
                             
-                            <b>Price: </b>'.$record['price'].' VND<br />
+                            <b>Price: </b>'.number_format($record['price']).' VND<br />
                             <b>Occurance Day: </b>';
                             $stringOccurance ="";
                             while ($occurance = mysql_fetch_array($occurance_result)) {
