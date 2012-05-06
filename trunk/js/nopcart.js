@@ -85,7 +85,7 @@
 //---------------------------------------------------------------------||
 
 //Options for Everyone:
-MonetarySymbol        = '$';
+MonetarySymbol        = '';
 DisplayNotice         = true;
 DisplayShippingColumn = false;
 DisplayShippingRow    = false;
@@ -401,10 +401,21 @@ function moneyFormat(input) {
    if ( cents == "0" )
       cents = "00";
 
-   return(dollars + "." + cents);
+   return(addCommas(dollars) + " VND");
 }
 
-
+function addCommas(nStr)
+{
+	nStr += '';
+	x = nStr.split('.');
+	x1 = x[0];
+	x2 = x.length > 1 ? '.' + x[1] : '';
+	var rgx = /(\d+)(\d{3})/;
+	while (rgx.test(x1)) {
+		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+	}
+	return x1 + x2;
+}
 //---------------------------------------------------------------------||
 // FUNCTION:    RemoveFromCart                                         ||
 // PARAMETERS:  Order Number to Remove                                 ||
@@ -605,11 +616,11 @@ function ManageCart( ) {
          else
             strOutput += "<TD CLASS=\"nopentry\">"  + fields[3] + " - <I>"+ fields[5] + "</I></TD>";
 
-         strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[2]) + "/ea</TD>";
+         strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[2]) + "</TD>";
 
          if ( DisplayShippingColumn ) {
             if ( parseFloat(fields[4]) > 0 )
-               strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[4]) + "/ea</TD>";
+               strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[4]) + "</TD>";
             else
                strOutput += "<TD CLASS=\"nopentry\">N/A</TD>";
          }
@@ -777,11 +788,11 @@ function CheckoutCart( ) {
          else
             strOutput += "<TD CLASS=\"nopentry\">"  + fields[3] + " - <I>"+ fields[5] + "</I></TD>";
 
-         strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[2]) + "/ea</TD>";
+         strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[2]) + "</TD>";
 
          if ( DisplayShippingColumn ) {
             if ( parseFloat(fields[4]) > 0 )
-               strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[4]) + "/ea</TD>";
+               strOutput += "<TD CLASS=\"nopentry\">"+ MonetarySymbol + moneyFormat(fields[4]) + "</TD>";
             else
                strOutput += "<TD CLASS=\"nopentry\">N/A</TD>";
          }
