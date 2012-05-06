@@ -1,4 +1,4 @@
-<form name="search" onsubmit="return validateSearch()" action="search.html" method="get">
+<form name="search" action="search.html" method="get">
             	<fieldset>
                 	<table>
  						<tr>

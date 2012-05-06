@@ -106,34 +106,3 @@ function validateContactForm()
 		return false;
 	}
 }
-
-function validateSearch() 
-{
-	var destination = document.forms["search"]["destination"].value;
-	var price = document.forms["search"]["price"].value;
-	var date = document.forms["search"]["date"].value;
-	
-	var message = "";
-	var valid = new Boolean();
-	valid = true;
-
-	if (destination == "0") {
-		message = message + "- Please select Destination" + "\n";
-		valid = false;	
-	}
-	
-	if (price == "0") {
-		message = message + "- Please select Price" + "\n";
-		valid = false;
-	}
-	
-	if (date == "") {
-		message = message + "- Please select Date of Departure" + "\n";
-		valid = false;
-	}
-	
-	if (valid == false) {
-		alert(message);
-		return false;
-	}	
-}
