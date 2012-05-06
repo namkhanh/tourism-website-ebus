@@ -1,0 +1,140 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head>
+	<meta http-equiv="content-type" content="text/xml; charset=utf-8" /> 
+    <title>Tour Booking</title>
+    <meta name="description" content="" /> 
+	<meta name="keywords" content="" /> 
+	<link rel="stylesheet" type="text/css" href="formatstyles.css"/> 
+	<link rel="stylesheet" type="text/css" href="divstyles.css"/> 
+    <link rel="stylesheet" type="text/css" href="style/css/jquery-ui-1.8.18.custom.css" />
+	
+	<!-- include CSS always before including js -->
+
+	<!-- include jQuery library -->
+	<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+	<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+	<script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	<script type="text/javascript" src="js/login.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+	<link rel="stylesheet" type="text/css" media="screen" href="style/css/demos.css"/>
+	<style type="text/css" media="screen"> 
+		@import "style/css/uni-form.css"; 
+	</style>
+	
+	<!-- Demo page js -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.uni-form.js"></script>
+	
+	<!-- Star Rating widget stuff here... -->
+	<script type="text/javascript" src="js/jquery.ui.stars.js"></script>
+	<link rel="stylesheet" type="text/css" href="style/css/crystal-stars.css"/>
+	<script type="text/javascript" src ="js/language-en.js"></script> 
+	<script type="text/javascript" src ="js/nopcart.js" language="javascript"> 
+	
+      //============================================================== 
+      //               NOP Design JavaScript Shopping Cart               
+      //-------------------------------------------------------------- 
+	  //       Visit NOP Design at http://www.nopdesign.com/freecart     
+	  //============================================================== 
+	</script>
+
+</head>
+
+<body>
+<div id="fade" style="display:none;"></div>
+	<!-- This is the page section -->
+	<div id="page_section">
+
+		<!-- This is the banner --> 
+		<div id="banner"> 
+ 			<?php include("banner.php"); ?>
+		</div> 
+		<!-- This is end of the banner --> 
+    
+    	<div id="user-cpanel">
+		<?php include("user_cpanel.php"); ?>
+		<?php include("session.php"); ?>
+        </div>
+        <div class="wan-clear"></div>
+        <div id="user-form">
+       	<?php include("user-form.php"); ?>
+		</div>
+		<div id="topnav">
+           <?php include("top-nav.php"); ?>
+        </div>
+
+<!-- This is the content -->
+		<div id="content">
+
+         <?php
+         
+	include (dirname(__FILE__).'/database_config.php');
+	$username = $_SESSION['username'];
+	$result = mysql_query('Select * From tour t, tour_booking tb, customer c, transport tr Where tb.transportID = tr.transportID and t.tourID = tb.tourID And c.username = tb.username And tb.username = "'.$username.'" ORDER BY date');
+	
+	$first = true;
+
+                if (mysql_num_rows($result) > 0){                
+                    while ($record = mysql_fetch_array($result)) {
+	$temp = date_create($record['date_booking']);
+	$date_booking= date_format($temp,"d-m-Y");
+
+	$temp = date_create($record['date']);
+	$date= date_format($temp,"d-m-Y");
+                        if ($first == true) {
+                            echo '<table id="history">
+                            <caption>Booking History of '.$record['firstName'].', '.$record['lastName'].'</caption>
+                            <tr>
+                                <th>Tour Booking Id</th>
+<th>Tour Name</th>
+                                <th>Booking Date</th>
+                                <th>Date of Departure</th>
+                                <th>Transport</th>
+                                <th>Number of visitors</th>
+								<th>Remove</th>
+                            </tr>';
+                            $first = false;
+                        }
+                        
+                        echo '
+                        <tr>
+                            <td>'.$record['tour_booking_id'].'</td>
+							<td>'.$record['t_name'].'</td>
+                            <td>'.$date_booking.'</td>
+                            <td>'.$date.'</td>
+                            <td>'.$record['name'].'</td>                        
+                            <td>'.$record['no_ppl'].'</td>';
+							$today = date("Y-m-d");
+							if ($record['date'] <  $today) {
+							echo '<td>&nbsp;</td>';
+							} else {
+							echo '<td><input type="button" value="delete" onclick="confirmDeleteBooking(\''.$record['t_name'].'\',\''.$record['tour_booking_id'].'\',\''.$record['date'].'\')" /></td>';
+							}
+							
+                        echo '</tr>';
+                    }
+                	echo '</table><br />';
+                } else {
+                	echo 'No record found';
+                }
+                //echo '<center><a href="tour.php?tourID='.$tourID.'"><input type="button" value="Back to Previous Page" /></a></center>';
+         			
+            ?>
+       
+		</div> 
+<!-- This is end of the content -->
+	</div> 
+<!-- This is end of the page section -->
+<br />
+<!-- This is the footer -->
+		<div id="footer"> 
+			<p class="footer">This website is a student project that is intended to be used only for academic purposes. This page was created by Duy, Le Quang </p>
+		</div> 
+<!-- This is end of the footer -->
+</body>
+
+</html>
