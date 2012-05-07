@@ -16,7 +16,7 @@ a {
 }
 
 body {
-	background-image: url(images/background.jpg);
+	background-image: url(images/body-bg.jpg);
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
